@@ -1,0 +1,12 @@
+main{
+	
+}
+
+.Photography{
+	padding-top:30px;
+	padding-bottom: 80px;
+	background:url('../../assets/Backgrounds/Mountain.jpg');
+	background-size: calc(100%-170px);
+	background-attachment: fixed;
+	background-position: center top
+}

@@ -1,0 +1,43 @@
+.Square{
+	height:500px;
+	padding:30px;
+}
+.Preview{
+	padding:30px;
+	border-top:2px solid rgba(250,250,250,1);
+}
+
+.Buttons{
+	display: flex;
+	width: 100%;
+	justify-content: space-around;
+}
+
+.DevCard{
+	border: 1px solid #eee;
+	justify-content: center !important;
+}
+
+.DevCard .Info{
+	background:rgba(250,250,250,1);
+}
+
+.DevCard p {
+	font-size: 15px
+}
+
+.DevCard h2{
+	font-size: 50px;
+	max-width: auto;
+}
+
+
+.Preview img{
+	width: 100%;
+	margin-top: 20px;
+object-fit: contain;
+}
+
+.ImagePreviews{
+	transition:1s;	overflow: hidden
+}
