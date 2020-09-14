@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import PhotoCard from '../../components/Photography/PhotoCard/PhotoCard';
 import './Photography.css';
+import {LazyLoadComponent} from 'react-lazy-load-image-component';
 import PhotoGrid from '../../components/Photography/PhotoGrid/PhotoGrid';
 import {Route, Switch} from "react-router-dom"; 
 import Animals from "../../components/Photography/Gallery/Animals/Animals";
@@ -54,17 +55,17 @@ const Photography = (props) => {
 	return (<div className="Photography">
 		{galleryView ? <GalleryView image={collection[index]} next={()=>moveGallery(+1)} prev={()=>moveGallery(-1)} exitGallery={closeGallery}/> : null}
 		<Switch>
-		<Route path="/photography/Travel/Asia" render={()=>{return <Asia imageSelect={(image, collection)=>openGallery(image, collection)}/>}} />
-		<Route path="/photography/Travel/Canada" render={()=>{return<Canada imageSelect={(image, collection)=>openGallery(image, collection)}/>}} />
-		<Route path="/photography/Travel/Oceania" render={()=>{return<Oceania imageSelect={(image, collection)=>openGallery(image, collection)}/>} }/>
-		<Route path="/photography/Travel/Europe" render={()=>{return<Europe imageSelect={(image, collection)=>openGallery(image, collection)}/>}} />
-		<Route path="/photography/Client/Cat-Motors" render={()=>{return<CatMotors imageSelect={(image, collection)=>openGallery(image, collection)}/>}} />
-		<Route path="/photography/Client/Sprout" render={()=>{return<Sprout imageSelect={(image, collection)=>openGallery(image, collection)}/>}} />
-		<Route path="/photography/Client/Luna" render={()=>{return<Luna imageSelect={(image, collection)=>openGallery(image, collection)}/>}} />
-		<Route path="/photography/Client/Climate" render={()=>{return<Climate imageSelect={(image, collection)=>openGallery(image, collection)}/>}} />
-		<Route path="/photography/Client/Gemma" render={()=>{return<Gemma imageSelect={(image, collection)=>openGallery(image, collection)}/>}}/>
-		<Route path="/photography/Animal" render={()=>{return<Animals imageSelect={(image, collection)=>openGallery(image, collection)}/>}} />
-		<Route path="/photography/Portrait" render={()=>{return<Portrait imageSelect={(image, collection)=>openGallery(image, collection)}/>}} />
+		<Route path="/photography/Travel/Asia" render={()=>{return  (<LazyLoadComponent><Asia imageSelect={(image, collection)=>openGallery(image, collection)}/></LazyLoadComponent>)}} />
+		<Route path="/photography/Travel/Canada" render={()=>{return (<LazyLoadComponent><Canada imageSelect={(image, collection)=>openGallery(image, collection)}/></LazyLoadComponent>)}} />
+		<Route path="/photography/Travel/Oceania" render={()=>{return (<LazyLoadComponent><Oceania imageSelect={(image, collection)=>openGallery(image, collection)}/></LazyLoadComponent>)} }/>
+		<Route path="/photography/Travel/Europe" render={()=>{return (<LazyLoadComponent><Europe imageSelect={(image, collection)=>openGallery(image, collection)}/></LazyLoadComponent>)}} />
+		<Route path="/photography/Client/Cat-Motors" render={()=>{return (<LazyLoadComponent><CatMotors imageSelect={(image, collection)=>openGallery(image, collection)}/></LazyLoadComponent>)}} />
+		<Route path="/photography/Client/Sprout" render={()=>{return (<LazyLoadComponent><Sprout imageSelect={(image, collection)=>openGallery(image, collection)}/></LazyLoadComponent>)}} />
+		<Route path="/photography/Client/Luna" render={()=>{return (<LazyLoadComponent><Luna imageSelect={(image, collection)=>openGallery(image, collection)}/></LazyLoadComponent>)}} />
+		<Route path="/photography/Client/Climate" render={()=>{return (<LazyLoadComponent><Climate imageSelect={(image, collection)=>openGallery(image, collection)}/></LazyLoadComponent>)}} />
+		<Route path="/photography/Client/Gemma" render={()=>{return (<LazyLoadComponent><Gemma imageSelect={(image, collection)=>openGallery(image, collection)}/></LazyLoadComponent>)}}/>
+		<Route path="/photography/Animal" render={()=>{return (<LazyLoadComponent><Animals imageSelect={(image, collection)=>openGallery(image, collection)}/></LazyLoadComponent>)}} />
+		<Route path="/photography/Portrait" render={()=>{return (<LazyLoadComponent><Portrait imageSelect={(image, collection)=>openGallery(image, collection)}/></LazyLoadComponent>)}} />
 		<Route path="/photography/Travel"  render={()=>{return(<PhotoGrid>
 			<PhotoCard card="Asia" clicked={(card)=>onCardSelect(card)}>Asia</PhotoCard>
 		<PhotoCard card="Canada" clicked={(card)=>onCardSelect(card)}>Canada</PhotoCard>
