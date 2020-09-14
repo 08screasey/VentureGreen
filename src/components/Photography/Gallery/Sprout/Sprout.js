@@ -1,4 +1,5 @@
 import React from 'react';
+import {LazyLoadComponent} from 'react-lazy-load-image-component';
 
 import GalleryLayout from '../../GalleryLayout/GalleryLayout';
 import sprout1 from '../../../../assets/client/Sprout/sprout.jpg';
@@ -22,9 +23,9 @@ import sprout17 from '../../../../assets/client/Sprout/sprout17.jpg';
 
 const Sprout = (props) => {
 	const images = [sprout1, sprout2, sprout3, sprout4, sprout5, sprout6, sprout7, sprout8, sprout9, sprout10, sprout11, sprout12, sprout13, sprout14, sprout15, sprout16, sprout17];
-	return (<GalleryLayout clicked={(i)=>props.imageSelect(i,images)} header="Sprout Plant-Based Eatery" images={images}>
+	return (<LazyLoadComponent><GalleryLayout clicked={(i)=>props.imageSelect(i,images)} header="Sprout Plant-Based Eatery" images={images}>
 		Tucked away on Ward street lies Nelson’s very first vegan eatery. This bright, cosy cafe has you leaving satisfied and even healthier than when you walked in. If it’s Poke-bowls or doughnuts you’re after, this cafe has it all. With a new breakfast offer to tempt you in for a morning bite, it was time for some fresh images to showcase the mouth-watering bowls and wraps down at Sprout. If you’re in Nelson stick Wing Wednesday in your calendar, join the community for a bowl of cauliflower wings and a vegan beer or three!
-		</GalleryLayout>)
+		</GalleryLayout></LazyLoadComponent>)
 
 };
 

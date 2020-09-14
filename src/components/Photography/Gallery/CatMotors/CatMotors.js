@@ -14,16 +14,17 @@ import Cat10 from '../../../../assets/client/CatMotors/cat10.jpg';
 import Cat11 from '../../../../assets/client/CatMotors/cat11.jpg';
 import Cat12 from '../../../../assets/client/CatMotors/cat12.jpg';
 import Cat13 from '../../../../assets/client/CatMotors/cat13.jpg';
+import {LazyLoadComponent} from 'react-lazy-load-image-component';
 
 
 const CatMotors = (props) => {
 	const images = [Cat1, Cat2, Cat3, Cat4, Cat5, Cat6, Cat7, Cat8, Cat9, Cat10, Cat11, Cat12, Cat13]
-	return (<GalleryLayout clicked={(i)=>props.imageSelect(i,images)} header="Cat Motors" images={images}>Based in Chiang Mai, Cat Motors are a motorbike rental company who were set up by travellers with the goal of allowing other travellers easy access to explore the beautiful mountain regions surrounding Chiang Mai Province. 
+	return (<LazyLoadComponent><GalleryLayout clicked={(i)=>props.imageSelect(i,images)} header="Cat Motors" images={images}>Based in Chiang Mai, Cat Motors are a motorbike rental company who were set up by travellers with the goal of allowing other travellers easy access to explore the beautiful mountain regions surrounding Chiang Mai Province. 
 
 With a primary focus on safety for travellers they spend around 30% of profits on bike maintenance alone. 
 
 <strong style={{display:"block"}}>“Created by travellers, for travellers”</strong>
-</GalleryLayout>)
+</GalleryLayout></LazyLoadComponent>)
 };
 
 export default CatMotors ;

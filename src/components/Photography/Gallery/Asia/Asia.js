@@ -20,12 +20,14 @@ import asia18 from '../../../../assets/travel/asia/asia18.jpg'
 import asia19 from '../../../../assets/travel/asia/asia19.jpg'
 import asia20 from '../../../../assets/travel/asia/asia20.jpg'
 import asia21 from '../../../../assets/travel/asia/asia21.jpg'
+import {LazyLoadComponent} from 'react-lazy-load-image-component';
 
 
 const Asia = (props) => {
 	const images = [asia1, asia2, asia3, asia4, asia5, asia6, asia7, asia8, asia9, asia10, asia11, asia12, asia13, asia14, asia15, asia16, asia18, asia19, asia20, asia21];
 	console.log(images);
-	return (<GalleryLayout clicked={(i)=>props.imageSelect(i,images)} images={images}></GalleryLayout>)
+	return (<LazyLoadComponent><GalleryLayout clicked={(i)=>props.imageSelect(i,images)} images={images}></GalleryLayout>
+		</LazyLoadComponent>)
 };
 
 export default Asia ;

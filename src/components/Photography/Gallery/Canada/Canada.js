@@ -15,11 +15,13 @@ import canada12 from '../../../../assets/travel/canada/Pyramid+Mountain.jpg'
 import canada13 from '../../../../assets/travel/canada/reflection+pyramid+1.jpg'
 import canada14 from '../../../../assets/travel/canada/snow+2.jpg'
 import canada15 from '../../../../assets/travel/canada/snow+4.jpg'
-import canada16 from '../../../../assets/travel/canada/snow+7.jpg'
+import canada16 from '../../../../assets/travel/canada/snow+7.jpg';
+import {LazyLoadComponent} from 'react-lazy-load-image-component';
+
 const Canada = (props) => {
 	const images = [canada1, canada2,canada3, canada4, canada5, canada6, canada7, canada8, canada9, canada10, canada11, canada12, canada13, canada14, canada15, canada16];
 
-	return (<GalleryLayout clicked={(i)=>props.imageSelect(i,images)} images={images}></GalleryLayout>)
+	return (<LazyLoadComponent><GalleryLayout clicked={(i)=>props.imageSelect(i,images)} images={images}></GalleryLayout></LazyLoadComponent>)
 };
 
 export default Canada ;

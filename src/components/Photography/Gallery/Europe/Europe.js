@@ -1,4 +1,5 @@
 import React from 'react';
+import {LazyLoadComponent} from 'react-lazy-load-image-component';
 
 import GalleryLayout from '../../GalleryLayout/GalleryLayout';
 import europe1 from '../../../../assets/travel/europe/europe.jpg'
@@ -31,9 +32,9 @@ import europe27 from '../../../../assets/travel/europe/europe27.jpg'
 import europe28 from '../../../../assets/travel/europe/europe28.jpg'
 const Europe = (props) => {
 	const images = [europe1, europe2, europe3, europe4, europe5, europe6, europe7, europe8, europe9, europe10, europe11, europe12, europe13, europe14, europe15, europe16, europe17, europe18, europe19, europe20, europe21, europe22, europe23, europe24, europe25, europe26, europe27, europe28];
-	return (
+	return (<LazyLoadComponent>
 		<GalleryLayout clicked={(i)=>props.imageSelect(i,images)} images={images}></GalleryLayout>
-		)
+	</LazyLoadComponent>	)
 };
 
 export default Europe ;

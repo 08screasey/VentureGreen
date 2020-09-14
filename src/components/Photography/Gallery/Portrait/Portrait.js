@@ -12,10 +12,11 @@ import portrait8 from '../../../../assets/portrait/portrait8.jpg'
 import portrait9 from '../../../../assets/portrait/portrait9.jpg'
 import portrait10 from '../../../../assets/portrait/portrait10.jpg'
 import portrait11 from '../../../../assets/portrait/portrait11.jpg'
+import {LazyLoadComponent} from 'react-lazy-load-image-component';
 
 const Portrait = (props) => {
 	const images = [portrait1, portrait2, portrait3, portrait4, portrait5, portrait6, portrait7, portrait8, portrait9, portrait10, portrait11];
-	return (<GalleryLayout clicked={(i)=>props.imageSelect(i,images)} images={images}></GalleryLayout>)
+	return (<LazyLoadComponent><GalleryLayout clicked={(i)=>props.imageSelect(i,images)} images={images}></GalleryLayout></LazyLoadComponent>)
 };
 
 export default Portrait ;

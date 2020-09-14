@@ -1,4 +1,5 @@
 import React from 'react';
+import {LazyLoadComponent} from 'react-lazy-load-image-component';
 
 import GalleryLayout from '../../GalleryLayout/GalleryLayout';
 import oceania1 from '../../../../assets/travel/oceania/oceania.jpg'
@@ -34,7 +35,7 @@ import oceania28 from '../../../../assets/travel/oceania/oceania28.jpg'
 const Oceania = (props) => {
 	const images = [oceania1, oceania2, oceania3, oceania4, oceania5, oceania6, oceania7, oceania8, oceania9, oceania10, oceania11, oceania12, oceania13, oceania14, oceania15, oceania16, oceania17, oceania18, oceania19, oceania20, oceania21, oceania22, oceania23, oceania24, oceania25, oceania26, oceania27, oceania28];
 	
-	return (<GalleryLayout clicked={(i)=>props.imageSelect(i,images)} images={images}></GalleryLayout>)
+	return (<LazyLoadComponent><GalleryLayout clicked={(i)=>props.imageSelect(i,images)} images={images}></GalleryLayout></LazyLoadComponent>)
 };
 
 export default Oceania ;

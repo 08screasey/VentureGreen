@@ -24,14 +24,15 @@ import Gem22 from '../../../../assets/client/Gemma/gem22.jpg';
 import Gem23 from '../../../../assets/client/Gemma/gem23.jpg';
 import Gem24 from '../../../../assets/client/Gemma/gem24.jpg';
 import Gem25 from '../../../../assets/client/Gemma/gem25.jpg';
+import {LazyLoadComponent} from 'react-lazy-load-image-component';
 
 
 const Gemma = (props) => {
 	const images = [Gem1, Gem2, Gem3, Gem4, Gem5, Gem6, Gem8, Gem9, Gem10, Gem11, Gem12, Gem13, Gem14, Gem15, Gem16, Gem17, Gem18, Gem19, Gem20, Gem21, Gem22, Gem23, Gem24, Gem25];
-	return (<GalleryLayout clicked={(i)=>props.imageSelect(i,images)} header="Gemma: Aerial" images={images}>
+	return (<LazyLoadComponent><GalleryLayout clicked={(i)=>props.imageSelect(i,images)} header="Gemma: Aerial" images={images}>
 		Tucked away in an old church building, there are people dancing in the shadows. The circus community at Cardiff’s No Fit State houses extraordinary talents. The outer structure has retained it’s appearance, and a peek through the wooden door shows that the high ceilings in this space are being used to their full potential. Whether its hanging from a trapeze or hand-standing tall, this place is teeming with strength, grace and precision. 
 
-Gemma is a combination of all 3.</GalleryLayout>)
+Gemma is a combination of all 3.</GalleryLayout></LazyLoadComponent>)
 };
 
 export default Gemma ;

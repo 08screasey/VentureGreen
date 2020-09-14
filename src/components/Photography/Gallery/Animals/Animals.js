@@ -21,11 +21,12 @@ import animal18 from '../../../../assets/animals/poppy.jpg';
 import animal19 from '../../../../assets/animals/sheep+snowdon+2.jpg';
 import animal20 from '../../../../assets/animals/sunset+pen+y+fan+6.jpg';
 import animal21 from '../../../../assets/animals/wombat.jpg';
+import {LazyLoadComponent} from 'react-lazy-load-image-component';
 import './Animals.css';
 
 const Animals = (props) => {
-	return (<GalleryLayout images={[animal1, animal2, animal3, animal4, animal5, animal6, animal7, animal8, animal9, animal10, animal11, animal12, animal13, animal14, animal15, animal16, animal17, animal18, animal19, animal20, animal21]}>
-</GalleryLayout>)
+	return (<LazyLoadComponent><GalleryLayout images={[animal1, animal2, animal3, animal4, animal5, animal6, animal7, animal8, animal9, animal10, animal11, animal12, animal13, animal14, animal15, animal16, animal17, animal18, animal19, animal20, animal21]}>
+</GalleryLayout></LazyLoadComponent>)
 };
 
 export default Animals ;
