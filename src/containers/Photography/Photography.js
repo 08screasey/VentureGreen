@@ -20,7 +20,7 @@ import GalleryView from "../../components/Photography/GalleryView/GalleryView";
 const Photography = (props) => {
 useEffect(() => {
   window.scrollTo(0, 0)
-}, [])
+}, [props.location.pathname])
 	const [galleryView, setGalleryView] = useState(false);
 	const [collection, setCollection] = useState([]);
 	const [image, setImage] = useState(null);
@@ -68,13 +68,15 @@ useEffect(() => {
 		<Route path="/photography/Client/Gemma" render={()=>{return (<LazyLoadComponent><Gemma imageSelect={(image, collection)=>openGallery(image, collection)}/></LazyLoadComponent>)}}/>
 		<Route path="/photography/Animal" render={()=>{return (<LazyLoadComponent><Animals imageSelect={(image, collection)=>openGallery(image, collection)}/></LazyLoadComponent>)}} />
 		<Route path="/photography/Portrait" render={()=>{return (<LazyLoadComponent><Portrait imageSelect={(image, collection)=>openGallery(image, collection)}/></LazyLoadComponent>)}} />
-		<Route path="/photography/Travel"  render={()=>{return(<PhotoGrid>
+		<Route path="/photography/Travel"  render={()=>{
+			return(<PhotoGrid>
 			<PhotoCard card="Asia" clicked={(card)=>onCardSelect(card)}>Asia</PhotoCard>
 		<PhotoCard card="Canada" clicked={(card)=>onCardSelect(card)}>Canada</PhotoCard>
 		<PhotoCard card="Oceania" clicked={(card)=>onCardSelect(card)}>Oceania</PhotoCard>
 		<PhotoCard card="Europe" clicked={(card)=>onCardSelect(card)}>Europe</PhotoCard>
 		</PhotoGrid>)}}/>
-		<Route path="/photography/Client" render={()=>{return(<PhotoGrid>
+		<Route path="/photography/Client" render={()=>{
+			return(<PhotoGrid>
 			<PhotoCard card="Cat-Motors" clicked={(card)=>onCardSelect(card)}>Cat Motors</PhotoCard>
 		<PhotoCard card="Sprout" clicked={(card)=>onCardSelect(card)}>Sprout Plant Based Eatery</PhotoCard>
 		<PhotoCard card="Luna" clicked={(card)=>onCardSelect(card)}>Luna & The Moon</PhotoCard>
