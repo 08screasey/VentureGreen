@@ -1,8 +1,13 @@
-import React from "react";
+import React, {useEffect} from "react";
 import "./About.css";
 import Sam from "../../assets/About/about.jpg";
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
+import {faLinkedin} from '@fortawesome/free-brands-svg-icons'; 
 
 const About = (props) => {
+	useEffect(() => {
+  window.scrollTo(0, 0)
+}, [])
 	return (
 		<div className="About">
 			<img src={Sam} />
@@ -10,34 +15,12 @@ const About = (props) => {
 				<h1 className="F-Active PaleGreen">
 					Hi, I'm Sam and Welcome To My World!
 				</h1>
-				<p>
-					What started as a desire to see something completely
-					different to the little cozy town I grew up in developed in
-					to a lifestyle. A way to explore new territories and with
-					that, capture as much of the journey as I could.
-				</p>
-
-				<p>
-					Along the way I realized how big a role our environment
-					plays and how fragile it can be. I created this website to
-					share my photography, and it led me down a path of finding
-					the greenest way to see the world.{" "}
-				</p>
-
-				<p>
-					I picked up a camera only 2 years ago and with support and
-					encouragement it has become so much more than just a hobby.
-					It will drag me out of bed at 5am or make me climb a
-					mountain in the snow.
-				</p>
-
-				<p>
-					{" "}
-					The things that I have been lucky enough to see because of
-					this are the things that I want the world to see, and to
-					hopefully show that there is so much more to the world than
-					the little town we grow up in. -Sam
-				</p>
+				<p>Whilst on the road I began using photography as a medium to document my adventures, volunteering whenever possible alongside environmental organisations and ethical companies.</p>
+				<p>Eventually I felt as though I had even more to offer, and discovered that web development was scratching an itch for problem solving I'd had since graduating, allowing me to combine creativity with my natural analytical skillset.</p>
+				<p>My portfolio is a showcase of everything I have taught myself. I finished high school at 17 but never stopped learning, even if that meant bringing my laptop to the ski hill.</p>
+				<p>Combining 7 years of hospitality work experience, an eternal drive for self-improvement, a rich array of outdoor interests and a vocation for development encapsulates exactly what makes me, me! </p>
+				<small>				<a className="" href="https://www.linkedin.com/in/sam-creasey-056b371b7"><FontAwesomeIcon size="2x" icon={faLinkedin}/> Hire me. </a>
+If you liked this blurb, you'll love the book. </small>
 			</div>
 		</div>
 	);

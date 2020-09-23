@@ -1,13 +1,12 @@
-main{
-	
-}
 
 .Photography{
 	padding-top:30px;
 	padding-bottom: 80px;
-	background:url('../../assets/Backgrounds/Mountain.jpg');
-	background-size: calc(100vh-20px);
+	background:url('../../assets/Backgrounds/Berg.jpg');
+	background-size:cover;
 	background-attachment: fixed;
-	background-position: center top;
+	background-position: center bottom;
+	background-repeat: no-repeat;
+	min-height: 80vh
 
 }

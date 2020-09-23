@@ -25,7 +25,9 @@ import {LazyLoadComponent} from 'react-lazy-load-image-component';
 import './Animals.css';
 
 const Animals = (props) => {
-	return (<LazyLoadComponent><GalleryLayout images={[animal1, animal2, animal3, animal4, animal5, animal6, animal7, animal8, animal9, animal10, animal11, animal12, animal13, animal14, animal15, animal16, animal17, animal18, animal19, animal20, animal21]}>
+	const images = [animal1, animal2, animal3, animal4, animal5, animal6, animal7, animal8, animal9, animal10, animal11, animal12, animal13, animal14, animal15, animal16, animal17, animal18, animal19, animal20, animal21];
+	return (<LazyLoadComponent><GalleryLayout clicked={(i)=>props.imageSelect(i,images)} images={images}
+	 images={images}>
 </GalleryLayout></LazyLoadComponent>)
 };
 

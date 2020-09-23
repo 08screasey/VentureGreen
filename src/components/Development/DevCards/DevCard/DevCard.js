@@ -8,20 +8,20 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const DevCard = (props) => {
 	const [preview, showPreview] = useState(false);
-	return (<Container className="mb-2">
+	return (<Container style={{marginBottom:"70px"}}>
 		<Row className="DevCard">
-			<Col lg={{span:6, order:1}} xs={{span:12, order:1}} className="Square Flex">
-				<h2 className="F-Active" style={{maxWidth:"280px"}}>{props.header}</h2>
+			<Col lg={{span:6, order:props.alt ? 2 : 1}} xs={{span:12, order:1}} className="Title Flex" style={{background:props.color}}>
+				<h2 className="F-Active" style={{maxWidth:"300px", color:props.altColor}}>{props.header}</h2>
 			</Col>
-			<Col lg={{span:6, order:2}} xs={{span:12, order:2}} className="Square Flex Info">
-				<p className="F-Bodini Description">
+			<Col lg={{span:6, order:props.alt ? 1: 2}} xs={{span:12, order:2}} style={{backgroundColor:props.altColor}} className="Square Flex Info">
+				<p className="F-Code Description">
 					<strong>Description:</strong> {props.description}
 				</p>
-				<p className="F-Bodini Description">
+				<p className="F-Code Description">
 					<strong>Technologies/Frameworks: </strong>
 					{props.technologies.join(", ")}
 				</p>
-				<p className="F-Bodini Description">
+				<p className="F-Code Description">
 					<strong>API's: </strong>
 					{props.API.join(", ")}
 				</p>
@@ -45,8 +45,8 @@ const DevCard = (props) => {
 				</div>
 			</Col>
 			<Col lg={{span:12, order:3}} xs={{span:12, order:3}} className="Preview">
-			<h2 className="F-Active PaleGreen" onClick={()=>{showPreview(!preview)}}>Previews <span><FontAwesomeIcon style={{transform: preview ? "rotateZ(180deg)": "rotateZ(0deg)", transition:"0.5s"}} icon={faCaretDown}/></span></h2>
-			<div className=" d-flex ImagePreviews w-100" style={{maxHeight:preview ? "5000px" : "0px"}}>
+			<h2 className="F-Active" onClick={()=>{showPreview(!preview)}} style={{color:props.color}}>Previews </h2>
+			<div className=" d-flex ImagePreviews w-100 align-items-center" >
 			<Row>
 			<Col md="4" sm="12">
 			<img src={props.images[0]}/>

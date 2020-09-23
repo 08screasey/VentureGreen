@@ -17,5 +17,21 @@
 	align-items: center;
 	flex-wrap: wrap;
 	width:100%;
-	padding-bottom: 150px
+	padding-bottom: 60px
+}
+
+.About a{
+	color:#6f994d;
+	padding:2px;
+	margin:2px;
+	display: inline-block;
+	width:90px;
+	justify-content: center;
+	box-sizing: border-box;
+	transition:0.1s;
+}
+.About a:hover{
+	color:#6f994d;
+	text-decoration: none;
+	transform:scale(1.1);
 }

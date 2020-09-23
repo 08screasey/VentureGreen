@@ -1,0 +1,38 @@
+.Footer a{
+font-size: 14px;
+height:60px;
+color:#CCC;
+display: flex;
+align-items: center;
+justify-content: center;
+padding:10px;
+}
+
+.Links{max-width:800px;
+	width:95%;
+height: 100px;
+flex-wrap: wrap}
+
+.Footer a:hover{
+	color:#CCC;
+}
+
+.Spacer{
+	height:20px;
+	width:1px;
+	background: #CCC
+}
+
+.Footer{
+	padding-bottom: 80px;
+}
+
+@media screen and (min-width: 750px){
+	.Footer a{
+		font-size: 20px
+	}
+	.Footer{
+	padding-bottom: 20px;
+	padding-top: 10px
+}
+}

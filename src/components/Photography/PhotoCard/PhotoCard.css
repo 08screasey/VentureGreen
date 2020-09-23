@@ -25,9 +25,9 @@
 	background:rgba(0,0,0,0.3);
 	z-index: 2;
 	opacity: 0;
-	transition: 0.3s;
+	transition: 1s;
 }
-.PhotoCard:hover::after{
+.PhotoCard.Show::after{
 	opacity: 1;
 }
 
@@ -37,9 +37,9 @@
 	margin:10px 0;
 	text-shadow: 1px 0px black;
 	background:rgba(0,0,0,0.5);
-	transition: 0.3s;
+	transition: 1s;
 }
-.PhotoCard:hover p{
+.PhotoCard.Show p{
 	background:transparent;
 }
 

@@ -1,7 +1,10 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import './GalleryLayout.css';
 
 const GalleryLayout = (props) => {
+	useEffect(() => {
+  window.scrollTo(0, 0)
+}, [])
 	return (<div className="Gallery">
 		<h2 className="F-Bodini">{props.header}</h2>
 <p className="F-OldStandard">{props.children}</p>

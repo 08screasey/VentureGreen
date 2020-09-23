@@ -22,14 +22,15 @@ code {
 img{display: block}
 
 /*colours*/
-
+.Red{color:#FF5370;}
+.Cyan{color:#89DDFF;}
 .PaleGreen{color:#8ea989 !important;}
 .PaleGreen-Bg{
 	background: #8ea989
 }
 .Green{color:#6f994d;}
 .Grey{
-	color:#BBBBBB;
+	color:#AAA;
 }
 .LightGrey{
 	color:#AAAAAA;
@@ -62,6 +63,15 @@ font-family: "lora", serif;
 font-weight: 700;
 font-style: normal;
 letter-spacing: 1px}
+.F-Code{
+  font-family: source-code-pro, monospace;
+
+font-weight: 400;
+
+font-style: normal;
+
+
+}
 
 /*Spacings*/
 

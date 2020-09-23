@@ -14,6 +14,13 @@
 	z-index: 10;
 }
 
+.Navbar a{
+	color:black;
+}
+.Navbar a:hover{
+	color: #8ea989
+}
+
 @media screen and (min-width: 750px) {
 	.Navbar {
 		top:55px;

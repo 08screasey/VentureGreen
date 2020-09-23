@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import PhotoCard from '../../components/Photography/PhotoCard/PhotoCard';
 import './Photography.css';
 import {LazyLoadComponent} from 'react-lazy-load-image-component';
@@ -18,7 +18,9 @@ import Portrait from "../../components/Photography/Gallery/Portrait/Portrait";
 import GalleryView from "../../components/Photography/GalleryView/GalleryView";
 
 const Photography = (props) => {
-
+useEffect(() => {
+  window.scrollTo(0, 0)
+}, [])
 	const [galleryView, setGalleryView] = useState(false);
 	const [collection, setCollection] = useState([]);
 	const [image, setImage] = useState(null);
@@ -74,10 +76,10 @@ const Photography = (props) => {
 		</PhotoGrid>)}}/>
 		<Route path="/photography/Client" render={()=>{return(<PhotoGrid>
 			<PhotoCard card="Cat-Motors" clicked={(card)=>onCardSelect(card)}>Cat Motors</PhotoCard>
-		<PhotoCard card="Sprout" clicked={(card)=>onCardSelect(card)}>Sprout</PhotoCard>
+		<PhotoCard card="Sprout" clicked={(card)=>onCardSelect(card)}>Sprout Plant Based Eatery</PhotoCard>
 		<PhotoCard card="Luna" clicked={(card)=>onCardSelect(card)}>Luna & The Moon</PhotoCard>
-		<PhotoCard card="Climate" clicked={(card)=>onCardSelect(card)}>Climate</PhotoCard>
-		<PhotoCard card="Gemma" clicked={(card)=>onCardSelect(card)}>Gemma</PhotoCard>
+		<PhotoCard card="Climate" clicked={(card)=>onCardSelect(card)}>Strike For Climate 2019</PhotoCard>
+		<PhotoCard card="Gemma" clicked={(card)=>onCardSelect(card)}>Gemma: Aerial</PhotoCard>
 		</PhotoGrid>)}}/>
 		<Route path="/photography" render={()=>{return (<PhotoGrid>
 			<PhotoCard card="Travel" clicked={(card)=>onCardSelect(card)}>Travel</PhotoCard>

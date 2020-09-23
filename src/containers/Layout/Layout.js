@@ -5,6 +5,7 @@ import { Fade as Hamburger } from "hamburger-react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faInstagram } from "@fortawesome/free-brands-svg-icons";
 import Logo from '../../assets/venturegreen.png';
+import Footer from '../Footer/Footer';
 import SlideMenu from '../../components/Navigation/SlideMenu/SlideMenu';
 import Navbar from "../../components/Navigation/Navbar/Navbar";
 
@@ -23,12 +24,13 @@ const Layout = (props) => {
 					<div style={{zIndex:"1000"}}>
 					<Hamburger toggled={isOpen} toggle={setOpen} size={20} />
 					</div>
-					<div className="IconWrapper">
+					<a className="IconWrapper" href="https://www.instagram.com/venturegreenphotography/" target="_blank">
 					<FontAwesomeIcon icon={faInstagram} size="2x" />
-					</div>
+					</a>
 				</Navbar>{" "}
 			</header>
 			<main>{props.children}</main>
+			<Footer />
 		</div>
 	);
 };
