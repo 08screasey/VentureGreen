@@ -16,7 +16,7 @@ const Layout = (props) => {
 		<div>
 			<header>
 				<div className="LogoDiv">
-					<img src={Logo} className="Logo"/>
+					<img src={Logo} className="Logo" alt="Venture Green Logo"/>
 					<p className="F-Lora PaleGreen">Adventure Photography & Web Development</p>
 				</div>
 				<Navbar>
@@ -24,7 +24,7 @@ const Layout = (props) => {
 					<div style={{zIndex:"1000"}}>
 					<Hamburger toggled={isOpen} toggle={setOpen} size={20} />
 					</div>
-					<a className="IconWrapper" href="https://www.instagram.com/venturegreenphotography/" target="_blank">
+					<a className="IconWrapper" rel="noopener noreferrer" href="https://www.instagram.com/venturegreenphotography/" target="_blank">
 					<FontAwesomeIcon icon={faInstagram} size="2x" />
 					</a>
 				</Navbar>{" "}

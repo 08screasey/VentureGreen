@@ -23,7 +23,6 @@ useEffect(() => {
 }, [props.location.pathname])
 	const [galleryView, setGalleryView] = useState(false);
 	const [collection, setCollection] = useState([]);
-	const [image, setImage] = useState(null);
 	const [index, setIndex] = useState(0)
 
 	const onCardSelect = (card) => {
@@ -31,29 +30,21 @@ useEffect(() => {
 	}
 
 	const openGallery = (img, col) => {
-		console.log(img)
 		setCollection(col);
-		setImage(collection[img]);
-		setIndex(img)
-		console.log(collection, index)
 		setGalleryView(true);
 	};
 		const closeGallery = () => {
 		setGalleryView(false);
 		setCollection([]);
-		setImage(null);
 		setIndex(0);
 	};
 		
 	const moveGallery = (num) => {
 		const newIndex = (index+num+collection.length)%collection.length;
 		setIndex(newIndex);
-		console.log(index);
-		setImage(collection[index]);
 	}
 
 
-	console.log(props)
 	return (<div className="Photography">
 		{galleryView ? <GalleryView image={collection[index]} next={()=>moveGallery(+1)} prev={()=>moveGallery(-1)} exitGallery={closeGallery}/> : null}
 		<Switch>

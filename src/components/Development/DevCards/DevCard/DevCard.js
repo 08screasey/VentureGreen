@@ -3,7 +3,7 @@ import "./DevCard.css";
 import {Container, Row, Col} from 'react-bootstrap';
 
 import { faGithubSquare } from "@fortawesome/free-brands-svg-icons";
-import { faLink, faCaretDown } from "@fortawesome/free-solid-svg-icons";
+import { faLink } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const DevCard = (props) => {
@@ -26,7 +26,7 @@ const DevCard = (props) => {
 					{props.API.join(", ")}
 				</p>
 				<div className="Buttons">
-					<a href={props.link} className="F-Active" target="_blank">
+					<a href={props.link} rel="noopener noreferrer" className="F-Active" target="_blank">
 						<FontAwesomeIcon
 							className="Green"
 							icon={faLink}
@@ -34,7 +34,7 @@ const DevCard = (props) => {
 						/>{" "}
 						Live Build{" "}
 					</a>
-					<a href={props.github} className="F-Active" target="_blank">
+					<a href={props.github} rel="noopener noreferrer" className="F-Active" target="_blank">
 						<FontAwesomeIcon
 							className="Green"
 							icon={faGithubSquare}
@@ -49,13 +49,13 @@ const DevCard = (props) => {
 			<div className=" d-flex ImagePreviews w-100 align-items-center" >
 			<Row>
 			<Col md="4" sm="12">
-			<img src={props.images[0]}/>
+			<img src={props.images[0]} alt=""/>
 			</Col>
 			<Col md="4" sm="12">
-			<img src={props.images[1]}/>
+			<img src={props.images[1]} alt=""/>
 			</Col>
 			<Col md="4" sm="12">
-			<img src={props.images[2]}/>
+			<img src={props.images[2]} alt=""/>
 			</Col>
 			</Row>
 			</div>

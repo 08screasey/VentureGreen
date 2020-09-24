@@ -4,11 +4,10 @@ import Image1 from '../../assets/Home/Home Image.jpg'
 import Image2 from '../../assets/Home/Home Image 2.jpg'
 import Image3 from '../../assets/Home/Home Image 3.jpg'
 import Image4 from '../../assets/Home/Home Image 4.jpg';
-import leftArrow from '../../assets/Home/leftarrow.png';
 import Image5 from '../../assets/Home/Home Image 5.jpg'
 import Website from "../../assets/Home/website.jpg";
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
-import {faLevelUpAlt, faLevelDownAlt} from '@fortawesome/free-solid-svg-icons'
+import {faLevelUpAlt} from '@fortawesome/free-solid-svg-icons'
 import {ReactComponent as LeftBrain} from '../../assets/Home/brainLeft.svg';
 import LeftBrainOVerlay from '../../assets/Home/brainLeftOverLay.png';
 import LeftText1 from '../../assets/Home/brainLeftText1.png';
@@ -38,49 +37,53 @@ const Home = (props) => {
 	}
 
 	return (<div className="Home pt-3">
-	
-		<h1 className="mx-auto pt-2 my-0 px-3 F-Code text-left" style={{fontSize:"25px",width:"90%", textShadow:"1px 1px #ccc", borderBottom:"1px solid #CCC"}}>Portfolio</h1>
+		<h1 className="F-Lora PaleGreen mx-auto" style={{fontSize:"30px", borderTop:"1px solid #CCC", paddingTop:"30px", textShadow:"1px 1px #eee"}}>Welcome to the Mind of Sam Creasey</h1>
+		<p className="F-Code mx-auto" style={{fontSize:"14px", marginBottom:"30px", marginTop:"20px", color:"#888", width:"80%"}}> For his web development projects select the left side of his brain. To view his photography gallery select the right side. </p>
+		<h2 
+		className="mx-auto pt-2 my-0 px-3 F-Code text-left" 
+		style={{fontSize:"25px",width:"80%", textShadow:"1px 1px #ccc", borderBottom:"1px solid #CCC"}}>
+		</h2>
 		<div className="Flex" >
 		<Waypoint onEnter={()=>{setDevView(true);
 			startTyping()}} topOffset={"200px"} onLeave={()=>setDevView(false)}>
 		<div className={"HomeDev"} onClick={()=>props.history.push("/development")}>
-		<h2 className="F-Code" style={{color:"white"}}>{devContent.map(x=>x)} <span class="Typer"></span></h2>
+		<h2 className="F-Code" style={{color:"white"}}>{devContent.map((x,i)=><React.Fragment key={i}>{x}</React.Fragment>)} <span className="Typer"></span></h2>
 		<div className="LaptopScreen">
 		<div className="InnerScreen">
-		<img src={Website} />
+		<img alt="" src={Website} />
 		</div>
 		</div>
 
 	</div>
 
 		</Waypoint>
-	<div className="HomeBreak" onClick={()=>props.history.push("/about-me")}>
+	<div className="HomeBreak">
 	<div className="Brain d-flex justify-content-center mb-5" >
-	<div className={devView ? "LeftBrain Active" : "LeftBrain"}>
-	<img src={LeftBrainOVerlay} className="BrainOverlay"/>
-	<img src={LeftText1} alt="" className="Text Text1"/>
-	<img src={LeftText2} alt="" className="Text Text2"/>
+	<div className={devView ? "LeftBrain Active" : "LeftBrain"} onClick={()=>props.history.push("/development")}>
+	<img alt="" src={LeftBrainOVerlay} className="BrainOverlay"/>
+	<img alt="" src={LeftText1} className="Text Text1"/>
+	<img alt="" src={LeftText2} className="Text Text2"/>
 	<FontAwesomeIcon icon={faLevelUpAlt} className="Arrow PaleGreen" />
 	<LeftBrain />
 
 	</div>
 	
-	<div className={photoView ? "RightBrain Active" : "RightBrain"}>
+	<div className={photoView ? "RightBrain Active" : "RightBrain"} onClick={()=>props.history.push("/photography")}>
 	<RightBrain />
-		<img src={RightBrainOVerlay} className="BrainOverlay"/>
-		<img src={RightText1} alt="" className="Text Text1"/>
-		<img src={RightText2} alt="" className="Text Text2"/>
+		<img alt="" src={RightBrainOVerlay} className="BrainOverlay"/>
+		<img alt="" src={RightText1} className="Text Text1"/>
+		<img alt="" src={RightText2} className="Text Text2"/>
 		<FontAwesomeIcon icon={faLevelUpAlt} className="Arrow Cyan" /> 
 	</div>
 </div>
 	</div>
 	<Waypoint onEnter={()=>setPhotoView(true)} onLeave={()=>setPhotoView(false)} topOffset={"650px"} bottomOffset={"500px"}>
 	<div className={photoView ? "Active HomePhoto":"HomePhoto"} onClick={()=>props.history.push("/photography")}>
-		<img src={Image1} />
-		<img src={Image2} />
-		<img src={Image3} />
-		<img src={Image4} />
-		<img src={Image5} />
+		<img alt="" src={Image1} />
+		<img alt="" src={Image2} />
+		<img alt="" src={Image3} />
+		<img alt="" src={Image4} />
+		<img alt="" src={Image5} />
 	</div>
 	</Waypoint>
 	</div>
