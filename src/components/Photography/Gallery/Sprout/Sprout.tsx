@@ -1,16 +1,6 @@
-import React from "react";
 import { LazyLoadComponent } from "react-lazy-load-image-component";
 
-import GalleryLayout from "../../GalleryLayout/GalleryLayout";
 import sprout1 from "../../../../assets/client/Sprout/sprout.jpg";
-import sprout2 from "../../../../assets/client/Sprout/sprout2.jpg";
-import sprout3 from "../../../../assets/client/Sprout/sprout3.jpg";
-import sprout4 from "../../../../assets/client/Sprout/sprout4.jpg";
-import sprout5 from "../../../../assets/client/Sprout/sprout5.jpg";
-import sprout6 from "../../../../assets/client/Sprout/sprout6.jpg";
-import sprout7 from "../../../../assets/client/Sprout/sprout7.jpg";
-import sprout8 from "../../../../assets/client/Sprout/sprout8.jpg";
-import sprout9 from "../../../../assets/client/Sprout/sprout9.jpg";
 import sprout10 from "../../../../assets/client/Sprout/sprout10.jpg";
 import sprout11 from "../../../../assets/client/Sprout/sprout11.jpg";
 import sprout12 from "../../../../assets/client/Sprout/sprout12.jpg";
@@ -19,8 +9,18 @@ import sprout14 from "../../../../assets/client/Sprout/sprout14.jpg";
 import sprout15 from "../../../../assets/client/Sprout/sprout15.jpg";
 import sprout16 from "../../../../assets/client/Sprout/sprout16.jpg";
 import sprout17 from "../../../../assets/client/Sprout/sprout17.jpg";
+import sprout2 from "../../../../assets/client/Sprout/sprout2.jpg";
+import sprout3 from "../../../../assets/client/Sprout/sprout3.jpg";
+import sprout4 from "../../../../assets/client/Sprout/sprout4.jpg";
+import sprout5 from "../../../../assets/client/Sprout/sprout5.jpg";
+import sprout6 from "../../../../assets/client/Sprout/sprout6.jpg";
+import sprout7 from "../../../../assets/client/Sprout/sprout7.jpg";
+import sprout8 from "../../../../assets/client/Sprout/sprout8.jpg";
+import sprout9 from "../../../../assets/client/Sprout/sprout9.jpg";
+import { ImageGalleryProps } from "../../../../containers/Photography/Photography";
+import { GalleryLayout } from "../../GalleryLayout/GalleryLayout";
 
-const Sprout = (props) => {
+export const Sprout = ({ onImageClick }: ImageGalleryProps) => {
   const images = [
     sprout1,
     sprout2,
@@ -40,10 +40,11 @@ const Sprout = (props) => {
     sprout16,
     sprout17,
   ];
+
   return (
     <LazyLoadComponent>
       <GalleryLayout
-        clicked={(i) => props.imageSelect(i, images)}
+        onClick={(i) => onImageClick(i, images)}
         header="Sprout Plant-Based Eatery"
         images={images}
       >
@@ -59,5 +60,3 @@ const Sprout = (props) => {
     </LazyLoadComponent>
   );
 };
-
-export default Sprout;

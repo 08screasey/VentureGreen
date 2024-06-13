@@ -1,21 +1,27 @@
 import { useState, useEffect } from "react";
-import PhotoCard from "../../components/Photography/PhotoCard/PhotoCard";
-import "./Photography.css";
 import { LazyLoadComponent } from "react-lazy-load-image-component";
-import PhotoGrid from "../../components/Photography/PhotoGrid/PhotoGrid";
-import { Route, useLocation, useNavigate } from "react-router-dom";
-import Animals from "../../components/Photography/Gallery/Animals/Animals";
-import Asia from "../../components/Photography/Gallery/Asia/Asia";
-import Canada from "../../components/Photography/Gallery/Canada/Canada";
-import Oceania from "../../components/Photography/Gallery/Oceania/Oceania";
-import Europe from "../../components/Photography/Gallery/Europe/Europe";
-import CatMotors from "../../components/Photography/Gallery/CatMotors/CatMotors";
-import Sprout from "../../components/Photography/Gallery/Sprout/Sprout";
-import Luna from "../../components/Photography/Gallery/Luna/Luna";
-import Climate from "../../components/Photography/Gallery/Climate/Climate";
-import Gemma from "../../components/Photography/Gallery/Gemma/Gemma";
-import Portrait from "../../components/Photography/Gallery/Portrait/Portrait";
-import GalleryView from "../../components/Photography/GalleryView/GalleryView";
+import { Route, Routes, useLocation, useNavigate } from "react-router-dom";
+
+import { Animals } from "../../components/Photography/Gallery/Animals/Animals";
+import { Asia } from "../../components/Photography/Gallery/Asia/Asia";
+import { Canada } from "../../components/Photography/Gallery/Canada/Canada";
+import { CatMotors } from "../../components/Photography/Gallery/CatMotors/CatMotors";
+import { Climate } from "../../components/Photography/Gallery/Climate/Climate";
+import { Europe } from "../../components/Photography/Gallery/Europe/Europe";
+import { Gemma } from "../../components/Photography/Gallery/Gemma/Gemma";
+import { Luna } from "../../components/Photography/Gallery/Luna/Luna";
+import { Oceania } from "../../components/Photography/Gallery/Oceania/Oceania";
+import { Portrait } from "../../components/Photography/Gallery/Portrait/Portrait";
+import { Sprout } from "../../components/Photography/Gallery/Sprout/Sprout";
+import { GalleryView } from "../../components/Photography/GalleryView/GalleryView";
+import { PhotoCard } from "../../components/Photography/PhotoCard/PhotoCard";
+import { PhotoGrid } from "../../components/Photography/PhotoGrid/PhotoGrid";
+
+import "./Photography.css";
+
+export type ImageGalleryProps = {
+  onImageClick: (imageIndex: number, collection: string[]) => void;
+};
 
 export const Photography = () => {
   const { pathname } = useLocation();
@@ -23,7 +29,8 @@ export const Photography = () => {
 
   useEffect(() => {
     window.scrollTo(0, 0);
-  }, [location.pathname]);
+  }, [pathname]);
+
   const [galleryView, setGalleryView] = useState(false);
   const [collection, setCollection] = useState<string[]>([]);
   const [index, setIndex] = useState(0);
@@ -32,7 +39,8 @@ export const Photography = () => {
     navigate(pathname + "/" + card);
   };
 
-  const openGallery = (col: string[]) => {
+  const openGallery = (index: number, col: string[]) => {
+    console.log(index);
     setCollection(col);
     setGalleryView(true);
   };
@@ -51,19 +59,19 @@ export const Photography = () => {
     <div className="Photography">
       {galleryView ? (
         <GalleryView
-          image={collection[index]}
-          next={() => moveGallery(+1)}
-          prev={() => moveGallery(-1)}
-          exitGallery={closeGallery}
+          imageSrc={collection[index]}
+          onNext={() => moveGallery(+1)}
+          onPrev={() => moveGallery(-1)}
+          onExit={closeGallery}
         />
       ) : null}
       <Routes>
         <Route
           path="/photography/Travel/Asia"
-          Component={
+          element={
             <LazyLoadComponent>
               <Asia
-                imageSelect={(image, collection) =>
+                onImageClick={(image, collection) =>
                   openGallery(image, collection)
                 }
               />
@@ -72,221 +80,183 @@ export const Photography = () => {
         />
         <Route
           path="/photography/Travel/Canada"
-          render={() => {
-            return (
-              <LazyLoadComponent>
-                <Canada
-                  imageSelect={(image, collection) =>
-                    openGallery(image, collection)
-                  }
-                />
-              </LazyLoadComponent>
-            );
-          }}
+          element={
+            <LazyLoadComponent>
+              <Canada
+                onImageClick={(image, collection) =>
+                  openGallery(image, collection)
+                }
+              />
+            </LazyLoadComponent>
+          }
         />
         <Route
           path="/photography/Travel/Oceania"
-          render={() => {
-            return (
-              <LazyLoadComponent>
-                <Oceania
-                  imageSelect={(image, collection) =>
-                    openGallery(image, collection)
-                  }
-                />
-              </LazyLoadComponent>
-            );
-          }}
+          element={
+            <LazyLoadComponent>
+              <Oceania
+                onImageClick={(image, collection) =>
+                  openGallery(image, collection)
+                }
+              />
+            </LazyLoadComponent>
+          }
         />
         <Route
           path="/photography/Travel/Europe"
-          render={() => {
-            return (
-              <LazyLoadComponent>
-                <Europe
-                  imageSelect={(image, collection) =>
-                    openGallery(image, collection)
-                  }
-                />
-              </LazyLoadComponent>
-            );
-          }}
+          element={
+            <LazyLoadComponent>
+              <Europe
+                onImageClick={(image, collection) =>
+                  openGallery(image, collection)
+                }
+              />
+            </LazyLoadComponent>
+          }
         />
         <Route
           path="/photography/Client/Cat-Motors"
-          render={() => {
-            return (
-              <LazyLoadComponent>
-                <CatMotors
-                  imageSelect={(image, collection) =>
-                    openGallery(image, collection)
-                  }
-                />
-              </LazyLoadComponent>
-            );
-          }}
+          element={
+            <LazyLoadComponent>
+              <CatMotors
+                onImageClick={(image, collection) =>
+                  openGallery(image, collection)
+                }
+              />
+            </LazyLoadComponent>
+          }
         />
         <Route
           path="/photography/Client/Sprout"
-          render={() => {
-            return (
-              <LazyLoadComponent>
-                <Sprout
-                  imageSelect={(image, collection) =>
-                    openGallery(image, collection)
-                  }
-                />
-              </LazyLoadComponent>
-            );
-          }}
+          element={
+            <LazyLoadComponent>
+              <Sprout
+                onImageClick={(image, collection) =>
+                  openGallery(image, collection)
+                }
+              />
+            </LazyLoadComponent>
+          }
         />
         <Route
           path="/photography/Client/Luna"
-          render={() => {
-            return (
-              <LazyLoadComponent>
-                <Luna
-                  imageSelect={(image, collection) =>
-                    openGallery(image, collection)
-                  }
-                />
-              </LazyLoadComponent>
-            );
-          }}
+          element={
+            <LazyLoadComponent>
+              <Luna
+                onImageClick={(image, collection) =>
+                  openGallery(image, collection)
+                }
+              />
+            </LazyLoadComponent>
+          }
         />
         <Route
           path="/photography/Client/Climate"
-          render={() => {
-            return (
-              <LazyLoadComponent>
-                <Climate
-                  imageSelect={(image, collection) =>
-                    openGallery(image, collection)
-                  }
-                />
-              </LazyLoadComponent>
-            );
-          }}
+          element={
+            <LazyLoadComponent>
+              <Climate
+                onImageClick={(image, collection) =>
+                  openGallery(image, collection)
+                }
+              />
+            </LazyLoadComponent>
+          }
         />
         <Route
           path="/photography/Client/Gemma"
-          render={() => {
-            return (
-              <LazyLoadComponent>
-                <Gemma
-                  imageSelect={(image, collection) =>
-                    openGallery(image, collection)
-                  }
-                />
-              </LazyLoadComponent>
-            );
-          }}
+          element={
+            <LazyLoadComponent>
+              <Gemma
+                onImageClick={(image, collection) =>
+                  openGallery(image, collection)
+                }
+              />
+            </LazyLoadComponent>
+          }
         />
         <Route
           path="/photography/Animal"
-          render={() => {
-            return (
-              <LazyLoadComponent>
-                <Animals
-                  imageSelect={(image, collection) =>
-                    openGallery(image, collection)
-                  }
-                />
-              </LazyLoadComponent>
-            );
-          }}
+          element={
+            <LazyLoadComponent>
+              <Animals
+                onImageClick={(image, collection) =>
+                  openGallery(image, collection)
+                }
+              />
+            </LazyLoadComponent>
+          }
         />
         <Route
           path="/photography/Portrait"
-          render={() => {
-            return (
-              <LazyLoadComponent>
-                <Portrait
-                  imageSelect={(image, collection) =>
-                    openGallery(image, collection)
-                  }
-                />
-              </LazyLoadComponent>
-            );
-          }}
+          element={
+            <LazyLoadComponent>
+              <Portrait
+                onImageClick={(image, collection) =>
+                  openGallery(image, collection)
+                }
+              />
+            </LazyLoadComponent>
+          }
         />
         <Route
           path="/photography/Travel"
-          render={() => {
-            return (
-              <PhotoGrid>
-                <PhotoCard card="Asia" clicked={(card) => onCardSelect(card)}>
-                  Asia
-                </PhotoCard>
-                <PhotoCard card="Canada" clicked={(card) => onCardSelect(card)}>
-                  Canada
-                </PhotoCard>
-                <PhotoCard
-                  card="Oceania"
-                  clicked={(card) => onCardSelect(card)}
-                >
-                  Oceania
-                </PhotoCard>
-                <PhotoCard card="Europe" clicked={(card) => onCardSelect(card)}>
-                  Europe
-                </PhotoCard>
-              </PhotoGrid>
-            );
-          }}
+          element={
+            <PhotoGrid>
+              <PhotoCard card="Asia" onClick={onCardSelect}>
+                Asia
+              </PhotoCard>
+              <PhotoCard card="Canada" onClick={onCardSelect}>
+                Canada
+              </PhotoCard>
+              <PhotoCard card="Oceania" onClick={onCardSelect}>
+                Oceania
+              </PhotoCard>
+              <PhotoCard card="Europe" onClick={onCardSelect}>
+                Europe
+              </PhotoCard>
+            </PhotoGrid>
+          }
         />
         <Route
           path="/photography/Client"
-          render={() => {
-            return (
-              <PhotoGrid>
-                <PhotoCard
-                  card="Cat-Motors"
-                  clicked={(card) => onCardSelect(card)}
-                >
-                  Cat Motors
-                </PhotoCard>
-                <PhotoCard card="Sprout" clicked={(card) => onCardSelect(card)}>
-                  Sprout Plant Based Eatery
-                </PhotoCard>
-                <PhotoCard card="Luna" clicked={(card) => onCardSelect(card)}>
-                  Luna & The Moon
-                </PhotoCard>
-                <PhotoCard
-                  card="Climate"
-                  clicked={(card) => onCardSelect(card)}
-                >
-                  Strike For Climate 2019
-                </PhotoCard>
-                <PhotoCard card="Gemma" clicked={(card) => onCardSelect(card)}>
-                  Gemma: Aerial
-                </PhotoCard>
-              </PhotoGrid>
-            );
-          }}
+          element={
+            <PhotoGrid>
+              <PhotoCard card="Cat-Motors" onClick={onCardSelect}>
+                Cat Motors
+              </PhotoCard>
+              <PhotoCard card="Sprout" onClick={onCardSelect}>
+                Sprout Plant Based Eatery
+              </PhotoCard>
+              <PhotoCard card="Luna" onClick={onCardSelect}>
+                Luna & The Moon
+              </PhotoCard>
+              <PhotoCard card="Climate" onClick={onCardSelect}>
+                Strike For Climate 2019
+              </PhotoCard>
+              <PhotoCard card="Gemma" onClick={onCardSelect}>
+                Gemma: Aerial
+              </PhotoCard>
+            </PhotoGrid>
+          }
         />
         <Route
           path="/photography"
-          render={() => {
-            return (
-              <PhotoGrid>
-                <PhotoCard card="Travel" clicked={(card) => onCardSelect(card)}>
-                  Travel
-                </PhotoCard>
-                <PhotoCard card="Animal" clicked={(card) => onCardSelect(card)}>
-                  Animal
-                </PhotoCard>
-                <PhotoCard
-                  card="Portrait"
-                  clicked={(card) => onCardSelect(card)}
-                >
-                  Portrait
-                </PhotoCard>
-                <PhotoCard card="Client" clicked={(card) => onCardSelect(card)}>
-                  Client
-                </PhotoCard>
-              </PhotoGrid>
-            );
-          }}
+          element={
+            <PhotoGrid>
+              <PhotoCard card="Travel" onClick={onCardSelect}>
+                Travel
+              </PhotoCard>
+              <PhotoCard card="Animal" onClick={onCardSelect}>
+                Animal
+              </PhotoCard>
+              <PhotoCard card="Portrait" onClick={onCardSelect}>
+                Portrait
+              </PhotoCard>
+              <PhotoCard card="Client" onClick={onCardSelect}>
+                Client
+              </PhotoCard>
+            </PhotoGrid>
+          }
         />
       </Routes>
     </div>

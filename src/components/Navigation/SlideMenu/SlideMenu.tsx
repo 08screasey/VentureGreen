@@ -1,4 +1,4 @@
-import MenuItem from "./MenuItem/MenuItem";
+import { MenuItem } from "./MenuItem/MenuItem";
 import "./SlideMenu.css";
 
 type SlideMenuProps = {
@@ -8,19 +8,19 @@ type SlideMenuProps = {
 
 export const SlideMenu = (props: SlideMenuProps) => (
   <div className={props.showMenu ? "SlideMenu Show" : "SlideMenu"}>
-    <MenuItem link="/" exact clicked={props.handleClick}>
+    <MenuItem link="/" onClick={props.handleClick}>
       Home
     </MenuItem>
-    <MenuItem link="/photography" clicked={props.handleClick}>
+    <MenuItem link="/photography" onClick={props.handleClick}>
       Photography
     </MenuItem>
-    <MenuItem link="/development" clicked={props.handleClick}>
+    <MenuItem link="/development" onClick={props.handleClick}>
       Development
     </MenuItem>
-    <MenuItem link="/about-me" clicked={props.handleClick}>
+    <MenuItem link="/about-me" onClick={props.handleClick}>
       About Me
     </MenuItem>
-    <MenuItem link="/contact" clicked={props.handleClick}>
+    <MenuItem link="/contact" onClick={props.handleClick}>
       Contact
     </MenuItem>
   </div>

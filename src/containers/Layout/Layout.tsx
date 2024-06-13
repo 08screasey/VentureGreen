@@ -1,19 +1,19 @@
-import { type ReactNode, useState } from "react";
-import "./Layout.css";
-
-import { Fade as Hamburger } from "hamburger-react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faInstagram } from "@fortawesome/free-brands-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { Fade as Hamburger } from "hamburger-react";
+import { type ReactNode, useState } from "react";
+
 import Logo from "../../assets/venturegreen.png";
-import { Footer } from "../Footer/Footer";
-import { SlideMenu } from "../../components/Navigation/SlideMenu/SlideMenu";
 import { Navbar } from "../../components/Navigation/Navbar/Navbar";
+import { SlideMenu } from "../../components/Navigation/SlideMenu/SlideMenu";
+import { Footer } from "../Footer/Footer";
+import "./Layout.css";
 
 type LayoutProps = {
   children: ReactNode;
 };
 
-const Layout = ({ children }: LayoutProps) => {
+export const Layout = ({ children }: LayoutProps) => {
   const [isOpen, setOpen] = useState(false);
 
   return (
@@ -45,5 +45,3 @@ const Layout = ({ children }: LayoutProps) => {
     </div>
   );
 };
-
-export default Layout;

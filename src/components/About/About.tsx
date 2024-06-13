@@ -1,13 +1,16 @@
-import React, { useEffect } from "react";
-import "./About.css";
-import Sam from "../../assets/About/about.jpg";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLinkedin } from "@fortawesome/free-brands-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { useEffect } from "react";
 
-const About = (props) => {
+import Sam from "../../assets/About/about.jpg";
+
+import "./About.css";
+
+export const About = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+
   return (
     <div className="About">
       <img src={Sam} alt="" />
@@ -35,7 +38,6 @@ const About = (props) => {
           development encapsulates exactly what makes me, me!{" "}
         </p>
         <small>
-          {" "}
           <a
             className=""
             href="https://www.linkedin.com/in/sam-creasey-056b371b7"
@@ -48,5 +50,3 @@ const About = (props) => {
     </div>
   );
 };
-
-export default About;

@@ -1,12 +1,13 @@
-import React, { useEffect } from "react";
-import "./Contact.css";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faInstagram,
   faFacebook,
   faLinkedinIn,
 } from "@fortawesome/free-brands-svg-icons";
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { useEffect } from "react";
+
+import "./Contact.css";
 
 export const Contact = () => {
   useEffect(() => {

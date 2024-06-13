@@ -1,5 +1,5 @@
-import React from "react";
-import GalleryLayout from "../../GalleryLayout/GalleryLayout";
+import { LazyLoadComponent } from "react-lazy-load-image-component";
+
 import animal1 from "../../../../assets/animals/bird+hand-2.jpg";
 import animal2 from "../../../../assets/animals/brad+cliffs+3.jpg";
 import animal3 from "../../../../assets/animals/brown+snake-2.jpg";
@@ -21,9 +21,10 @@ import animal18 from "../../../../assets/animals/poppy.jpg";
 import animal19 from "../../../../assets/animals/sheep+snowdon+2.jpg";
 import animal20 from "../../../../assets/animals/sunset+pen+y+fan+6.jpg";
 import animal21 from "../../../../assets/animals/wombat.jpg";
-import { LazyLoadComponent } from "react-lazy-load-image-component";
+import { ImageGalleryProps } from "../../../../containers/Photography/Photography";
+import { GalleryLayout } from "../../GalleryLayout/GalleryLayout";
 
-const Animals = (props) => {
+export const Animals = ({ onImageClick }: ImageGalleryProps) => {
   const images = [
     animal1,
     animal2,
@@ -50,11 +51,9 @@ const Animals = (props) => {
   return (
     <LazyLoadComponent>
       <GalleryLayout
-        clicked={(i) => props.imageSelect(i, images)}
+        onClick={(i) => onImageClick(i, images)}
         images={images}
       ></GalleryLayout>
     </LazyLoadComponent>
   );
 };
-
-export default Animals;

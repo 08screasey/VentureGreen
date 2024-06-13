@@ -1,7 +1,10 @@
-import React from "react";
+import { LazyLoadComponent } from "react-lazy-load-image-component";
 
-import GalleryLayout from "../../GalleryLayout/GalleryLayout";
 import Luna1 from "../../../../assets/client/luna/Luna.jpg";
+import Luna10 from "../../../../assets/client/luna/Luna10.jpg";
+import Luna11 from "../../../../assets/client/luna/Luna11.jpg";
+import Luna12 from "../../../../assets/client/luna/Luna12.jpg";
+import Luna13 from "../../../../assets/client/luna/Luna13.jpg";
 import Luna2 from "../../../../assets/client/luna/Luna2.jpg";
 import Luna3 from "../../../../assets/client/luna/Luna3.jpg";
 import Luna4 from "../../../../assets/client/luna/Luna4.jpg";
@@ -10,13 +13,10 @@ import Luna6 from "../../../../assets/client/luna/Luna6.jpg";
 import Luna7 from "../../../../assets/client/luna/Luna7.jpg";
 import Luna8 from "../../../../assets/client/luna/Luna8.jpg";
 import Luna9 from "../../../../assets/client/luna/Luna9.jpg";
-import Luna10 from "../../../../assets/client/luna/Luna10.jpg";
-import Luna11 from "../../../../assets/client/luna/Luna11.jpg";
-import Luna12 from "../../../../assets/client/luna/Luna12.jpg";
-import Luna13 from "../../../../assets/client/luna/Luna13.jpg";
-import { LazyLoadComponent } from "react-lazy-load-image-component";
+import { ImageGalleryProps } from "../../../../containers/Photography/Photography";
+import { GalleryLayout } from "../../GalleryLayout/GalleryLayout";
 
-const Luna = (props) => {
+export const Luna = ({ onImageClick }: ImageGalleryProps) => {
   const images = [
     Luna1,
     Luna2,
@@ -36,7 +36,7 @@ const Luna = (props) => {
   return (
     <LazyLoadComponent>
       <GalleryLayout
-        clicked={(i) => props.imageSelect(i, images)}
+        onClick={(i) => onImageClick(i, images)}
         header="Luna & The Moon"
         images={images}
       >
@@ -51,5 +51,3 @@ const Luna = (props) => {
     </LazyLoadComponent>
   );
 };
-
-export default Luna;

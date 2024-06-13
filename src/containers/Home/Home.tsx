@@ -1,28 +1,32 @@
 import { faLevelUpAlt } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import { Waypoint } from "react-waypoint";
 
 import "./Home.css";
-import Image1 from "../../assets/Home/Home Image.jpg";
 import Image2 from "../../assets/Home/Home Image 2.jpg";
 import Image3 from "../../assets/Home/Home Image 3.jpg";
 import Image4 from "../../assets/Home/Home Image 4.jpg";
 import Image5 from "../../assets/Home/Home Image 5.jpg";
-import Website from "../../assets/Home/website.jpg";
+import Image1 from "../../assets/Home/Home Image.jpg";
 import LeftBrain from "../../assets/Home/brainLeft.svg";
 import LeftBrainOVerlay from "../../assets/Home/brainLeftOverLay.png";
 import LeftText1 from "../../assets/Home/brainLeftText1.png";
 import LeftText2 from "../../assets/Home/brainLeftText2.png";
+import RightBrain from "../../assets/Home/brainRight.svg";
+import RightBrainOVerlay from "../../assets/Home/brainRightOverLay.png";
 import RightText1 from "../../assets/Home/brainRightText1.png";
 import RightText2 from "../../assets/Home/brainRightText2.png";
-import RightBrainOVerlay from "../../assets/Home/brainRightOverLay.png";
-import RightBrain from "../../assets/Home/brainRight.svg";
+import Website from "../../assets/Home/website.jpg";
 
-const Home = (props) => {
+export const Home = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+
+  const navigate = useNavigate();
+
   const [photoView, setPhotoView] = useState(false);
   const [devView, setDevView] = useState(false);
   const content = [
@@ -45,10 +49,10 @@ const Home = (props) => {
     <span className="Red">a</span>,
     <span className="Cyan">{">"}</span>,
   ];
-  const [devContent, setDevContent] = useState([]);
+  const [devContent, setDevContent] = useState<(string | JSX.Element)[]>([]);
   const startTyping = () => {
     if (devContent.length < 1) {
-      content.forEach((el, i) => {
+      content.forEach((_el, i) => {
         setTimeout(() => {
           setDevContent(content.slice(0, i + 1));
         }, 110 * i + Math.floor(Math.random() * 90));
@@ -79,9 +83,8 @@ const Home = (props) => {
           width: "80%",
         }}
       >
-        {" "}
-        For web development projects select the left side of his brain. To
-        view photography gallery select the right side.{" "}
+        For web development projects select the left side of his brain. To view
+        photography gallery select the right side.
       </p>
       <h2
         className="mx-auto pt-2 my-0 px-3 F-Code text-left"
@@ -101,14 +104,11 @@ const Home = (props) => {
           topOffset={"200px"}
           onLeave={() => setDevView(false)}
         >
-          <div
-            className={"HomeDev"}
-            onClick={() => props.history.push("/development")}
-          >
+          <div className={"HomeDev"} onClick={() => navigate("/development")}>
             <h2 className="F-Code" style={{ color: "white" }}>
               {devContent.map((x, i) => (
                 <React.Fragment key={i}>{x}</React.Fragment>
-              ))}{" "}
+              ))}
               <span className="Typer"></span>
             </h2>
             <div className="LaptopScreen">
@@ -122,7 +122,7 @@ const Home = (props) => {
           <div className="Brain d-flex justify-content-center mb-5">
             <div
               className={devView ? "LeftBrain Active" : "LeftBrain"}
-              onClick={() => props.history.push("/development")}
+              onClick={() => navigate("/development")}
             >
               <img alt="" src={LeftBrainOVerlay} className="BrainOverlay" />
               <img alt="" src={LeftText1} className="Text Text1" />
@@ -136,7 +136,7 @@ const Home = (props) => {
 
             <div
               className={photoView ? "RightBrain Active" : "RightBrain"}
-              onClick={() => props.history.push("/photography")}
+              onClick={() => navigate("/photography")}
             >
               <RightBrain />
               <img alt="" src={RightBrainOVerlay} className="BrainOverlay" />
@@ -154,7 +154,7 @@ const Home = (props) => {
         >
           <div
             className={photoView ? "Active HomePhoto" : "HomePhoto"}
-            onClick={() => props.history.push("/photography")}
+            onClick={() => navigate("/photography")}
           >
             <img alt="" src={Image1} />
             <img alt="" src={Image2} />
@@ -167,5 +167,3 @@ const Home = (props) => {
     </div>
   );
 };
-
-export default Home;

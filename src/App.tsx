@@ -1,11 +1,11 @@
 import { Routes, Route } from "react-router-dom";
 
-import Photography from "./containers/Photography/Photography";
-import Development from "./containers/Development/Development";
-import Layout from "./containers/Layout/Layout";
-import Home from "./containers/Home/Home";
-import About from "./components/About/About";
+import { About } from "./components/About/About";
 import { Contact } from "./containers/Contact/Contact";
+import { Development } from "./containers/Development/Development";
+import { Home } from "./containers/Home/Home";
+import { Layout } from "./containers/Layout/Layout";
+import { Photography } from "./containers/Photography/Photography";
 
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";

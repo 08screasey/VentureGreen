@@ -1,7 +1,10 @@
-import React from "react";
+import { LazyLoadComponent } from "react-lazy-load-image-component";
 
-import GalleryLayout from "../../GalleryLayout/GalleryLayout";
 import Cat1 from "../../../../assets/client/CatMotors/cat.jpg";
+import Cat10 from "../../../../assets/client/CatMotors/cat10.jpg";
+import Cat11 from "../../../../assets/client/CatMotors/cat11.jpg";
+import Cat12 from "../../../../assets/client/CatMotors/cat12.jpg";
+import Cat13 from "../../../../assets/client/CatMotors/cat13.jpg";
 import Cat2 from "../../../../assets/client/CatMotors/cat2.jpg";
 import Cat3 from "../../../../assets/client/CatMotors/cat3.jpg";
 import Cat4 from "../../../../assets/client/CatMotors/cat4.jpg";
@@ -10,13 +13,10 @@ import Cat6 from "../../../../assets/client/CatMotors/cat6.jpg";
 import Cat7 from "../../../../assets/client/CatMotors/cat7.jpg";
 import Cat8 from "../../../../assets/client/CatMotors/cat8.jpg";
 import Cat9 from "../../../../assets/client/CatMotors/cat9.jpg";
-import Cat10 from "../../../../assets/client/CatMotors/cat10.jpg";
-import Cat11 from "../../../../assets/client/CatMotors/cat11.jpg";
-import Cat12 from "../../../../assets/client/CatMotors/cat12.jpg";
-import Cat13 from "../../../../assets/client/CatMotors/cat13.jpg";
-import { LazyLoadComponent } from "react-lazy-load-image-component";
+import { ImageGalleryProps } from "../../../../containers/Photography/Photography";
+import { GalleryLayout } from "../../GalleryLayout/GalleryLayout";
 
-const CatMotors = (props) => {
+export const CatMotors = ({ onImageClick }: ImageGalleryProps) => {
   const images = [
     Cat1,
     Cat2,
@@ -35,7 +35,7 @@ const CatMotors = (props) => {
   return (
     <LazyLoadComponent>
       <GalleryLayout
-        clicked={(i) => props.imageSelect(i, images)}
+        onClick={(i) => onImageClick(i, images)}
         header="Cat Motors"
         images={images}
       >
@@ -51,5 +51,3 @@ const CatMotors = (props) => {
     </LazyLoadComponent>
   );
 };
-
-export default CatMotors;

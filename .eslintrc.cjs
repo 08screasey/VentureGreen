@@ -12,7 +12,28 @@ module.exports = {
   parser: "@typescript-eslint/parser",
   plugins: ["react-refresh", "import"],
   rules: {
-    "import/order": ["error", { "newlines-between": "always" }],
+    "import/order": [
+      "error",
+      {
+        groups: [
+          "builtin",
+          "external",
+          "internal",
+          "parent",
+          "sibling",
+          "index",
+          "object",
+          "type",
+        ],
+        "newlines-between": "always",
+        alphabetize: {
+          order: "asc",
+          caseInsensitive: false,
+        },
+      },
+    ],
+    "import/no-duplicates": ["error", { "prefer-inline": true }],
+    "import/consistent-type-specifier-style": ["error", "prefer-inline"],
     "react-refresh/only-export-components": [
       "warn",
       { allowConstantExport: true },

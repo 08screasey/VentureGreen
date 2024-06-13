@@ -1,13 +1,6 @@
-import React from "react";
-import GalleryLayout from "../../GalleryLayout/GalleryLayout";
+import { LazyLoadComponent } from "react-lazy-load-image-component";
+
 import Gem1 from "../../../../assets/client/Gemma/gem1.jpg";
-import Gem2 from "../../../../assets/client/Gemma/gem2.jpg";
-import Gem3 from "../../../../assets/client/Gemma/gem3.jpg";
-import Gem4 from "../../../../assets/client/Gemma/gem4.jpg";
-import Gem5 from "../../../../assets/client/Gemma/gem5.jpg";
-import Gem6 from "../../../../assets/client/Gemma/gem6.jpg";
-import Gem8 from "../../../../assets/client/Gemma/gem8.jpg";
-import Gem9 from "../../../../assets/client/Gemma/gem9.jpg";
 import Gem10 from "../../../../assets/client/Gemma/gem10.jpg";
 import Gem11 from "../../../../assets/client/Gemma/gem11.jpg";
 import Gem12 from "../../../../assets/client/Gemma/gem12.jpg";
@@ -18,15 +11,23 @@ import Gem16 from "../../../../assets/client/Gemma/gem16.jpg";
 import Gem17 from "../../../../assets/client/Gemma/gem17.jpg";
 import Gem18 from "../../../../assets/client/Gemma/gem18.jpg";
 import Gem19 from "../../../../assets/client/Gemma/gem19.jpg";
+import Gem2 from "../../../../assets/client/Gemma/gem2.jpg";
 import Gem20 from "../../../../assets/client/Gemma/gem20.jpg";
 import Gem21 from "../../../../assets/client/Gemma/gem21.jpg";
 import Gem22 from "../../../../assets/client/Gemma/gem22.jpg";
 import Gem23 from "../../../../assets/client/Gemma/gem23.jpg";
 import Gem24 from "../../../../assets/client/Gemma/gem24.jpg";
 import Gem25 from "../../../../assets/client/Gemma/gem25.jpg";
-import { LazyLoadComponent } from "react-lazy-load-image-component";
+import Gem3 from "../../../../assets/client/Gemma/gem3.jpg";
+import Gem4 from "../../../../assets/client/Gemma/gem4.jpg";
+import Gem5 from "../../../../assets/client/Gemma/gem5.jpg";
+import Gem6 from "../../../../assets/client/Gemma/gem6.jpg";
+import Gem8 from "../../../../assets/client/Gemma/gem8.jpg";
+import Gem9 from "../../../../assets/client/Gemma/gem9.jpg";
+import { ImageGalleryProps } from "../../../../containers/Photography/Photography";
+import { GalleryLayout } from "../../GalleryLayout/GalleryLayout";
 
-const Gemma = (props) => {
+export const Gemma = ({ onImageClick }: ImageGalleryProps) => {
   const images = [
     Gem1,
     Gem2,
@@ -56,7 +57,7 @@ const Gemma = (props) => {
   return (
     <LazyLoadComponent>
       <GalleryLayout
-        clicked={(i) => props.imageSelect(i, images)}
+        onClick={(i) => onImageClick(i, images)}
         header="Gemma: Aerial"
         images={images}
       >
@@ -71,5 +72,3 @@ const Gemma = (props) => {
     </LazyLoadComponent>
   );
 };
-
-export default Gemma;

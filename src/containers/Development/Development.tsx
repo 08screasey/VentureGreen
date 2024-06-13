@@ -1,12 +1,14 @@
-import React, { useEffect } from "react";
+import { useEffect } from "react";
+
+import { DevCards } from "../../components/Development/DevCards/DevCards";
 
 import "./Development.css";
-import DevCards from "../../components/Development/DevCards/DevCards";
 
-const Development = (props) => {
+export const Development = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+
   return (
     <div className="Development">
       <h1 className="F-Active PaleGreen">Web Development</h1>
@@ -33,5 +35,3 @@ const Development = (props) => {
     </div>
   );
 };
-
-export default Development;

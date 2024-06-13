@@ -1,14 +1,6 @@
-import React from "react";
-import GalleryLayout from "../../GalleryLayout/GalleryLayout";
+import { LazyLoadComponent } from "react-lazy-load-image-component";
+
 import Climate1 from "../../../../assets/client/Climate/climate.jpg";
-import Climate2 from "../../../../assets/client/Climate/climate2.jpg";
-import Climate3 from "../../../../assets/client/Climate/climate3.jpg";
-import Climate4 from "../../../../assets/client/Climate/climate4.jpg";
-import Climate5 from "../../../../assets/client/Climate/climate5.jpg";
-import Climate6 from "../../../../assets/client/Climate/climate6.jpg";
-import Climate7 from "../../../../assets/client/Climate/climate7.jpg";
-import Climate8 from "../../../../assets/client/Climate/climate8.jpg";
-import Climate9 from "../../../../assets/client/Climate/climate9.jpg";
 import Climate10 from "../../../../assets/client/Climate/climate10.jpg";
 import Climate11 from "../../../../assets/client/Climate/climate11.jpg";
 import Climate12 from "../../../../assets/client/Climate/climate12.jpg";
@@ -19,9 +11,18 @@ import Climate16 from "../../../../assets/client/Climate/climate16.jpg";
 import Climate17 from "../../../../assets/client/Climate/climate17.jpg";
 import Climate18 from "../../../../assets/client/Climate/climate18.jpg";
 import Climate19 from "../../../../assets/client/Climate/climate19.jpg";
-import { LazyLoadComponent } from "react-lazy-load-image-component";
+import Climate2 from "../../../../assets/client/Climate/climate2.jpg";
+import Climate3 from "../../../../assets/client/Climate/climate3.jpg";
+import Climate4 from "../../../../assets/client/Climate/climate4.jpg";
+import Climate5 from "../../../../assets/client/Climate/climate5.jpg";
+import Climate6 from "../../../../assets/client/Climate/climate6.jpg";
+import Climate7 from "../../../../assets/client/Climate/climate7.jpg";
+import Climate8 from "../../../../assets/client/Climate/climate8.jpg";
+import Climate9 from "../../../../assets/client/Climate/climate9.jpg";
+import { type ImageGalleryProps } from "../../../../containers/Photography/Photography";
+import { GalleryLayout } from "../../GalleryLayout/GalleryLayout";
 
-const Climate = (props) => {
+export const Climate = ({ onImageClick }: ImageGalleryProps) => {
   const images = [
     Climate1,
     Climate2,
@@ -46,7 +47,7 @@ const Climate = (props) => {
   return (
     <LazyLoadComponent>
       <GalleryLayout
-        clicked={(i) => props.imageSelect(i, images)}
+        onClick={(i) => onImageClick(i, images)}
         header="Strike For Climate 2019 - Nelson, BC"
         images={images}
       >
@@ -61,5 +62,3 @@ const Climate = (props) => {
     </LazyLoadComponent>
   );
 };
-
-export default Climate;
