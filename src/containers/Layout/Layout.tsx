@@ -1,15 +1,19 @@
-import React, { useState } from "react";
+import { type ReactNode, useState } from "react";
 import "./Layout.css";
 
 import { Fade as Hamburger } from "hamburger-react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faInstagram } from "@fortawesome/free-brands-svg-icons";
 import Logo from "../../assets/venturegreen.png";
-import Footer from "../Footer/Footer";
-import SlideMenu from "../../components/Navigation/SlideMenu/SlideMenu";
-import Navbar from "../../components/Navigation/Navbar/Navbar";
+import { Footer } from "../Footer/Footer";
+import { SlideMenu } from "../../components/Navigation/SlideMenu/SlideMenu";
+import { Navbar } from "../../components/Navigation/Navbar/Navbar";
 
-const Layout = (props) => {
+type LayoutProps = {
+  children: ReactNode;
+};
+
+const Layout = ({ children }: LayoutProps) => {
   const [isOpen, setOpen] = useState(false);
 
   return (
@@ -34,9 +38,9 @@ const Layout = (props) => {
           >
             <FontAwesomeIcon icon={faInstagram} size="2x" />
           </a>
-        </Navbar>{" "}
+        </Navbar>
       </header>
-      <main>{props.children}</main>
+      <main>{children}</main>
       <Footer />
     </div>
   );

@@ -1,9 +1,9 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import PhotoCard from "../../components/Photography/PhotoCard/PhotoCard";
 import "./Photography.css";
 import { LazyLoadComponent } from "react-lazy-load-image-component";
 import PhotoGrid from "../../components/Photography/PhotoGrid/PhotoGrid";
-import { Route } from "react-router-dom";
+import { Route, useLocation, useNavigate } from "react-router-dom";
 import Animals from "../../components/Photography/Gallery/Animals/Animals";
 import Asia from "../../components/Photography/Gallery/Asia/Asia";
 import Canada from "../../components/Photography/Gallery/Canada/Canada";
@@ -17,19 +17,22 @@ import Gemma from "../../components/Photography/Gallery/Gemma/Gemma";
 import Portrait from "../../components/Photography/Gallery/Portrait/Portrait";
 import GalleryView from "../../components/Photography/GalleryView/GalleryView";
 
-const Photography = (props) => {
+export const Photography = () => {
+  const { pathname } = useLocation();
+  const navigate = useNavigate();
+
   useEffect(() => {
     window.scrollTo(0, 0);
-  }, [props.location.pathname]);
+  }, [location.pathname]);
   const [galleryView, setGalleryView] = useState(false);
-  const [collection, setCollection] = useState([]);
+  const [collection, setCollection] = useState<string[]>([]);
   const [index, setIndex] = useState(0);
 
-  const onCardSelect = (card) => {
-    props.history.push(props.location.pathname + "/" + card);
+  const onCardSelect = (card: string) => {
+    navigate(pathname + "/" + card);
   };
 
-  const openGallery = (img, col) => {
+  const openGallery = (col: string[]) => {
     setCollection(col);
     setGalleryView(true);
   };
@@ -39,7 +42,7 @@ const Photography = (props) => {
     setIndex(0);
   };
 
-  const moveGallery = (num) => {
+  const moveGallery = (num: number) => {
     const newIndex = (index + num + collection.length) % collection.length;
     setIndex(newIndex);
   };
@@ -57,17 +60,15 @@ const Photography = (props) => {
       <Routes>
         <Route
           path="/photography/Travel/Asia"
-          render={() => {
-            return (
-              <LazyLoadComponent>
-                <Asia
-                  imageSelect={(image, collection) =>
-                    openGallery(image, collection)
-                  }
-                />
-              </LazyLoadComponent>
-            );
-          }}
+          Component={
+            <LazyLoadComponent>
+              <Asia
+                imageSelect={(image, collection) =>
+                  openGallery(image, collection)
+                }
+              />
+            </LazyLoadComponent>
+          }
         />
         <Route
           path="/photography/Travel/Canada"
@@ -291,5 +292,3 @@ const Photography = (props) => {
     </div>
   );
 };
-
-export default Photography;

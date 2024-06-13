@@ -1,4 +1,8 @@
+import { faLevelUpAlt } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useState, useEffect } from "react";
+import { Waypoint } from "react-waypoint";
+
 import "./Home.css";
 import Image1 from "../../assets/Home/Home Image.jpg";
 import Image2 from "../../assets/Home/Home Image 2.jpg";
@@ -6,8 +10,6 @@ import Image3 from "../../assets/Home/Home Image 3.jpg";
 import Image4 from "../../assets/Home/Home Image 4.jpg";
 import Image5 from "../../assets/Home/Home Image 5.jpg";
 import Website from "../../assets/Home/website.jpg";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faLevelUpAlt } from "@fortawesome/free-solid-svg-icons";
 import LeftBrain from "../../assets/Home/brainLeft.svg";
 import LeftBrainOVerlay from "../../assets/Home/brainLeftOverLay.png";
 import LeftText1 from "../../assets/Home/brainLeftText1.png";
@@ -16,7 +18,6 @@ import RightText1 from "../../assets/Home/brainRightText1.png";
 import RightText2 from "../../assets/Home/brainRightText2.png";
 import RightBrainOVerlay from "../../assets/Home/brainRightOverLay.png";
 import RightBrain from "../../assets/Home/brainRight.svg";
-import { Waypoint } from "react-waypoint";
 
 const Home = (props) => {
   useEffect(() => {
@@ -79,8 +80,8 @@ const Home = (props) => {
         }}
       >
         {" "}
-        For his web development projects select the left side of his brain. To
-        view his photography gallery select the right side.{" "}
+        For web development projects select the left side of his brain. To
+        view photography gallery select the right side.{" "}
       </p>
       <h2
         className="mx-auto pt-2 my-0 px-3 F-Code text-left"
