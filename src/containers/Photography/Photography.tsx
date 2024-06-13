@@ -20,7 +20,7 @@ import { PhotoGrid } from '../../components/Photography/PhotoGrid/PhotoGrid';
 import './Photography.css';
 
 export type ImageGalleryProps = {
-    onImageClick: (imageIndex: number, collection: string[]) => void;
+    onImageClick: (index: number, collection: string[]) => void;
 };
 
 export const Photography = () => {
