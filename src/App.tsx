@@ -13,7 +13,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 export const App = () => (
     <Layout>
         <Routes>
-            <Route path="/photography" Component={Photography} />
+            <Route path="/photography/*" Component={Photography} />
             <Route path="/development" Component={Development} />
             <Route path="/about-me" Component={About} />
             <Route path="/contact" Component={Contact} />

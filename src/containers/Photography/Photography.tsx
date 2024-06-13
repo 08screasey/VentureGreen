@@ -67,7 +67,7 @@ export const Photography = () => {
             ) : null}
             <Routes>
                 <Route
-                    path="/photography/Travel/Asia"
+                    path="Travel/Asia"
                     element={
                         <LazyLoadComponent>
                             <Asia onImageClick={(image, collection) => openGallery(image, collection)} />
@@ -75,7 +75,7 @@ export const Photography = () => {
                     }
                 />
                 <Route
-                    path="/photography/Travel/Canada"
+                    path="Travel/Canada"
                     element={
                         <LazyLoadComponent>
                             <Canada onImageClick={(image, collection) => openGallery(image, collection)} />
@@ -83,7 +83,7 @@ export const Photography = () => {
                     }
                 />
                 <Route
-                    path="/photography/Travel/Oceania"
+                    path="Travel/Oceania"
                     element={
                         <LazyLoadComponent>
                             <Oceania onImageClick={(image, collection) => openGallery(image, collection)} />
@@ -91,7 +91,7 @@ export const Photography = () => {
                     }
                 />
                 <Route
-                    path="/photography/Travel/Europe"
+                    path="Travel/Europe"
                     element={
                         <LazyLoadComponent>
                             <Europe onImageClick={(image, collection) => openGallery(image, collection)} />
@@ -99,7 +99,7 @@ export const Photography = () => {
                     }
                 />
                 <Route
-                    path="/photography/Client/Cat-Motors"
+                    path="Client/Cat-Motors"
                     element={
                         <LazyLoadComponent>
                             <CatMotors onImageClick={(image, collection) => openGallery(image, collection)} />
@@ -107,7 +107,7 @@ export const Photography = () => {
                     }
                 />
                 <Route
-                    path="/photography/Client/Sprout"
+                    path="Client/Sprout"
                     element={
                         <LazyLoadComponent>
                             <Sprout onImageClick={(image, collection) => openGallery(image, collection)} />
@@ -115,7 +115,7 @@ export const Photography = () => {
                     }
                 />
                 <Route
-                    path="/photography/Client/Luna"
+                    path="Client/Luna"
                     element={
                         <LazyLoadComponent>
                             <Luna onImageClick={(image, collection) => openGallery(image, collection)} />
@@ -123,7 +123,7 @@ export const Photography = () => {
                     }
                 />
                 <Route
-                    path="/photography/Client/Climate"
+                    path="Client/Climate"
                     element={
                         <LazyLoadComponent>
                             <Climate onImageClick={(image, collection) => openGallery(image, collection)} />
@@ -131,7 +131,7 @@ export const Photography = () => {
                     }
                 />
                 <Route
-                    path="/photography/Client/Gemma"
+                    path="Client/Gemma"
                     element={
                         <LazyLoadComponent>
                             <Gemma onImageClick={(image, collection) => openGallery(image, collection)} />
@@ -139,7 +139,7 @@ export const Photography = () => {
                     }
                 />
                 <Route
-                    path="/photography/Animal"
+                    path="Animal"
                     element={
                         <LazyLoadComponent>
                             <Animals onImageClick={(image, collection) => openGallery(image, collection)} />
@@ -147,7 +147,7 @@ export const Photography = () => {
                     }
                 />
                 <Route
-                    path="/photography/Portrait"
+                    path="Portrait"
                     element={
                         <LazyLoadComponent>
                             <Portrait onImageClick={(image, collection) => openGallery(image, collection)} />
@@ -155,7 +155,7 @@ export const Photography = () => {
                     }
                 />
                 <Route
-                    path="/photography/Travel"
+                    path="Travel"
                     element={
                         <PhotoGrid>
                             <PhotoCard card="Asia" onClick={onCardSelect}>
@@ -174,7 +174,7 @@ export const Photography = () => {
                     }
                 />
                 <Route
-                    path="/photography/Client"
+                    path="Client"
                     element={
                         <PhotoGrid>
                             <PhotoCard card="Cat-Motors" onClick={onCardSelect}>
@@ -196,7 +196,7 @@ export const Photography = () => {
                     }
                 />
                 <Route
-                    path="/photography"
+                    path="*"
                     element={
                         <PhotoGrid>
                             <PhotoCard card="Travel" onClick={onCardSelect}>
