@@ -1,37 +1,37 @@
-.AboutText{
-	padding:15px;
-	width:100%;
-	max-width: 700px
+.AboutText {
+    padding: 15px;
+    width: 100%;
+    max-width: 700px;
 }
 
-.About img{
-	width:60%;
-	max-width: 400px;
-	border-radius:50%;
-	max-height: 400px;
+.About img {
+    width: 60%;
+    max-width: 400px;
+    border-radius: 50%;
+    max-height: 400px;
 }
 
-.About{
-	display: flex;
-	justify-content: space-around;
-	align-items: center;
-	flex-wrap: wrap;
-	width:100%;
-	padding-bottom: 60px
+.About {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
+    padding-bottom: 60px;
 }
 
-.About a{
-	color:#6f994d;
-	padding:2px;
-	margin:2px;
-	display: inline-block;
-	width:90px;
-	justify-content: center;
-	box-sizing: border-box;
-	transition:0.1s;
+.About a {
+    color: #6f994d;
+    padding: 2px;
+    margin: 2px;
+    display: inline-block;
+    width: 90px;
+    justify-content: center;
+    box-sizing: border-box;
+    transition: 0.1s;
 }
-.About a:hover{
-	color:#6f994d;
-	text-decoration: none;
-	transform:scale(1.1);
+.About a:hover {
+    color: #6f994d;
+    text-decoration: none;
+    transform: scale(1.1);
 }

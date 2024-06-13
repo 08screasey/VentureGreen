@@ -1,31 +1,31 @@
-.Navbar{
-	position:fixed;
-	bottom:0;
-	left:0;
-	height:70px;
-	width:100%;
-	background:transparent;
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	padding:0 4%;
-	border-top: 1px solid #EEEEEE;
-	background: white;
-	z-index: 10;
+.Navbar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    height: 70px;
+    width: 100%;
+    background: transparent;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 4%;
+    border-top: 1px solid #eeeeee;
+    background: white;
+    z-index: 10;
 }
 
-.Navbar a{
-	color:black;
+.Navbar a {
+    color: black;
 }
-.Navbar a:hover{
-	color: #8ea989
+.Navbar a:hover {
+    color: #8ea989;
 }
 
 @media screen and (min-width: 750px) {
-	.Navbar {
-		top:55px;
-		padding:0 6%;
-		border-top: none;
-		background: transparent;
-	}
+    .Navbar {
+        top: 55px;
+        padding: 0 6%;
+        border-top: none;
+        background: transparent;
+    }
 }

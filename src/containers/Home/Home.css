@@ -1,427 +1,439 @@
-.HomePhoto img{ width:90%;
-position: absolute;
-top:0;
-left:5%; 
-cursor:pointer;
-transition:0.3s;
-transform-origin: center center;
-box-shadow: 1px -1px 3px rgba(0,0,0,0.3)}
-
-.Typer{
-	border-left:5px solid #FFCB6B;
-	animation:flicker 1.1s linear infinite;
+.HomePhoto img {
+    width: 90%;
+    position: absolute;
+    top: 0;
+    left: 5%;
+    cursor: pointer;
+    transition: 0.3s;
+    transform-origin: center center;
+    box-shadow: 1px -1px 3px rgba(0, 0, 0, 0.3);
 }
 
-.Home{position: relative;
-padding-bottom: 00px}
-.Home .Flex{padding-top:60px;
-width:90%;
-margin:auto;}
+.Typer {
+    border-left: 5px solid #ffcb6b;
+    animation: flicker 1.1s linear infinite;
+}
+
+.Home {
+    position: relative;
+    padding-bottom: 00px;
+}
+.Home .Flex {
+    padding-top: 60px;
+    width: 90%;
+    margin: auto;
+}
 
 @keyframes flicker {
-	0%{opacity:1;}
-	49%{opacity: 1}
-	50%{opacity: 0}
-	100%{opacity: 0}
+    0% {
+        opacity: 1;
+    }
+    49% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 0;
+    }
 }
 
 /*Brain*/
-.Brain{
-	position: relative;
-	margin-top:-40px;
+.Brain {
+    position: relative;
+    margin-top: -40px;
 }
-.LeftBrain.Active .BrainOverlay{
-opacity:1;
+.LeftBrain.Active .BrainOverlay {
+    opacity: 1;
 }
-.RightBrain.Active .BrainOverlay{
-	opacity:1;
-
+.RightBrain.Active .BrainOverlay {
+    opacity: 1;
 }
-.LeftBrain .BrainOverlay{
-	width:148px;
-	right:3px;
-	position: absolute;
-	opacity: 0;
-	transition:0.2s;
-	z-index:10;
+.LeftBrain .BrainOverlay {
+    width: 148px;
+    right: 3px;
+    position: absolute;
+    opacity: 0;
+    transition: 0.2s;
+    z-index: 10;
 }
-.RightBrain .BrainOverlay{
-	width:148px;
-	left:3px;
-	position: absolute;
-	opacity: 0;
-	transition:0.2s;
-	z-index:10;
-}
-
-.Brain .Text{
-	position:absolute;
-	width:52px;
-	z-index:-1;
+.RightBrain .BrainOverlay {
+    width: 148px;
+    left: 3px;
+    position: absolute;
+    opacity: 0;
+    transition: 0.2s;
+    z-index: 10;
 }
 
-.Active .Text{
-	transition: 0.2s cubic-bezier(.22,1.24,.42,1.03)
-}
-.RightBrain .Text{
-	width:55px;
-}
-.LeftBrain .Text1{
-	left:-10px;
-	bottom:-92px;
-	transform:translateX(40px) translateY(10px);
-}
-.LeftBrain .Text2{
-	left:-11px;
-	bottom:-162px;
-	transform:translateX(40px) translateY(-10px);
+.Brain .Text {
+    position: absolute;
+    width: 52px;
+    z-index: -1;
 }
 
-
-.LeftBrain.Active .Text1{
-	transform: translateX(0) translateY(0);
+.Active .Text {
+    transition: 0.2s cubic-bezier(0.22, 1.24, 0.42, 1.03);
 }
-.LeftBrain.Active .Text2{
-	transition-delay:0.1s ; 
-	transform: translateX(0) translateY(0);
+.RightBrain .Text {
+    width: 55px;
 }
-.RightBrain .Text1{
-	right:-10px;
-	bottom:-87px;
-	transform:translateX(-40px) translateY(10px);
+.LeftBrain .Text1 {
+    left: -10px;
+    bottom: -92px;
+    transform: translateX(40px) translateY(10px);
 }
-.RightBrain .Text2{
-	right:-9px;
-	bottom:-170px;
-	transform:translateX(-40px) translateY(-10px);
-
+.LeftBrain .Text2 {
+    left: -11px;
+    bottom: -162px;
+    transform: translateX(40px) translateY(-10px);
 }
 
-.RightBrain.Active .Text1{
-	transform: translateX(0) translateY(0);
+.LeftBrain.Active .Text1 {
+    transform: translateX(0) translateY(0);
 }
-.RightBrain.Active .Text2{	transition-delay:0.1s;
-	transform: translateX(0) translateY(0);
+.LeftBrain.Active .Text2 {
+    transition-delay: 0.1s;
+    transform: translateX(0) translateY(0);
 }
-
-.BrainText{position: absolute}
-
-.LeftBrain .Arrow{
-	font-size: 50px;
-	position: absolute;
-
-	top:-45px;
-	transform: rotate(270deg) translateX(-80px)
-	translateY(40px);
-	left:20px;
+.RightBrain .Text1 {
+    right: -10px;
+    bottom: -87px;
+    transform: translateX(-40px) translateY(10px);
 }
-.RightBrain .Arrow{
-	font-size: 50px;
-	position: absolute;
-		transform: rotate(90deg) translateX(-80px) translateY(40px);
-		z-index: -1;
-	top:170px;
-	left:60px;
-}
-.Active .Arrow{
-	transition: 0.3s;
-	opacity: 1;
-	transition-delay: 0.2s;
+.RightBrain .Text2 {
+    right: -9px;
+    bottom: -170px;
+    transform: translateX(-40px) translateY(-10px);
 }
 
-.LeftBrain.Active .Arrow{
-	transform:rotate(270deg);
+.RightBrain.Active .Text1 {
+    transform: translateX(0) translateY(0);
 }
-.RightBrain.Active .Arrow{
-	transform:rotate(90deg);
+.RightBrain.Active .Text2 {
+    transition-delay: 0.1s;
+    transform: translateX(0) translateY(0);
 }
 
+.BrainText {
+    position: absolute;
+}
+
+.LeftBrain .Arrow {
+    font-size: 50px;
+    position: absolute;
+
+    top: -45px;
+    transform: rotate(270deg) translateX(-80px) translateY(40px);
+    left: 20px;
+}
+.RightBrain .Arrow {
+    font-size: 50px;
+    position: absolute;
+    transform: rotate(90deg) translateX(-80px) translateY(40px);
+    z-index: -1;
+    top: 170px;
+    left: 60px;
+}
+.Active .Arrow {
+    transition: 0.3s;
+    opacity: 1;
+    transition-delay: 0.2s;
+}
+
+.LeftBrain.Active .Arrow {
+    transform: rotate(270deg);
+}
+.RightBrain.Active .Arrow {
+    transform: rotate(90deg);
+}
 
 .LeftBrain svg,
-.RightBrain svg{width:90px;
-	top:0px;
-	position: absolute;
-	fill:#eee;
+.RightBrain svg {
+    width: 90px;
+    top: 0px;
+    position: absolute;
+    fill: #eee;
 }
-.LeftBrain svg{
-	right:3px;
+.LeftBrain svg {
+    right: 3px;
 }
-.RightBrain svg{
-	left:3px;
+.RightBrain svg {
+    left: 3px;
 }
-.LeftBrain{
-	padding-right: 3px;
-	transition: 1s;
-	width:110px;
-	position:relative;
+.LeftBrain {
+    padding-right: 3px;
+    transition: 1s;
+    width: 110px;
+    position: relative;
 }
-.RightBrain{
-	padding-left: 3px;
-	width:110px;
-	transition: 1s;
-	position:relative;
-}
-
-.HomePhoto img:nth-child(1){
-	z-index:5;
-}
-.HomePhoto img:nth-child(2){
-transform: translateX(-2px) translateY(-2px);
-z-index:4;
-}
-.HomePhoto img:nth-child(3){z-index:3;
-	transform: translateX(-4px) translateY(-4px);
-}
-.HomePhoto img:nth-child(4){
-	z-index:2;
-transform: translateX(-6px) translateY(-6px);
-}
-.HomePhoto img:nth-child(5){
-	z-index:1;
-	transform: translateX(-8px) translateY(-8px);
+.RightBrain {
+    padding-left: 3px;
+    width: 110px;
+    transition: 1s;
+    position: relative;
 }
 
-.HomePhoto{position: relative;
-	max-width:500px;
-width:500px;
-height:350px;
-z-index:1;
-margin-top: 60px}
-
-.HomePhoto.Active img:nth-child(1){
-	transform: translateX(0px) translateY(0px) ;
+.HomePhoto img:nth-child(1) {
+    z-index: 5;
 }
-.HomePhoto.Active img:nth-child(2){
-	transition-delay: 0.1s;
-	transform: translateX(-2px) translateY(-10px) rotateZ(10deg);
+.HomePhoto img:nth-child(2) {
+    transform: translateX(-2px) translateY(-2px);
+    z-index: 4;
 }
-.HomePhoto.Active img:nth-child(3){
-	transition-delay: 0s;
-	transform: translateX(-4px) translateY(-30px) rotateZ(-11deg);
-}.HomePhoto.Active img:nth-child(4){
-	transform:translateX(-2px) translateY(-20px) rotateZ(6deg);
+.HomePhoto img:nth-child(3) {
+    z-index: 3;
+    transform: translateX(-4px) translateY(-4px);
 }
-.HomePhoto.Active img:nth-child(5){
-	transform: translateX(-4px) translateY(-30px) ;
-
+.HomePhoto img:nth-child(4) {
+    z-index: 2;
+    transform: translateX(-6px) translateY(-6px);
+}
+.HomePhoto img:nth-child(5) {
+    z-index: 1;
+    transform: translateX(-8px) translateY(-8px);
 }
 
-.Home p{
-	font-size: 20px;
-	margin-bottom:-30px;
+.HomePhoto {
+    position: relative;
+    max-width: 500px;
+    width: 500px;
+    height: 350px;
+    z-index: 1;
+    margin-top: 60px;
 }
 
-.HomeDev{
-	height:500px;
-	width:500px;
-	position: relative;
-	margin-top:-50px;
-	background-image: url(../../assets/Home/laptop.svg)
+.HomePhoto.Active img:nth-child(1) {
+    transform: translateX(0px) translateY(0px);
+}
+.HomePhoto.Active img:nth-child(2) {
+    transition-delay: 0.1s;
+    transform: translateX(-2px) translateY(-10px) rotateZ(10deg);
+}
+.HomePhoto.Active img:nth-child(3) {
+    transition-delay: 0s;
+    transform: translateX(-4px) translateY(-30px) rotateZ(-11deg);
+}
+.HomePhoto.Active img:nth-child(4) {
+    transform: translateX(-2px) translateY(-20px) rotateZ(6deg);
+}
+.HomePhoto.Active img:nth-child(5) {
+    transform: translateX(-4px) translateY(-30px);
 }
 
-.LaptopScreen{
-	width:82.1%;
-	height:301px;
-	overflow:hidden;
-	margin: auto;
-	padding-left: 8px;
-	padding-top:97px;
-}
-.InnerScreen{
-	overflow: overlay;
-	overflow-x: hidden;
-	height:205px;
-	width:100%;
-}
-.HomeDev img{
-	width:100%;margin:auto;
-	cursor:pointer;
+.Home p {
+    font-size: 20px;
+    margin-bottom: -30px;
 }
 
-.HomeDev h2{
-	position: absolute;
-	bottom:120px;
-	font-size: 45px;
-	width:100%;
-	z-index:2;
-	text-align: center;
-	transition:0.3s;
-	cursor: pointer;
-	transition-timing-function: cubic-bezier(0,1.83,.48,.93);
-;
-}
-.HomeDev h2:before{
-	content:"Development";
-	position:absolute;
-	bottom:-10px;
-	transform:scaleY(0.2) skew(-10deg);
-	left:80px;
-	z-index:-1;
-	color:transparent;
-	text-shadow: 0 0 5px rgba(255,255,255,0.2);
-
-	transition:0.3s;
-	transition-timing-function: cubic-bezier(0,1.83,.48,.93);
-
+.HomeDev {
+    height: 500px;
+    width: 500px;
+    position: relative;
+    margin-top: -50px;
+    background-image: url(../../assets/Home/laptop.svg);
 }
 
-
-
-.Home h1{
-	width:90%;
+.LaptopScreen {
+    width: 82.1%;
+    height: 301px;
+    overflow: hidden;
+    margin: auto;
+    padding-left: 8px;
+    padding-top: 97px;
+}
+.InnerScreen {
+    overflow: overlay;
+    overflow-x: hidden;
+    height: 205px;
+    width: 100%;
+}
+.HomeDev img {
+    width: 100%;
+    margin: auto;
+    cursor: pointer;
 }
 
-.Home p{width:100%;}
+.HomeDev h2 {
+    position: absolute;
+    bottom: 120px;
+    font-size: 45px;
+    width: 100%;
+    z-index: 2;
+    text-align: center;
+    transition: 0.3s;
+    cursor: pointer;
+    transition-timing-function: cubic-bezier(0, 1.83, 0.48, 0.93);
+}
+.HomeDev h2:before {
+    content: 'Development';
+    position: absolute;
+    bottom: -10px;
+    transform: scaleY(0.2) skew(-10deg);
+    left: 80px;
+    z-index: -1;
+    color: transparent;
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.2);
 
-.HomeBreak{
-	margin-top:-150px;
-	width:300px;
-	z-index: 1;
-cursor: pointer;}
-
-@media screen and (max-width:580px) {
-	.HomeDev{
-	height:400px;
-	width:400px;
-	margin:auto;
-	position: relative;
-	margin-top:-50px;
-	background-image: url(../../assets/Home/laptop.svg)
+    transition: 0.3s;
+    transition-timing-function: cubic-bezier(0, 1.83, 0.48, 0.93);
 }
 
-.LaptopScreen{
-	width:83.1%;
-	height:243px;
-	overflow:hidden;
-	margin: auto;
-	padding-left: 11px;
-	padding-top:78px;
-}.InnerScreen{
-	height:170px;
-}
-.HomeDev h2{
-	position: absolute;
-	bottom:90px;
-	font-size: 37px;
-	width:100%;
-	z-index:2;
-	text-align: center;
-	transition:0.3s;
-	cursor: pointer;
-	transition-timing-function: cubic-bezier(0,1.83,.48,.93);
-;
-}
-.HomeDev h2:before{
-	content:"Development";
-	position:absolute;
-	bottom:0px;
-	transform:scaleY(0.2) skew(-10deg);
-	left:80px;
-	z-index:-1;
-	color:transparent;
-	text-shadow: 0 0 5px rgba(255,255,255,0.2);
-
-	transition:0.3s;
-	transition-timing-function: cubic-bezier(0,1.83,.48,.93);
-
+.Home h1 {
+    width: 90%;
 }
 
+.Home p {
+    width: 100%;
 }
 
-@media screen and (max-width:460px) {
-	.HomeDev{
-	height:330px;
-	width:330px;
-	margin:auto;
-	position: relative;
-	margin-top:-50px;
-	background-image: url(../../assets/Home/laptop.svg)
+.HomeBreak {
+    margin-top: -150px;
+    width: 300px;
+    z-index: 1;
+    cursor: pointer;
 }
 
-.LaptopScreen{
-	width:84.1%;
-	height:200px;
-	overflow:hidden;
-	margin: auto;
-	padding-left: 11px;
-	padding-top:61px;
-}
-.InnerScreen{
-	height:150px;
-}
-.HomeDev h2{
-	position: absolute;
-	bottom:72px;
-	font-size: 30px;
-	width:100%;
-	left:5px;
-	z-index:2;
-	text-align: center;
-	transition:0.3s;
-	cursor: pointer;
-	transition-timing-function: cubic-bezier(0,1.83,.48,.93);
+@media screen and (max-width: 580px) {
+    .HomeDev {
+        height: 400px;
+        width: 400px;
+        margin: auto;
+        position: relative;
+        margin-top: -50px;
+        background-image: url(../../assets/Home/laptop.svg);
+    }
 
-}
-.HomeDev h2:before{
-	content:"Development";
-	position:absolute;
-	bottom:-10px;
-	transform:scaleY(0.2) skew(-10deg);
-	left:40px;
-	z-index:-1;
-	color:transparent;
-	text-shadow: 0 0 5px rgba(255,255,255,0.2);
+    .LaptopScreen {
+        width: 83.1%;
+        height: 243px;
+        overflow: hidden;
+        margin: auto;
+        padding-left: 11px;
+        padding-top: 78px;
+    }
+    .InnerScreen {
+        height: 170px;
+    }
+    .HomeDev h2 {
+        position: absolute;
+        bottom: 90px;
+        font-size: 37px;
+        width: 100%;
+        z-index: 2;
+        text-align: center;
+        transition: 0.3s;
+        cursor: pointer;
+        transition-timing-function: cubic-bezier(0, 1.83, 0.48, 0.93);
+    }
+    .HomeDev h2:before {
+        content: 'Development';
+        position: absolute;
+        bottom: 0px;
+        transform: scaleY(0.2) skew(-10deg);
+        left: 80px;
+        z-index: -1;
+        color: transparent;
+        text-shadow: 0 0 5px rgba(255, 255, 255, 0.2);
 
-	transition:0.3s;
-	transition-timing-function: cubic-bezier(0,1.83,.48,.93);
-
-}
-.HomePhoto{
-	width:100%;
-	height:250px;
-}
-
-.HomeBreak{
-	width:200px;
-	position: relative;
-	z-index:5;
-}
+        transition: 0.3s;
+        transition-timing-function: cubic-bezier(0, 1.83, 0.48, 0.93);
+    }
 }
 
-@media screen and (max-width:1450px){
-	.Home .Flex{flex-direction: column}
-	.HomeBreak{
-		border-left: none;
-		height:100px;
-		width:80%;
-		margin:40px auto 90px auto;}
-	.LeftBrain .Arrow{
-	position: absolute;
-	transform: rotateY(180deg) translateX(-100px);
-	top:45px;
-	left:-50px;
-}
-.RightBrain .Arrow{
+@media screen and (max-width: 460px) {
+    .HomeDev {
+        height: 330px;
+        width: 330px;
+        margin: auto;
+        position: relative;
+        margin-top: -50px;
+        background-image: url(../../assets/Home/laptop.svg);
+    }
 
-	position: absolute;
-	top:85px;
-	left:130px;
-	transform:rotateX(180deg) translateX(-100px);
-}
-.LeftBrain.Active .Arrow{
-	transform:rotateY(180deg);
-}
-.RightBrain.Active .Arrow{
-	transform:rotateX(180deg);
+    .LaptopScreen {
+        width: 84.1%;
+        height: 200px;
+        overflow: hidden;
+        margin: auto;
+        padding-left: 11px;
+        padding-top: 61px;
+    }
+    .InnerScreen {
+        height: 150px;
+    }
+    .HomeDev h2 {
+        position: absolute;
+        bottom: 72px;
+        font-size: 30px;
+        width: 100%;
+        left: 5px;
+        z-index: 2;
+        text-align: center;
+        transition: 0.3s;
+        cursor: pointer;
+        transition-timing-function: cubic-bezier(0, 1.83, 0.48, 0.93);
+    }
+    .HomeDev h2:before {
+        content: 'Development';
+        position: absolute;
+        bottom: -10px;
+        transform: scaleY(0.2) skew(-10deg);
+        left: 40px;
+        z-index: -1;
+        color: transparent;
+        text-shadow: 0 0 5px rgba(255, 255, 255, 0.2);
 
+        transition: 0.3s;
+        transition-timing-function: cubic-bezier(0, 1.83, 0.48, 0.93);
+    }
+    .HomePhoto {
+        width: 100%;
+        height: 250px;
+    }
 
+    .HomeBreak {
+        width: 200px;
+        position: relative;
+        z-index: 5;
+    }
 }
 
+@media screen and (max-width: 1450px) {
+    .Home .Flex {
+        flex-direction: column;
+    }
+    .HomeBreak {
+        border-left: none;
+        height: 100px;
+        width: 80%;
+        margin: 40px auto 90px auto;
+    }
+    .LeftBrain .Arrow {
+        position: absolute;
+        transform: rotateY(180deg) translateX(-100px);
+        top: 45px;
+        left: -50px;
+    }
+    .RightBrain .Arrow {
+        position: absolute;
+        top: 85px;
+        left: 130px;
+        transform: rotateX(180deg) translateX(-100px);
+    }
+    .LeftBrain.Active .Arrow {
+        transform: rotateY(180deg);
+    }
+    .RightBrain.Active .Arrow {
+        transform: rotateX(180deg);
+    }
 
-.Home .Flex{padding-top:40px;}
-.Home h1{
-	margin-top:10px !important;
-	margin-bottom: 10px !important
+    .Home .Flex {
+        padding-top: 40px;
+    }
+    .Home h1 {
+        margin-top: 10px !important;
+        margin-bottom: 10px !important;
+    }
 }
-}
-

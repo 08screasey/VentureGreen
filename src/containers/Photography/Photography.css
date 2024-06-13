@@ -1,12 +1,10 @@
-
-.Photography{
-	padding-top:30px;
-	padding-bottom: 80px;
-	background:url('../../assets/Backgrounds/Berg.jpg');
-	background-size:cover;
-	background-attachment: fixed;
-	background-position: center bottom;
-	background-repeat: no-repeat;
-	min-height: 80vh
-
+.Photography {
+    padding-top: 30px;
+    padding-bottom: 80px;
+    background: url('../../assets/Backgrounds/Berg.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center bottom;
+    background-repeat: no-repeat;
+    min-height: 80vh;
 }

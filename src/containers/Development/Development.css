@@ -1,18 +1,22 @@
-.Development p {margin:auto;
-max-width: 600px;}
-.Development{padding-bottom: 150px;
-	background-attachment: fixed;
-	background-repeat:no-repeat;
-	background-size: cover;
-	background-position: center center;
-background-image: url(../../assets/Development/background.jpg)}
-
-.Development h1{
-	font-size: 55px
+.Development p {
+    margin: auto;
+    max-width: 600px;
+}
+.Development {
+    padding-bottom: 150px;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    background-image: url(../../assets/Development/background.jpg);
 }
 
-@media (max-width: 700px){
-	.Code p{
-		font-size:14px;
-	}
+.Development h1 {
+    font-size: 55px;
+}
+
+@media (max-width: 700px) {
+    .Code p {
+        font-size: 14px;
+    }
 }
