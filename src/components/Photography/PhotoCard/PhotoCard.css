@@ -1,119 +1,119 @@
-.PhotoCard{
-	width:100%;
-	max-width:400px;
-	margin:0 15px 15px 15px;
-	height:550px;
-	display: flex;
-	flex-direction: column ;
-	justify-content:center;
-	align-items: center;
-	color:white;
-	font-size:80px;
-	cursor: pointer;
-	position: relative;
-	z-index: 1;
-	background-size: cover;
+.PhotoCard {
+  width: 100%;
+  max-width: 400px;
+  margin: 0 15px 15px 15px;
+  height: 550px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 80px;
+  cursor: pointer;
+  position: relative;
+  z-index: 1;
+  background-size: cover;
 }
 
-.PhotoCard::after{
-	content: "";
-	position:absolute;
-	top:0;
-	left: 0;
-	width:100%;
-	height:100%;
-	background:rgba(0,0,0,0.3);
-	z-index: 2;
-	opacity: 0;
-	transition: 1s;
+.PhotoCard::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.3);
+  z-index: 2;
+  opacity: 0;
+  transition: 1s;
 }
-.PhotoCard.Show::after{
-	opacity: 1;
+.PhotoCard.Show::after {
+  opacity: 1;
 }
 
-.PhotoCard p{z-index: 3;
-	font-size:60px;
-	width:100%;
-	margin:10px 0;
-	text-shadow: 1px 0px black;
-	background:rgba(0,0,0,0.5);
-	transition: 1s;
+.PhotoCard p {
+  z-index: 3;
+  font-size: 60px;
+  width: 100%;
+  margin: 10px 0;
+  text-shadow: 1px 0px black;
+  background: rgba(0, 0, 0, 0.5);
+  transition: 1s;
 }
-.PhotoCard.Show p{
-	background:transparent;
+.PhotoCard.Show p {
+  background: transparent;
 }
 
 @media screen and (min-width: 750px) {
-
-	.PhotoCard{
-		max-width: 330px;
-		height:450px;
-	}
+  .PhotoCard {
+    max-width: 330px;
+    height: 450px;
+  }
 }
 
-.PhotoCard.Client{
-	background: url(../../../assets/photocards/client.jpg);
-	background-size: cover;
-	background-position: center bottom;
+.PhotoCard.Client {
+  background: url(../../../assets/photocards/client.jpg);
+  background-size: cover;
+  background-position: center bottom;
 }
 
-.PhotoCard.Travel{
-		background: url(../../../assets/photocards/travel.jpg);
-	background-size: cover;
-	background-position: center bottom;
+.PhotoCard.Travel {
+  background: url(../../../assets/photocards/travel.jpg);
+  background-size: cover;
+  background-position: center bottom;
 }
-.PhotoCard.Portrait{
-		background: url(../../../assets/photocards/portrait.jpg);
-	background-size: cover;
-	background-position: 80% bottom;
+.PhotoCard.Portrait {
+  background: url(../../../assets/photocards/portrait.jpg);
+  background-size: cover;
+  background-position: 80% bottom;
 }
-.PhotoCard.Animal{
-		background: url(../../../assets/photocards/animal.jpg);
-	background-size: cover;
-	background-position: center center;
+.PhotoCard.Animal {
+  background: url(../../../assets/photocards/animal.jpg);
+  background-size: cover;
+  background-position: center center;
 }
-.PhotoCard.Asia{
-	background:url(../../../assets/photocards/asia.jpg);
-	background-size:cover;
-	background-position: 50% 50%; 
+.PhotoCard.Asia {
+  background: url(../../../assets/photocards/asia.jpg);
+  background-size: cover;
+  background-position: 50% 50%;
 }
-.PhotoCard.Canada{
-	background:url(../../../assets/photocards/canada.jpg);
-	background-size:cover;
-	background-position: 50% 50%; 
+.PhotoCard.Canada {
+  background: url(../../../assets/photocards/canada.jpg);
+  background-size: cover;
+  background-position: 50% 50%;
 }
-.PhotoCard.Europe{
-	background:url(../../../assets/photocards/europe.jpg);
-	background-size:cover;
-	background-position: 50% 50%; 
+.PhotoCard.Europe {
+  background: url(../../../assets/photocards/europe.jpg);
+  background-size: cover;
+  background-position: 50% 50%;
 }
-.PhotoCard.Oceania{
-	background:url(../../../assets/photocards/oceania.jpg);
-	background-size:cover;
-	background-position: 50% 50%; 
+.PhotoCard.Oceania {
+  background: url(../../../assets/photocards/oceania.jpg);
+  background-size: cover;
+  background-position: 50% 50%;
 }
-.PhotoCard.Cat-Motors{
-	background:url(../../../assets/photocards/cat-motors.jpg);
-	background-size:cover;
-	background-position: 50% 50%; 
+.PhotoCard.Cat-Motors {
+  background: url(../../../assets/photocards/cat-motors.jpg);
+  background-size: cover;
+  background-position: 50% 50%;
 }
-.PhotoCard.Gemma{
-	background:url(../../../assets/photocards/gemma.jpg);
-	background-size:cover;
-	background-position: 50% 50%; 
+.PhotoCard.Gemma {
+  background: url(../../../assets/photocards/gemma.jpg);
+  background-size: cover;
+  background-position: 50% 50%;
 }
-.PhotoCard.Sprout{
-	background:url(../../../assets/photocards/sprout.jpg);
-	background-size:cover;
-	background-position: 50% 50%; 
+.PhotoCard.Sprout {
+  background: url(../../../assets/photocards/sprout.jpg);
+  background-size: cover;
+  background-position: 50% 50%;
 }
-.PhotoCard.Climate{
-	background:url(../../../assets/photocards/climate.jpg);
-	background-size:cover;
-	background-position: 50% 50%; 
+.PhotoCard.Climate {
+  background: url(../../../assets/photocards/climate.jpg);
+  background-size: cover;
+  background-position: 50% 50%;
 }
-.PhotoCard.Luna{
-	background:url(../../../assets/photocards/luna.jpg);
-	background-size:cover;
-	background-position: 50% 50%; 
+.PhotoCard.Luna {
+  background: url(../../../assets/photocards/luna.jpg);
+  background-size: cover;
+  background-position: 50% 50%;
 }
