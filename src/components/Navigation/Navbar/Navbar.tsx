@@ -1,10 +1,8 @@
-import { type ReactNode } from "react";
-import "./Navbar.css";
+import { type ReactNode } from 'react';
+import './Navbar.css';
 
 type NavbarProps = {
-  children: ReactNode;
+    children: ReactNode;
 };
 
-export const Navbar = ({ children }: NavbarProps) => (
-  <div className="Navbar">{children}</div>
-);
+export const Navbar = ({ children }: NavbarProps) => <div className="Navbar">{children}</div>;

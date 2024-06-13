@@ -1,78 +1,78 @@
 name: Pull request actions
 run-name: Checking pull request eligibility 🚀
 on:
-  pull_request:
-    branches:
-      - main
+    pull_request:
+        branches:
+            - main
 jobs:
-  typecheck-files:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout current commit
-        uses: actions/checkout@v4
+    typecheck-files:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout current commit
+              uses: actions/checkout@v4
 
-      - name: Install pnpm
-        uses: pnpm/action-setup@v4
-        with:
-          version: 9
-          run_install: false
+            - name: Install pnpm
+              uses: pnpm/action-setup@v4
+              with:
+                  version: 9
+                  run_install: false
 
-      - name: Install node
-        uses: actions/setup-node@v4
-        with:
-          node-version: "22"
-          cache: "pnpm"
+            - name: Install node
+              uses: actions/setup-node@v4
+              with:
+                  node-version: '22'
+                  cache: 'pnpm'
 
-      - name: Install dependencies
-        run: pnpm i --frozen-lockfile
+            - name: Install dependencies
+              run: pnpm i --frozen-lockfile
 
-      - name: Run typecheck
-        run: pnpm typecheck
+            - name: Run typecheck
+              run: pnpm typecheck
 
-  lint-files:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout current commit
-        uses: actions/checkout@v4
+    lint-files:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout current commit
+              uses: actions/checkout@v4
 
-      - name: Setup pnpm
-        uses: pnpm/action-setup@v4
-        with:
-          version: 9
-          run_install: false
+            - name: Setup pnpm
+              uses: pnpm/action-setup@v4
+              with:
+                  version: 9
+                  run_install: false
 
-      - name: Setup node
-        uses: actions/setup-node@v4
-        with:
-          node-version: "22"
-          cache: "pnpm"
+            - name: Setup node
+              uses: actions/setup-node@v4
+              with:
+                  node-version: '22'
+                  cache: 'pnpm'
 
-      - name: Install dependencies
-        run: pnpm i --frozen-lockfile
+            - name: Install dependencies
+              run: pnpm i --frozen-lockfile
 
-      - name: Lint files
-        run: pnpm lint
+            - name: Lint files
+              run: pnpm lint
 
-  test-files:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout current commit
-        uses: actions/checkout@v4
+    test-files:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout current commit
+              uses: actions/checkout@v4
 
-      - name: Install pnpm
-        uses: pnpm/action-setup@v4
-        with:
-          version: 9
-          run_install: false
+            - name: Install pnpm
+              uses: pnpm/action-setup@v4
+              with:
+                  version: 9
+                  run_install: false
 
-      - name: Install node
-        uses: actions/setup-node@v4
-        with:
-          node-version: "22"
-          cache: "pnpm"
+            - name: Install node
+              uses: actions/setup-node@v4
+              with:
+                  node-version: '22'
+                  cache: 'pnpm'
 
-      - name: Install dependencies
-        run: pnpm i --frozen-lockfile
+            - name: Install dependencies
+              run: pnpm i --frozen-lockfile
 
-      - name: Test files
-        run: pnpm test:ci
+            - name: Test files
+              run: pnpm test:ci
