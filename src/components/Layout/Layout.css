@@ -18,6 +18,10 @@ main {
 }
 
 header {
+    transition: box-shadow 0.1s;
+}
+
+header.Scrolling {
     box-shadow: 0px 10px 50px rgba(0, 0, 0, 0.05);
 }
 

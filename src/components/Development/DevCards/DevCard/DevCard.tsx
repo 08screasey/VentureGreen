@@ -82,8 +82,8 @@ export const DevCard = ({
                     >
                         Previews{' '}
                     </h2>
-                    <div className=" d-flex ImagePreviews w-100 align-items-center">
-                        <Row>
+                    <div className="d-flex ImagePreviews w-100 align-items-center">
+                        <Row className="w-100">
                             <Col md="4" sm="12">
                                 <img src={images[0]} alt="" />
                             </Col>

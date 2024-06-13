@@ -1,7 +1,7 @@
 import { faInstagram } from '@fortawesome/free-brands-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Fade as Hamburger } from 'hamburger-react';
-import { type ReactNode, useState } from 'react';
+import { type ReactNode, useState, useEffect } from 'react';
 
 import Logo from '../../assets/venturegreen.png';
 import { Footer } from '../Footer/Footer';
@@ -16,10 +16,22 @@ type LayoutProps = {
 
 export const Layout = ({ children }: LayoutProps) => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const [isAtTop, setIsAtTop] = useState(window.scrollY === 0);
+
+    useEffect(() => {
+        const recalculateScrollTop = () => {
+            setIsAtTop(window.scrollY === 0);
+        };
+        window.addEventListener('scroll', recalculateScrollTop);
+
+        return () => {
+            window.removeEventListener('scroll', recalculateScrollTop);
+        };
+    }, []);
 
     return (
         <div>
-            <header>
+            <header className={isAtTop ? '' : 'Scrolling'}>
                 <div className="LogoDiv">
                     <img src={Logo} className="Logo" alt="Venture Green Logo" />
                     <p className="F-Lora PaleGreen">Adventure Photography & Web Development</p>

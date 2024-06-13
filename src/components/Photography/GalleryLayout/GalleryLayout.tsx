@@ -1,4 +1,4 @@
-import { PropsWithChildren, useEffect } from 'react';
+import { PropsWithChildren } from 'react';
 import './GalleryLayout.css';
 
 type GalleryLayoutProps = PropsWithChildren<{
@@ -7,14 +7,12 @@ type GalleryLayoutProps = PropsWithChildren<{
     header?: string;
 }>;
 
-export const GalleryLayout = ({ children, header, images, onClick }: GalleryLayoutProps) => {
-    return (
-        <div className="Gallery">
-            <h2 className="F-Bodini">{header}</h2>
-            <p className="F-OldStandard">{children}</p>
-            {images.map((image, i) => (
-                <img key={i} src={image} alt={image.toString()} onClick={() => onClick(i)} />
-            ))}
-        </div>
-    );
-};
+export const GalleryLayout = ({ children, header, images, onClick }: GalleryLayoutProps) => (
+    <div className="Gallery">
+        <h2 className="F-Bodini">{header}</h2>
+        <p className="F-OldStandard">{children}</p>
+        {images.map((image, i) => (
+            <img key={i} src={image} alt={image.toString()} onClick={() => onClick(i)} />
+        ))}
+    </div>
+);
