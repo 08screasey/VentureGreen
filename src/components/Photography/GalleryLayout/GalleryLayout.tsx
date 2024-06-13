@@ -1,7 +1,8 @@
 import { useState } from 'react';
-import './GalleryLayout.css';
-import { GalleryView } from '../GalleryView/GalleryView';
+
 import { type Album } from '../../../Pages/Photography/albums';
+import { GalleryView } from '../GalleryView/GalleryView';
+import './GalleryLayout.css';
 
 type GalleryLayoutProps = {
     album: Album;
