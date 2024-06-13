@@ -2,7 +2,6 @@ import { ReactElement } from "react";
 import { LazyLoadComponent } from "react-lazy-load-image-component";
 
 import asia1 from "../../../../assets/travel/asia/asia.jpg";
-import asia9 from "../../../../assets/travel/asia/asia9.jpg";
 import asia10 from "../../../../assets/travel/asia/asia10.jpg";
 import asia11 from "../../../../assets/travel/asia/asia11.jpg";
 import asia12 from "../../../../assets/travel/asia/asia12.jpg";
@@ -21,6 +20,7 @@ import asia5 from "../../../../assets/travel/asia/asia5.jpg";
 import asia6 from "../../../../assets/travel/asia/asia6.jpg";
 import asia7 from "../../../../assets/travel/asia/asia7.jpg";
 import asia8 from "../../../../assets/travel/asia/asia8.jpg";
+import asia9 from "../../../../assets/travel/asia/asia9.jpg";
 import { ImageGalleryProps } from "../../../../containers/Photography/Photography";
 import { GalleryLayout } from "../../GalleryLayout/GalleryLayout";
 

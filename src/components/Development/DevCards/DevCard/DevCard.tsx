@@ -1,10 +1,10 @@
-import { useState } from "react";
-import "./DevCard.css";
-
 import { faGithubSquare } from "@fortawesome/free-brands-svg-icons";
 import { faLink } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { useState } from "react";
 import { Container, Row, Col } from "react-bootstrap";
+
+import "./DevCard.css";
 
 type DevCardProps = {
   alt?: boolean;
