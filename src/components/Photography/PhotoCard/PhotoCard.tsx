@@ -27,7 +27,7 @@ export const PhotoCard = ({ coverArt, children, link }: PhotoCardProps) => {
             bottomOffset="500px"
             topOffset="200px"
         >
-            <NavLink to={link} className={classes.join(' ')} style={{ backgroundImage: `url(${coverArt})` }}>
+            <NavLink to={link} className={classes.join(' ')} style={{ backgroundImage: `url("${coverArt.src}")` }}>
                 <p>{children}</p>
             </NavLink>
         </Waypoint>
