@@ -6,8 +6,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faInstagram } from "@fortawesome/free-brands-svg-icons";
 import Logo from "../../assets/venturegreen.png";
 import Footer from "../Footer/Footer";
-import SlideMenu from "../../../vite/vite-project/src/components/Navigation/SlideMenu/SlideMenu";
-import Navbar from "../../../vite/vite-project/src/components/Navigation/Navbar/Navbar";
+import SlideMenu from "../../components/Navigation/SlideMenu/SlideMenu";
+import Navbar from "../../components/Navigation/Navbar/Navbar";
 
 const Layout = (props) => {
   const [isOpen, setOpen] = useState(false);

@@ -1,21 +1,21 @@
 import React, { useState, useEffect } from "react";
-import PhotoCard from "../../../vite/vite-project/src/components/Photography/PhotoCard/PhotoCard";
+import PhotoCard from "../../components/Photography/PhotoCard/PhotoCard";
 import "./Photography.css";
 import { LazyLoadComponent } from "react-lazy-load-image-component";
-import PhotoGrid from "../../../vite/vite-project/src/components/Photography/PhotoGrid/PhotoGrid";
-import { Route, Switch } from "react-router-dom";
-import Animals from "../../../vite/vite-project/src/components/Photography/Gallery/Animals/Animals";
-import Asia from "../../../vite/vite-project/src/components/Photography/Gallery/Asia/Asia";
-import Canada from "../../../vite/vite-project/src/components/Photography/Gallery/Canada/Canada";
-import Oceania from "../../../vite/vite-project/src/components/Photography/Gallery/Oceania/Oceania";
-import Europe from "../../../vite/vite-project/src/components/Photography/Gallery/Europe/Europe";
-import CatMotors from "../../../vite/vite-project/src/components/Photography/Gallery/CatMotors/CatMotors";
-import Sprout from "../../../vite/vite-project/src/components/Photography/Gallery/Sprout/Sprout";
-import Luna from "../../../vite/vite-project/src/components/Photography/Gallery/Luna/Luna";
-import Climate from "../../../vite/vite-project/src/components/Photography/Gallery/Climate/Climate";
-import Gemma from "../../../vite/vite-project/src/components/Photography/Gallery/Gemma/Gemma";
-import Portrait from "../../../vite/vite-project/src/components/Photography/Gallery/Portrait/Portrait";
-import GalleryView from "../../../vite/vite-project/src/components/Photography/GalleryView/GalleryView";
+import PhotoGrid from "../../components/Photography/PhotoGrid/PhotoGrid";
+import { Route } from "react-router-dom";
+import Animals from "../../components/Photography/Gallery/Animals/Animals";
+import Asia from "../../components/Photography/Gallery/Asia/Asia";
+import Canada from "../../components/Photography/Gallery/Canada/Canada";
+import Oceania from "../../components/Photography/Gallery/Oceania/Oceania";
+import Europe from "../../components/Photography/Gallery/Europe/Europe";
+import CatMotors from "../../components/Photography/Gallery/CatMotors/CatMotors";
+import Sprout from "../../components/Photography/Gallery/Sprout/Sprout";
+import Luna from "../../components/Photography/Gallery/Luna/Luna";
+import Climate from "../../components/Photography/Gallery/Climate/Climate";
+import Gemma from "../../components/Photography/Gallery/Gemma/Gemma";
+import Portrait from "../../components/Photography/Gallery/Portrait/Portrait";
+import GalleryView from "../../components/Photography/GalleryView/GalleryView";
 
 const Photography = (props) => {
   useEffect(() => {
@@ -54,7 +54,7 @@ const Photography = (props) => {
           exitGallery={closeGallery}
         />
       ) : null}
-      <Switch>
+      <Routes>
         <Route
           path="/photography/Travel/Asia"
           render={() => {
@@ -287,7 +287,7 @@ const Photography = (props) => {
             );
           }}
         />
-      </Switch>
+      </Routes>
     </div>
   );
 };

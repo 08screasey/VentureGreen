@@ -8,14 +8,14 @@ import Image5 from "../../assets/Home/Home Image 5.jpg";
 import Website from "../../assets/Home/website.jpg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLevelUpAlt } from "@fortawesome/free-solid-svg-icons";
-import { ReactComponent as LeftBrain } from "../../assets/Home/brainLeft.svg";
+import LeftBrain from "../../assets/Home/brainLeft.svg";
 import LeftBrainOVerlay from "../../assets/Home/brainLeftOverLay.png";
 import LeftText1 from "../../assets/Home/brainLeftText1.png";
 import LeftText2 from "../../assets/Home/brainLeftText2.png";
 import RightText1 from "../../assets/Home/brainRightText1.png";
 import RightText2 from "../../assets/Home/brainRightText2.png";
 import RightBrainOVerlay from "../../assets/Home/brainRightOverLay.png";
-import { ReactComponent as RightBrain } from "../../assets/Home/brainRight.svg";
+import RightBrain from "../../assets/Home/brainRight.svg";
 import { Waypoint } from "react-waypoint";
 
 const Home = (props) => {

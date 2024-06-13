@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 
 import "./Development.css";
-import DevCards from "../../../vite/vite-project/src/components/Development/DevCards/DevCards";
+import DevCards from "../../components/Development/DevCards/DevCards";
 
 const Development = (props) => {
   useEffect(() => {

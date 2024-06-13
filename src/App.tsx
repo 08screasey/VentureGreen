@@ -1,4 +1,4 @@
-import { Routes, Route, BrowserRouter } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 
 import Photography from "./containers/Photography/Photography";
 import Development from "./containers/Development/Development";
@@ -11,15 +11,13 @@ import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 export const App = () => (
-  <BrowserRouter>
-    <Layout>
-      <Routes>
-        <Route path="/photography" Component={Photography} />
-        <Route path="/development" Component={Development} />
-        <Route path="/about-me" Component={About} />
-        <Route path="/contact" Component={Contact} />
-        <Route path="/" Component={Home} />
-      </Routes>
-    </Layout>
-  </BrowserRouter>
+  <Layout>
+    <Routes>
+      <Route path="/photography" Component={Photography} />
+      <Route path="/development" Component={Development} />
+      <Route path="/about-me" Component={About} />
+      <Route path="/contact" Component={Contact} />
+      <Route path="*" Component={Home} />
+    </Routes>
+  </Layout>
 );

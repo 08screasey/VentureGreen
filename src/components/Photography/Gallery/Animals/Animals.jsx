@@ -22,7 +22,6 @@ import animal19 from "../../../../assets/animals/sheep+snowdon+2.jpg";
 import animal20 from "../../../../assets/animals/sunset+pen+y+fan+6.jpg";
 import animal21 from "../../../../assets/animals/wombat.jpg";
 import { LazyLoadComponent } from "react-lazy-load-image-component";
-import "./Animals.css";
 
 const Animals = (props) => {
   const images = [
