@@ -1,8 +1,8 @@
 import { Route, Routes } from 'react-router-dom';
 
-import { GalleryLayout } from '../../Components/Photography/GalleryLayout/GalleryLayout';
-import { PhotoCard } from '../../Components/Photography/PhotoCard/PhotoCard';
-import { PhotoGrid } from '../../Components/Photography/PhotoGrid/PhotoGrid';
+import { GalleryLayout } from '../../Component/Photography/GalleryLayout/GalleryLayout';
+import { PhotoCard } from '../../Component/Photography/PhotoCard/PhotoCard';
+import { PhotoGrid } from '../../Component/Photography/PhotoGrid/PhotoGrid';
 
 import './Photography.css';
 import { PHOTOGRAPHY_COLLECTIONS } from './albums';

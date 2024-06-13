@@ -1,8 +1,8 @@
 import { useEffect } from 'react';
 import { Routes, Route, useLocation } from 'react-router-dom';
 
-import { About } from './Components/About/About';
-import { Layout } from './Components/Layout/Layout';
+import { About } from './Component/About/About';
+import { Layout } from './Component/Layout/Layout';
 import { Contact } from './Pages/Contact/Contact';
 import { Development } from './Pages/Development/Development';
 import { Home } from './Pages/Home/Home';

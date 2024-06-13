@@ -1,0 +1,13 @@
+.Gallery img {
+    width: 100%;
+    max-width: 600px;
+    margin: 0px auto 4px auto;
+    cursor: pointer;
+}
+
+.Gallery {
+    width: 100%;
+    max-width: 600px;
+    margin: auto;
+    padding: 0 4px;
+}
