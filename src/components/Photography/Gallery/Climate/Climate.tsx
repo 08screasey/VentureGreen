@@ -19,7 +19,7 @@ import Climate6 from '../../../../assets/client/Climate/climate6.jpg';
 import Climate7 from '../../../../assets/client/Climate/climate7.jpg';
 import Climate8 from '../../../../assets/client/Climate/climate8.jpg';
 import Climate9 from '../../../../assets/client/Climate/climate9.jpg';
-import { type ImageGalleryProps } from '../../../../containers/Photography/Photography';
+import { type ImageGalleryProps } from '../../../../Pages/Photography/Photography';
 import { GalleryLayout } from '../../GalleryLayout/GalleryLayout';
 
 export const Climate = ({ onImageClick }: ImageGalleryProps) => {

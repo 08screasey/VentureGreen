@@ -17,7 +17,7 @@ import sprout6 from '../../../../assets/client/Sprout/sprout6.jpg';
 import sprout7 from '../../../../assets/client/Sprout/sprout7.jpg';
 import sprout8 from '../../../../assets/client/Sprout/sprout8.jpg';
 import sprout9 from '../../../../assets/client/Sprout/sprout9.jpg';
-import { ImageGalleryProps } from '../../../../containers/Photography/Photography';
+import { ImageGalleryProps } from '../../../../Pages/Photography/Photography';
 import { GalleryLayout } from '../../GalleryLayout/GalleryLayout';
 
 export const Sprout = ({ onImageClick }: ImageGalleryProps) => {

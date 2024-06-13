@@ -2,20 +2,20 @@ import { useState, useEffect } from 'react';
 import { LazyLoadComponent } from 'react-lazy-load-image-component';
 import { Route, Routes, useLocation, useNavigate } from 'react-router-dom';
 
-import { Animals } from '../../components/Photography/Gallery/Animals/Animals';
-import { Asia } from '../../components/Photography/Gallery/Asia/Asia';
-import { Canada } from '../../components/Photography/Gallery/Canada/Canada';
-import { CatMotors } from '../../components/Photography/Gallery/CatMotors/CatMotors';
-import { Climate } from '../../components/Photography/Gallery/Climate/Climate';
-import { Europe } from '../../components/Photography/Gallery/Europe/Europe';
-import { Gemma } from '../../components/Photography/Gallery/Gemma/Gemma';
-import { Luna } from '../../components/Photography/Gallery/Luna/Luna';
-import { Oceania } from '../../components/Photography/Gallery/Oceania/Oceania';
-import { Portrait } from '../../components/Photography/Gallery/Portrait/Portrait';
-import { Sprout } from '../../components/Photography/Gallery/Sprout/Sprout';
-import { GalleryView } from '../../components/Photography/GalleryView/GalleryView';
-import { PhotoCard } from '../../components/Photography/PhotoCard/PhotoCard';
-import { PhotoGrid } from '../../components/Photography/PhotoGrid/PhotoGrid';
+import { Animals } from '../../Components/Photography/Gallery/Animals/Animals';
+import { Asia } from '../../Components/Photography/Gallery/Asia/Asia';
+import { Canada } from '../../Components/Photography/Gallery/Canada/Canada';
+import { CatMotors } from '../../Components/Photography/Gallery/CatMotors/CatMotors';
+import { Climate } from '../../Components/Photography/Gallery/Climate/Climate';
+import { Europe } from '../../Components/Photography/Gallery/Europe/Europe';
+import { Gemma } from '../../Components/Photography/Gallery/Gemma/Gemma';
+import { Luna } from '../../Components/Photography/Gallery/Luna/Luna';
+import { Oceania } from '../../Components/Photography/Gallery/Oceania/Oceania';
+import { Portrait } from '../../Components/Photography/Gallery/Portrait/Portrait';
+import { Sprout } from '../../Components/Photography/Gallery/Sprout/Sprout';
+import { GalleryView } from '../../Components/Photography/GalleryView/GalleryView';
+import { PhotoCard } from '../../Components/Photography/PhotoCard/PhotoCard';
+import { PhotoGrid } from '../../Components/Photography/PhotoGrid/PhotoGrid';
 
 import './Photography.css';
 

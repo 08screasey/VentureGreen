@@ -28,7 +28,7 @@ import europe6 from '../../../../assets/travel/europe/europe5.jpg';
 import europe7 from '../../../../assets/travel/europe/europe6.jpg';
 import europe8 from '../../../../assets/travel/europe/europe7.jpg';
 import europe9 from '../../../../assets/travel/europe/europe8.jpg';
-import { ImageGalleryProps } from '../../../../containers/Photography/Photography';
+import { ImageGalleryProps } from '../../../../Pages/Photography/Photography';
 import { GalleryLayout } from '../../GalleryLayout/GalleryLayout';
 
 export const Europe = ({ onImageClick }: ImageGalleryProps) => {

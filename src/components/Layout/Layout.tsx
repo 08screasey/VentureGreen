@@ -4,9 +4,10 @@ import { Fade as Hamburger } from 'hamburger-react';
 import { type ReactNode, useState } from 'react';
 
 import Logo from '../../assets/venturegreen.png';
-import { Navbar } from '../../components/Navigation/Navbar/Navbar';
-import { SlideMenu } from '../../components/Navigation/SlideMenu/SlideMenu';
 import { Footer } from '../Footer/Footer';
+import { Navbar } from '../Navigation/Navbar/Navbar';
+import { SlideMenu } from '../Navigation/SlideMenu/SlideMenu';
+
 import './Layout.css';
 
 type LayoutProps = {
@@ -14,7 +15,7 @@ type LayoutProps = {
 };
 
 export const Layout = ({ children }: LayoutProps) => {
-    const [isOpen, setOpen] = useState(false);
+    const [isMenuOpen, setIsMenuOpen] = useState(false);
 
     return (
         <div>
@@ -24,9 +25,9 @@ export const Layout = ({ children }: LayoutProps) => {
                     <p className="F-Lora PaleGreen">Adventure Photography & Web Development</p>
                 </div>
                 <Navbar>
-                    <SlideMenu showMenu={isOpen} handleClick={() => setOpen(false)} />
+                    <SlideMenu showMenu={isMenuOpen} handleClick={() => setIsMenuOpen(false)} />
                     <div style={{ zIndex: '1000' }}>
-                        <Hamburger toggled={isOpen} toggle={setOpen} size={20} />
+                        <Hamburger toggled={isMenuOpen} toggle={setIsMenuOpen} size={20} />
                     </div>
                     <a
                         className="IconWrapper"

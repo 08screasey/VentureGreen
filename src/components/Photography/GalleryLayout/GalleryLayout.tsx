@@ -8,10 +8,6 @@ type GalleryLayoutProps = PropsWithChildren<{
 }>;
 
 export const GalleryLayout = ({ children, header, images, onClick }: GalleryLayoutProps) => {
-    useEffect(() => {
-        window.scrollTo(0, 0);
-    }, []);
-
     return (
         <div className="Gallery">
             <h2 className="F-Bodini">{header}</h2>

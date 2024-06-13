@@ -2,7 +2,7 @@
     position: fixed;
     height: 100%;
     width: 100%;
-    max-width: 800px;
+    max-width: 500px;
     top: 0;
     left: 0;
     transform: translateX(-800px);
@@ -13,6 +13,7 @@
     align-items: center;
     justify-content: center;
     z-index: 5;
+    box-shadow: 10px 0px 30px rgba(0, 0, 0, 0.1);
 }
 .SlideMenu.Show {
     transform: translateX(0px);

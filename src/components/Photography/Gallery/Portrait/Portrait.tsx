@@ -11,7 +11,7 @@ import portrait6 from '../../../../assets/portrait/portrait6.jpg';
 import portrait7 from '../../../../assets/portrait/portrait7.jpg';
 import portrait8 from '../../../../assets/portrait/portrait8.jpg';
 import portrait9 from '../../../../assets/portrait/portrait9.jpg';
-import { type ImageGalleryProps } from '../../../../containers/Photography/Photography';
+import { type ImageGalleryProps } from '../../../../Pages/Photography/Photography';
 import { GalleryLayout } from '../../GalleryLayout/GalleryLayout';
 
 export const Portrait = ({ onImageClick }: ImageGalleryProps) => {

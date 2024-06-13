@@ -13,7 +13,7 @@ import Cat6 from '../../../../assets/client/CatMotors/cat6.jpg';
 import Cat7 from '../../../../assets/client/CatMotors/cat7.jpg';
 import Cat8 from '../../../../assets/client/CatMotors/cat8.jpg';
 import Cat9 from '../../../../assets/client/CatMotors/cat9.jpg';
-import { ImageGalleryProps } from '../../../../containers/Photography/Photography';
+import { ImageGalleryProps } from '../../../../Pages/Photography/Photography';
 import { GalleryLayout } from '../../GalleryLayout/GalleryLayout';
 
 export const CatMotors = ({ onImageClick }: ImageGalleryProps) => {

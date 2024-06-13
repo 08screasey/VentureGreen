@@ -28,7 +28,7 @@ import oceania6 from '../../../../assets/travel/oceania/oceania6.jpg';
 import oceania7 from '../../../../assets/travel/oceania/oceania7.jpg';
 import oceania8 from '../../../../assets/travel/oceania/oceania8.jpg';
 import oceania9 from '../../../../assets/travel/oceania/oceania9.jpg';
-import { ImageGalleryProps } from '../../../../containers/Photography/Photography';
+import { ImageGalleryProps } from '../../../../Pages/Photography/Photography';
 import { GalleryLayout } from '../../GalleryLayout/GalleryLayout';
 
 export const Oceania = ({ onImageClick }: ImageGalleryProps) => {

@@ -21,7 +21,7 @@ import asia6 from '../../../../assets/travel/asia/asia6.jpg';
 import asia7 from '../../../../assets/travel/asia/asia7.jpg';
 import asia8 from '../../../../assets/travel/asia/asia8.jpg';
 import asia9 from '../../../../assets/travel/asia/asia9.jpg';
-import { ImageGalleryProps } from '../../../../containers/Photography/Photography';
+import { ImageGalleryProps } from '../../../../Pages/Photography/Photography';
 import { GalleryLayout } from '../../GalleryLayout/GalleryLayout';
 
 export const Asia = ({ onImageClick }: ImageGalleryProps): ReactElement => {

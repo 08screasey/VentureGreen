@@ -18,7 +18,7 @@ import canada13 from '../../../../assets/travel/canada/reflection+pyramid+1.jpg'
 import canada14 from '../../../../assets/travel/canada/snow+2.jpg';
 import canada15 from '../../../../assets/travel/canada/snow+4.jpg';
 import canada16 from '../../../../assets/travel/canada/snow+7.jpg';
-import { type ImageGalleryProps } from '../../../../containers/Photography/Photography';
+import { type ImageGalleryProps } from '../../../../Pages/Photography/Photography';
 import { GalleryLayout } from '../../GalleryLayout/GalleryLayout';
 
 export const Canada = ({ onImageClick }: ImageGalleryProps) => {

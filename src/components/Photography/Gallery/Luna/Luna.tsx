@@ -13,7 +13,7 @@ import Luna6 from '../../../../assets/client/luna/Luna6.jpg';
 import Luna7 from '../../../../assets/client/luna/Luna7.jpg';
 import Luna8 from '../../../../assets/client/luna/Luna8.jpg';
 import Luna9 from '../../../../assets/client/luna/Luna9.jpg';
-import { ImageGalleryProps } from '../../../../containers/Photography/Photography';
+import { ImageGalleryProps } from '../../../../Pages/Photography/Photography';
 import { GalleryLayout } from '../../GalleryLayout/GalleryLayout';
 
 export const Luna = ({ onImageClick }: ImageGalleryProps) => {

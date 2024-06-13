@@ -1,6 +1,6 @@
 import { faLevelUpAlt } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Waypoint } from 'react-waypoint';
 
@@ -21,10 +21,6 @@ import RightText2 from '../../assets/Home/brainRightText2.png';
 import Website from '../../assets/Home/website.jpg';
 
 export const Home = () => {
-    useEffect(() => {
-        window.scrollTo(0, 0);
-    }, []);
-
     const navigate = useNavigate();
 
     const [photoView, setPhotoView] = useState(false);

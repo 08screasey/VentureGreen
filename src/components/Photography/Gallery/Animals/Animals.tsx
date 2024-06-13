@@ -21,7 +21,7 @@ import animal18 from '../../../../assets/animals/poppy.jpg';
 import animal19 from '../../../../assets/animals/sheep+snowdon+2.jpg';
 import animal20 from '../../../../assets/animals/sunset+pen+y+fan+6.jpg';
 import animal21 from '../../../../assets/animals/wombat.jpg';
-import { ImageGalleryProps } from '../../../../containers/Photography/Photography';
+import { ImageGalleryProps } from '../../../../Pages/Photography/Photography';
 import { GalleryLayout } from '../../GalleryLayout/GalleryLayout';
 
 export const Animals = ({ onImageClick }: ImageGalleryProps) => {
