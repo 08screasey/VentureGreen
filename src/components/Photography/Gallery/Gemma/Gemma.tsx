@@ -24,7 +24,7 @@ import Gem5 from "../../../../assets/client/Gemma/gem5.jpg";
 import Gem6 from "../../../../assets/client/Gemma/gem6.jpg";
 import Gem8 from "../../../../assets/client/Gemma/gem8.jpg";
 import Gem9 from "../../../../assets/client/Gemma/gem9.jpg";
-import { ImageGalleryProps } from "../../../../containers/Photography/Photography";
+import { type ImageGalleryProps } from "../../../../containers/Photography/Photography";
 import { GalleryLayout } from "../../GalleryLayout/GalleryLayout";
 
 export const Gemma = ({ onImageClick }: ImageGalleryProps) => {
@@ -54,6 +54,7 @@ export const Gemma = ({ onImageClick }: ImageGalleryProps) => {
     Gem24,
     Gem25,
   ];
+
   return (
     <LazyLoadComponent>
       <GalleryLayout
