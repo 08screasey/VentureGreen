@@ -3,7 +3,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Fade as Hamburger } from 'hamburger-react';
 import { type ReactNode, useState, useEffect } from 'react';
 
-import Logo from '../../assets/venturegreen.png';
 import { Footer } from '../Footer/Footer';
 import { Navbar } from '../Navigation/Navbar/Navbar';
 import { SlideMenu } from '../Navigation/SlideMenu/SlideMenu';
@@ -33,7 +32,7 @@ export const Layout = ({ children }: LayoutProps) => {
         <div>
             <header className={isAtTop ? '' : 'Scrolling'}>
                 <div className="LogoDiv">
-                    <img src={Logo} className="Logo" alt="Venture Green Logo" />
+                    <img src="/venturegreen.png" className="Logo" alt="Venture Green Logo" />
                     <p className="F-Lora PaleGreen">Adventure Photography & Web Development</p>
                 </div>
                 <Navbar>

@@ -1,13 +1,11 @@
 import { faLinkedin } from '@fortawesome/free-brands-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-import Sam from '../../assets/About/about.jpg';
-
 import './About.css';
 
 export const About = () => (
     <div className="About">
-        <img src={Sam} alt="" />
+        <img src="/about/about.jpg" alt="" />
         <div className="F-OldStandard AboutText">
             <h1 className="F-Active PaleGreen">Hi, I'm Sam!</h1>
             <p>
@@ -25,13 +23,13 @@ export const About = () => (
             </p>
             <p>
                 Combining 7 years of hospitality work experience, an eternal drive for self-improvement, a rich array of
-                outdoor interests and a vocation for development encapsulates exactly what makes me, me!{' '}
+                outdoor interests and a vocation for development encapsulates exactly what makes me, me!
             </p>
             <small>
                 <a className="" href="https://www.linkedin.com/in/sam-creasey-056b371b7">
-                    <FontAwesomeIcon size="2x" icon={faLinkedin} /> Hire me.{' '}
+                    <FontAwesomeIcon size="2x" icon={faLinkedin} /> Hire me.
                 </a>
-                If you liked this blurb, you'll love the book.{' '}
+                If you liked this blurb, you'll love the book.
             </small>
         </div>
     </div>
