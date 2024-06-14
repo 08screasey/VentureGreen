@@ -5,7 +5,7 @@ export const DevCards = () => (
     <div className="DevCards">
         <DevCard
             header="Columbia Valley Hut Society"
-            API={['Paypal Rest SDK', 'SendGrid']}
+            api={['Paypal Rest SDK', 'SendGrid']}
             technologies={['React', 'Javascript', 'HTML', 'CSS', 'Node.js', 'MongoDB', 'Express']}
             description="This full-stack React web application was built and designed for use by the Columbia Valley Hut Society, a Canadian volunteer-run organization responsible for several mountain cabins throughout the Columbia Mountain range of BC."
             github="https://github.com/08screasey/ColumbiaValleyHutSociety"
@@ -19,7 +19,7 @@ export const DevCards = () => (
             header="Recipe Analyser"
             description="A dynamic web application for parsing recipes from provided URL's. Built using the React framework, utilising firebase as an authentication and database platform."
             technologies={['React', 'Javascript', 'HTML', 'CSS', 'Firebase']}
-            API={['Spoonacular']}
+            api={['Spoonacular']}
             color="hsl(122, 20%, 60%)"
             altColor="white"
             images={['/development/recipe.jpg', '/development/recipe2.jpg', '/development/recipe2.jpg']}
@@ -30,7 +30,7 @@ export const DevCards = () => (
             header="Sprout Plant-Based Eatery"
             description="A dynamic website built for a local plant based restaurant. Built with an interface for owner to upload and delete events."
             technologies={['EJS', 'Javascript', 'CSS', 'MongoDB', 'Node.js', 'Express']}
-            API={['Cloudinary']}
+            api={['Cloudinary']}
             color="hsl(146, 39%, 74%)"
             altColor="white"
             images={['/development/sprout.jpg', '/development/sprout2.jpg', '/development/sprout3.jpg']}

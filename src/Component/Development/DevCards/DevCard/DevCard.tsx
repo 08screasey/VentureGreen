@@ -13,10 +13,10 @@ type DevCardProps = {
     header: string;
     description: string;
     technologies: string[];
-    API: string[];
+    api: string[];
     link: string;
     github: string;
-    images: string[];
+    images: [string, string, string];
 };
 
 export const DevCard = ({
@@ -26,7 +26,7 @@ export const DevCard = ({
     header,
     description,
     technologies,
-    API,
+    api,
     link,
     github,
     images,
@@ -61,11 +61,11 @@ export const DevCard = ({
                     </p>
                     <p className="F-Code Description">
                         <strong>API's: </strong>
-                        {API.join(', ')}
+                        {api.join(', ')}
                     </p>
                     <div className="Buttons">
                         <a href={link} rel="noopener noreferrer" className="F-Active" target="_blank">
-                            <FontAwesomeIcon className="Green" icon={faLink} size="lg" /> Live Build{' '}
+                            <FontAwesomeIcon className="Green" icon={faLink} size="lg" /> Live Build
                         </a>
                         <a href={github} rel="noopener noreferrer" className="F-Active" target="_blank">
                             <FontAwesomeIcon className="Green" icon={faGithubSquare} size="lg" /> Github Repo
@@ -80,7 +80,7 @@ export const DevCard = ({
                         }}
                         style={{ color: color }}
                     >
-                        Previews{' '}
+                        Previews
                     </h2>
                     <div className="d-flex ImagePreviews w-100 align-items-center">
                         <Row className="w-100">
