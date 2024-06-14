@@ -5,20 +5,8 @@ import { useNavigate } from 'react-router-dom';
 import { Waypoint } from 'react-waypoint';
 
 import './Home.css';
-import Image2 from '../../assets/Home/Home Image 2.jpg';
-import Image3 from '../../assets/Home/Home Image 3.jpg';
-import Image4 from '../../assets/Home/Home Image 4.jpg';
-import Image5 from '../../assets/Home/Home Image 5.jpg';
-import Image1 from '../../assets/Home/Home Image.jpg';
-import LeftBrain from '../../assets/Home/brainLeft.svg';
-import LeftBrainOVerlay from '../../assets/Home/brainLeftOverLay.png';
-import LeftText1 from '../../assets/Home/brainLeftText1.png';
-import LeftText2 from '../../assets/Home/brainLeftText2.png';
-import RightBrain from '../../assets/Home/brainRight.svg';
-import RightBrainOVerlay from '../../assets/Home/brainRightOverLay.png';
-import RightText1 from '../../assets/Home/brainRightText1.png';
-import RightText2 from '../../assets/Home/brainRightText2.png';
-import Website from '../../assets/Home/website.jpg';
+import LeftBrain from '../../assets/brainLeft.svg';
+import RightBrain from '../../assets/brainRight.svg';
 
 export const Home = () => {
     const navigate = useNavigate();
@@ -112,7 +100,7 @@ export const Home = () => {
                         </h2>
                         <div className="LaptopScreen">
                             <div className="InnerScreen">
-                                <img alt="" src={Website} />
+                                <img alt="" src="/home/website.jpg" />
                             </div>
                         </div>
                     </div>
@@ -123,9 +111,9 @@ export const Home = () => {
                             className={devView ? 'LeftBrain Active' : 'LeftBrain'}
                             onClick={() => navigate('/development')}
                         >
-                            <img alt="" src={LeftBrainOVerlay} className="BrainOverlay" />
-                            <img alt="" src={LeftText1} className="Text Text1" />
-                            <img alt="" src={LeftText2} className="Text Text2" />
+                            <img alt="" src="/home/brainLeftOverLay.png" className="BrainOverlay" />
+                            <img alt="" src="/home/brainLeftText1.png" className="Text Text1" />
+                            <img alt="" src="/home/brainLeftText2.png" className="Text Text2" />
                             <FontAwesomeIcon icon={faLevelUpAlt} className="Arrow PaleGreen" />
                             <LeftBrain />
                         </div>
@@ -135,9 +123,9 @@ export const Home = () => {
                             onClick={() => navigate('/photography')}
                         >
                             <RightBrain />
-                            <img alt="" src={RightBrainOVerlay} className="BrainOverlay" />
-                            <img alt="" src={RightText1} className="Text Text1" />
-                            <img alt="" src={RightText2} className="Text Text2" />
+                            <img alt="" src="/home/brainRightOverLay.png" className="BrainOverlay" />
+                            <img alt="" src="/home/brainRightText1.png" className="Text Text1" />
+                            <img alt="" src="/home/brainRightText2.png" className="Text Text2" />
                             <FontAwesomeIcon icon={faLevelUpAlt} className="Arrow Cyan" />
                         </div>
                     </div>
@@ -152,11 +140,11 @@ export const Home = () => {
                         className={photoView ? 'Active HomePhoto' : 'HomePhoto'}
                         onClick={() => navigate('/photography')}
                     >
-                        <img alt="" src={Image1} />
-                        <img alt="" src={Image2} />
-                        <img alt="" src={Image3} />
-                        <img alt="" src={Image4} />
-                        <img alt="" src={Image5} />
+                        <img alt="" src="/home/Home Image.jpg" />
+                        <img alt="" src="/home/Home Image 2.jpg" />
+                        <img alt="" src="/home/Home Image 3.jpg" />
+                        <img alt="" src="/home/Home Image 4.jpg" />
+                        <img alt="" src="/home/Home Image 5.jpg" />
                     </div>
                 </Waypoint>
             </div>

@@ -78,5 +78,5 @@ a:nth-child(4) .blob {
     height: 75vw;
     border-radius: 50%;
     background-size: cover;
-    background-image: url(../../assets/About/Untitled Export/DSC_1271.jpg);
+    background-image: url('/about/about-mountain.jpg');
 }

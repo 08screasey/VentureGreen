@@ -1,0 +1,52 @@
+.PhotoCard {
+    width: 100%;
+    max-width: 400px;
+    margin: 0 15px 15px 15px;
+    height: 550px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 80px;
+    cursor: pointer;
+    position: relative;
+    z-index: 1;
+    background-size: cover;
+}
+
+.PhotoCard::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3);
+    z-index: 2;
+    opacity: 0;
+    transition: 1s;
+}
+.PhotoCard.Show::after {
+    opacity: 1;
+}
+
+.PhotoCard p {
+    z-index: 3;
+    font-size: 60px;
+    width: 100%;
+    margin: 10px 0;
+    text-shadow: 1px 0px black;
+    background: rgba(0, 0, 0, 0.5);
+    transition: 1s;
+}
+.PhotoCard.Show p {
+    background: transparent;
+}
+
+@media screen and (min-width: 750px) {
+    .PhotoCard {
+        max-width: 330px;
+        height: 450px;
+    }
+}

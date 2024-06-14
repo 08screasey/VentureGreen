@@ -1,4 +1,4 @@
-import { DevCards } from '../../Components/Development/DevCards/DevCards';
+import { DevCards } from '../../Component/Development/DevCards/DevCards';
 
 import './Development.css';
 
