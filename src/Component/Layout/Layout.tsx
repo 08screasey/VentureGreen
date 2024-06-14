@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Fade as Hamburger } from 'hamburger-react';
 import { type ReactNode, useState, useEffect } from 'react';
 
+import { useKeypress } from '../../Utility/useKeypress';
 import { Footer } from '../Footer/Footer';
 import { Navbar } from '../Navigation/Navbar/Navbar';
 import { SlideMenu } from '../Navigation/SlideMenu/SlideMenu';
@@ -27,6 +28,8 @@ export const Layout = ({ children }: LayoutProps) => {
             window.removeEventListener('scroll', recalculateScrollTop);
         };
     }, []);
+
+    useKeypress({ key: 'Escape', enabled: isMenuOpen, callback: () => setIsMenuOpen(false) });
 
     return (
         <div>

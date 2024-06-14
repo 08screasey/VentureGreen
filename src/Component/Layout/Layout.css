@@ -27,7 +27,7 @@ header.Scrolling {
 
 @media screen and (min-width: 750px) {
     main {
-        padding-top: 180px;
+        padding-top: 150px;
         min-height: 100vh;
     }
     header {

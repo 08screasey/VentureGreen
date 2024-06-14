@@ -232,7 +232,7 @@
     width: 500px;
     position: relative;
     margin-top: -50px;
-    background-image: url(../../assets/Home/laptop.svg);
+    background-image: url('home/laptop.svg');
 }
 
 .LaptopScreen {
@@ -302,7 +302,7 @@
         margin: auto;
         position: relative;
         margin-top: -50px;
-        background-image: url(../../assets/Home/laptop.svg);
+        background-image: url('home/laptop.svg');
     }
 
     .LaptopScreen {
@@ -349,7 +349,7 @@
         margin: auto;
         position: relative;
         margin-top: -50px;
-        background-image: url(../../assets/Home/laptop.svg);
+        background-image: url('home/laptop.svg');
     }
 
     .LaptopScreen {
@@ -414,12 +414,12 @@
         position: absolute;
         transform: rotateY(180deg) translateX(-100px);
         top: 45px;
-        left: -50px;
+        left: -80px;
     }
     .RightBrain .Arrow {
         position: absolute;
         top: 85px;
-        left: 130px;
+        left: 100px;
         transform: rotateX(180deg) translateX(-100px);
     }
     .LeftBrain.Active .Arrow {

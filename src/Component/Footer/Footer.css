@@ -1,7 +1,7 @@
 .Footer a {
     font-size: 14px;
     height: 60px;
-    color: #ccc;
+    color: #8ea989;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -16,7 +16,7 @@
 }
 
 .Footer a:hover {
-    color: #ccc;
+    color: #7a9276;
 }
 
 .Spacer {
