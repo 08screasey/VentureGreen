@@ -2,7 +2,6 @@ import { useState } from 'react';
 
 import { type Album } from '../../../Pages/Photography/albums';
 import { GalleryView } from '../GalleryView/GalleryView';
-import './GalleryLayout.css';
 
 type GalleryLayoutProps = {
     album: Album;
@@ -21,7 +20,7 @@ export const GalleryLayout = ({ album }: GalleryLayoutProps) => {
     };
 
     const moveGallery = (num: number) => {
-        if (!index) {
+        if (index === null) {
             return;
         }
         const newIndex = (index + num + images.length) % images.length;
@@ -36,13 +35,20 @@ export const GalleryLayout = ({ album }: GalleryLayoutProps) => {
                     onNext={() => moveGallery(+1)}
                     onPrev={() => moveGallery(-1)}
                     onExit={closeGallery}
+                    alt={images[index].alt ?? ''}
                 />
             ) : null}
-            <div className="Gallery">
-                <h2 className="F-Bodini">{header}</h2>
-                <p className="F-OldStandard">{subheader}</p>
+            <div className="tw-w-full tw-max-w-[600px] tw-mx-auto tw-px-1">
+                <h2 className="tw-font-lora">{header}</h2>
+                <p className="tw-font-lora">{subheader}</p>
                 {images.map(({ src, alt }, i) => (
-                    <img key={i} src={src} alt={alt ?? src} onClick={() => openGallery(i)} />
+                    <img
+                        key={i}
+                        className="tw-w-full tw-mx-auto tw-mb-4 tw-cursor-pointer"
+                        src={src}
+                        alt={alt ?? src}
+                        onClick={() => openGallery(i)}
+                    />
                 ))}
             </div>
         </>

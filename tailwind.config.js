@@ -10,6 +10,7 @@ export default {
             red: '#EB0027',
             cyan: '#009DDB',
             white: '#FFFFFF',
+            black: '#000000',
         },
         fontFamily: {
             lora: ['lora', 'serif'],
