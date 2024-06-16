@@ -3,6 +3,7 @@ import { NavLink } from 'react-router-dom';
 import { Waypoint } from 'react-waypoint';
 
 import { type Image } from '../../../Pages/Photography/albums';
+import { FOCUS_VISIBLE_STYLES } from '../../../Utility/focusStyles';
 import { merge } from '../../../Utility/merge';
 
 type PhotoCardProps = {
@@ -24,7 +25,8 @@ export const PhotoCard = ({ coverArt, children, link }: PhotoCardProps) => {
             <NavLink
                 to={link}
                 className={merge(
-                    'tw-w-full tw-max-w-[400px] tw-h-[550px] tw-flex tw-flex-col tw-justify-center tw-text-white tw-cursor-pointer tw-relative tw-z-[1] tw-bg-cover',
+                    'tw-w-full tw-max-w-[400px] tw-h-[550px] tw-flex tw-flex-col tw-justify-center tw-text-white tw-font-lora tw-text-4xl tw-cursor-pointer tw-relative tw-z-[1] tw-bg-cover',
+                    FOCUS_VISIBLE_STYLES,
                 )}
                 style={{ backgroundImage: `url("${coverArt.src}")` }}
             >
@@ -34,7 +36,7 @@ export const PhotoCard = ({ coverArt, children, link }: PhotoCardProps) => {
                         inView ? 'tw-opacity-100' : 'tw-opacity-0',
                     )}
                 />
-                <h3>{children}</h3>
+                <h3 className="tw-relative tw-z-[3]">{children}</h3>
             </NavLink>
         </Waypoint>
     );
