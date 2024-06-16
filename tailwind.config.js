@@ -4,6 +4,7 @@ export default {
     prefix: 'tw-',
     theme: {
         colors: {
+            'extra-light-green': '#E9EAE633',
             'light-green': '#637C5A',
             green: '#495C42',
             red: '#EB0027',
