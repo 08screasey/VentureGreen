@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 body {
     margin: 0;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans',
@@ -23,19 +27,19 @@ img {
 
 /*colours*/
 .Red {
-    color: #ff5370;
+    color: #eb0027;
 }
 .Cyan {
     color: #89ddff;
 }
 .PaleGreen {
-    color: #8ea989 !important;
+    color: #637c5a !important;
 }
 .PaleGreen-Bg {
     background: #8ea989;
 }
 .Green {
-    color: #6f994d;
+    color: #495c42;
 }
 .Grey {
     color: #aaa;
@@ -59,24 +63,6 @@ img {
 .F-OldStandard {
     font-family: old-standard, serif;
     font-weight: 400;
-    font-style: normal;
-}
-.F-Lato {
-    font-family: lato, sans-serif;
-    font-weight: 400;
-    font-style: normal;
-}
-.F-Lora {
-    font-family: 'lora', serif;
-    font-weight: 700;
-    font-style: normal;
-    letter-spacing: 1px;
-}
-.F-Code {
-    font-family: source-code-pro, monospace;
-
-    font-weight: 400;
-
     font-style: normal;
 }
 
