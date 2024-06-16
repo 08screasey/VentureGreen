@@ -14,8 +14,8 @@ export default {
         },
         fontFamily: {
             lora: ['lora', 'serif'],
-            lato: ['lato', 'sans-serif'],
             code: ['source-code-pro', 'monospace'],
+            'old-standard': ['old-standard', 'serif'],
         },
     },
     plugins: [],
