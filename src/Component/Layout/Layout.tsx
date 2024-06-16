@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Fade as Hamburger } from 'hamburger-react';
 import { type ReactNode, useState, useEffect } from 'react';
 
+import { FOCUS_VISIBLE_STYLES } from '../../Utility/focusStyles';
 import { merge } from '../../Utility/merge';
 import { useKeypress } from '../../Utility/useKeypress';
 import { Footer } from '../Footer/Footer';
@@ -31,15 +32,25 @@ export const Layout = ({ children }: LayoutProps) => {
 
     return (
         <div>
-            <header className={merge(!isAtTop && 'tw-shadow-md', 'tw-transition-shadow')}>
+            <header
+                className={merge(
+                    !isAtTop && 'tw-shadow-md',
+                    'tw-transition-shadow tw-w-full tw-fixed tw-top-0 tw-left-0 tw-z-[4] tw-bg-white',
+                )}
+            >
                 <nav className="tw-flex tw-items-center tw-justify-between tw-px-8 tw-pb-4 tw-pt-6">
-                    <Hamburger toggled={isMenuOpen} toggle={setIsMenuOpen} size={20} />
+                    <button
+                        className={merge('tw-rounded', FOCUS_VISIBLE_STYLES)}
+                        onClick={() => setIsMenuOpen((isOpen) => !isOpen)}
+                    >
+                        <Hamburger toggled={isMenuOpen} size={20} hideOutline={false} />
+                    </button>
                     <h1 className="tw-w-full tw-text-xl tw-mb-0 tw-max-w-[500px] tw-m-auto tw-text-light-green tw-font-lora tw-font-bold">
                         <img src="/venturegreen.png" className="tw-h-[75px] tw-mx-auto" alt="Venture Green Logo" />
                         <div>Adventure Photography & Web Development</div>
                     </h1>
                     <a
-                        className="tw-p-4 tw-rounded"
+                        className={merge('tw-p-4 tw-rounded', FOCUS_VISIBLE_STYLES)}
                         rel="noopener noreferrer"
                         href="https://www.instagram.com/venturegreenphotography/"
                         target="_blank"
@@ -49,7 +60,7 @@ export const Layout = ({ children }: LayoutProps) => {
                     <SlideMenu showMenu={isMenuOpen} handleClick={() => setIsMenuOpen(false)} />
                 </nav>
             </header>
-            <main>{children}</main>
+            <main className="md:tw-min-h-[100vh] md:tw-pt-[150px]">{children}</main>
             <Footer />
         </div>
     );

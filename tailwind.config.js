@@ -8,6 +8,7 @@ export default {
             green: '#495C42',
             red: '#EB0027',
             cyan: '#009DDB',
+            white: '#FFFFFF',
         },
         fontFamily: {
             lora: ['lora', 'serif'],

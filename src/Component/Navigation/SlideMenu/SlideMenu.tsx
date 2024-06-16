@@ -6,22 +6,26 @@ type SlideMenuProps = {
     showMenu: boolean;
 };
 
-export const SlideMenu = (props: SlideMenuProps) => (
-    <div className={props.showMenu ? 'SlideMenu Show' : 'SlideMenu'}>
-        <MenuItem link="/" onClick={props.handleClick}>
-            Home
-        </MenuItem>
-        <MenuItem link="/photography" onClick={props.handleClick}>
-            Photography
-        </MenuItem>
-        <MenuItem link="/development" onClick={props.handleClick}>
-            Development
-        </MenuItem>
-        <MenuItem link="/about-me" onClick={props.handleClick}>
-            About Me
-        </MenuItem>
-        <MenuItem link="/contact" onClick={props.handleClick}>
-            Contact
-        </MenuItem>
+export const SlideMenu = ({ showMenu, handleClick }: SlideMenuProps) => (
+    <div className={showMenu ? 'SlideMenu Show' : 'SlideMenu'}>
+        {showMenu && (
+            <>
+                <MenuItem link="/" onClick={handleClick}>
+                    Home
+                </MenuItem>
+                <MenuItem link="/photography" onClick={handleClick}>
+                    Photography
+                </MenuItem>
+                <MenuItem link="/development" onClick={handleClick}>
+                    Development
+                </MenuItem>
+                <MenuItem link="/about-me" onClick={handleClick}>
+                    About Me
+                </MenuItem>
+                <MenuItem link="/contact" onClick={handleClick}>
+                    Contact
+                </MenuItem>
+            </>
+        )}
     </div>
 );
