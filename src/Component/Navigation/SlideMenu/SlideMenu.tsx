@@ -10,7 +10,7 @@ type SlideMenuProps = {
 export const SlideMenu = ({ showMenu, handleClick }: SlideMenuProps) => (
     <div
         className={merge(
-            'tw-fixed tw-h-full tw-w-full tw-max-w-[400px] tw-top-0 tw-left-0 tw-transition-transform tw-bg-white tw-flex tw-flex-col tw-items-center tw-justify-center tw-z-[5] tw-shadow-lg',
+            'tw-fixed tw-left-0 tw-top-0 tw-z-[5] tw-flex tw-h-full tw-w-full tw-max-w-[400px] tw-flex-col tw-items-center tw-justify-center tw-bg-white tw-shadow-lg tw-transition-transform',
             showMenu ? '' : 'tw-translate-x-[-100%]',
         )}
     >

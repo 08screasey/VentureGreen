@@ -1,9 +1,9 @@
 import { DevCards } from '../../Component/Development/DevCards/DevCards';
 
 export const Development = () => (
-    <div className="tw-pt-[30px] tw-pb-[150px] tw-bg-fixed tw-bg-no-repeat tw-bg-center tw-bg-cover tw-bg-[url(/development/background.jpg)]">
-        <h2 className="tw-font-lora tw-text-light-green tw-font-bold tw-font-3xl">Web Development</h2>
-        <div className="tw-p-4 tw-max-w-[600px] tw-mx-auto">
+    <div className="tw-bg-[url(/development/background.jpg)] tw-bg-cover tw-bg-fixed tw-bg-center tw-bg-no-repeat tw-pb-[150px] tw-pt-[30px]">
+        <h2 className="tw-font-3xl tw-font-lora tw-font-bold tw-text-light-green">Web Development</h2>
+        <div className="tw-mx-auto tw-max-w-[600px] tw-p-4">
             <p className="tw-font-code">
                 {'<'}
                 <span style={{ color: 'red' }}>p</span>
@@ -11,7 +11,7 @@ export const Development = () => (
                 <span style={{ color: 'red' }}>p</span>
                 {'>'}
             </p>
-            <p className="tw-font-code mb-3">
+            <p className="tw-mb-3 tw-font-code">
                 {'<'}
                 <span style={{ color: 'red' }}>p</span>
                 {'>'} With a mathematical background, I have always excelled in problem solving. It was a revelation to

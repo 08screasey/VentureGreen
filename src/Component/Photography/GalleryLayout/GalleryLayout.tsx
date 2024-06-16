@@ -38,13 +38,13 @@ export const GalleryLayout = ({ album }: GalleryLayoutProps) => {
                     alt={images[index].alt ?? ''}
                 />
             ) : null}
-            <div className="tw-w-full tw-max-w-[600px] tw-mx-auto tw-px-1">
+            <div className="tw-mx-auto tw-w-full tw-max-w-[600px] tw-px-1">
                 <h2 className="tw-font-lora">{header}</h2>
                 <p className="tw-font-lora">{subheader}</p>
                 {images.map(({ src, alt }, i) => (
                     <img
                         key={i}
-                        className="tw-w-full tw-mx-auto tw-mb-4 tw-cursor-pointer"
+                        className="tw-mx-auto tw-mb-4 tw-w-full tw-cursor-pointer"
                         src={src}
                         alt={alt ?? src}
                         onClick={() => openGallery(i)}

@@ -25,14 +25,14 @@ export const PhotoCard = ({ coverArt, children, link }: PhotoCardProps) => {
             <NavLink
                 to={link}
                 className={merge(
-                    'tw-w-full tw-max-w-[400px] tw-h-[550px] tw-flex tw-flex-col tw-justify-center tw-text-white tw-font-lora tw-text-4xl tw-cursor-pointer tw-relative tw-z-[1] tw-bg-cover',
+                    'tw-relative tw-z-[1] tw-flex tw-h-[550px] tw-w-full tw-max-w-[400px] tw-cursor-pointer tw-flex-col tw-justify-center tw-bg-cover tw-font-lora tw-text-4xl tw-text-white',
                     FOCUS_VISIBLE_STYLES,
                 )}
                 style={{ backgroundImage: `url("${coverArt.src}")` }}
             >
                 <div
                     className={merge(
-                        'tw-w-full tw-h-full tw-absolute tw-top-0 tw-left-0 tw-z-[2] tw-transition-opacity tw-bg-black/50',
+                        'tw-absolute tw-left-0 tw-top-0 tw-z-[2] tw-h-full tw-w-full tw-bg-black/50 tw-transition-opacity',
                         inView ? 'tw-opacity-100' : 'tw-opacity-0',
                     )}
                 />

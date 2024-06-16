@@ -8,7 +8,7 @@ const ContactLink = ({ children, href, label }: PropsWithChildren<{ href: string
         rel="noopener noreferrer"
         href={href}
         target="_blank"
-        className="tw-rounded-full tw-p-2 tw-w-12 tw-h-12 tw-inline-flex tw-items-center tw-justify-center tw-text-white tw-bg-green tw-animate-pulse"
+        className="tw-inline-flex tw-h-12 tw-w-12 tw-animate-pulse tw-items-center tw-justify-center tw-rounded-full tw-bg-green tw-p-2 tw-text-white"
         aria-label={label}
     >
         {children}
@@ -16,8 +16,8 @@ const ContactLink = ({ children, href, label }: PropsWithChildren<{ href: string
 );
 
 export const Contact = () => (
-    <div className="tw-w-[95%] tw-max-w-[800px] tw-mx-auto tw-pb-[90px] tw-px-2 tw-mt-3">
-        <h1 className="tw-font-lora tw-green tw-mb-4">Contact Me</h1>
+    <div className="tw-mx-auto tw-mt-3 tw-w-[95%] tw-max-w-[800px] tw-px-2 tw-pb-[90px]">
+        <h1 className="tw-green tw-mb-4 tw-font-lora">Contact Me</h1>
         <img
             className="tw-mx-auto tw-mb-4 tw-aspect-square tw-w-[75vw] tw-max-w-[350px] tw-rounded-full tw-bg-cover"
             src="/about/about-mountain.jpg"
@@ -36,7 +36,7 @@ export const Contact = () => (
         </p>
         <p className="tw-font-old-standard">~ Sam</p>
         <div className="tw-relative">
-            <div className="tw-flex tw-w-full tw-justify-around tw-mt-4">
+            <div className="tw-mt-4 tw-flex tw-w-full tw-justify-around">
                 <ContactLink href="mailto:screasey97@gmail.com" label="Email">
                     <FontAwesomeIcon icon={faEnvelope} size="2x" />
                 </ContactLink>

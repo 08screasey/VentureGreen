@@ -35,7 +35,7 @@ export const Layout = ({ children }: LayoutProps) => {
             <header
                 className={merge(
                     !isAtTop && 'tw-shadow-md',
-                    'tw-transition-shadow tw-w-full tw-fixed tw-top-0 tw-left-0 tw-z-[4] tw-bg-white',
+                    'tw-fixed tw-left-0 tw-top-0 tw-z-[4] tw-w-full tw-bg-white tw-transition-shadow',
                 )}
             >
                 <nav className="tw-flex tw-items-center tw-justify-between tw-px-8 tw-pb-4 tw-pt-6">
@@ -45,12 +45,12 @@ export const Layout = ({ children }: LayoutProps) => {
                     >
                         <Hamburger toggled={isMenuOpen} size={20} hideOutline={false} />
                     </button>
-                    <h1 className="tw-w-full tw-text-xl tw-mb-0 tw-max-w-[500px] tw-m-auto tw-text-light-green tw-font-lora tw-font-bold">
-                        <img src="/venturegreen.png" className="tw-h-[75px] tw-mx-auto" alt="Venture Green Logo" />
+                    <h1 className="tw-m-auto tw-mb-0 tw-w-full tw-max-w-[500px] tw-font-lora tw-text-xl tw-font-bold tw-text-light-green">
+                        <img src="/venturegreen.png" className="tw-mx-auto tw-h-[75px]" alt="Venture Green Logo" />
                         <div>Adventure Photography & Web Development</div>
                     </h1>
                     <a
-                        className={merge('tw-p-4 tw-rounded', FOCUS_VISIBLE_STYLES)}
+                        className={merge('tw-rounded tw-p-4', FOCUS_VISIBLE_STYLES)}
                         rel="noopener noreferrer"
                         href="https://www.instagram.com/venturegreenphotography/"
                         target="_blank"
