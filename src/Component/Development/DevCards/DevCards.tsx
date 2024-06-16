@@ -1,8 +1,7 @@
 import { DevCard } from './DevCard/DevCard';
-import './DevCards.css';
 
 export const DevCards = () => (
-    <div className="DevCards">
+    <div className="tw-m-1">
         <DevCard
             header="Columbia Valley Hut Society"
             api={['Paypal Rest SDK', 'SendGrid']}
