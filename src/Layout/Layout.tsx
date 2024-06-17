@@ -3,11 +3,12 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Fade as Hamburger } from 'hamburger-react';
 import { type ReactNode, useState, useEffect } from 'react';
 
-import { FOCUS_VISIBLE_STYLES } from '../../Utility/focusStyles';
-import { merge } from '../../Utility/merge';
-import { useKeypress } from '../../Utility/useKeypress';
-import { Footer } from '../Footer/Footer';
-import { SlideMenu } from '../Navigation/SlideMenu/SlideMenu';
+import { FOCUS_VISIBLE_STYLES } from '../Utility/focusStyles';
+import { merge } from '../Utility/merge';
+import { useKeypress } from '../Utility/useKeypress';
+
+import { Footer } from './Footer/Footer';
+import { SlideMenu } from './SlideMenu/SlideMenu';
 
 type LayoutProps = {
     children: ReactNode;

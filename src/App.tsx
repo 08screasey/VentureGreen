@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import { Routes, Route, useLocation } from 'react-router-dom';
 
-import { Layout } from './Component/Layout/Layout';
+import { Layout } from './Layout/Layout';
 import { About } from './Pages/About/About';
 import { Contact } from './Pages/Contact/Contact';
 import { Development } from './Pages/Development/Development';

@@ -6,7 +6,7 @@ export const TypingEffect = (props: TypingEffectProps) => {
     return (
         <>
             {output}
-            <span className="Typer"></span>
+            <span className="tw-animate-flicker tw-border-l-golden tw-border-4 tw-border-l tw-border-solid"></span>
         </>
     );
 };

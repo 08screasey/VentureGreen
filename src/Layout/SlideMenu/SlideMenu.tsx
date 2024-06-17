@@ -1,4 +1,4 @@
-import { merge } from '../../../Utility/merge';
+import { merge } from '../../Utility/merge';
 
 import { MenuItem } from './MenuItem/MenuItem';
 

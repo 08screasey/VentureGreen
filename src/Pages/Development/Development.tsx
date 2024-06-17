@@ -1,4 +1,4 @@
-import { DevCards } from '../../Component/Development/DevCards/DevCards';
+import { DevCards } from '../../Feature/Development/DevCards/DevCards';
 
 export const Development = () => (
     <div className="tw-bg-[url(/development/background.jpg)] tw-bg-cover tw-bg-fixed tw-bg-center tw-bg-no-repeat tw-pb-[150px] tw-pt-[30px]">

@@ -1,7 +1,7 @@
 import { PropsWithChildren } from 'react';
 import { NavLink } from 'react-router-dom';
 
-import { merge } from '../../../../Utility/merge';
+import { merge } from '../../../Utility/merge';
 
 type MenuItemProps = PropsWithChildren<{
     onClick: () => void;
