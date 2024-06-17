@@ -38,7 +38,7 @@ export const SlideMenu = ({ onClose }: SlideMenuProps) => {
                     aria-label="Close menu"
                     className={merge(
                         FOCUS_VISIBLE_STYLES,
-                        'tw-absolute tw-left-4 tw-top-4 tw-flex tw-h-8 tw-w-8 tw-items-center tw-justify-center tw-rounded',
+                        'tw-absolute tw-left-6 tw-top-6 tw-flex tw-h-8 tw-w-8 tw-items-center tw-justify-center tw-rounded hover:tw-bg-extra-light-green',
                     )}
                     onClick={onClose}
                 >

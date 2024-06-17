@@ -17,7 +17,7 @@ const ContactLink = ({ children, href, label }: PropsWithChildren<{ href: string
 
 export const Contact = () => (
     <div className="tw-mx-auto tw-mt-3 tw-w-[95%] tw-max-w-[800px] tw-px-2 tw-pb-[90px]">
-        <h1 className="tw-green tw-mb-4 tw-font-lora">Contact Me</h1>
+        <h2 className="tw-mb-4 tw-text-center tw-font-lora tw-text-4xl tw-font-bold tw-text-light-green">Contact Me</h2>
         <img
             className="tw-mx-auto tw-mb-4 tw-aspect-square tw-w-[75vw] tw-max-w-[350px] tw-rounded-full tw-bg-cover"
             src="/about/about-mountain.jpg"

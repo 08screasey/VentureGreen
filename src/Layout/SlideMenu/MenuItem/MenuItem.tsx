@@ -15,7 +15,7 @@ export const MenuItem = ({ onClick, link, children }: MenuItemProps) => (
         onClick={onClick}
         className={({ isActive }) =>
             merge(
-                isActive ? 'tw-font-bold' : '',
+                isActive ? 'tw-font-bold tw-underline' : '',
                 'tw-w-full tw-p-6 tw-font-lora tw-text-4xl tw-text-green tw-transition-colors hover:tw-bg-extra-light-green',
                 FOCUS_VISIBLE_STYLES,
             )
