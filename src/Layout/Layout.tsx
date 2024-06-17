@@ -1,7 +1,7 @@
 import { faInstagram } from '@fortawesome/free-brands-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { AnimatePresence } from 'framer-motion';
-import { type ReactNode, useState, useEffect } from 'react';
+import { type ReactNode, useState, useEffect, useCallback } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 
 import { Hamburger } from '../Common/Hamburger/Hamburger';
@@ -32,9 +32,17 @@ export const Layout = ({ children }: LayoutProps) => {
 
     const { pathname } = useLocation();
 
-    useEffect(() => {
+    const openMenu = useCallback(() => {
+        setIsMenuOpen(true);
+    }, []);
+
+    const closeMenu = useCallback(() => {
         setIsMenuOpen(false);
-    }, [pathname]);
+    }, []);
+
+    useEffect(() => {
+        closeMenu();
+    }, [pathname, closeMenu]);
 
     return (
         <div>
@@ -45,7 +53,7 @@ export const Layout = ({ children }: LayoutProps) => {
                 )}
             >
                 <nav className="tw-flex tw-items-center tw-justify-between tw-px-8 tw-pb-4 tw-pt-6">
-                    <Hamburger onClick={() => setIsMenuOpen(true)} label="Open Menu" />
+                    <Hamburger onClick={openMenu} label="Open Menu" />
                     <h1 className="tw-m-auto tw-mb-0 tw-flex tw-max-w-[500px] tw-flex-col tw-items-center tw-font-lora tw-text-xl tw-font-bold tw-text-light-green">
                         <Link to="/" className={FOCUS_VISIBLE_STYLES}>
                             <img
@@ -65,7 +73,7 @@ export const Layout = ({ children }: LayoutProps) => {
                         <FontAwesomeIcon icon={faInstagram} size="2x" />
                     </a>
                     <AnimatePresence>
-                        {isMenuOpen && <SlideMenu showMenu={isMenuOpen} onClose={() => setIsMenuOpen(false)} />}
+                        {isMenuOpen && <SlideMenu showMenu={isMenuOpen} onClose={closeMenu} />}
                     </AnimatePresence>
                 </nav>
             </header>

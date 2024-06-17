@@ -1,10 +1,12 @@
 import { faXmark } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { motion } from 'framer-motion';
+import { useRef } from 'react';
 import ReactFocusLock from 'react-focus-lock';
 
 import { FOCUS_VISIBLE_STYLES } from '../../Utility/focusStyles';
 import { merge } from '../../Utility/merge';
+import { useClickOutside } from '../../Utility/useClickOutside';
 import { useKeypress } from '../../Utility/useKeypress';
 
 import { MenuItem } from './MenuItem/MenuItem';
@@ -15,7 +17,10 @@ type SlideMenuProps = {
 };
 
 export const SlideMenu = ({ onClose }: SlideMenuProps) => {
+    const menuRef = useRef<HTMLDivElement>(null);
+
     useKeypress({ key: 'Escape', callback: onClose });
+    useClickOutside({ ref: menuRef, callback: onClose });
 
     return (
         <ReactFocusLock>
@@ -27,6 +32,7 @@ export const SlideMenu = ({ onClose }: SlideMenuProps) => {
                 animate={{ x: '0%' }}
                 exit={{ x: '-100%' }}
                 transition={{ type: 'tween', duration: 0.2 }}
+                ref={menuRef}
             >
                 <button
                     aria-label="Close menu"
