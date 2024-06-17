@@ -4,7 +4,6 @@ import { GalleryLayout } from '../../Feature/Photography/GalleryLayout/GalleryLa
 import { PhotoCard } from '../../Feature/Photography/PhotoCard/PhotoCard';
 import { PhotoGrid } from '../../Feature/Photography/PhotoGrid/PhotoGrid';
 
-import './Photography.css';
 import { PHOTOGRAPHY_COLLECTIONS } from './albums';
 
 const PhotoCollection = ({ albums }: { albums: typeof PHOTOGRAPHY_COLLECTIONS }) => (
@@ -38,7 +37,7 @@ const PhotoCollection = ({ albums }: { albums: typeof PHOTOGRAPHY_COLLECTIONS })
 );
 
 export const Photography = () => (
-    <div className="Photography">
+    <div className="tw-min-h-[80vh] tw-bg-[url('/backgrounds/berg.jpg')] tw-bg-cover tw-bg-fixed tw-bg-bottom tw-bg-no-repeat tw-pb-20 tw-pt-7">
         <PhotoCollection albums={PHOTOGRAPHY_COLLECTIONS} />
     </div>
 );

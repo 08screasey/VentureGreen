@@ -8,8 +8,8 @@ export const Laptop = () => {
     const scrollProps = useAutoScroll({ scrollRef, duration: 120000, delay: 2 * 1000 });
 
     return (
-        <div className="tw-relative tw-scale-90">
-            <div className="tw-absolute tw-left-[44px] tw-top-[16px] tw-z-[1] tw-h-[245px] tw-w-[366px] tw-overflow-hidden">
+        <div className="tw-relative tw-leading-none">
+            <div className="tw-absolute tw-left-[44px] tw-top-4 tw-z-[1] tw-h-[245px] tw-w-[366px] tw-overflow-hidden">
                 <div className="tw-h-full tw-w-full tw-overflow-y-auto" ref={scrollRef} {...scrollProps} tabIndex={0}>
                     <img src="/home/website.jpg" className="tw-block tw-w-full" />
                 </div>

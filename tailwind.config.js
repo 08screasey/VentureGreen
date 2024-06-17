@@ -12,11 +12,15 @@ export default {
             white: '#FFFFFF',
             black: '#000000',
             golden: '#FFCB6B',
+            transparent: '#FFFFFF00',
+            grey: '#ccc',
         },
         fontFamily: {
             lora: ['lora', 'serif'],
             code: ['source-code-pro', 'monospace'],
             'old-standard': ['old-standard', 'serif'],
+            active: ['active', 'sans-serif'],
+            bodini: ['ltc-bodoni-175', 'serif'],
         },
         extend: {
             animation: {

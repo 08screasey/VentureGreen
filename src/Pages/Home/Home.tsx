@@ -11,7 +11,6 @@ import { merge } from '../../Utility/merge';
 import { useIntersectionObserver } from '../../Utility/useIntersectionObserver';
 import LeftBrain from '../../assets/brainLeft.svg';
 import RightBrain from '../../assets/brainRight.svg';
-import './Home.css';
 
 const CONTENT = [
     { text: '<', className: 'Cyan' },
@@ -45,56 +44,90 @@ export const Home = () => {
     });
 
     return (
-        <div className="Home tw-pt-3">
-            <h1
-                className="tw-mx-auto tw-font-lora tw-text-green"
-                style={{
-                    fontSize: '30px',
-                    borderTop: '1px solid #CCC',
-                    paddingTop: '30px',
-                    textShadow: '1px 1px #eee',
-                }}
-            >
-                Portfolio
-            </h1>
-            <p
-                className="tw-mx-auto tw-font-lora"
-                style={{
-                    fontSize: '14px',
-                    marginBottom: '30px',
-                    marginTop: '20px',
-                    color: '#888',
-                    width: '80%',
-                }}
-            >
-                For web development projects select the left side of his brain. To view photography gallery select the
-                right side.
-            </p>
-            <div className="Flex">
-                <Link to="/development" className={merge('tw-relative', FOCUS_VISIBLE_STYLES)} ref={devCardRef}>
-                    <h2 className="tw-z-[4] tw-mx-auto tw-mb-0 tw-w-full tw-font-code tw-text-4xl">
+        <div className="tw-pt-28">
+            <div className="tw-flex tw-flex-wrap tw-items-center tw-justify-around">
+                <Link
+                    to="/development"
+                    className={merge('tw-relative tw-flex tw-flex-col tw-gap-0', FOCUS_VISIBLE_STYLES)}
+                    ref={devCardRef}
+                >
+                    <Laptop />
+                    <h2 className="tw-z-[4] tw-mx-auto tw-w-full tw-font-code tw-text-4xl">
                         <TypingEffect enabled={isDevInView} content={CONTENT} />
                     </h2>
-                    <Laptop />
                 </Link>
-                <div className="HomeBreak">
-                    <div className="Brain tw-mb-5 tw-flex tw-justify-center">
-                        <Link className={isDevInView ? 'LeftBrain Active' : 'LeftBrain'} to="/development">
-                            <img alt="" src="/home/brainLeftOverLay.png" className="BrainOverlay" />
-                            <img alt="" src="/home/brainLeftText1.png" className="Text Text1" />
-                            <img alt="" src="/home/brainLeftText2.png" className="Text Text2" />
-                            <FontAwesomeIcon icon={faLevelUpAlt} className="Arrow PaleGreen" />
-                            <LeftBrain />
-                        </Link>
+                <div className="tw-mb-5 tw-flex tw-justify-center tw-gap-x-2">
+                    <Link to="/development" className={merge('tw-relative tw-w-[90px]', FOCUS_VISIBLE_STYLES)}>
+                        <img
+                            alt=""
+                            src="/home/brainLeftText1.png"
+                            className={merge(
+                                isDevInView ? 'tw-translate-x-0' : 'tw-translate-x-14',
+                                'tw-absolute tw-left-[-30px] tw-top-[10px] tw-w-[52px] tw-max-w-[unset] tw-transition-all',
+                            )}
+                        />
+                        <img
+                            alt=""
+                            src="/home/brainLeftText2.png"
+                            className={merge(
+                                isDevInView ? 'tw-translate-x-0' : 'tw-translate-x-14',
+                                'tw-absolute tw-left-[-30px] tw-top-[100px] tw-w-[52px] tw-max-w-[unset] tw-transition-all',
+                            )}
+                        />
+                        <FontAwesomeIcon
+                            icon={faLevelUpAlt}
+                            size="3x"
+                            className={merge(
+                                isDevInView ? 'tw-translate-y-0 tw-scale-100' : 'tw-translate-y-20 tw-scale-0',
+                                'tw-absolute tw-left-[30px] tw-top-[-50px] -tw-rotate-90 tw-text-green tw-transition-all',
+                            )}
+                        />
+                        <LeftBrain className="tw-fill-grey tw-relative tw-z-[2] tw-w-full" />
+                        <img
+                            alt=""
+                            src="/home/brainLeftOverLay.png"
+                            className={merge(
+                                isDevInView ? 'tw-scale-1 tw-opacity-100' : 'tw-scale-0 tw-opacity-0',
+                                'tw-absolute tw-right-0 tw-top-0 tw-z-[3] tw-h-full tw-w-auto tw-max-w-[unset] tw-origin-right tw-transition-all',
+                            )}
+                        />
+                    </Link>
 
-                        <Link className={isPhotoInView ? 'RightBrain Active' : 'RightBrain'} to="/photography">
-                            <RightBrain />
-                            <img alt="" src="/home/brainRightOverLay.png" className="BrainOverlay" />
-                            <img alt="" src="/home/brainRightText1.png" className="Text Text1" />
-                            <img alt="" src="/home/brainRightText2.png" className="Text Text2" />
-                            <FontAwesomeIcon icon={faLevelUpAlt} className="Arrow Cyan" />
-                        </Link>
-                    </div>
+                    <Link to="/photography" className={merge('tw-relative tw-w-[90px]', FOCUS_VISIBLE_STYLES)}>
+                        <img
+                            alt=""
+                            src="/home/brainRightText1.png"
+                            className={merge(
+                                isPhotoInView ? 'tw-translate-x-0' : '-tw-translate-x-14',
+                                'tw-absolute tw-right-[-28px] tw-top-[5px] tw-w-[52px] tw-max-w-[unset] tw-transition-all',
+                            )}
+                        />
+                        <img
+                            alt=""
+                            src="/home/brainRightText2.png"
+                            className={merge(
+                                isPhotoInView ? 'tw-translate-x-0' : '-tw-translate-x-14',
+                                'tw-absolute tw-right-[-28px] tw-top-[90px] tw-w-[52px] tw-max-w-[unset] tw-transition-all',
+                            )}
+                        />
+                        <FontAwesomeIcon
+                            icon={faLevelUpAlt}
+                            size="3x"
+                            className={merge(
+                                isPhotoInView ? 'tw-translate-y-0 tw-scale-100' : '-tw-translate-y-20 tw-scale-0',
+                                'tw-absolute tw-bottom-[-50px] tw-right-[30px] tw-rotate-90 tw-text-cyan tw-transition-all',
+                            )}
+                        />
+                        <RightBrain className="tw-fill-grey tw-relative tw-z-[2] tw-w-full" />
+                        <img
+                            alt=""
+                            src="/home/brainRightOverLay.png"
+                            className={merge(
+                                isPhotoInView ? 'tw-scale-1 tw-opacity-100' : 'tw-scale-0 tw-opacity-0',
+                                'tw-absolute tw-top-0 tw-z-[3] tw-h-full tw-w-auto tw-max-w-[unset] tw-origin-left tw-transition-all',
+                            )}
+                        />
+                    </Link>
                 </div>
 
                 <PhotoStack isInView={isPhotoInView} ref={photoCardRef} />

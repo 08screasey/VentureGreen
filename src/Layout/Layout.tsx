@@ -61,7 +61,7 @@ export const Layout = ({ children }: LayoutProps) => {
                     <SlideMenu showMenu={isMenuOpen} handleClick={() => setIsMenuOpen(false)} />
                 </nav>
             </header>
-            <main className="md:tw-min-h-[100vh] md:tw-pt-[150px]">{children}</main>
+            <main className="md:tw-min-h-[90vh] md:tw-pt-[150px]">{children}</main>
             <Footer />
         </div>
     );
