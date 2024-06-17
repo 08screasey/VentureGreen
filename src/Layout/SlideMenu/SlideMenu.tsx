@@ -1,37 +1,54 @@
+import { faXmark } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { motion } from 'framer-motion';
+import ReactFocusLock from 'react-focus-lock';
+
+import { FOCUS_VISIBLE_STYLES } from '../../Utility/focusStyles';
 import { merge } from '../../Utility/merge';
+import { useKeypress } from '../../Utility/useKeypress';
 
 import { MenuItem } from './MenuItem/MenuItem';
 
 type SlideMenuProps = {
-    handleClick: () => void;
+    onClose: () => void;
     showMenu: boolean;
 };
 
-export const SlideMenu = ({ showMenu, handleClick }: SlideMenuProps) => (
-    <div
-        className={merge(
-            'tw-fixed tw-left-0 tw-top-0 tw-z-[5] tw-flex tw-h-full tw-w-full tw-max-w-[400px] tw-flex-col tw-items-center tw-justify-center tw-bg-white tw-shadow-lg tw-transition-transform',
-            showMenu ? '' : 'tw-translate-x-[-100%]',
-        )}
-    >
-        {showMenu && (
-            <>
-                <MenuItem link="/" onClick={handleClick}>
-                    Home
-                </MenuItem>
-                <MenuItem link="/photography" onClick={handleClick}>
-                    Photography
-                </MenuItem>
-                <MenuItem link="/development" onClick={handleClick}>
-                    Development
-                </MenuItem>
-                <MenuItem link="/about-me" onClick={handleClick}>
-                    About Me
-                </MenuItem>
-                <MenuItem link="/contact" onClick={handleClick}>
-                    Contact
-                </MenuItem>
-            </>
-        )}
-    </div>
-);
+export const SlideMenu = ({ onClose }: SlideMenuProps) => {
+    useKeypress({ key: 'Escape', callback: onClose });
+
+    return (
+        <ReactFocusLock>
+            <motion.div
+                className={merge(
+                    'tw-fixed tw-left-0 tw-top-0 tw-z-[11] tw-h-full tw-w-full tw-max-w-[400px] tw-bg-white tw-shadow-lg',
+                )}
+                initial={{ x: '-100%' }}
+                animate={{ x: '0%' }}
+                exit={{ x: '-100%' }}
+                transition={{ type: 'tween', duration: 0.2 }}
+            >
+                <button
+                    aria-label="Close menu"
+                    className={merge(
+                        FOCUS_VISIBLE_STYLES,
+                        'tw-absolute tw-left-4 tw-top-4 tw-flex tw-h-8 tw-w-8 tw-items-center tw-justify-center tw-rounded',
+                    )}
+                    onClick={onClose}
+                >
+                    <FontAwesomeIcon icon={faXmark} size="2x" className="tw-text-green" />
+                </button>
+                <div
+                    className="tw-flex tw-h-full tw-w-full tw-flex-col tw-items-center tw-justify-center"
+                    aria-role="navigation"
+                >
+                    <MenuItem link="/">Home</MenuItem>
+                    <MenuItem link="/photography">Photography</MenuItem>
+                    <MenuItem link="/development">Development</MenuItem>
+                    <MenuItem link="/about-me">About Me</MenuItem>
+                    <MenuItem link="/contact">Contact</MenuItem>
+                </div>
+            </motion.div>
+        </ReactFocusLock>
+    );
+};

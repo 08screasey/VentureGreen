@@ -1,10 +1,11 @@
 import { PropsWithChildren } from 'react';
 import { NavLink } from 'react-router-dom';
 
+import { FOCUS_VISIBLE_STYLES } from '../../../Utility/focusStyles';
 import { merge } from '../../../Utility/merge';
 
 type MenuItemProps = PropsWithChildren<{
-    onClick: () => void;
+    onClick?: () => void;
     link: string;
 }>;
 
@@ -16,6 +17,7 @@ export const MenuItem = ({ onClick, link, children }: MenuItemProps) => (
             merge(
                 isActive ? 'tw-font-bold' : '',
                 'tw-w-full tw-p-6 tw-font-lora tw-text-4xl tw-text-green tw-transition-colors hover:tw-bg-extra-light-green',
+                FOCUS_VISIBLE_STYLES,
             )
         }
     >
