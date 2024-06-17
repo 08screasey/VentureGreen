@@ -13,7 +13,8 @@ export default {
             black: '#000000',
             golden: '#FFCB6B',
             transparent: '#FFFFFF00',
-            grey: '#ccc',
+            grey: '#CCCCCC',
+            'light-grey': '#EEEEEE',
         },
         fontFamily: {
             lora: ['lora', 'serif'],

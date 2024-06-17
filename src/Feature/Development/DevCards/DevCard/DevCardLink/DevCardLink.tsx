@@ -6,7 +6,7 @@ export const DevCardLink = ({ children, href }: DevCardLinkProps) => (
     <a
         href={href}
         rel="noopener noreferrer"
-        className="tw-group/link tw-relative tw-w-[150px] tw-rounded tw-border tw-px-3 tw-py-2 tw-text-left tw-font-lora tw-shadow-md tw-transition-all hover:tw-w-[170px] focus-visible:tw-w-[170px]"
+        className="tw-group/link tw-border-grey tw-relative tw-w-[150px] tw-rounded tw-border tw-px-3 tw-py-2 tw-text-left tw-font-lora tw-shadow-md tw-transition-all hover:tw-w-[170px] focus-visible:tw-w-[170px]"
         target="_blank"
     >
         {children}

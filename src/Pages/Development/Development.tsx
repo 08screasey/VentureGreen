@@ -7,7 +7,7 @@ const CONTENT: TypingEffectProps['content'] = [
     { text: 'p', className: 'tw-text-red' },
     { text: '>', className: 'tw-text-cyan' },
     {
-        text: ' As a self taught programmer with a mathematical background, I have always excelled in problem solving. It was a revelation to discover that web development was a skill that would satisfy both sides of my brain. ',
+        text: ' With a mathematical background, I have always excelled in problem solving. Web development for me is a place where I can apply those skills with creativity. ',
     },
     { text: '</', className: 'tw-text-cyan' },
     { text: 'p', className: 'tw-text-red' },
