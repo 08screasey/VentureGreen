@@ -1,51 +1,29 @@
 import { faLevelUpAlt } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Waypoint } from 'react-waypoint';
 
-import './Home.css';
+import { TypingEffect } from '../../Common/TypingEffect';
 import LeftBrain from '../../assets/brainLeft.svg';
 import RightBrain from '../../assets/brainRight.svg';
+import './Home.css';
+
+const CONTENT = [
+    { text: '<', className: 'Cyan' },
+    { text: 'a', className: 'Red' },
+    { text: '>', className: 'Cyan' },
+    { text: 'Development', className: 'tw-text-white' },
+    { text: '</', className: 'Cyan' },
+    { text: 'a', className: 'Red' },
+    { text: '>', className: 'Cyan' },
+];
 
 export const Home = () => {
     const navigate = useNavigate();
 
     const [photoView, setPhotoView] = useState(false);
     const [devView, setDevView] = useState(false);
-    const content = [
-        <span className="Cyan">{'<'}</span>,
-        <span className="Red">a</span>,
-        <span className="Cyan">{'>'}</span>,
-        'D',
-        'e',
-        'v',
-        'e',
-        'l',
-        'o',
-        'p',
-        'm',
-        'e',
-        'n',
-        't',
-        <span className="Cyan">{'<'}</span>,
-        <span className="Cyan">{'/'}</span>,
-        <span className="Red">a</span>,
-        <span className="Cyan">{'>'}</span>,
-    ];
-    const [devContent, setDevContent] = useState<(string | JSX.Element)[]>([]);
-    const startTyping = () => {
-        if (devContent.length < 1) {
-            content.forEach((_el, i) => {
-                setTimeout(
-                    () => {
-                        setDevContent(content.slice(0, i + 1));
-                    },
-                    110 * i + Math.floor(Math.random() * 90),
-                );
-            });
-        }
-    };
 
     return (
         <div className="Home pt-3">
@@ -86,17 +64,13 @@ export const Home = () => {
                 <Waypoint
                     onEnter={() => {
                         setDevView(true);
-                        startTyping();
                     }}
                     topOffset={'200px'}
                     onLeave={() => setDevView(false)}
                 >
-                    <div className={'HomeDev'} onClick={() => navigate('/development')}>
-                        <h2 className="F-Code" style={{ color: 'white' }}>
-                            {devContent.map((x, i) => (
-                                <React.Fragment key={i}>{x}</React.Fragment>
-                            ))}
-                            <span className="Typer"></span>
+                    <div className="HomeDev" onClick={() => navigate('/development')}>
+                        <h2 className="tw-font-code">
+                            <TypingEffect enabled={devView} content={CONTENT} />
                         </h2>
                         <div className="LaptopScreen">
                             <div className="InnerScreen">

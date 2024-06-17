@@ -11,11 +11,23 @@ export default {
             cyan: '#009DDB',
             white: '#FFFFFF',
             black: '#000000',
+            golden: '#FFCB6B',
         },
         fontFamily: {
             lora: ['lora', 'serif'],
             code: ['source-code-pro', 'monospace'],
             'old-standard': ['old-standard', 'serif'],
+        },
+        extend: {
+            animation: {
+                flicker: 'flicker 1.1s linear infinite',
+            },
+            keyframes: {
+                flicker: {
+                    '0%, 49%': { opacity: 1 },
+                    '50%, 100%': { opacity: 0 },
+                },
+            },
         },
     },
     plugins: [],
