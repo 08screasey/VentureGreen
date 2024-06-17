@@ -13,13 +13,13 @@ import LeftBrain from '../../assets/brainLeft.svg';
 import RightBrain from '../../assets/brainRight.svg';
 
 const CONTENT = [
-    { text: '<', className: 'Cyan' },
-    { text: 'a', className: 'Red' },
-    { text: '>', className: 'Cyan' },
+    { text: '<', className: 'tw-text-cyan' },
+    { text: 'a', className: 'tw-text-red' },
+    { text: '>', className: 'tw-text-cyan' },
     { text: 'Development', className: 'tw-text-black' },
-    { text: '</', className: 'Cyan' },
-    { text: 'a', className: 'Red' },
-    { text: '>', className: 'Cyan' },
+    { text: '</', className: 'tw-text-cyan' },
+    { text: 'a', className: 'tw-text-red' },
+    { text: '>', className: 'tw-text-cyan' },
 ];
 
 export const Home = () => {
@@ -48,11 +48,11 @@ export const Home = () => {
             <div className="tw-flex tw-flex-wrap tw-items-center tw-justify-around">
                 <Link
                     to="/development"
-                    className={merge('tw-relative tw-flex tw-flex-col tw-gap-0', FOCUS_VISIBLE_STYLES)}
+                    className={merge('tw-relative tw-flex tw-flex-col tw-gap-2', FOCUS_VISIBLE_STYLES)}
                     ref={devCardRef}
                 >
                     <Laptop />
-                    <h2 className="tw-z-[4] tw-mx-auto tw-w-full tw-font-code tw-text-4xl">
+                    <h2 className="tw-z-[4] tw-mx-auto tw-w-full tw-text-center tw-font-code tw-text-4xl">
                         <TypingEffect enabled={isDevInView} content={CONTENT} />
                     </h2>
                 </Link>

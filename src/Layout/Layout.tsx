@@ -1,8 +1,8 @@
 import { faInstagram } from '@fortawesome/free-brands-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { Fade as Hamburger } from 'hamburger-react';
 import { type ReactNode, useState, useEffect } from 'react';
 
+import { Hamburger } from '../Common/Hamburger/Hamburger';
 import { FOCUS_VISIBLE_STYLES } from '../Utility/focusStyles';
 import { merge } from '../Utility/merge';
 import { useKeypress } from '../Utility/useKeypress';
@@ -40,15 +40,10 @@ export const Layout = ({ children }: LayoutProps) => {
                 )}
             >
                 <nav className="tw-flex tw-items-center tw-justify-between tw-px-8 tw-pb-4 tw-pt-6">
-                    <button
-                        className={merge('tw-rounded', FOCUS_VISIBLE_STYLES)}
-                        onClick={() => setIsMenuOpen((isOpen) => !isOpen)}
-                    >
-                        <Hamburger toggled={isMenuOpen} size={20} hideOutline={false} />
-                    </button>
+                    <Hamburger onClick={() => setIsMenuOpen(true)} label="Open Menu" />
                     <h1 className="tw-m-auto tw-mb-0 tw-w-full tw-max-w-[500px] tw-font-lora tw-text-xl tw-font-bold tw-text-light-green">
                         <img src="/venturegreen.png" className="tw-mx-auto tw-h-[75px]" alt="Venture Green Logo" />
-                        <div>Adventure Photography & Web Development</div>
+                        <div className="tw-text-center">Adventure Photography & Web Development</div>
                     </h1>
                     <a
                         className={merge('tw-rounded tw-p-4', FOCUS_VISIBLE_STYLES)}
