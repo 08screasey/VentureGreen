@@ -1,23 +1,35 @@
+import { TypingEffect } from '../../Common/TypingEffect';
 import { DevCards } from '../../Feature/Development/DevCards/DevCards';
+import { TypingEffectProps } from '../../Utility/useTypingEffect';
+
+const CONTENT: TypingEffectProps['content'] = [
+    { text: '<', className: 'tw-text-cyan' },
+    { text: 'p', className: 'tw-text-red' },
+    { text: '>', className: 'tw-text-cyan' },
+    {
+        text: ' As a self taught programmer with a mathematical background, I have always excelled in problem solving. It was a revelation to discover that web development was a skill that would satisfy both sides of my brain. ',
+    },
+    { text: '</', className: 'tw-text-cyan' },
+    { text: 'p', className: 'tw-text-red' },
+    { text: '>', className: 'tw-text-cyan' },
+    { text: '\n', className: 'tw-block tw-w-full tw-h-2' },
+    { text: '<', className: 'tw-text-cyan' },
+    { text: 'p', className: 'tw-text-red' },
+    { text: '>', className: 'tw-text-cyan' },
+    {
+        text: ' Check out some of my projects below! ',
+    },
+    { text: '</', className: 'tw-text-cyan' },
+    { text: 'p', className: 'tw-text-red' },
+    { text: '>', className: 'tw-text-cyan' },
+];
 
 export const Development = () => (
     <div className="tw-bg-[url(/development/background.jpg)] tw-bg-cover tw-bg-fixed tw-bg-center tw-bg-no-repeat tw-pb-[150px] tw-pt-[30px]">
-        <h2 className="tw-font-3xl tw-font-lora tw-font-bold tw-text-light-green">Web Development</h2>
+        <h2 className="tw-text-center tw-font-lora tw-text-3xl tw-font-bold tw-text-light-green">Web Development</h2>
         <div className="tw-mx-auto tw-max-w-[600px] tw-p-4">
-            <p className="tw-font-code">
-                {'<'}
-                <span style={{ color: 'red' }}>p</span>
-                {'>'} As a self taught programmer, the only thing I've had to drive me to this point is myself. {'</'}
-                <span style={{ color: 'red' }}>p</span>
-                {'>'}
-            </p>
-            <p className="tw-mb-3 tw-font-code">
-                {'<'}
-                <span style={{ color: 'red' }}>p</span>
-                {'>'} With a mathematical background, I have always excelled in problem solving. It was a revelation to
-                discover that web development was a skill that would satisfy both sides of my brain. {'</'}
-                <span style={{ color: 'red' }}>p</span>
-                {'>'}
+            <p className="tw-mb-3 tw-text-center tw-font-code">
+                <TypingEffect content={CONTENT} enabled minSpeed={10} maxSpeed={30} />
             </p>
         </div>
         <DevCards />

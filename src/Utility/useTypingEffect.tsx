@@ -3,9 +3,15 @@ import { cloneElement, useEffect, useRef, useState } from 'react';
 import { getRandomInterval } from './getRandomInterval';
 
 type TypingEffectNode = { text: string; className?: string };
-export type TypingEffectProps = { content: TypingEffectNode[]; enabled: boolean };
 
-export const useTypingEffect = ({ content, enabled }: TypingEffectProps) => {
+export type TypingEffectProps = {
+    content: TypingEffectNode[];
+    enabled: boolean;
+    minSpeed: number;
+    maxSpeed: number;
+};
+
+export const useTypingEffect = ({ content, enabled, minSpeed = 30, maxSpeed = 80 }: TypingEffectProps) => {
     const [output, setOutput] = useState<JSX.Element[]>([]);
     const contentIndexRef = useRef({ itemIndex: 0, charIndex: 0 });
 
@@ -47,12 +53,12 @@ export const useTypingEffect = ({ content, enabled }: TypingEffectProps) => {
                 () => {
                     typeNextChar();
                 },
-                getRandomInterval(30, 80),
+                getRandomInterval(minSpeed, maxSpeed),
             );
 
             return () => clearInterval(interval);
         }
-    }, [enabled, output, content]);
+    }, [enabled, output, content, minSpeed, maxSpeed]);
 
     return output;
 };
