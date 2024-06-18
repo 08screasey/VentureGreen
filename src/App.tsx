@@ -8,8 +8,6 @@ import { Development } from './Pages/Development/Development';
 import { Home } from './Pages/Home/Home';
 import { Photography } from './Pages/Photography/Photography';
 
-import 'bootstrap/dist/css/bootstrap.min.css';
-
 export const App = () => {
     const { pathname } = useLocation();
     useEffect(() => {

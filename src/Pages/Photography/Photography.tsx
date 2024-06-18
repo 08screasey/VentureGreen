@@ -37,7 +37,7 @@ const PhotoCollection = ({ albums }: { albums: typeof PHOTOGRAPHY_COLLECTIONS })
 );
 
 export const Photography = () => (
-    <div className="tw-min-h-[80vh] tw-bg-[url('/backgrounds/berg.jpg')] tw-bg-cover tw-bg-fixed tw-bg-bottom tw-bg-no-repeat tw-pb-20 tw-pt-7">
+    <div className="tw-w-full tw-bg-[url('/backgrounds/berg.jpg')] tw-bg-cover tw-bg-fixed tw-bg-bottom tw-bg-no-repeat">
         <PhotoCollection albums={PHOTOGRAPHY_COLLECTIONS} />
     </div>
 );

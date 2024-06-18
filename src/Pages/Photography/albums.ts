@@ -111,7 +111,7 @@ export const CAT_MOTORS_ALBUM: Album = {
 };
 
 export const CLIMATE_GALLERY: Album = {
-    header: 'Strike For Climate 2019 - Nelson, BC',
+    header: 'Strike For Climate 2019: Nelson, BC',
     subheader: `The September strike for climate, organised mainly by the Friday’s for Future movement, was the largest
     Strike For Climate on record. It saw people of all ages out on the street, pleading for change,
     demanding it. In Nelson, BC an estimated number of 1,500-2,000 (20% of total population) citizens joined

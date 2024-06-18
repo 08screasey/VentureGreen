@@ -68,7 +68,7 @@ export const Layout = ({ children }: LayoutProps) => {
                         <div className="tw-text-center">Adventure Photography & Web Development</div>
                     </h1>
                     <a
-                        className={merge('tw-hidden tw-rounded tw-p-4 lg:tw-block', FOCUS_VISIBLE_STYLES)}
+                        className={merge('tw-hidden tw-rounded tw-p-2 lg:tw-block', FOCUS_VISIBLE_STYLES)}
                         rel="noopener noreferrer"
                         href="https://www.instagram.com/venturegreenphotography/"
                         target="_blank"
