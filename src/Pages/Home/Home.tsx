@@ -45,7 +45,7 @@ export const Home = () => {
 
     return (
         <div className="tw-pt-28">
-            <div className="tw-flex tw-flex-wrap tw-items-center tw-justify-around">
+            <div className="tw-flex tw-flex-col tw-items-center tw-justify-around tw-gap-y-20 lg:tw-flex-row">
                 <Link
                     to="/development"
                     className={merge('tw-relative tw-flex tw-flex-col tw-gap-2', FOCUS_VISIBLE_STYLES)}
@@ -56,7 +56,7 @@ export const Home = () => {
                         <TypingEffect enabled={isDevInView} content={CONTENT} />
                     </h2>
                 </Link>
-                <div className="tw-mb-5 tw-flex tw-justify-center tw-gap-x-2">
+                <div className="tw-flex tw-justify-center tw-gap-x-2">
                     <Link to="/development" className={merge('tw-relative tw-w-[90px]', FOCUS_VISIBLE_STYLES)}>
                         <img
                             alt=""

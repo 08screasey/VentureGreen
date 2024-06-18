@@ -7,8 +7,8 @@ type TypingEffectNode = { text: string; className?: string };
 export type TypingEffectProps = {
     content: TypingEffectNode[];
     enabled: boolean;
-    minSpeed: number;
-    maxSpeed: number;
+    minSpeed?: number;
+    maxSpeed?: number;
 };
 
 export const useTypingEffect = ({ content, enabled, minSpeed = 30, maxSpeed = 80 }: TypingEffectProps) => {

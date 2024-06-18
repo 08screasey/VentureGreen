@@ -9,7 +9,7 @@ export const Laptop = () => {
 
     return (
         <div className="tw-relative tw-leading-none">
-            <div className="tw-group/screen tw-absolute tw-left-[44px] tw-top-4 tw-z-[1] tw-h-[245px] tw-w-[366px] tw-overflow-hidden">
+            <div className="tw-group/screen tw-absolute tw-left-[10%] tw-top-[5.5%] tw-z-[1] tw-h-[74%] tw-w-[80%] tw-overflow-hidden">
                 <div
                     className="tw-peer/inner-screen tw-scrollbar-none tw-relative tw-h-full tw-w-full tw-overflow-y-auto"
                     ref={scrollRef}
@@ -22,7 +22,7 @@ export const Laptop = () => {
             </div>
             <img
                 src="/home/edited laptop.png"
-                className="tw-pointer-events-none tw-relative tw-z-[2] tw-w-[450px] tw-drop-shadow-2xl"
+                className="tw-pointer-events-none tw-relative tw-z-[2] tw-w-full tw-max-w-[450px] tw-drop-shadow-2xl"
             />
         </div>
     );

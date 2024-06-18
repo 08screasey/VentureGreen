@@ -26,7 +26,7 @@ export const SlideMenu = ({ onClose }: SlideMenuProps) => {
         <ReactFocusLock>
             <motion.div
                 className={merge(
-                    'tw-fixed tw-left-0 tw-top-0 tw-z-[11] tw-h-full tw-w-full tw-max-w-[400px] tw-bg-white tw-shadow-lg',
+                    'tw-fixed tw-left-0 tw-top-0 tw-z-[11] tw-h-full tw-w-full tw-max-w-[100vw] tw-bg-white tw-shadow-lg md:tw-max-w-[400px]',
                 )}
                 initial={{ x: '-100%' }}
                 animate={{ x: '0%' }}

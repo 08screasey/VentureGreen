@@ -7,7 +7,7 @@ const BASE_IMAGE_CLASS = 'tw-absolute tw-top-0 tw-left-0 tw-transition-all tw-sh
 
 export const PhotoStack = forwardRef<HTMLAnchorElement, { isInView: boolean }>(({ isInView }, ref) => (
     <Link
-        className="tw-group/photos tw-relative tw-block tw-h-[300px] tw-w-[450px] tw-outline-none"
+        className="tw-group/photos tw-relative tw-block tw-max-w-[450px] tw-outline-none"
         to="/photography"
         ref={ref}
         aria-label="Photography portfolio"
@@ -26,7 +26,7 @@ export const PhotoStack = forwardRef<HTMLAnchorElement, { isInView: boolean }>((
             src="/home/Home Image 4.jpg"
         />
         <img
-            className={merge(BASE_IMAGE_CLASS, isInView && '-tw-translate-x-1 -tw-translate-y-7 -tw-rotate-12')}
+            className={merge(BASE_IMAGE_CLASS, isInView && '-tw-translate-x-1 -tw-translate-y-3 -tw-rotate-6')}
             alt=""
             src="/home/Home Image 3.jpg"
         />
@@ -40,8 +40,7 @@ export const PhotoStack = forwardRef<HTMLAnchorElement, { isInView: boolean }>((
         />
         <img
             className={merge(
-                BASE_IMAGE_CLASS,
-                'group-hover/photos:tw-scale-105 group-hover/photos:tw-shadow-2xl group-focus-visible/photos:tw-scale-105 group-focus-visible/photos:tw-shadow-2xl',
+                'tw-relative tw-origin-center tw-shadow-lg tw-transition-all group-hover/photos:tw-scale-105 group-hover/photos:tw-shadow-2xl group-focus-visible/photos:tw-scale-105 group-focus-visible/photos:tw-shadow-2xl',
             )}
             alt=""
             src="/home/Home Image.jpg"
