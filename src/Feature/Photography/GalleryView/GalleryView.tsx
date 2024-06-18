@@ -19,7 +19,7 @@ export const GalleryView = ({ onExit, onPrev, onNext, imageSrc, alt }: GalleryVi
     useKeypress({ key: 'Escape', callback: onExit });
 
     return (
-        <ReactFocusLock>
+        <ReactFocusLock returnFocus>
             <div className="tw-fixed tw-left-0 tw-top-0 tw-z-[100] tw-flex tw-h-full tw-w-full tw-items-center tw-justify-center">
                 <div
                     className="tw-fixed tw-left-0 tw-top-0 tw-z-[6] tw-h-full tw-w-full tw-bg-black/70"

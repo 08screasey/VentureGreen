@@ -23,7 +23,7 @@ export const SlideMenu = ({ onClose }: SlideMenuProps) => {
     useClickOutside({ ref: menuRef, callback: onClose });
 
     return (
-        <ReactFocusLock>
+        <ReactFocusLock returnFocus>
             <motion.div
                 className={merge(
                     'tw-fixed tw-left-0 tw-top-0 tw-z-[11] tw-h-full tw-w-full tw-max-w-[100vw] tw-bg-white tw-shadow-lg md:tw-max-w-[400px]',
@@ -38,7 +38,7 @@ export const SlideMenu = ({ onClose }: SlideMenuProps) => {
                     aria-label="Close menu"
                     className={merge(
                         FOCUS_VISIBLE_STYLES,
-                        'tw-absolute tw-left-6 tw-top-6 tw-flex tw-h-8 tw-w-8 tw-items-center tw-justify-center tw-rounded hover:tw-bg-extra-light-green',
+                        'tw-absolute tw-left-6 tw-top-6 tw-flex tw-h-8 tw-w-8 tw-items-center tw-justify-center tw-rounded hover:tw-bg-light-grey',
                     )}
                     onClick={onClose}
                 >
