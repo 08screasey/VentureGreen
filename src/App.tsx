@@ -1,5 +1,5 @@
 import { AnimatePresence, MotionConfig } from 'framer-motion';
-import { cloneElement, useEffect } from 'react';
+import { cloneElement } from 'react';
 import { useLocation, useRoutes } from 'react-router-dom';
 
 import { Layout } from './Layout/Layout';
@@ -10,9 +10,6 @@ import { Photography } from './Pages/Photography/Photography';
 
 export const App = () => {
     const { pathname } = useLocation();
-    useEffect(() => {
-        window.scrollTo(0, 0);
-    }, [pathname]);
 
     const route = useRoutes([
         { path: '/photography/*', element: <Photography /> },
