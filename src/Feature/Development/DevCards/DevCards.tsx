@@ -1,17 +1,7 @@
-import { motion } from 'framer-motion';
-
 import { DevCard } from './DevCard/DevCard';
-import { getDevCardVariants } from './animations';
 
-type DevCardsProps = { entranceDelay: number };
-
-export const DevCards = ({ entranceDelay }: DevCardsProps) => (
-    <motion.div
-        variants={getDevCardVariants(entranceDelay)}
-        initial="hidden"
-        animate="show"
-        className="tw-flex tw-w-full tw-flex-col tw-items-center tw-gap-16"
-    >
+export const DevCards = () => (
+    <div className="tw-flex tw-w-full tw-flex-col tw-items-center tw-gap-16">
         <DevCard
             header="Columbia Valley Hut Society"
             api={['Paypal Rest SDK', 'SendGrid']}
@@ -46,5 +36,5 @@ export const DevCards = ({ entranceDelay }: DevCardsProps) => (
             github="https://github.com/08screasey/SproutWebsite"
             link="https://sproutwebsite.onrender.com"
         />
-    </motion.div>
+    </div>
 );

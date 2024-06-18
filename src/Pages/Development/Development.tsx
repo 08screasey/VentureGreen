@@ -1,8 +1,11 @@
+import { motion } from 'framer-motion';
 import { useEffect, useRef } from 'react';
 
 import { TypingEffect } from '../../Common/TypingEffect';
+import { DEV_CARD_VARIANTS } from '../../Feature/Development/DevCards/DevCard/animations';
 import { DevCards } from '../../Feature/Development/DevCards/DevCards';
-import { TypingEffectProps } from '../../Utility/useTypingEffect';
+import { getDevCardVariants } from '../../Feature/Development/DevCards/animations';
+import { TypingEffectProps, convertNodesToSpanElements } from '../../Utility/useTypingEffect';
 
 const CONTENT: TypingEffectProps['content'] = [
     { text: '<', className: 'tw-text-cyan' },
@@ -36,16 +39,31 @@ export const Development = () => {
     const hasVisited = useRef(sessionStorage.getItem(DEVELOPMENT_VISITED_KEY) === 'true').current;
 
     return (
-        <div className="tw-w-full tw-bg-[url(/development/background.jpg)] tw-bg-cover tw-bg-fixed tw-bg-center tw-bg-no-repeat tw-px-2 tw-pb-[150px] tw-pt-[50px] md:tw-px-10">
-            <h2 className="tw-text-center tw-font-lora tw-text-3xl tw-font-bold tw-text-light-green">
+        <motion.div
+            variants={getDevCardVariants(hasVisited ? 0 : 5)}
+            initial="hidden"
+            animate="show"
+            className="tw-w-full tw-bg-[url(/development/background.jpg)] tw-bg-cover tw-bg-fixed tw-bg-center tw-bg-no-repeat tw-px-2 tw-pb-[150px] tw-pt-[50px] md:tw-px-10"
+        >
+            <motion.h2
+                className="tw-text-center tw-font-lora tw-text-3xl tw-font-bold tw-text-light-green"
+                variants={DEV_CARD_VARIANTS}
+                transition={{ type: 'tween' }}
+            >
                 Web Development
-            </h2>
+            </motion.h2>
             <div className="tw-mx-auto tw-max-w-[600px] tw-p-4">
                 <p className="tw-mb-3 tw-min-h-[100px] tw-text-center tw-font-code">
-                    <TypingEffect content={CONTENT} enabled minSpeed={8} maxSpeed={30} />
+                    {hasVisited ? (
+                        <motion.span variants={DEV_CARD_VARIANTS} transition={{ type: 'tween' }}>
+                            {convertNodesToSpanElements(CONTENT)}
+                        </motion.span>
+                    ) : (
+                        <TypingEffect content={CONTENT} enabled minSpeed={8} maxSpeed={30} />
+                    )}
                 </p>
             </div>
-            <DevCards entranceDelay={hasVisited ? 0 : 5} />
-        </div>
+            <DevCards />
+        </motion.div>
     );
 };

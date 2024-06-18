@@ -1,4 +1,4 @@
-import { AnimatePresence } from 'framer-motion';
+import { AnimatePresence, MotionConfig } from 'framer-motion';
 import { cloneElement, useEffect } from 'react';
 import { useLocation, useRoutes } from 'react-router-dom';
 
@@ -26,8 +26,10 @@ export const App = () => {
     }
 
     return (
-        <Layout>
-            <AnimatePresence mode="wait">{cloneElement(route, { key: pathname })}</AnimatePresence>
-        </Layout>
+        <MotionConfig reducedMotion="user">
+            <Layout>
+                <AnimatePresence mode="wait">{cloneElement(route, { key: pathname })}</AnimatePresence>
+            </Layout>
+        </MotionConfig>
     );
 };

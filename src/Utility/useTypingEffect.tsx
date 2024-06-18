@@ -11,6 +11,13 @@ export type TypingEffectProps = {
     maxSpeed?: number;
 };
 
+export const convertNodesToSpanElements = (content: TypingEffectNode[]) =>
+    content.map(({ text, className }) => (
+        <span key={className + text} className={className}>
+            {text}
+        </span>
+    ));
+
 export const useTypingEffect = ({ content, enabled, minSpeed = 30, maxSpeed = 80 }: TypingEffectProps) => {
     const [output, setOutput] = useState<JSX.Element[]>([]);
     const contentIndexRef = useRef({ itemIndex: 0, charIndex: 0 });
