@@ -246,7 +246,7 @@ const CANADA_ALBUM: Album = {
         { src: '/images/photos/travel/canada/reflection+pyramid+1.jpg' },
         { src: '/images/photos/travel/canada/snow+2.jpg' },
         { src: '/images/photos/travel/canada/snow+4.jpg' },
-        { src: '/images/photos/travel/canada/snow+7.jpg' },
+        { src: '/images/600/photos/travel/canada/snow+7.jpg' },
     ],
 };
 
