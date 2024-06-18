@@ -1,4 +1,4 @@
-import { faXmark } from '@fortawesome/free-solid-svg-icons';
+import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { motion } from 'framer-motion';
 import { useRef } from 'react';
@@ -38,11 +38,11 @@ export const SlideMenu = ({ onClose }: SlideMenuProps) => {
                     aria-label="Close menu"
                     className={merge(
                         FOCUS_VISIBLE_STYLES,
-                        'tw-absolute tw-left-6 tw-top-6 tw-flex tw-h-8 tw-w-8 tw-items-center tw-justify-center tw-rounded hover:tw-bg-light-grey',
+                        'tw-absolute tw-bottom-4 tw-left-4 tw-flex tw-h-10 tw-w-10 tw-items-center tw-justify-center tw-rounded tw-p-2 hover:tw-bg-light-grey',
                     )}
                     onClick={onClose}
                 >
-                    <FontAwesomeIcon icon={faXmark} size="2x" className="tw-text-green" />
+                    <FontAwesomeIcon icon={faArrowLeft} size="2x" className="tw-text-green" />
                 </button>
                 <div
                     className="tw-flex tw-h-full tw-w-full tw-flex-col tw-items-center tw-justify-center"

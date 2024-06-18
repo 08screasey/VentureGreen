@@ -1,4 +1,4 @@
-import { faInstagram } from '@fortawesome/free-brands-svg-icons';
+import { faGithub, faInstagram } from '@fortawesome/free-brands-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { AnimatePresence } from 'framer-motion';
 import { type ReactNode, useState, useEffect, useCallback } from 'react';
@@ -54,11 +54,20 @@ export const Layout = ({ children }: LayoutProps) => {
             >
                 {/* Desktop Navigation Bar */}
                 <nav className="tw-flex tw-items-center tw-justify-between tw-px-8 tw-py-3 lg:tw-pb-4 lg:tw-pt-6">
-                    <div className="tw-hidden lg:tw-block">
-                        <Hamburger onClick={openMenu} label="Open Menu" />
-                    </div>
+                    <a
+                        className={merge(
+                            'tw-hidden tw-h-[50px] tw-w-[50px] tw-items-center tw-justify-center tw-rounded tw-p-2 lg:tw-flex',
+                            FOCUS_VISIBLE_STYLES,
+                        )}
+                        rel="noopener noreferrer"
+                        aria-label="Github"
+                        href="https://www.github.com/08screasey"
+                        target="_blank"
+                    >
+                        <FontAwesomeIcon icon={faGithub} size="2x" />
+                    </a>
                     <h1 className="tw-text-l tw-m-auto tw-mb-0 tw-flex tw-max-w-[500px] tw-flex-col tw-items-center tw-font-lora tw-font-bold tw-text-light-green lg:tw-text-xl">
-                        <Link to="/" className={FOCUS_VISIBLE_STYLES}>
+                        <Link to="/" className={merge(FOCUS_VISIBLE_STYLES, 'tw-rounded')} aria-label="Home">
                             <img
                                 src="/venturegreen.png"
                                 className="tw-mx-auto tw-block tw-h-[60px] lg:tw-h-[75px]"
@@ -73,6 +82,7 @@ export const Layout = ({ children }: LayoutProps) => {
                             FOCUS_VISIBLE_STYLES,
                         )}
                         rel="noopener noreferrer"
+                        aria-label="Instagram"
                         href="https://www.instagram.com/venturegreenphotography/"
                         target="_blank"
                     >
@@ -90,17 +100,31 @@ export const Layout = ({ children }: LayoutProps) => {
             {/** Mobile Navigation Tray */}
             <nav className="tw-fixed tw-bottom-0 tw-left-0 tw-z-[10] tw-flex tw-w-full tw-items-center tw-justify-between tw-border-t tw-border-t-light-grey tw-bg-white tw-px-4 tw-py-2 lg:tw-hidden">
                 <Hamburger onClick={openMenu} label="Open Menu" />
-                <a
-                    className={merge(
-                        'tw-flex tw-h-[50px] tw-w-[50px] tw-items-center tw-justify-center tw-rounded tw-p-2',
-                        FOCUS_VISIBLE_STYLES,
-                    )}
-                    rel="noopener noreferrer"
-                    href="https://www.instagram.com/venturegreenphotography/"
-                    target="_blank"
-                >
-                    <FontAwesomeIcon icon={faInstagram} size="2x" />
-                </a>
+                <div className="tw-flex tw-items-center tw-gap-2">
+                    <a
+                        className={merge(
+                            'tw-flex tw-h-[50px] tw-w-[50px] tw-items-center tw-justify-center tw-rounded tw-p-2',
+                            FOCUS_VISIBLE_STYLES,
+                        )}
+                        rel="noopener noreferrer"
+                        aria-label="Github"
+                        href="https://www.github.com/08screasey"
+                        target="_blank"
+                    >
+                        <FontAwesomeIcon icon={faGithub} size="2x" />
+                    </a>
+                    <a
+                        className={merge(
+                            'tw-flex tw-h-[50px] tw-w-[50px] tw-items-center tw-justify-center tw-rounded tw-p-2',
+                            FOCUS_VISIBLE_STYLES,
+                        )}
+                        rel="noopener noreferrer"
+                        href="https://www.instagram.com/venturegreenphotography/"
+                        target="_blank"
+                    >
+                        <FontAwesomeIcon icon={faInstagram} size="2x" />
+                    </a>
+                </div>
             </nav>
         </div>
     );
