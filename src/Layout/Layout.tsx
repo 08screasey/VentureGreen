@@ -57,7 +57,7 @@ export const Layout = ({ children }: LayoutProps) => {
                     <div className="tw-hidden lg:tw-block">
                         <Hamburger onClick={openMenu} label="Open Menu" />
                     </div>
-                    <h1 className="tw-m-auto tw-mb-0 tw-flex tw-max-w-[500px] tw-flex-col tw-items-center tw-font-lora tw-text-xl tw-font-bold tw-text-light-green">
+                    <h1 className="tw-text-l tw-m-auto tw-mb-0 tw-flex tw-max-w-[500px] tw-flex-col tw-items-center tw-font-lora tw-font-bold tw-text-light-green lg:tw-text-xl">
                         <Link to="/" className={FOCUS_VISIBLE_STYLES}>
                             <img
                                 src="/venturegreen.png"
@@ -75,9 +75,6 @@ export const Layout = ({ children }: LayoutProps) => {
                     >
                         <FontAwesomeIcon icon={faInstagram} size="2x" />
                     </a>
-                    <AnimatePresence>
-                        {isMenuOpen && <SlideMenu showMenu={isMenuOpen} onClose={closeMenu} />}
-                    </AnimatePresence>
                 </nav>
             </header>
             <main className="tw-flex tw-w-full tw-flex-auto tw-justify-center tw-pb-[75px] tw-pt-[112px] lg:tw-pb-0 lg:tw-pt-[143px]">
@@ -85,8 +82,9 @@ export const Layout = ({ children }: LayoutProps) => {
             </main>
             <Footer />
 
+            <AnimatePresence>{isMenuOpen && <SlideMenu showMenu={isMenuOpen} onClose={closeMenu} />}</AnimatePresence>
             {/** Mobile Navigation Tray */}
-            <nav className="tw-border-t-light-grey tw-fixed tw-bottom-0 tw-left-0 tw-flex tw-w-full tw-items-center tw-justify-between tw-border-t tw-bg-white tw-px-4 tw-py-2 lg:tw-hidden">
+            <nav className="tw-border-t-light-grey tw-fixed tw-bottom-0 tw-left-0 tw-z-[10] tw-flex tw-w-full tw-items-center tw-justify-between tw-border-t tw-bg-white tw-px-4 tw-py-2 lg:tw-hidden">
                 <Hamburger onClick={openMenu} label="Open Menu" />
                 <a
                     className={merge('tw-rounded tw-p-3', FOCUS_VISIBLE_STYLES)}

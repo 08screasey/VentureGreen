@@ -22,7 +22,7 @@ const CONTENT = [
     { text: '>', className: 'tw-text-cyan' },
 ];
 
-const Col = ({ children }: PropsWithChildren) => (
+const EqualSizingCol = ({ children }: PropsWithChildren) => (
     <div className="tw-relative tw-flex tw-min-w-0 tw-max-w-[450px] tw-flex-col tw-items-center lg:tw-flex-initial lg:tw-basis-[450px]">
         {children}
     </div>
@@ -50,26 +50,26 @@ export const Home = () => {
     });
 
     return (
-        <div className="tw-flex tw-flex-col tw-items-center tw-justify-around tw-gap-x-8 tw-gap-y-20 tw-self-center tw-px-4 tw-pb-20 tw-pt-10 lg:tw-flex-row lg:tw-px-8 lg:tw-pb-10">
-            <Col>
+        <div className="tw-flex tw-min-w-0 tw-flex-initial tw-flex-col-reverse tw-items-center tw-justify-around tw-gap-x-8 tw-gap-y-16 tw-self-center tw-px-10 tw-py-20 lg:tw-flex-row lg:tw-px-8 lg:tw-pb-10 lg:tw-pt-8">
+            <EqualSizingCol>
                 <Link
                     to="/development"
                     className={merge('tw-relative tw-flex tw-flex-col tw-items-center tw-gap-2', FOCUS_VISIBLE_STYLES)}
                     ref={devCardRef}
                 >
                     <Laptop />
-                    <h2 className="tw-z-[4] tw-mx-auto tw-w-full tw-text-center tw-font-code tw-text-4xl lg:tw-text-3xl xl:tw-text-4xl">
+                    <h2 className="tw-z-[4] tw-mx-auto tw-w-full tw-text-center tw-font-code tw-text-3xl md:tw-text-4xl lg:tw-text-3xl xl:tw-text-4xl">
                         <TypingEffect enabled={isDevInView} content={CONTENT} />
                     </h2>
                 </Link>
-            </Col>
+            </EqualSizingCol>
             <div className="tw-flex tw-flex-none tw-justify-center tw-gap-x-2 tw-px-10">
                 <Link to="/development" className={merge('tw-relative tw-w-[90px]', FOCUS_VISIBLE_STYLES)}>
                     <img
                         alt=""
                         src="/home/brainLeftText1.png"
                         className={merge(
-                            isDevInView ? 'tw-translate-x-0' : 'tw-translate-x-14',
+                            isDevInView ? 'tw-translate-x-0 tw-delay-150' : 'tw-translate-x-14',
                             'tw-absolute tw-left-[-30px] tw-top-[10px] tw-w-[52px] tw-max-w-[unset] tw-transition-all',
                         )}
                     />
@@ -77,16 +77,18 @@ export const Home = () => {
                         alt=""
                         src="/home/brainLeftText2.png"
                         className={merge(
-                            isDevInView ? 'tw-translate-x-0' : 'tw-translate-x-14',
+                            isDevInView ? 'tw-translate-x-0 tw-delay-75' : 'tw-translate-x-14',
                             'tw-absolute tw-left-[-30px] tw-top-[100px] tw-w-[52px] tw-max-w-[unset] tw-transition-all',
                         )}
                     />
                     <FontAwesomeIcon
                         icon={faLevelUpAlt}
-                        size="3x"
+                        size="2x"
                         className={merge(
-                            isDevInView ? 'tw-translate-y-0 tw-scale-100' : 'tw-translate-y-20 tw-scale-0',
-                            'tw-absolute tw-left-[30px] tw-top-[-50px] -tw-rotate-90 tw-text-green tw-transition-all',
+                            isDevInView
+                                ? 'tw-translate-y-0 tw-scale-100 tw-delay-200'
+                                : 'tw-translate-x-20 tw-scale-0 lg:tw-translate-x-0 lg:tw-translate-y-20',
+                            'tw-absolute tw-left-[-60px] tw-top-[85px] tw-rotate-180 tw-text-green tw-transition-all lg:tw-left-[40px] lg:tw-top-[-40px] lg:-tw-rotate-90',
                         )}
                     />
                     <LeftBrain className="tw-fill-grey tw-relative tw-z-[2] tw-w-full" />
@@ -105,7 +107,7 @@ export const Home = () => {
                         alt=""
                         src="/home/brainRightText1.png"
                         className={merge(
-                            isPhotoInView ? 'tw-translate-x-0' : '-tw-translate-x-14',
+                            isPhotoInView ? 'tw-translate-x-0 tw-delay-150' : '-tw-translate-x-14',
                             'tw-absolute tw-right-[-28px] tw-top-[5px] tw-w-[52px] tw-max-w-[unset] tw-transition-all',
                         )}
                     />
@@ -113,16 +115,18 @@ export const Home = () => {
                         alt=""
                         src="/home/brainRightText2.png"
                         className={merge(
-                            isPhotoInView ? 'tw-translate-x-0' : '-tw-translate-x-14',
+                            isPhotoInView ? 'tw-translate-x-0 tw-delay-75' : '-tw-translate-x-14',
                             'tw-absolute tw-right-[-28px] tw-top-[90px] tw-w-[52px] tw-max-w-[unset] tw-transition-all',
                         )}
                     />
                     <FontAwesomeIcon
                         icon={faLevelUpAlt}
-                        size="3x"
+                        size="2x"
                         className={merge(
-                            isPhotoInView ? 'tw-translate-y-0 tw-scale-100' : '-tw-translate-y-20 tw-scale-0',
-                            'tw-absolute tw-bottom-[-50px] tw-right-[30px] tw-rotate-90 tw-text-cyan tw-transition-all',
+                            isPhotoInView
+                                ? 'tw-translate-y-0 tw-scale-100 tw-delay-200'
+                                : '-tw-translate-x-20 tw-scale-0 lg:-tw-translate-y-20 lg:tw-translate-x-0',
+                            'tw-absolute tw-bottom-[80px] tw-right-[-60px] tw-text-cyan tw-transition-all lg:tw-bottom-[-40px] lg:tw-right-[40px] lg:tw-rotate-90',
                         )}
                     />
                     <RightBrain className="tw-fill-grey tw-relative tw-z-[2] tw-w-full" />
@@ -136,9 +140,9 @@ export const Home = () => {
                     />
                 </Link>
             </div>
-            <Col>
+            <EqualSizingCol>
                 <PhotoStack isInView={isPhotoInView} ref={photoCardRef} />
-            </Col>
+            </EqualSizingCol>
         </div>
     );
 };
