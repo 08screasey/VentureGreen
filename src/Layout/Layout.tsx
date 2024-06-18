@@ -68,7 +68,10 @@ export const Layout = ({ children }: LayoutProps) => {
                         <div className="tw-text-center">Adventure Photography & Web Development</div>
                     </h1>
                     <a
-                        className={merge('tw-hidden tw-rounded tw-p-2 lg:tw-block', FOCUS_VISIBLE_STYLES)}
+                        className={merge(
+                            'tw-hidden tw-h-[50px] tw-w-[50px] tw-items-center tw-justify-center tw-rounded tw-p-2 lg:tw-flex',
+                            FOCUS_VISIBLE_STYLES,
+                        )}
                         rel="noopener noreferrer"
                         href="https://www.instagram.com/venturegreenphotography/"
                         target="_blank"
@@ -87,7 +90,10 @@ export const Layout = ({ children }: LayoutProps) => {
             <nav className="tw-border-t-light-grey tw-fixed tw-bottom-0 tw-left-0 tw-z-[10] tw-flex tw-w-full tw-items-center tw-justify-between tw-border-t tw-bg-white tw-px-4 tw-py-2 lg:tw-hidden">
                 <Hamburger onClick={openMenu} label="Open Menu" />
                 <a
-                    className={merge('tw-rounded tw-p-3', FOCUS_VISIBLE_STYLES)}
+                    className={merge(
+                        'tw-flex tw-h-[50px] tw-w-[50px] tw-items-center tw-justify-center tw-rounded tw-p-2',
+                        FOCUS_VISIBLE_STYLES,
+                    )}
                     rel="noopener noreferrer"
                     href="https://www.instagram.com/venturegreenphotography/"
                     target="_blank"
