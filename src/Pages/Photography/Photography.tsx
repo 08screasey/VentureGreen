@@ -1,10 +1,10 @@
 import { Route, Routes } from 'react-router-dom';
 
-import { GalleryLayout } from '../../Component/Photography/GalleryLayout/GalleryLayout';
-import { PhotoCard } from '../../Component/Photography/PhotoCard/PhotoCard';
-import { PhotoGrid } from '../../Component/Photography/PhotoGrid/PhotoGrid';
+import { GalleryLayout } from '../../Feature/Photography/GalleryLayout/GalleryLayout';
+import { PhotoCard } from '../../Feature/Photography/PhotoCard/PhotoCard';
+import { PhotoGrid } from '../../Feature/Photography/PhotoGrid/PhotoGrid';
+import { useDocumentTitle } from '../../Utility/useDocumentTitle';
 
-import './Photography.css';
 import { PHOTOGRAPHY_COLLECTIONS } from './albums';
 
 const PhotoCollection = ({ albums }: { albums: typeof PHOTOGRAPHY_COLLECTIONS }) => (
@@ -37,8 +37,12 @@ const PhotoCollection = ({ albums }: { albums: typeof PHOTOGRAPHY_COLLECTIONS })
     </Routes>
 );
 
-export const Photography = () => (
-    <div className="Photography">
-        <PhotoCollection albums={PHOTOGRAPHY_COLLECTIONS} />
-    </div>
-);
+export const Photography = () => {
+    useDocumentTitle("Sam Creasey's Photography Portfolio");
+
+    return (
+        <div className="tw-w-full tw-bg-[url('/backgrounds/berg.jpg')] tw-bg-cover tw-bg-fixed tw-bg-bottom tw-bg-no-repeat">
+            <PhotoCollection albums={PHOTOGRAPHY_COLLECTIONS} />
+        </div>
+    );
+};

@@ -1,153 +1,168 @@
 import { faLevelUpAlt } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import { Waypoint } from 'react-waypoint';
+import { PropsWithChildren, useCallback, useRef, useState } from 'react';
+import { Link } from 'react-router-dom';
 
-import './Home.css';
+import { TypingEffect } from '../../Common/TypingEffect';
+import { Laptop } from '../../Feature/Development/Laptop/Laptop';
+import { PhotoStack } from '../../Feature/Photography/PhotoStack/PhotoStack';
+import { FOCUS_VISIBLE_STYLES } from '../../Utility/focusStyles';
+import { merge } from '../../Utility/merge';
+import { useDocumentTitle } from '../../Utility/useDocumentTitle';
+import { useIntersectionObserver } from '../../Utility/useIntersectionObserver';
 import LeftBrain from '../../assets/brainLeft.svg';
 import RightBrain from '../../assets/brainRight.svg';
 
-export const Home = () => {
-    const navigate = useNavigate();
+const CONTENT = [
+    { text: '<', className: 'tw-text-cyan' },
+    { text: 'a', className: 'tw-text-red' },
+    { text: '>', className: 'tw-text-cyan' },
+    { text: 'Development', className: 'tw-text-black' },
+    { text: '</', className: 'tw-text-cyan' },
+    { text: 'a', className: 'tw-text-red' },
+    { text: '>', className: 'tw-text-cyan' },
+];
 
-    const [photoView, setPhotoView] = useState(false);
-    const [devView, setDevView] = useState(false);
-    const content = [
-        <span className="Cyan">{'<'}</span>,
-        <span className="Red">a</span>,
-        <span className="Cyan">{'>'}</span>,
-        'D',
-        'e',
-        'v',
-        'e',
-        'l',
-        'o',
-        'p',
-        'm',
-        'e',
-        'n',
-        't',
-        <span className="Cyan">{'<'}</span>,
-        <span className="Cyan">{'/'}</span>,
-        <span className="Red">a</span>,
-        <span className="Cyan">{'>'}</span>,
-    ];
-    const [devContent, setDevContent] = useState<(string | JSX.Element)[]>([]);
-    const startTyping = () => {
-        if (devContent.length < 1) {
-            content.forEach((_el, i) => {
-                setTimeout(
-                    () => {
-                        setDevContent(content.slice(0, i + 1));
-                    },
-                    110 * i + Math.floor(Math.random() * 90),
-                );
-            });
-        }
-    };
+const EqualSizingCol = ({ children }: PropsWithChildren) => (
+    <div className="tw-relative tw-flex tw-min-w-0 tw-max-w-[450px] tw-flex-col tw-items-center lg:tw-flex-initial lg:tw-basis-[450px]">
+        {children}
+    </div>
+);
+
+export const Home = () => {
+    useDocumentTitle("Sam Creasey's Portfolio");
+
+    const [isDevInView, setIsDevInView] = useState(false);
+    const [isPhotoInView, setIsPhotoInView] = useState(false);
+
+    const photoCardRef = useRef<HTMLAnchorElement>(null);
+    useIntersectionObserver({
+        onEnter: useCallback(() => setIsPhotoInView(true), []),
+        onLeave: useCallback(() => setIsPhotoInView(false), []),
+        topOffset: 300,
+        bottomOffset: 100,
+        ref: photoCardRef,
+    });
+
+    const devCardRef = useRef<HTMLAnchorElement>(null);
+    useIntersectionObserver({
+        onEnter: useCallback(() => setIsDevInView(true), []),
+        onLeave: useCallback(() => setIsDevInView(false), []),
+        topOffset: 300,
+        bottomOffset: 100,
+        ref: devCardRef,
+    });
 
     return (
-        <div className="Home pt-3">
-            <h1
-                className="F-Lora PaleGreen mx-auto"
-                style={{
-                    fontSize: '30px',
-                    borderTop: '1px solid #CCC',
-                    paddingTop: '30px',
-                    textShadow: '1px 1px #eee',
-                }}
-            >
-                Welcome to the Mind of Sam Creasey
-            </h1>
-            <p
-                className="F-Code mx-auto"
-                style={{
-                    fontSize: '14px',
-                    marginBottom: '30px',
-                    marginTop: '20px',
-                    color: '#888',
-                    width: '80%',
-                }}
-            >
-                For web development projects select the left side of his brain. To view photography gallery select the
-                right side.
-            </p>
-            <h2
-                className="mx-auto pt-2 my-0 px-3 F-Code text-left"
-                style={{
-                    fontSize: '25px',
-                    width: '80%',
-                    textShadow: '1px 1px #ccc',
-                    borderBottom: '1px solid #CCC',
-                }}
-            ></h2>
-            <div className="Flex">
-                <Waypoint
-                    onEnter={() => {
-                        setDevView(true);
-                        startTyping();
-                    }}
-                    topOffset={'200px'}
-                    onLeave={() => setDevView(false)}
+        <div className="tw-flex tw-min-w-0 tw-flex-initial tw-flex-col-reverse tw-items-center tw-justify-around tw-gap-x-8 tw-gap-y-16 tw-self-center tw-px-10 tw-py-20 lg:tw-flex-row lg:tw-px-8 lg:tw-pb-10 lg:tw-pt-8">
+            <EqualSizingCol>
+                <Link
+                    to="/development"
+                    className={merge('tw-relative tw-flex tw-flex-col tw-items-center tw-gap-2', FOCUS_VISIBLE_STYLES)}
+                    ref={devCardRef}
                 >
-                    <div className={'HomeDev'} onClick={() => navigate('/development')}>
-                        <h2 className="F-Code" style={{ color: 'white' }}>
-                            {devContent.map((x, i) => (
-                                <React.Fragment key={i}>{x}</React.Fragment>
-                            ))}
-                            <span className="Typer"></span>
-                        </h2>
-                        <div className="LaptopScreen">
-                            <div className="InnerScreen">
-                                <img alt="" src="/home/website.jpg" />
-                            </div>
-                        </div>
-                    </div>
-                </Waypoint>
-                <div className="HomeBreak">
-                    <div className="Brain d-flex justify-content-center mb-5">
-                        <div
-                            className={devView ? 'LeftBrain Active' : 'LeftBrain'}
-                            onClick={() => navigate('/development')}
-                        >
-                            <img alt="" src="/home/brainLeftOverLay.png" className="BrainOverlay" />
-                            <img alt="" src="/home/brainLeftText1.png" className="Text Text1" />
-                            <img alt="" src="/home/brainLeftText2.png" className="Text Text2" />
-                            <FontAwesomeIcon icon={faLevelUpAlt} className="Arrow PaleGreen" />
-                            <LeftBrain />
-                        </div>
+                    <Laptop />
+                    <h2 className="tw-z-[4] tw-mx-auto tw-w-full tw-text-center tw-font-code tw-text-3xl tw-drop-shadow-xl md:tw-text-4xl lg:tw-text-3xl xl:tw-text-4xl">
+                        <TypingEffect enabled={isDevInView} content={CONTENT} />
+                    </h2>
+                </Link>
+            </EqualSizingCol>
 
-                        <div
-                            className={photoView ? 'RightBrain Active' : 'RightBrain'}
-                            onClick={() => navigate('/photography')}
-                        >
-                            <RightBrain />
-                            <img alt="" src="/home/brainRightOverLay.png" className="BrainOverlay" />
-                            <img alt="" src="/home/brainRightText1.png" className="Text Text1" />
-                            <img alt="" src="/home/brainRightText2.png" className="Text Text2" />
-                            <FontAwesomeIcon icon={faLevelUpAlt} className="Arrow Cyan" />
-                        </div>
-                    </div>
-                </div>
-                <Waypoint
-                    onEnter={() => setPhotoView(true)}
-                    onLeave={() => setPhotoView(false)}
-                    topOffset={'650px'}
-                    bottomOffset={'500px'}
+            <div className="tw-flex tw-flex-none tw-justify-center tw-gap-x-2 tw-px-10">
+                <Link
+                    to="/development"
+                    className={merge(
+                        'tw-group/left-brain tw-relative tw-w-[90px] tw-origin-right tw-transition hover:tw-scale-105 focus-visible:tw-scale-105',
+                        FOCUS_VISIBLE_STYLES,
+                    )}
+                    aria-label="Go to development"
                 >
-                    <div
-                        className={photoView ? 'Active HomePhoto' : 'HomePhoto'}
-                        onClick={() => navigate('/photography')}
-                    >
-                        <img alt="" src="/home/Home Image.jpg" />
-                        <img alt="" src="/home/Home Image 2.jpg" />
-                        <img alt="" src="/home/Home Image 3.jpg" />
-                        <img alt="" src="/home/Home Image 4.jpg" />
-                        <img alt="" src="/home/Home Image 5.jpg" />
-                    </div>
-                </Waypoint>
+                    <img
+                        alt=""
+                        src="/home/brainLeftText1.png"
+                        className={merge(
+                            isDevInView ? 'tw-translate-x-0 tw-delay-150' : 'tw-translate-x-14',
+                            'tw-absolute tw-left-[-30px] tw-top-[10px] tw-w-[52px] tw-max-w-[unset] tw-transition-all',
+                        )}
+                    />
+                    <img
+                        alt=""
+                        src="/home/brainLeftText2.png"
+                        className={merge(
+                            isDevInView ? 'tw-translate-x-0 tw-delay-75' : 'tw-translate-x-14',
+                            'tw-absolute tw-left-[-30px] tw-top-[100px] tw-w-[52px] tw-max-w-[unset] tw-transition-all',
+                        )}
+                    />
+                    <FontAwesomeIcon
+                        icon={faLevelUpAlt}
+                        size="2x"
+                        className={merge(
+                            isDevInView
+                                ? 'tw-translate-y-0 tw-scale-100 tw-delay-200'
+                                : 'tw-translate-x-20 tw-scale-0 lg:tw-translate-x-0 lg:tw-translate-y-20',
+                            'tw-absolute tw-left-[-60px] tw-top-[85px] tw-rotate-180 tw-text-extra-light-green tw-transition-all lg:tw-left-[40px] lg:tw-top-[-40px] lg:-tw-rotate-90',
+                        )}
+                    />
+                    <LeftBrain className="tw-relative tw-z-[2] tw-w-full tw-fill-grey" />
+                    <img
+                        alt=""
+                        src="/home/brainLeftOverLay.png"
+                        className={merge(
+                            isDevInView ? 'tw-scale-1 tw-opacity-100' : 'tw-scale-0 tw-opacity-0',
+                            'tw-absolute tw-right-0 tw-top-0 tw-z-[3] tw-h-full tw-w-auto tw-max-w-[unset] tw-origin-right tw-transition-all',
+                        )}
+                    />
+                </Link>
+
+                <Link
+                    to="/photography"
+                    className={merge(
+                        'tw-group/right-brain tw-relative tw-w-[90px] tw-origin-left tw-transition hover:tw-scale-105 focus-visible:tw-scale-105',
+                        FOCUS_VISIBLE_STYLES,
+                    )}
+                    aria-label="Go to photography"
+                >
+                    <img
+                        alt=""
+                        src="/home/brainRightText1.png"
+                        className={merge(
+                            isPhotoInView ? 'tw-translate-x-0 tw-delay-150' : '-tw-translate-x-14',
+                            'tw-absolute tw-right-[-28px] tw-top-[5px] tw-w-[52px] tw-max-w-[unset] tw-transition-all',
+                        )}
+                    />
+                    <img
+                        alt=""
+                        src="/home/brainRightText2.png"
+                        className={merge(
+                            isPhotoInView ? 'tw-translate-x-0 tw-delay-75' : '-tw-translate-x-14',
+                            'tw-absolute tw-right-[-28px] tw-top-[90px] tw-w-[52px] tw-max-w-[unset] tw-transition-all',
+                        )}
+                    />
+                    <FontAwesomeIcon
+                        icon={faLevelUpAlt}
+                        size="2x"
+                        className={merge(
+                            isPhotoInView
+                                ? 'tw-translate-y-0 tw-scale-100 tw-delay-200'
+                                : '-tw-translate-x-20 tw-scale-0 lg:-tw-translate-y-20 lg:tw-translate-x-0',
+                            'tw-text-extra-light-cyan tw-absolute tw-bottom-[80px] tw-right-[-60px] tw-transition-all lg:tw-bottom-[-40px] lg:tw-right-[40px] lg:tw-rotate-90',
+                        )}
+                    />
+                    <RightBrain className="tw-relative tw-z-[2] tw-w-full tw-fill-grey" />
+                    <img
+                        alt=""
+                        src="/home/brainRightOverLay.png"
+                        className={merge(
+                            isPhotoInView ? 'tw-scale-1 tw-opacity-100' : 'tw-scale-0 tw-opacity-0',
+                            'tw-absolute tw-top-0 tw-z-[3] tw-h-full tw-w-auto tw-max-w-[unset] tw-origin-left tw-transition-all',
+                        )}
+                    />
+                </Link>
             </div>
+
+            <EqualSizingCol>
+                <PhotoStack isInView={isPhotoInView} ref={photoCardRef} />
+            </EqualSizingCol>
         </div>
     );
 };

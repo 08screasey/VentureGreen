@@ -1,30 +1,32 @@
-import { useEffect } from 'react';
-import { Routes, Route, useLocation } from 'react-router-dom';
+import { AnimatePresence, MotionConfig } from 'framer-motion';
+import { cloneElement } from 'react';
+import { useLocation, useRoutes } from 'react-router-dom';
 
-import { Layout } from './Component/Layout/Layout';
+import { Layout } from './Layout/Layout';
 import { About } from './Pages/About/About';
-import { Contact } from './Pages/Contact/Contact';
 import { Development } from './Pages/Development/Development';
 import { Home } from './Pages/Home/Home';
 import { Photography } from './Pages/Photography/Photography';
 
-import 'bootstrap/dist/css/bootstrap.min.css';
-
 export const App = () => {
     const { pathname } = useLocation();
-    useEffect(() => {
-        window.scrollTo(0, 0);
-    }, [pathname]);
+
+    const route = useRoutes([
+        { path: '/photography/*', element: <Photography /> },
+        { path: '/development', element: <Development /> },
+        { path: '/about', element: <About /> },
+        { path: '*', element: <Home /> },
+    ]);
+
+    if (!route) {
+        return null;
+    }
 
     return (
-        <Layout>
-            <Routes>
-                <Route path="/photography/*" Component={Photography} />
-                <Route path="/development" Component={Development} />
-                <Route path="/about-me" Component={About} />
-                <Route path="/contact" Component={Contact} />
-                <Route path="*" Component={Home} />
-            </Routes>
-        </Layout>
+        <MotionConfig reducedMotion="user">
+            <Layout>
+                <AnimatePresence mode="wait">{cloneElement(route, { key: pathname })}</AnimatePresence>
+            </Layout>
+        </MotionConfig>
     );
 };

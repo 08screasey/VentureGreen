@@ -8,7 +8,7 @@ module.exports = {
         'plugin:import/recommended',
         'plugin:import/typescript',
     ],
-    ignorePatterns: ['dist', '.eslintrc.cjs'],
+    ignorePatterns: ['dist', '.eslintrc.cjs', 'tailwind.config.js', 'postcss.config.js'],
     parser: '@typescript-eslint/parser',
     plugins: ['react-refresh', 'import'],
     rules: {
