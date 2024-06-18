@@ -8,6 +8,7 @@ import { Laptop } from '../../Feature/Development/Laptop/Laptop';
 import { PhotoStack } from '../../Feature/Photography/PhotoStack/PhotoStack';
 import { FOCUS_VISIBLE_STYLES } from '../../Utility/focusStyles';
 import { merge } from '../../Utility/merge';
+import { useDocumentTitle } from '../../Utility/useDocumentTitle';
 import { useIntersectionObserver } from '../../Utility/useIntersectionObserver';
 import LeftBrain from '../../assets/brainLeft.svg';
 import RightBrain from '../../assets/brainRight.svg';
@@ -29,6 +30,8 @@ const EqualSizingCol = ({ children }: PropsWithChildren) => (
 );
 
 export const Home = () => {
+    useDocumentTitle("Sam Creasey's Portfolio");
+
     const [isDevInView, setIsDevInView] = useState(false);
     const [isPhotoInView, setIsPhotoInView] = useState(false);
 

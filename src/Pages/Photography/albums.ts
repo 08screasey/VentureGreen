@@ -1,7 +1,7 @@
 export type Image = { src: string; alt?: string };
 export type Album = { images: Image[]; header: string; subheader?: string; quote?: string; coverArt: Image };
 
-export const PORTRAIT_ALBUM: Album = {
+const PORTRAIT_ALBUM: Album = {
     header: 'Portrait',
     coverArt: { src: '/cover-art/portrait.jpg' },
     images: [
@@ -19,7 +19,7 @@ export const PORTRAIT_ALBUM: Album = {
     ],
 };
 
-export const ANIMAL_ALBUM: Album = {
+const ANIMAL_ALBUM: Album = {
     header: 'Animal',
     coverArt: { src: '/cover-art/animal.jpg' },
     images: [
@@ -49,7 +49,7 @@ export const ANIMAL_ALBUM: Album = {
 
 // Clients
 
-export const GEMMA_ALBUM: Album = {
+const GEMMA_ALBUM: Album = {
     header: 'Gemma: Aerial',
     subheader: `Tucked away in an old church building, there are people dancing in the shadows. The circus community at
         Cardiff’s No Fit State houses extraordinary talents. The outer structure has retained it’s appearance,
@@ -85,7 +85,7 @@ export const GEMMA_ALBUM: Album = {
     ],
 };
 
-export const CAT_MOTORS_ALBUM: Album = {
+const CAT_MOTORS_ALBUM: Album = {
     header: 'Cat Motors',
     subheader: `Based in Chiang Mai, Cat Motors are a motorbike rental company who were set up by travellers with the
     goal of allowing other travellers easy access to explore the beautiful mountain regions surrounding
@@ -110,7 +110,7 @@ export const CAT_MOTORS_ALBUM: Album = {
     ],
 };
 
-export const CLIMATE_GALLERY: Album = {
+const CLIMATE_GALLERY: Album = {
     header: 'Strike For Climate 2019: Nelson, BC',
     subheader: `The September strike for climate, organised mainly by the Friday’s for Future movement, was the largest
     Strike For Climate on record. It saw people of all ages out on the street, pleading for change,
@@ -141,7 +141,7 @@ export const CLIMATE_GALLERY: Album = {
     ],
 };
 
-export const LUNA_GALLERY: Album = {
+const LUNA_GALLERY: Album = {
     header: 'Luna & The Moon',
     subheader: `In the quiet mountain town of Jasper, Alberta Luna & The Moon became more than just an idea. Filled with
 creative motivation, Olivia crafted her ideas into reality, and each one is carefully hand-made with the
@@ -166,7 +166,7 @@ your hair in place while you do your morning sun salutations.`,
     ],
 };
 
-export const SPROUT_ALBUM: Album = {
+const SPROUT_ALBUM: Album = {
     header: 'Sprout Plant-Based Eatery',
     subheader: `Tucked away on Ward street lies Nelson’s very first vegan eatery. This bright, cosy cafe has you leaving
 satisfied and even healthier than when you walked in. If it’s Poke-bowls or doughnuts you’re after, this
@@ -198,7 +198,7 @@ three!`,
 
 // Travel
 
-export const ASIA_ALBUM: Album = {
+const ASIA_ALBUM: Album = {
     header: 'Asia',
     coverArt: { src: '/cover-art/asia.jpg' },
     images: [
@@ -225,7 +225,7 @@ export const ASIA_ALBUM: Album = {
     ],
 };
 
-export const CANADA_ALBUM: Album = {
+const CANADA_ALBUM: Album = {
     header: 'Canada',
     coverArt: { src: '/cover-art/canada.jpg' },
     images: [
@@ -250,7 +250,7 @@ export const CANADA_ALBUM: Album = {
     ],
 };
 
-export const OCEANIA_ALBUM: Album = {
+const OCEANIA_ALBUM: Album = {
     header: 'Oceania',
     coverArt: { src: '/cover-art/oceania.jpg' },
     images: [
@@ -285,7 +285,7 @@ export const OCEANIA_ALBUM: Album = {
     ],
 };
 
-export const EUROPE_ALBUM: Album = {
+const EUROPE_ALBUM: Album = {
     header: 'Europe',
     coverArt: { src: '/cover-art/europe.jpg' },
     images: [

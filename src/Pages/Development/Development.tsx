@@ -5,6 +5,7 @@ import { TypingEffect } from '../../Common/TypingEffect';
 import { DEV_CARD_VARIANTS } from '../../Feature/Development/DevCards/DevCard/animations';
 import { DevCards } from '../../Feature/Development/DevCards/DevCards';
 import { getDevCardVariants } from '../../Feature/Development/DevCards/animations';
+import { useDocumentTitle } from '../../Utility/useDocumentTitle';
 import { TypingEffectProps, convertNodesToSpanElements } from '../../Utility/useTypingEffect';
 
 const CONTENT: TypingEffectProps['content'] = [
@@ -32,6 +33,7 @@ const CONTENT: TypingEffectProps['content'] = [
 const DEVELOPMENT_VISITED_KEY = 'development-visited';
 
 export const Development = () => {
+    useDocumentTitle("Sam Creasey's Development Portfolio");
     useEffect(() => {
         sessionStorage.setItem(DEVELOPMENT_VISITED_KEY, 'true');
     }, []);
