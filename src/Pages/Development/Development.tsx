@@ -45,7 +45,7 @@ export const Development = () => {
             variants={getDevCardVariants(hasVisited ? 0 : 5)}
             initial="hidden"
             animate="show"
-            className="tw-w-full tw-bg-[url(/development/background.jpg)] tw-bg-cover tw-bg-fixed tw-bg-center tw-bg-no-repeat tw-px-2 tw-pb-[150px] tw-pt-[50px] md:tw-px-10"
+            className="tw-w-full tw-bg-[url(/images/development/background.jpg)] tw-bg-cover tw-bg-fixed tw-bg-center tw-bg-no-repeat tw-px-2 tw-pb-[150px] tw-pt-[50px] md:tw-px-10"
         >
             <motion.h2
                 className="tw-text-center tw-font-lora tw-text-4xl tw-font-bold tw-text-green"

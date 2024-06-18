@@ -41,7 +41,7 @@ export const Photography = () => {
     useDocumentTitle("Sam Creasey's Photography Portfolio");
 
     return (
-        <div className="tw-w-full tw-bg-[url('/backgrounds/berg.jpg')] tw-bg-cover tw-bg-fixed tw-bg-bottom tw-bg-no-repeat">
+        <div className="tw-w-full tw-bg-[url('/images/backgrounds/berg.jpg')] tw-bg-cover tw-bg-fixed tw-bg-bottom tw-bg-no-repeat">
             <PhotoCollection albums={PHOTOGRAPHY_COLLECTIONS} />
         </div>
     );

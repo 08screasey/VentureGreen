@@ -30,7 +30,7 @@ export const About = () => {
                 <motion.img
                     variants={ABOUT_CONTENT_VARIANTS}
                     className="tw-aspect-square tw-w-[75vw] tw-max-w-[350px] tw-rounded-full tw-object-cover"
-                    src="/about/about-mountain.jpg"
+                    src="/images/about/about-mountain.jpg"
                     transition={{ type: 'tween' }}
                 />
                 <div className="tw-text-center lg:tw-text-left">

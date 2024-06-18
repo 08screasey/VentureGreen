@@ -15,7 +15,7 @@ export const PhotoStack = forwardRef<HTMLAnchorElement, { isInView: boolean }>((
         <img
             className={merge(BASE_IMAGE_CLASS, isInView && '-tw-translate-x-1 -tw-translate-y-1')}
             alt=""
-            src="/home/Home Image 5.jpg"
+            src="/images/home/Home Image 5.jpg"
         />
         <img
             className={merge(
@@ -23,12 +23,12 @@ export const PhotoStack = forwardRef<HTMLAnchorElement, { isInView: boolean }>((
                 isInView && '-tw-translate-x-0.5 -tw-translate-y-5 tw-rotate-6 tw-delay-100',
             )}
             alt=""
-            src="/home/Home Image 4.jpg"
+            src="/images/home/Home Image 4.jpg"
         />
         <img
             className={merge(BASE_IMAGE_CLASS, isInView && '-tw-translate-x-1 -tw-translate-y-3 -tw-rotate-6')}
             alt=""
-            src="/home/Home Image 3.jpg"
+            src="/images/home/Home Image 3.jpg"
         />
         <img
             className={merge(
@@ -36,14 +36,14 @@ export const PhotoStack = forwardRef<HTMLAnchorElement, { isInView: boolean }>((
                 isInView && '-tw-translate-x-0.5 tw-translate-y-2.5 tw-rotate-12 tw-delay-100',
             )}
             alt=""
-            src="/home/Home Image 2.jpg"
+            src="/images/home/Home Image 2.jpg"
         />
         <img
             className={merge(
                 'tw-relative tw-origin-center tw-shadow-lg tw-transition-all group-hover/photos:tw-scale-105 group-hover/photos:tw-shadow-2xl group-focus-visible/photos:tw-scale-105 group-focus-visible/photos:tw-shadow-2xl',
             )}
             alt=""
-            src="/home/Home Image.jpg"
+            src="/images/home/Home Image.jpg"
         />
     </Link>
 ));

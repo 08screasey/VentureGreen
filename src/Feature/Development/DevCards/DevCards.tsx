@@ -9,7 +9,11 @@ export const DevCards = () => (
             description="This full-stack React web application was built and designed for use by the Columbia Valley Hut Society, a Canadian volunteer-run organization responsible for several mountain cabins throughout the Columbia Mountain range of BC."
             github="https://github.com/08screasey/ColumbiaValleyHutSociety"
             link="https://columbiavalleyhutsociety.onrender.com/"
-            images={['/development/cvhsmobile.jpg', '/development/cvhsmobile3.jpg', '/development/cvhsmobile2.jpg']}
+            images={[
+                '/images/development/cvhsmobile.jpg',
+                '/images/development/cvhsmobile3.jpg',
+                '/images/development/cvhsmobile2.jpg',
+            ]}
             color="#224146"
             altColor="hsl(207.5, 20.7%, 98.9%)"
         />
@@ -21,7 +25,11 @@ export const DevCards = () => (
             api={['Spoonacular']}
             color="hsl(122, 20%, 60%)"
             altColor="hsl(207.5, 20.7%, 98.9%)"
-            images={['/development/recipe.jpg', '/development/recipe3.jpg', '/development/recipe2.jpg']}
+            images={[
+                '/images/development/recipe.jpg',
+                '/images/development/recipe3.jpg',
+                '/images/development/recipe2.jpg',
+            ]}
             github="https://github.com/08screasey/Recipe-parser"
             link="https://react-recipe-project-87fc0.web.app/auth"
         />
@@ -32,7 +40,11 @@ export const DevCards = () => (
             api={['Cloudinary']}
             color="hsl(146, 39%, 74%)"
             altColor="hsl(207.5, 20.7%, 98.9%)"
-            images={['/development/sprout.jpg', '/development/sprout2.jpg', '/development/sprout3.jpg']}
+            images={[
+                '/images/development/sprout.jpg',
+                '/images/development/sprout2.jpg',
+                '/images/development/sprout3.jpg',
+            ]}
             github="https://github.com/08screasey/SproutWebsite"
             link="https://sproutwebsite.onrender.com"
         />
