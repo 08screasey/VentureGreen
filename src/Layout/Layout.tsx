@@ -80,7 +80,7 @@ export const Layout = ({ children }: LayoutProps) => {
                     </a>
                 </nav>
             </header>
-            <main className="tw-flex tw-w-full tw-flex-auto tw-justify-center tw-pb-[75px] tw-pt-[112px] lg:tw-pb-0 lg:tw-pt-[143px]">
+            <main className="tw-flex tw-w-full tw-flex-auto tw-justify-center tw-pb-[67px] tw-pt-[112px] lg:tw-pb-0 lg:tw-pt-[143px]">
                 {children}
             </main>
             <Footer />
@@ -88,7 +88,7 @@ export const Layout = ({ children }: LayoutProps) => {
             <AnimatePresence>{isMenuOpen && <SlideMenu showMenu={isMenuOpen} onClose={closeMenu} />}</AnimatePresence>
 
             {/** Mobile Navigation Tray */}
-            <nav className="tw-border-t-light-grey tw-fixed tw-bottom-0 tw-left-0 tw-z-[10] tw-flex tw-w-full tw-items-center tw-justify-between tw-border-t tw-bg-white tw-px-4 tw-py-2 lg:tw-hidden">
+            <nav className="tw-fixed tw-bottom-0 tw-left-0 tw-z-[10] tw-flex tw-w-full tw-items-center tw-justify-between tw-border-t tw-border-t-light-grey tw-bg-white tw-px-4 tw-py-2 lg:tw-hidden">
                 <Hamburger onClick={openMenu} label="Open Menu" />
                 <a
                     className={merge(
