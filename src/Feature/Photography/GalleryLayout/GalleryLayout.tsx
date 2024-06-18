@@ -1,9 +1,12 @@
+import { motion } from 'framer-motion';
 import { useState } from 'react';
 
 import { type Album } from '../../../Pages/Photography/albums';
 import { FOCUS_VISIBLE_STYLES } from '../../../Utility/focusStyles';
 import { merge } from '../../../Utility/merge';
 import { GalleryView } from '../GalleryView/GalleryView';
+
+import { GALLERY_CONTAINER_VARIANTS, GALLERY_ITEM_VARIANTS } from './animations';
 
 type GalleryLayoutProps = {
     album: Album;
@@ -40,13 +43,32 @@ export const GalleryLayout = ({ album }: GalleryLayoutProps) => {
                     alt={images[index].alt ?? ''}
                 />
             ) : null}
-            <div className="tw-mx-auto tw-w-full tw-max-w-[600px] tw-px-1 tw-py-10">
+            <motion.div
+                className="tw-mx-auto tw-w-full tw-max-w-[600px] tw-px-1 tw-py-10"
+                variants={GALLERY_CONTAINER_VARIANTS}
+                initial="hidden"
+                animate="show"
+            >
                 <div className="tw-mb-2 tw-flex tw-flex-col tw-gap-4 tw-bg-black/70 tw-p-4 tw-text-white">
-                    <h2 className="tw-text-center tw-font-lora tw-text-4xl">{header}</h2>
-                    {subheader && <p className="tw-mb-4 tw-text-center tw-font-lora">{subheader}</p>}
+                    <motion.h2
+                        variants={GALLERY_ITEM_VARIANTS}
+                        transition={{ type: 'tween' }}
+                        className="tw-text-center tw-font-lora tw-text-4xl"
+                    >
+                        {header}
+                    </motion.h2>
+                    {subheader && (
+                        <motion.p
+                            variants={GALLERY_ITEM_VARIANTS}
+                            transition={{ type: 'tween' }}
+                            className="tw-mb-4 tw-text-center tw-font-lora"
+                        >
+                            {subheader}
+                        </motion.p>
+                    )}
                 </div>
                 {images.map(({ src, alt }, i) => (
-                    <button
+                    <motion.button
                         key={i}
                         onClick={() => openGallery(i)}
                         aria-label={`Open gallery view for ${alt ?? src}`}
@@ -55,11 +77,13 @@ export const GalleryLayout = ({ album }: GalleryLayoutProps) => {
                             FOCUS_VISIBLE_STYLES,
                             'focus-visible:tw-z-[2]',
                         )}
+                        variants={GALLERY_ITEM_VARIANTS}
+                        transition={{ type: 'tween' }}
                     >
                         <img className="tw-w-full" src={src} alt={alt ?? src} />
-                    </button>
+                    </motion.button>
                 ))}
-            </div>
+            </motion.div>
         </>
     );
 };

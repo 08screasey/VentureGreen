@@ -1,7 +1,15 @@
+import { motion } from 'framer-motion';
+
 import { DevCard } from './DevCard/DevCard';
+import { DEV_CARDS_VARIANTS } from './animations';
 
 export const DevCards = () => (
-    <div className="tw-flex tw-w-full tw-flex-col tw-items-center tw-gap-16">
+    <motion.div
+        variants={DEV_CARDS_VARIANTS}
+        initial="hidden"
+        animate="show"
+        className="tw-flex tw-w-full tw-flex-col tw-items-center tw-gap-16"
+    >
         <DevCard
             header="Columbia Valley Hut Society"
             api={['Paypal Rest SDK', 'SendGrid']}
@@ -36,5 +44,5 @@ export const DevCards = () => (
             github="https://github.com/08screasey/SproutWebsite"
             link="https://sproutwebsite.onrender.com"
         />
-    </div>
+    </motion.div>
 );

@@ -23,7 +23,7 @@ const ContactLink = ({ children, href, label }: PropsWithChildren<{ href: string
 
 export const About = () => (
     <div className="tw-flex tw-flex-col tw-items-center tw-justify-center tw-py-10">
-        <div className="tw-flex tw-w-[95%] tw-max-w-[1200px] tw-flex-col tw-items-center tw-gap-12 tw-px-2 lg:tw-flex-row">
+        <div className="tw-flex tw-w-[95%] tw-max-w-[1100px] tw-flex-col tw-items-center tw-gap-12 tw-px-2 lg:tw-flex-row">
             <img
                 className="tw-aspect-square tw-w-[75vw] tw-max-w-[350px] tw-rounded-full tw-object-cover"
                 src="/about/about-mountain.jpg"

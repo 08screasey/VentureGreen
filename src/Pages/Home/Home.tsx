@@ -1,6 +1,6 @@
 import { faLevelUpAlt } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { PropsWithChildren, useRef, useState } from 'react';
+import { PropsWithChildren, useCallback, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 
 import { TypingEffect } from '../../Common/TypingEffect';
@@ -34,18 +34,19 @@ export const Home = () => {
 
     const photoCardRef = useRef<HTMLAnchorElement>(null);
     useIntersectionObserver({
-        onEnter: () => setIsPhotoInView(true),
-        onLeave: () => setIsPhotoInView(false),
-        topOffset: 650,
+        onEnter: useCallback(() => setIsPhotoInView(true), []),
+        onLeave: useCallback(() => setIsPhotoInView(false), []),
+        topOffset: 300,
         bottomOffset: 100,
         ref: photoCardRef,
     });
 
     const devCardRef = useRef<HTMLAnchorElement>(null);
     useIntersectionObserver({
-        onEnter: () => setIsDevInView(true),
-        onLeave: () => setIsDevInView(false),
-        topOffset: 200,
+        onEnter: useCallback(() => setIsDevInView(true), []),
+        onLeave: useCallback(() => setIsDevInView(false), []),
+        topOffset: 300,
+        bottomOffset: 100,
         ref: devCardRef,
     });
 
@@ -58,13 +59,20 @@ export const Home = () => {
                     ref={devCardRef}
                 >
                     <Laptop />
-                    <h2 className="tw-z-[4] tw-mx-auto tw-w-full tw-text-center tw-font-code tw-text-3xl md:tw-text-4xl lg:tw-text-3xl xl:tw-text-4xl">
+                    <h2 className="tw-z-[4] tw-mx-auto tw-w-full tw-text-center tw-font-code tw-text-3xl tw-drop-shadow-xl md:tw-text-4xl lg:tw-text-3xl xl:tw-text-4xl">
                         <TypingEffect enabled={isDevInView} content={CONTENT} />
                     </h2>
                 </Link>
             </EqualSizingCol>
+
             <div className="tw-flex tw-flex-none tw-justify-center tw-gap-x-2 tw-px-10">
-                <Link to="/development" className={merge('tw-relative tw-w-[90px]', FOCUS_VISIBLE_STYLES)}>
+                <Link
+                    to="/development"
+                    className={merge(
+                        'tw-group/left-brain tw-relative tw-w-[90px] tw-origin-right tw-transition hover:tw-scale-105 focus-visible:tw-scale-105',
+                        FOCUS_VISIBLE_STYLES,
+                    )}
+                >
                     <img
                         alt=""
                         src="/home/brainLeftText1.png"
@@ -91,7 +99,7 @@ export const Home = () => {
                             'tw-absolute tw-left-[-60px] tw-top-[85px] tw-rotate-180 tw-text-green tw-transition-all lg:tw-left-[40px] lg:tw-top-[-40px] lg:-tw-rotate-90',
                         )}
                     />
-                    <LeftBrain className="tw-fill-grey tw-relative tw-z-[2] tw-w-full" />
+                    <LeftBrain className="tw-relative tw-z-[2] tw-w-full tw-fill-grey" />
                     <img
                         alt=""
                         src="/home/brainLeftOverLay.png"
@@ -102,7 +110,13 @@ export const Home = () => {
                     />
                 </Link>
 
-                <Link to="/photography" className={merge('tw-relative tw-w-[90px]', FOCUS_VISIBLE_STYLES)}>
+                <Link
+                    to="/photography"
+                    className={merge(
+                        'tw-group/right-brain tw-relative tw-w-[90px] tw-origin-left tw-transition hover:tw-scale-105 focus-visible:tw-scale-105',
+                        FOCUS_VISIBLE_STYLES,
+                    )}
+                >
                     <img
                         alt=""
                         src="/home/brainRightText1.png"
@@ -129,7 +143,7 @@ export const Home = () => {
                             'tw-absolute tw-bottom-[80px] tw-right-[-60px] tw-text-cyan tw-transition-all lg:tw-bottom-[-40px] lg:tw-right-[40px] lg:tw-rotate-90',
                         )}
                     />
-                    <RightBrain className="tw-fill-grey tw-relative tw-z-[2] tw-w-full" />
+                    <RightBrain className="tw-relative tw-z-[2] tw-w-full tw-fill-grey" />
                     <img
                         alt=""
                         src="/home/brainRightOverLay.png"
@@ -140,6 +154,7 @@ export const Home = () => {
                     />
                 </Link>
             </div>
+
             <EqualSizingCol>
                 <PhotoStack isInView={isPhotoInView} ref={photoCardRef} />
             </EqualSizingCol>

@@ -1,5 +1,6 @@
-import { useEffect } from 'react';
-import { Routes, Route, useLocation } from 'react-router-dom';
+import { AnimatePresence } from 'framer-motion';
+import { cloneElement, useEffect } from 'react';
+import { useLocation, useRoutes } from 'react-router-dom';
 
 import { Layout } from './Layout/Layout';
 import { About } from './Pages/About/About';
@@ -13,14 +14,20 @@ export const App = () => {
         window.scrollTo(0, 0);
     }, [pathname]);
 
+    const route = useRoutes([
+        { path: '/photography/*', element: <Photography /> },
+        { path: '/development', element: <Development /> },
+        { path: '/about', element: <About /> },
+        { path: '*', element: <Home /> },
+    ]);
+
+    if (!route) {
+        return null;
+    }
+
     return (
         <Layout>
-            <Routes>
-                <Route path="/photography/*" Component={Photography} />
-                <Route path="/development" Component={Development} />
-                <Route path="/about" Component={About} />
-                <Route path="*" Component={Home} />
-            </Routes>
+            <AnimatePresence mode="wait">{cloneElement(route, { key: pathname })}</AnimatePresence>
         </Layout>
     );
 };

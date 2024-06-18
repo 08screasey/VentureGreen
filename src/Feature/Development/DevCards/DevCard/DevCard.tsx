@@ -1,10 +1,12 @@
 import { faGithubSquare } from '@fortawesome/free-brands-svg-icons';
 import { faLink } from '@fortawesome/free-solid-svg-icons';
+import { motion } from 'framer-motion';
 import { useState } from 'react';
 
 import { merge } from '../../../../Utility/merge';
 
 import { DevCardLink } from './DevCardLink/DevCardLink';
+import { DEV_CARD_VARIANTS } from './animations';
 
 type DevCardProps = {
     alt?: boolean;
@@ -34,10 +36,13 @@ export const DevCard = ({
     const [preview, showPreview] = useState(false);
 
     return (
-        <section className="tw-border-light-grey tw-grid tw-max-w-[1100px] tw-grid-cols-2 tw-overflow-hidden tw-rounded-lg tw-border tw-shadow-lg">
+        <motion.section
+            variants={DEV_CARD_VARIANTS}
+            className="tw-grid tw-max-w-[1100px] tw-grid-cols-2 tw-overflow-hidden tw-rounded-lg tw-border tw-border-light-grey tw-shadow-lg"
+        >
             <h3
                 className={merge(
-                    'tw-font-active tw-order-1 tw-col-span-2 tw-flex tw-min-h-[225px] tw-w-full tw-items-center tw-justify-center tw-p-10 tw-text-center tw-text-7xl lg:tw-order-1 lg:tw-col-span-1 lg:tw-min-h-[450px]',
+                    'tw-order-1 tw-col-span-2 tw-flex tw-min-h-[225px] tw-w-full tw-items-center tw-justify-center tw-p-10 tw-text-center tw-font-active tw-text-7xl lg:tw-order-1 lg:tw-col-span-1 lg:tw-min-h-[450px]',
                     alt ? 'lg:tw-order-2' : 'lg:tw-order-1',
                 )}
                 style={{ color: altColor, background: color }}
@@ -71,9 +76,9 @@ export const DevCard = ({
                     </DevCardLink>
                 </div>
             </div>
-            <div className="tw-border-t-light-grey tw-order-3 tw-col-span-2 tw-border-t tw-border-solid tw-bg-white tw-p-8">
+            <div className="tw-order-3 tw-col-span-2 tw-border-t tw-border-solid tw-border-t-light-grey tw-bg-white tw-p-8">
                 <h4
-                    className="tw-font-active tw-mb-3 tw-text-center tw-text-6xl tw-font-bold"
+                    className="tw-mb-3 tw-text-center tw-font-active tw-text-6xl tw-font-bold"
                     onClick={() => {
                         showPreview(!preview);
                     }}
@@ -92,6 +97,6 @@ export const DevCard = ({
                     ))}
                 </div>
             </div>
-        </section>
+        </motion.section>
     );
 };
