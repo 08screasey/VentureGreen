@@ -1,11 +1,13 @@
 import { motion } from 'framer-motion';
 
 import { DevCard } from './DevCard/DevCard';
-import { DEV_CARDS_VARIANTS } from './animations';
+import { getDevCardVariants } from './animations';
 
-export const DevCards = () => (
+type DevCardsProps = { entranceDelay: number };
+
+export const DevCards = ({ entranceDelay }: DevCardsProps) => (
     <motion.div
-        variants={DEV_CARDS_VARIANTS}
+        variants={getDevCardVariants(entranceDelay)}
         initial="hidden"
         animate="show"
         className="tw-flex tw-w-full tw-flex-col tw-items-center tw-gap-16"

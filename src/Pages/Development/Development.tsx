@@ -1,3 +1,5 @@
+import { useEffect, useRef } from 'react';
+
 import { TypingEffect } from '../../Common/TypingEffect';
 import { DevCards } from '../../Feature/Development/DevCards/DevCards';
 import { TypingEffectProps } from '../../Utility/useTypingEffect';
@@ -24,14 +26,26 @@ const CONTENT: TypingEffectProps['content'] = [
     { text: '>', className: 'tw-text-cyan' },
 ];
 
-export const Development = () => (
-    <div className="tw-w-full tw-bg-[url(/development/background.jpg)] tw-bg-cover tw-bg-fixed tw-bg-center tw-bg-no-repeat tw-px-2 tw-pb-[150px] tw-pt-[50px] md:tw-px-10">
-        <h2 className="tw-text-center tw-font-lora tw-text-3xl tw-font-bold tw-text-light-green">Web Development</h2>
-        <div className="tw-mx-auto tw-max-w-[600px] tw-p-4">
-            <p className="tw-mb-3 tw-text-center tw-font-code">
-                <TypingEffect content={CONTENT} enabled minSpeed={10} maxSpeed={30} />
-            </p>
+const DEVELOPMENT_VISITED_KEY = 'development-visited';
+
+export const Development = () => {
+    useEffect(() => {
+        sessionStorage.setItem(DEVELOPMENT_VISITED_KEY, 'true');
+    }, []);
+
+    const hasVisited = useRef(sessionStorage.getItem(DEVELOPMENT_VISITED_KEY) === 'true').current;
+
+    return (
+        <div className="tw-w-full tw-bg-[url(/development/background.jpg)] tw-bg-cover tw-bg-fixed tw-bg-center tw-bg-no-repeat tw-px-2 tw-pb-[150px] tw-pt-[50px] md:tw-px-10">
+            <h2 className="tw-text-center tw-font-lora tw-text-3xl tw-font-bold tw-text-light-green">
+                Web Development
+            </h2>
+            <div className="tw-mx-auto tw-max-w-[600px] tw-p-4">
+                <p className="tw-mb-3 tw-min-h-[100px] tw-text-center tw-font-code">
+                    <TypingEffect content={CONTENT} enabled minSpeed={8} maxSpeed={30} />
+                </p>
+            </div>
+            <DevCards entranceDelay={hasVisited ? 0 : 5} />
         </div>
-        <DevCards />
-    </div>
-);
+    );
+};

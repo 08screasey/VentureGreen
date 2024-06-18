@@ -1,8 +1,9 @@
-export const DEV_CARDS_VARIANTS = {
+export const getDevCardVariants = (entranceDelay: number) => ({
     hidden: {},
     show: {
         transition: {
+            delayChildren: entranceDelay,
             staggerChildren: 0.2,
         },
     },
-};
+});

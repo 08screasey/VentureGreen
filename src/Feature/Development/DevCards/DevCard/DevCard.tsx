@@ -38,6 +38,7 @@ export const DevCard = ({
     return (
         <motion.section
             variants={DEV_CARD_VARIANTS}
+            transition={{ type: 'tween' }}
             className="tw-grid tw-max-w-[1100px] tw-grid-cols-2 tw-overflow-hidden tw-rounded-lg tw-border tw-border-light-grey tw-shadow-lg"
         >
             <h3
