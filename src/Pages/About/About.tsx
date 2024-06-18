@@ -26,12 +26,12 @@ const ABOUT_VARIANTS = {
     hidden: {},
     show: {
         transition: {
-            staggerChildren: 0.1,
+            staggerChildren: 0.3,
         },
     },
 };
 
-const ABOUT_CONTENT_VARIANTS = { hidden: { opacity: 0, y: 50 }, show: { opacity: 1, y: 0 } };
+const ABOUT_CONTENT_VARIANTS = { hidden: { opacity: 0, y: 30 }, show: { opacity: 1, y: 0 } };
 
 export const About = () => (
     <motion.div
