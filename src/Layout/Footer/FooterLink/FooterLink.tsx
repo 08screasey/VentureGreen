@@ -16,7 +16,7 @@ export const FooterLink = ({ children, to }: PropsWithChildren<{ to: string }>) 
             to={to}
             className={merge(
                 FOCUS_VISIBLE_STYLES,
-                'tw-relative tw-rounded tw-p-4 tw-font-lora tw-font-medium tw-text-green',
+                'tw-relative tw-rounded tw-p-4 tw-font-lora tw-font-medium tw-text-green hover:tw-text-extra-light-green active:tw-text-light-green',
             )}
         >
             {children}
