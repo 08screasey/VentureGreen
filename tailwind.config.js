@@ -33,6 +33,9 @@ export default {
                     '50%, 100%': { opacity: 0 },
                 },
             },
+            boxShadow: {
+                'inner-dark': 'inset 0 2px 4px 3px rgba(0, 0, 0, 0.5)',
+            },
         },
     },
     plugins: [require('tailwind-scrollbar')],

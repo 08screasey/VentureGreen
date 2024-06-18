@@ -46,13 +46,12 @@ export const SlideMenu = ({ onClose }: SlideMenuProps) => {
                 </button>
                 <div
                     className="tw-flex tw-h-full tw-w-full tw-flex-col tw-items-center tw-justify-center"
-                    aria-role="navigation"
+                    role="navigation"
                 >
                     <MenuItem link="/">Home</MenuItem>
                     <MenuItem link="/photography">Photography</MenuItem>
                     <MenuItem link="/development">Development</MenuItem>
-                    <MenuItem link="/about-me">About Me</MenuItem>
-                    <MenuItem link="/contact">Contact</MenuItem>
+                    <MenuItem link="/about">About Me</MenuItem>
                 </div>
             </motion.div>
         </ReactFocusLock>

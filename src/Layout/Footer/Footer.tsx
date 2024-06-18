@@ -19,8 +19,7 @@ export const Footer = () => (
             <FooterLink to="/">Home</FooterLink>
             <FooterLink to="/development">Development</FooterLink>
             <FooterLink to="/photography">Photography</FooterLink>
-            <FooterLink to="/about-me">About</FooterLink>
-            <FooterLink to="/contact">Contact</FooterLink>
+            <FooterLink to="/about">About me</FooterLink>
         </div>
     </footer>
 );
