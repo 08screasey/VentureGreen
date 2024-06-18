@@ -96,7 +96,7 @@ export const Home = () => {
                             isDevInView
                                 ? 'tw-translate-y-0 tw-scale-100 tw-delay-200'
                                 : 'tw-translate-x-20 tw-scale-0 lg:tw-translate-x-0 lg:tw-translate-y-20',
-                            'tw-absolute tw-left-[-60px] tw-top-[85px] tw-rotate-180 tw-text-green tw-transition-all lg:tw-left-[40px] lg:tw-top-[-40px] lg:-tw-rotate-90',
+                            'tw-absolute tw-left-[-60px] tw-top-[85px] tw-rotate-180 tw-text-extra-light-green tw-transition-all lg:tw-left-[40px] lg:tw-top-[-40px] lg:-tw-rotate-90',
                         )}
                     />
                     <LeftBrain className="tw-relative tw-z-[2] tw-w-full tw-fill-grey" />
@@ -140,7 +140,7 @@ export const Home = () => {
                             isPhotoInView
                                 ? 'tw-translate-y-0 tw-scale-100 tw-delay-200'
                                 : '-tw-translate-x-20 tw-scale-0 lg:-tw-translate-y-20 lg:tw-translate-x-0',
-                            'tw-absolute tw-bottom-[80px] tw-right-[-60px] tw-text-cyan tw-transition-all lg:tw-bottom-[-40px] lg:tw-right-[40px] lg:tw-rotate-90',
+                            'tw-text-extra-light-cyan tw-absolute tw-bottom-[80px] tw-right-[-60px] tw-transition-all lg:tw-bottom-[-40px] lg:tw-right-[40px] lg:tw-rotate-90',
                         )}
                     />
                     <RightBrain className="tw-relative tw-z-[2] tw-w-full tw-fill-grey" />

@@ -56,8 +56,9 @@ export const Layout = ({ children }: LayoutProps) => {
                 <nav className="tw-flex tw-items-center tw-justify-between tw-px-8 tw-py-3 lg:tw-pb-4 lg:tw-pt-6">
                     <a
                         className={merge(
-                            'tw-hidden tw-h-[50px] tw-w-[50px] tw-items-center tw-justify-center tw-rounded tw-p-2 lg:tw-flex',
+                            'tw-hidden tw-h-[50px] tw-w-[50px] tw-items-center tw-justify-center tw-rounded tw-p-2 tw-transition lg:tw-flex',
                             FOCUS_VISIBLE_STYLES,
+                            'hover:tw-text-light-green active:tw-text-green',
                         )}
                         rel="noopener noreferrer"
                         aria-label="Github"
@@ -78,8 +79,9 @@ export const Layout = ({ children }: LayoutProps) => {
                     </h1>
                     <a
                         className={merge(
-                            'tw-hidden tw-h-[50px] tw-w-[50px] tw-items-center tw-justify-center tw-rounded tw-p-2 lg:tw-flex',
+                            'tw-hidden tw-h-[50px] tw-w-[50px] tw-items-center tw-justify-center tw-rounded tw-p-2 tw-transition lg:tw-flex',
                             FOCUS_VISIBLE_STYLES,
+                            'hover:tw-text-light-green active:tw-text-green',
                         )}
                         rel="noopener noreferrer"
                         aria-label="Instagram"
@@ -103,8 +105,9 @@ export const Layout = ({ children }: LayoutProps) => {
                 <div className="tw-flex tw-items-center tw-gap-2">
                     <a
                         className={merge(
-                            'tw-flex tw-h-[50px] tw-w-[50px] tw-items-center tw-justify-center tw-rounded tw-p-2',
+                            'tw-flex tw-h-[50px] tw-w-[50px] tw-items-center tw-justify-center tw-rounded tw-p-2 tw-transition',
                             FOCUS_VISIBLE_STYLES,
+                            'hover:tw-text-light-green active:tw-text-green',
                         )}
                         rel="noopener noreferrer"
                         aria-label="Github"
@@ -115,8 +118,9 @@ export const Layout = ({ children }: LayoutProps) => {
                     </a>
                     <a
                         className={merge(
-                            'tw-flex tw-h-[50px] tw-w-[50px] tw-items-center tw-justify-center tw-rounded tw-p-2',
+                            'tw-flex tw-h-[50px] tw-w-[50px] tw-items-center tw-justify-center tw-rounded tw-p-2 tw-transition',
                             FOCUS_VISIBLE_STYLES,
+                            'hover:tw-text-light-green active:tw-text-green',
                         )}
                         rel="noopener noreferrer"
                         href="https://www.instagram.com/venturegreenphotography/"

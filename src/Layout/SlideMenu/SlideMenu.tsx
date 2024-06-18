@@ -10,6 +10,7 @@ import { useClickOutside } from '../../Utility/useClickOutside';
 import { useKeypress } from '../../Utility/useKeypress';
 
 import { MenuItem } from './MenuItem/MenuItem';
+import { SLIDE_MENU_VARIANTS } from './animation';
 
 type SlideMenuProps = {
     onClose: () => void;
@@ -28,10 +29,10 @@ export const SlideMenu = ({ onClose }: SlideMenuProps) => {
                 className={merge(
                     'tw-fixed tw-left-0 tw-top-0 tw-z-[11] tw-h-full tw-w-full tw-max-w-[100vw] tw-bg-white tw-shadow-lg md:tw-max-w-[400px]',
                 )}
-                initial={{ x: '-100%' }}
-                animate={{ x: '0%' }}
-                exit={{ x: '-100%' }}
-                transition={{ type: 'tween', duration: 0.2 }}
+                variants={SLIDE_MENU_VARIANTS}
+                initial="hidden"
+                animate="show"
+                exit="hidden"
                 ref={menuRef}
             >
                 <button
@@ -45,7 +46,7 @@ export const SlideMenu = ({ onClose }: SlideMenuProps) => {
                     <FontAwesomeIcon icon={faArrowLeft} size="2x" className="tw-text-green" />
                 </button>
                 <div
-                    className="tw-flex tw-h-full tw-w-full tw-flex-col tw-items-center tw-justify-center"
+                    className="tw-flex tw-h-full tw-w-full tw-flex-col tw-items-center tw-justify-center tw-gap-y-2 tw-text-center"
                     role="navigation"
                 >
                     <MenuItem link="/">Home</MenuItem>

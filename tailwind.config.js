@@ -4,10 +4,11 @@ export default {
     prefix: 'tw-',
     theme: {
         colors: {
-            'extra-light-green': '#E9EAE633',
+            'extra-light-green': '#8ea989',
             'light-green': '#637C5A',
             green: '#495C42',
             red: '#EB0027',
+            'extra-light-cyan': '#89ddff',
             cyan: '#009DDB',
             white: '#FFFFFF',
             black: '#000000',
@@ -15,6 +16,7 @@ export default {
             transparent: '#FFFFFF00',
             grey: '#CCCCCC',
             'light-grey': '#EEEEEE',
+            'extra-light-grey': '#FAFAFA',
         },
         fontFamily: {
             lora: ['lora', 'serif'],
