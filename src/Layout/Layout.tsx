@@ -86,6 +86,7 @@ export const Layout = ({ children }: LayoutProps) => {
             <Footer />
 
             <AnimatePresence>{isMenuOpen && <SlideMenu showMenu={isMenuOpen} onClose={closeMenu} />}</AnimatePresence>
+
             {/** Mobile Navigation Tray */}
             <nav className="tw-border-t-light-grey tw-fixed tw-bottom-0 tw-left-0 tw-z-[10] tw-flex tw-w-full tw-items-center tw-justify-between tw-border-t tw-bg-white tw-px-4 tw-py-2 lg:tw-hidden">
                 <Hamburger onClick={openMenu} label="Open Menu" />

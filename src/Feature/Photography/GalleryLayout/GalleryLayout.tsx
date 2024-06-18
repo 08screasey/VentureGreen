@@ -41,23 +41,23 @@ export const GalleryLayout = ({ album }: GalleryLayoutProps) => {
                 />
             ) : null}
             <div className="tw-mx-auto tw-w-full tw-max-w-[600px] tw-px-1 tw-py-10">
-                <div className="tw-flex tw-flex-col tw-gap-4 tw-bg-black/70 tw-p-4 tw-text-white">
+                <div className="tw-mb-2 tw-flex tw-flex-col tw-gap-4 tw-bg-black/70 tw-p-4 tw-text-white">
                     <h2 className="tw-text-center tw-font-lora tw-text-4xl">{header}</h2>
                     {subheader && <p className="tw-mb-4 tw-text-center tw-font-lora">{subheader}</p>}
                 </div>
                 {images.map(({ src, alt }, i) => (
-                    <img
+                    <button
                         key={i}
+                        onClick={() => openGallery(i)}
+                        aria-label={`Open gallery view for ${alt ?? src}`}
                         className={merge(
-                            'tw-relative tw-mx-auto tw-w-full tw-cursor-pointer tw-transition hover:tw-brightness-95 active:tw-brightness-90',
+                            'tw-relative tw-mx-auto tw-mb-2 tw-block tw-w-full hover:tw-brightness-95 active:tw-brightness-90',
                             FOCUS_VISIBLE_STYLES,
                             'focus-visible:tw-z-[2]',
                         )}
-                        src={src}
-                        tabIndex={0}
-                        alt={alt ?? src}
-                        onClick={() => openGallery(i)}
-                    />
+                    >
+                        <img className="tw-w-full" src={src} alt={alt ?? src} />
+                    </button>
                 ))}
             </div>
         </>
