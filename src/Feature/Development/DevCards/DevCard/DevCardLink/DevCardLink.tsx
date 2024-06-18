@@ -1,15 +1,23 @@
+import { FontAwesomeIcon, type FontAwesomeIconProps } from '@fortawesome/react-fontawesome';
 import { type PropsWithChildren } from 'react';
 
-type DevCardLinkProps = PropsWithChildren<{ href: string }>;
+import { FOCUS_VISIBLE_STYLES } from '../../../../../Utility/focusStyles';
+import { merge } from '../../../../../Utility/merge';
 
-export const DevCardLink = ({ children, href }: DevCardLinkProps) => (
+type DevCardLinkProps = PropsWithChildren<{ href: string; icon: FontAwesomeIconProps['icon'] }>;
+
+export const DevCardLink = ({ children, href, icon }: DevCardLinkProps) => (
     <a
         href={href}
         rel="noopener noreferrer"
-        className="tw-group/link tw-border-grey tw-relative tw-w-[150px] tw-rounded tw-border tw-px-3 tw-py-2 tw-text-left tw-font-lora tw-shadow-md tw-transition-all hover:tw-w-[170px] focus-visible:tw-w-[170px]"
+        className={merge(
+            FOCUS_VISIBLE_STYLES,
+            'tw-group/link tw-border-grey tw-font-active tw-relative tw-flex tw-items-center tw-gap-x-2 tw-rounded tw-border tw-py-2 tw-pl-3 tw-pr-6 tw-text-left tw-shadow-md tw-transition-all hover:tw-pr-8 focus-visible:tw-pr-8',
+        )}
         target="_blank"
     >
+        <FontAwesomeIcon className="tw-text-light-green" icon={icon} size="lg" />
         {children}
-        <span className="tw-absolute tw-right-0 tw-top-1/2 tw-hidden tw-h-0 tw-w-0 tw--translate-y-1/2 tw-border-[10px] tw-border-[transparent] tw-border-l-light-green group-hover/link:tw-inline-block group-focus-visible/link:tw-inline-block" />
+        <span className="tw-absolute tw-right-0 tw-top-1/2 tw-h-0 tw-w-0 tw--translate-y-1/2 tw-border-[8px] tw-border-[transparent] tw-border-l-light-green tw-opacity-0 tw-transition-opacity group-hover/link:tw-opacity-100 group-focus-visible/link:tw-opacity-100" />
     </a>
 );
