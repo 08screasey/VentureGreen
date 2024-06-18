@@ -72,6 +72,7 @@ export const Home = () => {
                         'tw-group/left-brain tw-relative tw-w-[90px] tw-origin-right tw-transition hover:tw-scale-105 focus-visible:tw-scale-105',
                         FOCUS_VISIBLE_STYLES,
                     )}
+                    aria-label="Go to development"
                 >
                     <img
                         alt=""
@@ -116,6 +117,7 @@ export const Home = () => {
                         'tw-group/right-brain tw-relative tw-w-[90px] tw-origin-left tw-transition hover:tw-scale-105 focus-visible:tw-scale-105',
                         FOCUS_VISIBLE_STYLES,
                     )}
+                    aria-label="Go to photography"
                 >
                     <img
                         alt=""
