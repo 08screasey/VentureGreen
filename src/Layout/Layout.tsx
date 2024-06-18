@@ -67,7 +67,7 @@ export const Layout = ({ children }: LayoutProps) => {
                     >
                         <FontAwesomeIcon icon={faGithub} size="2x" />
                     </a>
-                    <h1 className="tw-text-l tw-m-auto tw-mb-0 tw-flex tw-max-w-[500px] tw-flex-col tw-items-center tw-font-lora tw-font-bold tw-text-light-green lg:tw-text-xl">
+                    <h1 className="tw-text-l tw-m-auto tw-mb-0 tw-flex tw-max-w-[500px] tw-flex-col tw-items-center tw-font-lora tw-font-bold tw-text-green lg:tw-text-xl">
                         <Link to="/" className={merge(FOCUS_VISIBLE_STYLES, 'tw-rounded')} aria-label="Home">
                             <img
                                 src="/venturegreen.png"

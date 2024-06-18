@@ -49,7 +49,7 @@ export const About = () => (
             />
             <div className="tw-text-center lg:tw-text-left">
                 <motion.h2
-                    className="tw-mb-4 tw-font-lora tw-text-4xl tw-font-bold tw-text-light-green"
+                    className="tw-mb-4 tw-font-lora tw-text-4xl tw-font-bold tw-text-green"
                     variants={ABOUT_CONTENT_VARIANTS}
                     transition={{ type: 'tween' }}
                 >

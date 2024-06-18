@@ -46,7 +46,7 @@ export const Development = () => {
             className="tw-w-full tw-bg-[url(/development/background.jpg)] tw-bg-cover tw-bg-fixed tw-bg-center tw-bg-no-repeat tw-px-2 tw-pb-[150px] tw-pt-[50px] md:tw-px-10"
         >
             <motion.h2
-                className="tw-text-center tw-font-lora tw-text-3xl tw-font-bold tw-text-light-green"
+                className="tw-text-center tw-font-lora tw-text-4xl tw-font-bold tw-text-green"
                 variants={DEV_CARD_VARIANTS}
                 transition={{ type: 'tween' }}
             >
