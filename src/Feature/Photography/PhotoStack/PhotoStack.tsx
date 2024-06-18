@@ -7,7 +7,7 @@ const BASE_IMAGE_CLASS = 'tw-absolute tw-top-0 tw-left-0 tw-transition-all tw-sh
 
 export const PhotoStack = forwardRef<HTMLAnchorElement, { isInView: boolean }>(({ isInView }, ref) => (
     <Link
-        className="tw-group/photos tw-relative tw-block tw-max-w-[450px] tw-outline-none"
+        className="tw-group/photos tw-relative tw-block tw-outline-none"
         to="/photography"
         ref={ref}
         aria-label="Photography portfolio"

@@ -45,27 +45,30 @@ export const Layout = ({ children }: LayoutProps) => {
     }, [pathname, closeMenu]);
 
     return (
-        <div>
+        <div className="tw-flex tw-min-h-screen tw-w-full tw-flex-col">
             <header
                 className={merge(
                     !isAtTop && 'tw-shadow-md',
                     'tw-fixed tw-left-0 tw-top-0 tw-z-[10] tw-w-full tw-bg-white tw-transition-shadow',
                 )}
             >
-                <nav className="tw-flex tw-items-center tw-justify-between tw-px-8 tw-pb-4 tw-pt-6">
-                    <Hamburger onClick={openMenu} label="Open Menu" />
+                {/* Desktop Navigation Bar */}
+                <nav className="tw-flex tw-items-center tw-justify-between tw-px-8 tw-py-3 lg:tw-pb-4 lg:tw-pt-6">
+                    <div className="tw-hidden lg:tw-block">
+                        <Hamburger onClick={openMenu} label="Open Menu" />
+                    </div>
                     <h1 className="tw-m-auto tw-mb-0 tw-flex tw-max-w-[500px] tw-flex-col tw-items-center tw-font-lora tw-text-xl tw-font-bold tw-text-light-green">
                         <Link to="/" className={FOCUS_VISIBLE_STYLES}>
                             <img
                                 src="/venturegreen.png"
-                                className="tw-mx-auto tw-block tw-h-[75px]"
+                                className="tw-mx-auto tw-block tw-h-[60px] lg:tw-h-[75px]"
                                 alt="Venture Green Logo"
                             />
                         </Link>
                         <div className="tw-text-center">Adventure Photography & Web Development</div>
                     </h1>
                     <a
-                        className={merge('tw-rounded tw-p-4', FOCUS_VISIBLE_STYLES)}
+                        className={merge('tw-hidden tw-rounded tw-p-4 lg:tw-block', FOCUS_VISIBLE_STYLES)}
                         rel="noopener noreferrer"
                         href="https://www.instagram.com/venturegreenphotography/"
                         target="_blank"
@@ -77,8 +80,23 @@ export const Layout = ({ children }: LayoutProps) => {
                     </AnimatePresence>
                 </nav>
             </header>
-            <main className="md:tw-min-h-[90vh] md:tw-pt-[150px]">{children}</main>
+            <main className="tw-flex tw-w-full tw-flex-auto tw-justify-center tw-pb-[75px] tw-pt-[112px] lg:tw-pb-0 lg:tw-pt-[143px]">
+                {children}
+            </main>
             <Footer />
+
+            {/** Mobile Navigation Tray */}
+            <nav className="tw-border-t-light-grey tw-fixed tw-bottom-0 tw-left-0 tw-flex tw-w-full tw-items-center tw-justify-between tw-border-t tw-bg-white tw-px-4 tw-py-2 lg:tw-hidden">
+                <Hamburger onClick={openMenu} label="Open Menu" />
+                <a
+                    className={merge('tw-rounded tw-p-3', FOCUS_VISIBLE_STYLES)}
+                    rel="noopener noreferrer"
+                    href="https://www.instagram.com/venturegreenphotography/"
+                    target="_blank"
+                >
+                    <FontAwesomeIcon icon={faInstagram} size="2x" />
+                </a>
+            </nav>
         </div>
     );
 };

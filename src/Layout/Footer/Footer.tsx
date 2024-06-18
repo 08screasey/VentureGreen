@@ -14,7 +14,7 @@ const FooterLink = ({ children, to }: PropsWithChildren<{ to: string }>) => (
 );
 
 export const Footer = () => (
-    <footer className="tw-w-100 tw-hidden tw-py-3 md:tw-flex">
+    <footer className="tw-w-100 tw-hidden tw-flex-none tw-py-3 lg:tw-flex">
         <div className="tw-m-auto tw-flex tw-w-[95%] tw-max-w-[1000px] tw-items-center tw-justify-around">
             <FooterLink to="/">Home</FooterLink>
             <FooterLink to="/development">Development</FooterLink>

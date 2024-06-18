@@ -22,7 +22,7 @@ export const Laptop = () => {
             </div>
             <img
                 src="/home/edited laptop.png"
-                className="tw-pointer-events-none tw-relative tw-z-[2] tw-w-full tw-max-w-[450px] tw-drop-shadow-2xl"
+                className="tw-pointer-events-none tw-relative tw-z-[2] tw-w-full tw-drop-shadow-2xl"
             />
         </div>
     );
