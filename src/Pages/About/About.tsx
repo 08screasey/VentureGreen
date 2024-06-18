@@ -1,26 +1,8 @@
 import { faInstagram, faFacebook, faLinkedinIn, faGithub } from '@fortawesome/free-brands-svg-icons';
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { motion } from 'framer-motion';
-import { type PropsWithChildren } from 'react';
 
-import { FOCUS_VISIBLE_STYLES } from '../../Utility/focusStyles';
-import { merge } from '../../Utility/merge';
-
-const ContactLink = ({ children, href, label }: PropsWithChildren<{ href: string; label: string }>) => (
-    <a
-        rel="noopener noreferrer"
-        href={href}
-        target="_blank"
-        className={merge(
-            'tw-inline-flex tw-h-12 tw-w-12 tw-animate-pulse tw-items-center tw-justify-center tw-rounded-full tw-bg-green tw-p-2 tw-text-white',
-            FOCUS_VISIBLE_STYLES,
-        )}
-        aria-label={label}
-    >
-        {children}
-    </a>
-);
+import { ContactLink } from '../../Feature/About/ContactLink/ContactLink';
 
 const ABOUT_VARIANTS = {
     hidden: {},
@@ -77,21 +59,31 @@ export const About = () => (
                     transition={{ type: 'tween' }}
                     variants={ABOUT_CONTENT_VARIANTS}
                 >
-                    <ContactLink href="mailto:screasey97@gmail.com" label="Email">
-                        <FontAwesomeIcon icon={faEnvelope} size="2x" />
-                    </ContactLink>
-                    <ContactLink href="https://www.instagram.com/venturegreenphotography/" label="Instagram">
-                        <FontAwesomeIcon icon={faInstagram} size="2x" />
-                    </ContactLink>
-                    <ContactLink href="https://www.facebook.com/sam.creasey1" label="Facebook">
-                        <FontAwesomeIcon icon={faFacebook} size="2x" />
-                    </ContactLink>
-                    <ContactLink href="https://www.linkedin.com/in/sam-creasey-056b371b7/" label="LinkedIn">
-                        <FontAwesomeIcon icon={faLinkedinIn} size="2x" />
-                    </ContactLink>
-                    <ContactLink href="https://github.com/08screasey" label="Github">
-                        <FontAwesomeIcon icon={faGithub} size="2x" />
-                    </ContactLink>
+                    <ContactLink href="mailto:screasey97@gmail.com" label="Email" icon={faEnvelope} />
+                    <ContactLink
+                        href="https://www.instagram.com/venturegreenphotography/"
+                        label="Instagram"
+                        animationDelay="2s"
+                        icon={faInstagram}
+                    />
+                    <ContactLink
+                        href="https://www.facebook.com/sam.creasey1"
+                        icon={faFacebook}
+                        label="Facebook"
+                        animationDelay="4s"
+                    />
+                    <ContactLink
+                        href="https://www.linkedin.com/in/sam-creasey-056b371b7/"
+                        label="LinkedIn"
+                        animationDelay="6s"
+                        icon={faLinkedinIn}
+                    />
+                    <ContactLink
+                        href="https://github.com/08screasey"
+                        label="Github"
+                        animationDelay="8s"
+                        icon={faGithub}
+                    />
                 </motion.div>
             </div>
         </div>

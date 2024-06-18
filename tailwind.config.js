@@ -28,11 +28,30 @@ export default {
         extend: {
             animation: {
                 flicker: 'flicker 1.1s linear infinite',
+                'pulse-green': 'pulse-green 8s infinite',
             },
             keyframes: {
                 flicker: {
                     '0%, 49%': { opacity: 1 },
                     '50%, 100%': { opacity: 0 },
+                },
+                'pulse-green': {
+                    '0%': {
+                        transform: 'scale(0.95)',
+                        'box-shadow': '0 0 0 0 rgba(142, 169, 137, 0.7)',
+                    },
+                    '16%': {
+                        transform: 'scale(1)',
+                        'box-shadow': '0 0 0 10px rgba(142, 169, 137, 0)',
+                    },
+                    '23%': {
+                        transform: 'scale(0.95)',
+                        'box-shadow': '0 0 0 0 rgba(142, 169, 137, 0)',
+                    },
+                    '100%': {
+                        transform: 'scale(0.95)',
+                        'box-shadow': '0 0 0 0 rgba(142, 169, 137, 0)',
+                    },
                 },
             },
             boxShadow: {
