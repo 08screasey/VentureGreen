@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { PropsWithChildren, useCallback, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 
+import { LoadingCircle } from '../../Common/LoadingCircle/LoadingCircle';
 import { NetlifyImg } from '../../Common/NetlifyImage/NetlifyImage';
 import { TypingEffect } from '../../Common/TypingEffect';
 import { Laptop } from '../../Feature/Development/Laptop/Laptop';
@@ -63,159 +64,170 @@ export const Home = () => {
     const shouldAnimateRightBrain = isPhotoInView && hasContentLoaded;
 
     return (
-        <div
-            className={merge(
-                'tw-flex tw-min-w-0 tw-flex-initial tw-flex-col-reverse tw-items-center tw-justify-around tw-gap-x-8 tw-gap-y-16 tw-self-center tw-px-10 tw-py-20 lg:tw-flex-row lg:tw-px-8 lg:tw-pb-10 lg:tw-pt-8',
-                hasContentLoaded ? 'tw-visible' : 'tw-invisible',
-            )}
-        >
-            <EqualSizingCol>
-                <Link
-                    to="/development"
-                    className={merge(
-                        'tw-relative tw-flex tw-w-full tw-flex-col tw-items-center tw-gap-2',
-                        FOCUS_VISIBLE_STYLES,
-                    )}
-                    ref={devCardRef}
-                >
-                    <Laptop onLoad={useCallback(() => setHasLaptopLoaded(true), [])} />
-                    <h2 className="tw-z-[4] tw-mx-auto tw-w-full tw-text-center tw-font-code tw-text-3xl tw-drop-shadow-xl md:tw-text-4xl lg:tw-text-3xl xl:tw-text-4xl">
-                        <TypingEffect enabled={isDevInView} content={CONTENT} />
-                    </h2>
-                </Link>
-            </EqualSizingCol>
+        <>
+            <div
+                className={merge(
+                    'tw-min-w-0 tw-flex-initial tw-flex-col-reverse tw-items-center tw-justify-around tw-gap-x-8 tw-gap-y-16 tw-self-center tw-px-10 tw-py-20 lg:tw-flex-row lg:tw-px-8 lg:tw-pb-10 lg:tw-pt-8',
+                    !hasContentLoaded ? 'tw-hidden' : 'tw-flex',
+                )}
+            >
+                <EqualSizingCol>
+                    <Link
+                        to="/development"
+                        className={merge(
+                            'tw-relative tw-flex tw-w-full tw-flex-col tw-items-center tw-gap-2',
+                            FOCUS_VISIBLE_STYLES,
+                        )}
+                        ref={devCardRef}
+                    >
+                        <Laptop onLoad={useCallback(() => setHasLaptopLoaded(true), [])} />
+                        <h2 className="tw-z-[4] tw-mx-auto tw-w-full tw-text-center tw-font-code tw-text-3xl tw-drop-shadow-xl md:tw-text-4xl lg:tw-text-3xl xl:tw-text-4xl">
+                            <TypingEffect enabled={isDevInView} content={CONTENT} />
+                        </h2>
+                    </Link>
+                </EqualSizingCol>
 
-            <div className="tw-flex tw-flex-none tw-justify-center tw-gap-x-2 tw-px-10">
-                <Link
-                    to="/development"
-                    className={merge(
-                        'tw-group/left-brain tw-relative tw-w-[90px] tw-origin-right tw-transition hover:tw-scale-105 focus-visible:tw-scale-105',
-                        FOCUS_VISIBLE_STYLES,
-                    )}
-                    aria-label="Go to development"
-                >
-                    <NetlifyImg
-                        alt=""
-                        width={64}
-                        originalSrc="/home/brainLeftText1.png"
+                <div className="tw-flex tw-flex-none tw-justify-center tw-gap-x-2 tw-px-10">
+                    <Link
+                        to="/development"
                         className={merge(
-                            shouldAnimateLeftBrain ? 'tw-translate-x-0 tw-delay-150' : 'tw-translate-x-14 tw-scale-50',
-                            'tw-absolute tw-left-[-30px] tw-top-[10px] tw-w-[52px] tw-transition-all',
+                            'tw-group/left-brain tw-relative tw-w-[90px] tw-origin-right tw-transition hover:tw-scale-105 focus-visible:tw-scale-105',
+                            FOCUS_VISIBLE_STYLES,
                         )}
-                        originalWidth={316}
-                        originalHeight={506}
-                    />
-                    <NetlifyImg
-                        alt=""
-                        width={64}
-                        originalSrc="/home/brainLeftText2.png"
-                        className={merge(
-                            shouldAnimateLeftBrain ? 'tw-translate-x-0 tw-delay-150' : 'tw-translate-x-14 tw-scale-50',
-                            'tw-absolute tw-left-[-30px] tw-top-[100px] tw-w-[52px] tw-transition-all',
-                        )}
-                        originalWidth={316}
-                        originalHeight={506}
-                    />
-                    <FontAwesomeIcon
-                        icon={faLevelUpAlt}
-                        size="2x"
-                        className={merge(
-                            shouldAnimateLeftBrain
-                                ? 'tw-translate-y-0 tw-scale-100 tw-delay-200'
-                                : 'tw-translate-x-20 tw-scale-0 lg:tw-translate-x-0 lg:tw-translate-y-20',
-                            'tw-absolute tw-left-[-60px] tw-top-[85px] tw-rotate-180 tw-text-extra-light-green tw-transition-all lg:tw-left-[40px] lg:tw-top-[-40px] lg:-tw-rotate-90',
-                        )}
-                    />
-                    <LeftBrain
-                        className={merge(
-                            'tw-relative tw-z-[2] tw-w-full tw-fill-light-grey tw-transition',
-                            shouldAnimateLeftBrain && 'tw-scale-95',
-                        )}
-                    />
-                    <NetlifyImg
-                        alt=""
-                        width={150}
-                        originalSrc="/home/brainLeftOverLay.png"
-                        className={merge(
-                            shouldAnimateLeftBrain ? 'tw-scale-1 tw-opacity-100' : 'tw-scale-0 tw-opacity-0',
-                            'tw-absolute tw-right-0 tw-top-0 tw-z-[3] tw-h-full tw-w-[150px] tw-max-w-[unset] tw-origin-right tw-transition-all',
-                        )}
-                        originalHeight={916}
-                        originalWidth={800}
-                    />
-                </Link>
+                        aria-label="Go to development"
+                    >
+                        <NetlifyImg
+                            alt=""
+                            width={64}
+                            originalSrc="/home/brainLeftText1.png"
+                            className={merge(
+                                shouldAnimateLeftBrain
+                                    ? 'tw-translate-x-0 tw-delay-150'
+                                    : 'tw-translate-x-14 tw-scale-50',
+                                'tw-absolute tw-left-[-30px] tw-top-[10px] tw-w-[52px] tw-transition-all',
+                            )}
+                            originalWidth={316}
+                            originalHeight={506}
+                        />
+                        <NetlifyImg
+                            alt=""
+                            width={64}
+                            originalSrc="/home/brainLeftText2.png"
+                            className={merge(
+                                shouldAnimateLeftBrain
+                                    ? 'tw-translate-x-0 tw-delay-150'
+                                    : 'tw-translate-x-14 tw-scale-50',
+                                'tw-absolute tw-left-[-30px] tw-top-[100px] tw-w-[52px] tw-transition-all',
+                            )}
+                            originalWidth={316}
+                            originalHeight={506}
+                        />
+                        <FontAwesomeIcon
+                            icon={faLevelUpAlt}
+                            size="2x"
+                            className={merge(
+                                shouldAnimateLeftBrain
+                                    ? 'tw-translate-y-0 tw-scale-100 tw-delay-200'
+                                    : 'tw-translate-x-20 tw-scale-0 lg:tw-translate-x-0 lg:tw-translate-y-20',
+                                'tw-absolute tw-left-[-60px] tw-top-[85px] tw-rotate-180 tw-text-extra-light-green tw-transition-all lg:tw-left-[40px] lg:tw-top-[-40px] lg:-tw-rotate-90',
+                            )}
+                        />
+                        <LeftBrain
+                            className={merge(
+                                'tw-relative tw-z-[2] tw-w-full tw-fill-light-grey tw-transition',
+                                shouldAnimateLeftBrain && 'tw-scale-95',
+                            )}
+                        />
+                        <NetlifyImg
+                            alt=""
+                            width={150}
+                            originalSrc="/home/brainLeftOverLay.png"
+                            className={merge(
+                                shouldAnimateLeftBrain ? 'tw-scale-1 tw-opacity-100' : 'tw-scale-0 tw-opacity-0',
+                                'tw-absolute tw-right-0 tw-top-0 tw-z-[3] tw-h-full tw-w-[150px] tw-max-w-[unset] tw-origin-right tw-transition-all',
+                            )}
+                            originalHeight={916}
+                            originalWidth={800}
+                        />
+                    </Link>
 
-                <Link
-                    to="/photography"
-                    className={merge(
-                        'tw-group/right-brain tw-relative tw-w-[90px] tw-origin-left tw-transition hover:tw-scale-105 focus-visible:tw-scale-105',
-                        FOCUS_VISIBLE_STYLES,
-                    )}
-                    aria-label="Go to photography"
-                >
-                    <NetlifyImg
-                        alt=""
-                        originalSrc="/home/brainRightText1.png"
-                        width={64}
+                    <Link
+                        to="/photography"
                         className={merge(
-                            shouldAnimateRightBrain
-                                ? 'tw-translate-x-0 tw-delay-150'
-                                : '-tw-translate-x-14 tw-scale-50',
-                            'tw-absolute tw-right-[-28px] tw-top-[5px] tw-w-[52px] tw-transition-all',
+                            'tw-group/right-brain tw-relative tw-w-[90px] tw-origin-left tw-transition hover:tw-scale-105 focus-visible:tw-scale-105',
+                            FOCUS_VISIBLE_STYLES,
                         )}
-                        originalHeight={302}
-                        originalWidth={439}
+                        aria-label="Go to photography"
+                    >
+                        <NetlifyImg
+                            alt=""
+                            originalSrc="/home/brainRightText1.png"
+                            width={64}
+                            className={merge(
+                                shouldAnimateRightBrain
+                                    ? 'tw-translate-x-0 tw-delay-150'
+                                    : '-tw-translate-x-14 tw-scale-50',
+                                'tw-absolute tw-right-[-28px] tw-top-[5px] tw-w-[52px] tw-transition-all',
+                            )}
+                            originalHeight={302}
+                            originalWidth={439}
+                        />
+                        <NetlifyImg
+                            alt=""
+                            width={64}
+                            originalSrc="/home/brainRightText2.png"
+                            className={merge(
+                                shouldAnimateRightBrain
+                                    ? 'tw-translate-x-0 tw-delay-150'
+                                    : '-tw-translate-x-14 tw-scale-50',
+                                'tw-absolute tw-right-[-28px] tw-top-[90px] tw-w-[52px] tw-transition-all',
+                            )}
+                            originalHeight={302}
+                            originalWidth={439}
+                        />
+                        <FontAwesomeIcon
+                            icon={faLevelUpAlt}
+                            size="2x"
+                            className={merge(
+                                shouldAnimateRightBrain
+                                    ? 'tw-translate-y-0 tw-scale-100 tw-delay-200'
+                                    : '-tw-translate-x-20 tw-scale-0 lg:-tw-translate-y-20 lg:tw-translate-x-0',
+                                'tw-absolute tw-bottom-[80px] tw-right-[-60px] tw-text-extra-light-cyan tw-transition-all lg:tw-bottom-[-40px] lg:tw-right-[40px] lg:tw-rotate-90',
+                            )}
+                        />
+                        <RightBrain
+                            className={merge(
+                                'tw-relative tw-z-[2] tw-w-full tw-fill-light-grey tw-transition',
+                                shouldAnimateRightBrain && 'tw-scale-95',
+                            )}
+                        />
+                        <NetlifyImg
+                            alt=""
+                            width={150}
+                            originalSrc="/home/brainRightOverLay.png"
+                            className={merge(
+                                shouldAnimateRightBrain ? 'tw-scale-1 tw-opacity-100' : 'tw-scale-0 tw-opacity-0',
+                                'tw-absolute tw-top-0 tw-z-[3] tw-h-full tw-w-[150px] tw-max-w-[unset] tw-origin-left tw-transition-all',
+                            )}
+                            originalWidth={800}
+                            originalHeight={917}
+                        />
+                    </Link>
+                </div>
+
+                <EqualSizingCol>
+                    <PhotoStack
+                        isInView={shouldAnimateRightBrain}
+                        ref={photoCardRef}
+                        onLoad={useCallback(() => setHasPhotoStackLoaded(true), [])}
                     />
-                    <NetlifyImg
-                        alt=""
-                        width={64}
-                        originalSrc="/home/brainRightText2.png"
-                        className={merge(
-                            shouldAnimateRightBrain
-                                ? 'tw-translate-x-0 tw-delay-150'
-                                : '-tw-translate-x-14 tw-scale-50',
-                            'tw-absolute tw-right-[-28px] tw-top-[90px] tw-w-[52px] tw-transition-all',
-                        )}
-                        originalHeight={302}
-                        originalWidth={439}
-                    />
-                    <FontAwesomeIcon
-                        icon={faLevelUpAlt}
-                        size="2x"
-                        className={merge(
-                            shouldAnimateRightBrain
-                                ? 'tw-translate-y-0 tw-scale-100 tw-delay-200'
-                                : '-tw-translate-x-20 tw-scale-0 lg:-tw-translate-y-20 lg:tw-translate-x-0',
-                            'tw-absolute tw-bottom-[80px] tw-right-[-60px] tw-text-extra-light-cyan tw-transition-all lg:tw-bottom-[-40px] lg:tw-right-[40px] lg:tw-rotate-90',
-                        )}
-                    />
-                    <RightBrain
-                        className={merge(
-                            'tw-relative tw-z-[2] tw-w-full tw-fill-light-grey tw-transition',
-                            shouldAnimateRightBrain && 'tw-scale-95',
-                        )}
-                    />
-                    <NetlifyImg
-                        alt=""
-                        width={150}
-                        originalSrc="/home/brainRightOverLay.png"
-                        className={merge(
-                            shouldAnimateRightBrain ? 'tw-scale-1 tw-opacity-100' : 'tw-scale-0 tw-opacity-0',
-                            'tw-absolute tw-top-0 tw-z-[3] tw-h-full tw-w-[150px] tw-max-w-[unset] tw-origin-left tw-transition-all',
-                        )}
-                        originalWidth={800}
-                        originalHeight={917}
-                    />
-                </Link>
+                </EqualSizingCol>
             </div>
-
-            <EqualSizingCol>
-                <PhotoStack
-                    isInView={shouldAnimateRightBrain}
-                    ref={photoCardRef}
-                    onLoad={useCallback(() => setHasPhotoStackLoaded(true), [])}
-                />
-            </EqualSizingCol>
-        </div>
+            {!hasContentLoaded && (
+                <div className="tw-flex tw-items-center tw-justify-center">
+                    <LoadingCircle />
+                </div>
+            )}
+        </>
     );
 };
