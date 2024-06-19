@@ -33,6 +33,8 @@ export const PhotoCard = ({ coverArt, children, link }: PhotoCardProps) => (
                 originalSrc={coverArt.src}
                 width={800}
                 alt=""
+                originalHeight={coverArt.height}
+                originalWidth={coverArt.width}
             />
             <div
                 className={merge(

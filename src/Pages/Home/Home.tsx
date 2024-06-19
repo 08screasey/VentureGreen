@@ -87,6 +87,8 @@ export const Home = () => {
                             'tw-absolute tw-left-[-30px] tw-top-[10px] tw-w-[52px] tw-max-w-[unset] tw-transition-all',
                         )}
                         usePlaceholder={false}
+                        originalWidth={316}
+                        originalHeight={506}
                     />
                     <NetlifyImg
                         alt=""
@@ -97,6 +99,8 @@ export const Home = () => {
                             'tw-absolute tw-left-[-30px] tw-top-[100px] tw-w-[52px] tw-max-w-[unset] tw-transition-all',
                         )}
                         usePlaceholder={false}
+                        originalWidth={316}
+                        originalHeight={506}
                     />
                     <FontAwesomeIcon
                         icon={faLevelUpAlt}
@@ -117,6 +121,8 @@ export const Home = () => {
                             isDevInView ? 'tw-scale-1 tw-opacity-100' : 'tw-scale-0 tw-opacity-0',
                             'tw-absolute tw-right-0 tw-top-0 tw-z-[3] tw-h-full tw-w-auto tw-max-w-[unset] tw-origin-right tw-transition-all',
                         )}
+                        originalHeight={916}
+                        originalWidth={800}
                     />
                 </Link>
 
@@ -137,6 +143,8 @@ export const Home = () => {
                             'tw-absolute tw-right-[-28px] tw-top-[5px] tw-w-[52px] tw-max-w-[unset] tw-transition-all',
                         )}
                         usePlaceholder={false}
+                        originalHeight={302}
+                        originalWidth={439}
                     />
                     <NetlifyImg
                         alt=""
@@ -147,6 +155,8 @@ export const Home = () => {
                             'tw-absolute tw-right-[-28px] tw-top-[90px] tw-w-[52px] tw-max-w-[unset] tw-transition-all',
                         )}
                         usePlaceholder={false}
+                        originalHeight={302}
+                        originalWidth={439}
                     />
                     <FontAwesomeIcon
                         icon={faLevelUpAlt}
@@ -167,6 +177,8 @@ export const Home = () => {
                             isPhotoInView ? 'tw-scale-1 tw-opacity-100' : 'tw-scale-0 tw-opacity-0',
                             'tw-absolute tw-top-0 tw-z-[3] tw-h-full tw-w-auto tw-max-w-[unset] tw-origin-left tw-transition-all',
                         )}
+                        originalWidth={800}
+                        originalHeight={917}
                     />
                 </Link>
             </div>

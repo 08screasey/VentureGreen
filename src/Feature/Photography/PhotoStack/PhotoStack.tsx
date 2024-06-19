@@ -18,6 +18,8 @@ export const PhotoStack = forwardRef<HTMLAnchorElement, { isInView: boolean }>((
             alt=""
             originalSrc="/home/Home Image 5.jpg"
             width={450}
+            originalWidth={1600}
+            originalHeight={1067}
         />
         <NetlifyImg
             className={merge(
@@ -27,12 +29,16 @@ export const PhotoStack = forwardRef<HTMLAnchorElement, { isInView: boolean }>((
             alt=""
             originalSrc="/home/Home Image 4.jpg"
             width={450}
+            originalWidth={1600}
+            originalHeight={1067}
         />
         <NetlifyImg
             className={merge(BASE_IMAGE_CLASS, isInView && '-tw-translate-x-1 -tw-translate-y-3 -tw-rotate-6')}
             alt=""
             originalSrc="/home/Home Image 3.jpg"
             width={450}
+            originalWidth={1600}
+            originalHeight={1067}
         />
         <NetlifyImg
             className={merge(
@@ -42,6 +48,8 @@ export const PhotoStack = forwardRef<HTMLAnchorElement, { isInView: boolean }>((
             alt=""
             originalSrc="/home/Home Image 2.jpg"
             width={450}
+            originalWidth={1600}
+            originalHeight={951}
         />
         <NetlifyImg
             className={merge(
@@ -50,6 +58,8 @@ export const PhotoStack = forwardRef<HTMLAnchorElement, { isInView: boolean }>((
             alt=""
             originalSrc="/home/Home Image.jpg"
             width={450}
+            originalWidth={1500}
+            originalHeight={966}
         />
     </Link>
 ));

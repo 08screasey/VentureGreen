@@ -4,6 +4,7 @@ import { PropsWithChildren } from 'react';
 import ReactFocusLock from 'react-focus-lock';
 
 import { NetlifyImg } from '../../../Common/NetflifyImage/NetlifyImage';
+import { type Image } from '../../../Pages/Photography/albums';
 import { FOCUS_VISIBLE_STYLES } from '../../../Utility/focusStyles';
 import { merge } from '../../../Utility/merge';
 import { useKeypress } from '../../../Utility/useKeypress';
@@ -12,12 +13,13 @@ type GalleryViewProps = PropsWithChildren<{
     onExit: () => void;
     onPrev: () => void;
     onNext: () => void;
-    imageSrc: string;
-    alt: string;
+    image: Image;
 }>;
 
-export const GalleryView = ({ onExit, onPrev, onNext, imageSrc, alt }: GalleryViewProps) => {
+export const GalleryView = ({ onExit, onPrev, onNext, image }: GalleryViewProps) => {
     useKeypress({ key: 'Escape', callback: onExit });
+
+    const { src, alt, width, height } = image;
 
     return (
         <ReactFocusLock returnFocus>
@@ -27,8 +29,10 @@ export const GalleryView = ({ onExit, onPrev, onNext, imageSrc, alt }: GalleryVi
                     onClick={onExit}
                 />
                 <NetlifyImg
-                    originalSrc={imageSrc}
-                    alt={alt}
+                    originalSrc={src}
+                    alt={alt ?? ''}
+                    originalWidth={width}
+                    originalHeight={height}
                     className="tw-z-[100] tw-max-h-[90%] tw-w-[85%] tw-max-w-[1000px] tw-object-contain"
                 />
                 <button

@@ -37,11 +37,10 @@ export const GalleryLayout = ({ album }: GalleryLayoutProps) => {
         <>
             {index !== null ? (
                 <GalleryView
-                    imageSrc={images[index].src}
+                    image={images[index]}
                     onNext={() => moveGallery(+1)}
                     onPrev={() => moveGallery(-1)}
                     onExit={closeGallery}
-                    alt={images[index].alt ?? ''}
                 />
             ) : null}
             <motion.div
@@ -68,7 +67,7 @@ export const GalleryLayout = ({ album }: GalleryLayoutProps) => {
                         </motion.p>
                     )}
                 </div>
-                {images.map(({ src, alt }, i) => (
+                {images.map(({ src, alt, width, height }, i) => (
                     <motion.button
                         key={i}
                         onClick={() => openGallery(i)}
@@ -81,7 +80,14 @@ export const GalleryLayout = ({ album }: GalleryLayoutProps) => {
                         variants={GALLERY_ITEM_VARIANTS}
                         transition={{ type: 'tween' }}
                     >
-                        <NetlifyImg className="tw-w-full" originalSrc={src} alt={alt ?? src} width={600} />
+                        <NetlifyImg
+                            className="tw-w-full"
+                            originalSrc={src}
+                            alt={alt ?? src}
+                            width={600}
+                            originalWidth={width}
+                            originalHeight={height}
+                        />
                     </motion.button>
                 ))}
             </motion.div>
