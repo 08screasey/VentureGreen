@@ -1,4 +1,4 @@
-import { useEffect, useRef, useCallback, WheelEvent, KeyboardEvent, RefObject, useState } from 'react';
+import { useEffect, useRef, useCallback, WheelEvent, KeyboardEvent, RefObject, useState, TouchEvent } from 'react';
 
 type UseAutoScrollProps<T extends HTMLElement> = {
     scrollRef: RefObject<T>;
@@ -9,6 +9,7 @@ type UseAutoScrollProps<T extends HTMLElement> = {
 type UseAutoScrollReturn<T extends HTMLElement> = {
     onWheel: (event: WheelEvent<T>) => void;
     onKeyDown: (event: KeyboardEvent<T>) => void;
+    onTouchStart: (event: TouchEvent<T>) => void;
 };
 
 export const useAutoScroll = <T extends HTMLElement>({
@@ -72,5 +73,6 @@ export const useAutoScroll = <T extends HTMLElement>({
     return {
         onWheel: handleUserInteraction,
         onKeyDown: handleUserInteraction,
+        onTouchStart: handleUserInteraction,
     };
 };
