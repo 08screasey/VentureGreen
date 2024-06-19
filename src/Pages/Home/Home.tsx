@@ -116,7 +116,7 @@ export const Home = () => {
                     />
                     <LeftBrain
                         className={merge(
-                            'tw-relative tw-z-[2] tw-w-full tw-fill-grey tw-transition',
+                            'tw-relative tw-z-[2] tw-w-full tw-fill-light-grey tw-transition',
                             isDevInView && 'tw-scale-95',
                         )}
                     />
@@ -181,7 +181,7 @@ export const Home = () => {
                     />
                     <RightBrain
                         className={merge(
-                            'tw-relative tw-z-[2] tw-w-full tw-fill-grey tw-transition',
+                            'tw-relative tw-z-[2] tw-w-full tw-fill-light-grey tw-transition',
                             isPhotoInView && 'tw-scale-95',
                         )}
                     />
