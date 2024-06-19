@@ -48,7 +48,7 @@ export const PlaceholderImage = ({
         onEnter: useCallback(() => {
             setIsInViewport(true);
         }, []),
-        bottomOffset: 400,
+        bottomOffset: 600,
     });
 
     const { isLoaded } = useLoadImage({ src: fullWidthSrc, enabled: isInViewport || !lazy, onLoad });
@@ -63,7 +63,7 @@ export const PlaceholderImage = ({
                 originalWidth={originalWidth}
                 originalHeight={originalHeight}
                 width={isRenderingFullImage ? width : placeholderWidth}
-                originalSrc={originalSrc}
+                originalSrc={isInViewport ? originalSrc : '/favicon-16x16.png'}
                 className={merge(
                     'tw-block tw-max-h-full tw-max-w-full',
                     objectFit === 'cover' ? 'tw-object-cover' : 'tw-object-contain',
