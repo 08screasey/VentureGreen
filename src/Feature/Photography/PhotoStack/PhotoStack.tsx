@@ -5,11 +5,11 @@ import { NetlifyImg } from '../../../Common/NetlifyImage/NetlifyImage';
 import { PlaceholderImage } from '../../../Common/PlaceholderImage/PlaceholderImage';
 import { merge } from '../../../Utility/merge';
 
-const BASE_IMAGE_CLASS = 'tw-top-0 tw-left-0 tw-transition-all tw-shadow-lg tw-origin-center';
+const BASE_IMAGE_CLASS = 'tw-top-0 tw-left-0 tw-transition-all tw-shadow-lg tw-origin-center tw-w-full';
 
 export const PhotoStack = forwardRef<HTMLAnchorElement, { isInView: boolean }>(({ isInView }, ref) => (
     <Link
-        className="tw-group/photos tw-relative tw-block tw-outline-none"
+        className="tw-group/photos tw-relative tw-block tw-w-full tw-outline-none"
         to="/photography"
         ref={ref}
         aria-label="Photography portfolio"
@@ -58,7 +58,7 @@ export const PhotoStack = forwardRef<HTMLAnchorElement, { isInView: boolean }>((
         />
         <NetlifyImg
             className={merge(
-                'tw-relative tw-origin-center tw-shadow-lg tw-transition-all group-hover/photos:tw-scale-105 group-hover/photos:tw-shadow-2xl group-focus-visible/photos:tw-scale-105 group-focus-visible/photos:tw-shadow-2xl',
+                'tw-relative tw-block tw-w-full tw-origin-center tw-shadow-lg tw-transition-all group-hover/photos:tw-scale-105 group-hover/photos:tw-shadow-2xl group-focus-visible/photos:tw-scale-105 group-focus-visible/photos:tw-shadow-2xl',
             )}
             alt=""
             originalSrc="/home/Home Image.jpg"
