@@ -63,7 +63,7 @@ export const PlaceholderImage = ({
                 originalWidth={originalWidth}
                 originalHeight={originalHeight}
                 width={isRenderingFullImage ? width : placeholderWidth}
-                originalSrc={isInViewport ? originalSrc : '/favicon-16x16.png'}
+                originalSrc={isInViewport ? originalSrc : ''}
                 className={merge(
                     'tw-block tw-max-h-full tw-max-w-full',
                     objectFit === 'cover' ? 'tw-object-cover' : 'tw-object-contain',
