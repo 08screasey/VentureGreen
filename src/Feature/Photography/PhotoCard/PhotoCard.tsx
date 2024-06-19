@@ -24,7 +24,7 @@ export const PhotoCard = ({ coverArt, children, link }: PhotoCardProps) => (
         <NavLink
             to={link}
             className={merge(
-                'tw-group/card tw-relative tw-flex tw-h-[550px] tw-flex-none tw-cursor-pointer tw-flex-col tw-justify-end tw-overflow-hidden tw-font-lora tw-text-white',
+                'tw-group/card tw-relative tw-flex tw-h-[550px] tw-flex-none tw-cursor-pointer tw-flex-col tw-justify-start tw-overflow-hidden tw-font-lora tw-text-white',
                 FOCUS_VISIBLE_STYLES,
             )}
         >
