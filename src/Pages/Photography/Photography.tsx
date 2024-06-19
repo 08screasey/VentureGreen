@@ -43,7 +43,7 @@ export const Photography = () => {
     useScrollToTop();
 
     return (
-        <div className="tw-w-full tw-bg-[url('/backgrounds/berg.jpg')] tw-bg-cover tw-bg-fixed tw-bg-bottom tw-bg-no-repeat">
+        <div className="tw-w-full tw-bg-[url('/.netlify/images?url=/backgrounds/berg.jpg&fm=webp')] tw-bg-cover tw-bg-fixed tw-bg-bottom tw-bg-no-repeat">
             <PhotoCollection albums={PHOTOGRAPHY_COLLECTIONS} />
         </div>
     );
