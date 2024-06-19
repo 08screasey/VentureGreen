@@ -29,6 +29,7 @@ export const GalleryView = ({ onExit, onPrev, onNext, image }: GalleryViewProps)
                     onClick={onExit}
                 />
                 <NetlifyImg
+                    key={src}
                     originalSrc={src}
                     alt={alt ?? ''}
                     originalWidth={width}
