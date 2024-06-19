@@ -40,6 +40,7 @@ export const Laptop = () => {
                 width={450}
                 originalWidth={2000}
                 originalHeight={1457}
+                usePlaceholder={false}
                 onLoad={useCallback(() => setHasLaptopLoaded(true), [])}
             />
         </div>
