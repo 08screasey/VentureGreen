@@ -1,4 +1,4 @@
-export type Image = { src: string; alt?: string; height: number; width: number };
+export type Image = { src: string; alt: string; height: number; width: number };
 export type Album = { images: Image[]; header: string; subheader?: string; quote?: string; coverArt: Image };
 
 const PORTRAIT_ALBUM: Album = {

@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import { useState } from 'react';
 
 import { NetlifyImg } from '../../../../Common/NetflifyImage/NetlifyImage';
+import { Image } from '../../../../Pages/Photography/albums';
 import { merge } from '../../../../Utility/merge';
 
 import { DevCardLink } from './DevCardLink/DevCardLink';
@@ -19,7 +20,7 @@ type DevCardProps = {
     api: string[];
     link: string;
     github: string;
-    images: [string, string, string];
+    images: [Image, Image, Image];
 };
 
 export const DevCard = ({
@@ -89,12 +90,14 @@ export const DevCard = ({
                     Previews
                 </h4>
                 <div className="tw-grid tw-w-full tw-grid-cols-3 tw-items-center">
-                    {images.map((image) => (
+                    {images.map(({ src, height, width, alt }) => (
                         <NetlifyImg
-                            key={image}
+                            key={src}
                             width={512}
-                            originalSrc={image}
-                            alt=""
+                            originalSrc={src}
+                            originalHeight={height}
+                            originalWidth={width}
+                            alt={alt ?? ''}
                             className="tw-col-span-3 tw-mx-auto tw-mt-5 tw-max-h-[25rem] tw-object-contain lg:tw-col-span-1"
                         />
                     ))}

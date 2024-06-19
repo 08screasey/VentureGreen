@@ -9,7 +9,26 @@ export const DevCards = () => (
             description="This full-stack React web application was built and designed for use by the Columbia Valley Hut Society, a Canadian volunteer-run organization responsible for several mountain cabins throughout the Columbia Mountain range of BC."
             github="https://github.com/08screasey/ColumbiaValleyHutSociety"
             link="https://columbiavalleyhutsociety.onrender.com/"
-            images={['/development/cvhsmobile.jpg', '/development/cvhsmobile3.jpg', '/development/cvhsmobile2.jpg']}
+            images={[
+                {
+                    src: '/development/cvhsmobile.jpg',
+                    width: 633,
+                    height: 854,
+                    alt: '',
+                },
+                {
+                    src: '/development/cvhsmobile2.jpg',
+                    width: 492,
+                    height: 750,
+                    alt: '',
+                },
+                {
+                    src: '/development/cvhsmobile3.jpg',
+                    width: 900,
+                    height: 1206,
+                    alt: '',
+                },
+            ]}
             color="#224146"
             altColor="hsl(207.5, 20.7%, 98.9%)"
         />
@@ -21,7 +40,26 @@ export const DevCards = () => (
             api={['Spoonacular']}
             color="hsl(122, 20%, 60%)"
             altColor="hsl(207.5, 20.7%, 98.9%)"
-            images={['/development/recipe.jpg', '/development/recipe3.jpg', '/development/recipe2.jpg']}
+            images={[
+                {
+                    src: '/development/recipe.jpg',
+                    width: 492,
+                    height: 750,
+                    alt: '',
+                },
+                {
+                    src: '/development/recipe2.jpg',
+                    width: 633,
+                    height: 880,
+                    alt: '',
+                },
+                {
+                    src: '/development/recipe3.jpg',
+                    width: 900,
+                    height: 1206,
+                    alt: '',
+                },
+            ]}
             github="https://github.com/08screasey/Recipe-parser"
             link="https://react-recipe-project-87fc0.web.app/auth"
         />
@@ -32,7 +70,26 @@ export const DevCards = () => (
             api={['Cloudinary']}
             color="hsl(146, 39%, 74%)"
             altColor="hsl(207.5, 20.7%, 98.9%)"
-            images={['/development/sprout.jpg', '/development/sprout2.jpg', '/development/sprout3.jpg']}
+            images={[
+                {
+                    src: '/development/sprout.jpg',
+                    width: 492,
+                    height: 750,
+                    alt: '',
+                },
+                {
+                    src: '/development/sprout2.jpg',
+                    width: 900,
+                    height: 674,
+                    alt: '',
+                },
+                {
+                    src: '/development/sprout3.jpg',
+                    width: 840,
+                    height: 923,
+                    alt: '',
+                },
+            ]}
             github="https://github.com/08screasey/SproutWebsite"
             link="https://sproutwebsite.onrender.com"
         />
