@@ -25,7 +25,7 @@ const CONTENT = [
 ];
 
 const EqualSizingCol = ({ children }: PropsWithChildren) => (
-    <div className="tw-relative tw-flex tw-min-w-0 tw-max-w-[450px] tw-flex-col tw-items-center lg:tw-flex-initial lg:tw-basis-[450px]">
+    <div className="tw-relative tw-flex tw-w-full tw-min-w-0 tw-max-w-[450px] tw-flex-col tw-items-center lg:tw-flex-initial lg:tw-basis-[450px]">
         {children}
     </div>
 );
@@ -59,7 +59,10 @@ export const Home = () => {
             <EqualSizingCol>
                 <Link
                     to="/development"
-                    className={merge('tw-relative tw-flex tw-flex-col tw-items-center tw-gap-2', FOCUS_VISIBLE_STYLES)}
+                    className={merge(
+                        'tw-relative tw-flex tw-w-full tw-flex-col tw-items-center tw-gap-2',
+                        FOCUS_VISIBLE_STYLES,
+                    )}
                     ref={devCardRef}
                 >
                     <Laptop />

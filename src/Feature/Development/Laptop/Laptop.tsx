@@ -13,7 +13,7 @@ export const Laptop = () => {
     const scrollProps = useAutoScroll({ scrollRef, duration: 120000, delay: 2 * 1000 });
 
     return (
-        <div className="tw-relative tw-leading-none">
+        <div className="tw-relative tw-w-full tw-leading-none">
             <div className="tw-group/screen tw-absolute tw-left-[10%] tw-top-[5.5%] tw-z-[1] tw-h-[74%] tw-w-[80%] tw-overflow-hidden">
                 <div
                     className={merge(
