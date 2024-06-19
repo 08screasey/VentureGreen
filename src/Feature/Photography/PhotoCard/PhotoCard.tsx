@@ -38,7 +38,7 @@ export const PhotoCard = ({ coverArt, children, link }: PhotoCardProps) => (
                 originalWidth={coverArt.width}
                 wrapperPosition="absolute"
             />
-            <div className="tw-relative tw-z-[2] tw-bg-black/90 tw-py-4 tw-text-center tw-text-4xl tw-transition-all">
+            <div className="tw-relative tw-z-[2] tw-border-b tw-border-b-white tw-bg-black/90 tw-py-4 tw-text-center tw-text-4xl tw-transition-all">
                 {children}
             </div>
             <div

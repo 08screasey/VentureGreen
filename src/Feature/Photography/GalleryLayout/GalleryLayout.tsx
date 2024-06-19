@@ -26,12 +26,12 @@ export const GalleryLayout = ({ album }: GalleryLayoutProps) => {
         <>
             {index !== null ? <Carousel startingIndex={index} images={images} onExit={() => setIndex(null)} /> : null}
             <motion.div
-                className="tw-mx-auto tw-w-full tw-max-w-[600px] tw-px-1 tw-py-10"
+                className="tw-mx-auto tw-w-full tw-max-w-[600px] tw-divide-y-2 tw-divide-white tw-px-1 tw-py-1"
                 variants={GALLERY_CONTAINER_VARIANTS}
                 initial="hidden"
                 animate="show"
             >
-                <div className="tw-mb-2 tw-flex tw-flex-col tw-gap-4 tw-bg-black/80 tw-p-4 tw-text-white">
+                <div className="tw-flex tw-flex-col tw-gap-4 tw-bg-black/80 tw-p-4 tw-text-white">
                     <motion.h2
                         variants={GALLERY_HEADER_VARIANTS}
                         transition={{ type: 'tween' }}
@@ -55,7 +55,7 @@ export const GalleryLayout = ({ album }: GalleryLayoutProps) => {
                         onClick={() => openGallery(i)}
                         aria-label={`Open gallery view for ${alt ?? src}`}
                         className={merge(
-                            'tw-relative tw-mx-auto tw-block tw-w-full tw-transition hover:tw-brightness-95 active:tw-brightness-90',
+                            'tw-relative tw-mx-auto tw-flex tw-w-full tw-transition hover:tw-brightness-95 active:tw-brightness-90',
                             FOCUS_VISIBLE_STYLES,
                             'focus-visible:tw-z-[2]',
                         )}
