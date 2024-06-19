@@ -17,15 +17,15 @@ export const DevCards = () => (
                     alt: '',
                 },
                 {
-                    src: '/development/cvhsmobile2.jpg',
-                    width: 492,
-                    height: 750,
-                    alt: '',
-                },
-                {
                     src: '/development/cvhsmobile3.jpg',
                     width: 900,
                     height: 1206,
+                    alt: '',
+                },
+                {
+                    src: '/development/cvhsmobile2.jpg',
+                    width: 492,
+                    height: 750,
                     alt: '',
                 },
             ]}
@@ -48,15 +48,15 @@ export const DevCards = () => (
                     alt: '',
                 },
                 {
-                    src: '/development/recipe2.jpg',
-                    width: 633,
-                    height: 880,
-                    alt: '',
-                },
-                {
                     src: '/development/recipe3.jpg',
                     width: 900,
                     height: 1206,
+                    alt: '',
+                },
+                {
+                    src: '/development/recipe2.jpg',
+                    width: 633,
+                    height: 880,
                     alt: '',
                 },
             ]}
