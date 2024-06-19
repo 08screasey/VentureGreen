@@ -2,6 +2,7 @@ import { motion } from 'framer-motion';
 import { type ReactNode } from 'react';
 import { NavLink } from 'react-router-dom';
 
+import { NetlifyImg } from '../../../Common/NetflifyImage/NetlifyImage';
 import { type Image } from '../../../Pages/Photography/albums';
 import { FOCUS_VISIBLE_STYLES } from '../../../Utility/focusStyles';
 import { merge } from '../../../Utility/merge';
@@ -23,11 +24,16 @@ export const PhotoCard = ({ coverArt, children, link }: PhotoCardProps) => (
         <NavLink
             to={link}
             className={merge(
-                'tw-group/card tw-relative tw-flex tw-h-[550px] tw-flex-none tw-cursor-pointer tw-flex-col tw-justify-center tw-bg-cover tw-font-lora tw-text-4xl tw-text-white',
+                'tw-group/card tw-relative tw-flex tw-h-[550px] tw-flex-none tw-cursor-pointer tw-flex-col tw-justify-center tw-overflow-hidden tw-font-lora tw-text-4xl tw-text-white',
                 FOCUS_VISIBLE_STYLES,
             )}
-            style={{ backgroundImage: `url("${coverArt.src}")` }}
         >
+            <NetlifyImg
+                className="tw-absolute tw-left-0 tw-top-0 tw-h-full tw-w-full tw-object-cover"
+                originalSrc={coverArt.src}
+                width={1200}
+                alt=""
+            />
             <div
                 className={merge(
                     'tw-absolute tw-left-0 tw-top-0 tw-z-[2] tw-h-full tw-w-full tw-bg-black/80 tw-opacity-60 tw-transition-all group-hover/card:tw-opacity-100 group-focus-visible/card:tw-opacity-100',

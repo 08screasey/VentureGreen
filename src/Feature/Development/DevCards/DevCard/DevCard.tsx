@@ -3,6 +3,7 @@ import { faLink } from '@fortawesome/free-solid-svg-icons';
 import { motion } from 'framer-motion';
 import { useState } from 'react';
 
+import { NetlifyImg } from '../../../../Common/NetflifyImage/NetlifyImage';
 import { merge } from '../../../../Utility/merge';
 
 import { DevCardLink } from './DevCardLink/DevCardLink';
@@ -89,9 +90,10 @@ export const DevCard = ({
                 </h4>
                 <div className="tw-grid tw-w-full tw-grid-cols-3 tw-items-center">
                     {images.map((image) => (
-                        <img
+                        <NetlifyImg
                             key={image}
-                            src={image}
+                            width={512}
+                            originalSrc={image}
                             alt=""
                             className="tw-col-span-3 tw-mx-auto tw-mt-5 tw-max-h-[25rem] tw-object-contain lg:tw-col-span-1"
                         />

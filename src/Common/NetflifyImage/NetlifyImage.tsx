@@ -26,7 +26,7 @@ const convertUrlToNetlifyUrl = (url: string, width?: number) => {
         let netlifyUrl = `/.netlify/images?url=${url}`;
 
         if (width) {
-            netlifyUrl += `&width=${width}`;
+            netlifyUrl += `&width=${width * Math.ceil(window.devicePixelRatio)}`;
         }
 
         return netlifyUrl;
@@ -74,7 +74,7 @@ export const NetlifyImg = ({
             width={originalWidth}
             height={originalHeight}
             src={isLoaded ? fullWidthSrc : placeholderSrc}
-            className={merge(className, !isLoaded && 'tw-blur-lg')}
+            className={merge(className, isLoaded ? 'tw-blur-0' : 'tw-blur-sm', 'tw-transition')}
             alt={alt}
         />
     );

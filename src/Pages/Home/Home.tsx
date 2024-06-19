@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { PropsWithChildren, useCallback, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 
+import { NetlifyImg } from '../../Common/NetflifyImage/NetlifyImage';
 import { TypingEffect } from '../../Common/TypingEffect';
 import { Laptop } from '../../Feature/Development/Laptop/Laptop';
 import { PhotoStack } from '../../Feature/Photography/PhotoStack/PhotoStack';
@@ -77,17 +78,19 @@ export const Home = () => {
                     )}
                     aria-label="Go to development"
                 >
-                    <img
+                    <NetlifyImg
                         alt=""
-                        src="/home/brainLeftText1.png"
+                        width={64}
+                        originalSrc="/home/brainLeftText1.png"
                         className={merge(
                             isDevInView ? 'tw-translate-x-0 tw-delay-150' : 'tw-translate-x-14',
                             'tw-absolute tw-left-[-30px] tw-top-[10px] tw-w-[52px] tw-max-w-[unset] tw-transition-all',
                         )}
                     />
-                    <img
+                    <NetlifyImg
                         alt=""
-                        src="/home/brainLeftText2.png"
+                        width={64}
+                        originalSrc="/home/brainLeftText2.png"
                         className={merge(
                             isDevInView ? 'tw-translate-x-0 tw-delay-75' : 'tw-translate-x-14',
                             'tw-absolute tw-left-[-30px] tw-top-[100px] tw-w-[52px] tw-max-w-[unset] tw-transition-all',
@@ -104,9 +107,10 @@ export const Home = () => {
                         )}
                     />
                     <LeftBrain className="tw-relative tw-z-[2] tw-w-full tw-fill-grey" />
-                    <img
+                    <NetlifyImg
                         alt=""
-                        src="/home/brainLeftOverLay.png"
+                        width={256}
+                        originalSrc="/home/brainLeftOverLay.png"
                         className={merge(
                             isDevInView ? 'tw-scale-1 tw-opacity-100' : 'tw-scale-0 tw-opacity-0',
                             'tw-absolute tw-right-0 tw-top-0 tw-z-[3] tw-h-full tw-w-auto tw-max-w-[unset] tw-origin-right tw-transition-all',
@@ -122,17 +126,19 @@ export const Home = () => {
                     )}
                     aria-label="Go to photography"
                 >
-                    <img
+                    <NetlifyImg
                         alt=""
-                        src="/home/brainRightText1.png"
+                        originalSrc="/home/brainRightText1.png"
+                        width={64}
                         className={merge(
                             isPhotoInView ? 'tw-translate-x-0 tw-delay-150' : '-tw-translate-x-14',
                             'tw-absolute tw-right-[-28px] tw-top-[5px] tw-w-[52px] tw-max-w-[unset] tw-transition-all',
                         )}
                     />
-                    <img
+                    <NetlifyImg
                         alt=""
-                        src="/home/brainRightText2.png"
+                        width={64}
+                        originalSrc="/home/brainRightText2.png"
                         className={merge(
                             isPhotoInView ? 'tw-translate-x-0 tw-delay-75' : '-tw-translate-x-14',
                             'tw-absolute tw-right-[-28px] tw-top-[90px] tw-w-[52px] tw-max-w-[unset] tw-transition-all',
@@ -145,13 +151,14 @@ export const Home = () => {
                             isPhotoInView
                                 ? 'tw-translate-y-0 tw-scale-100 tw-delay-200'
                                 : '-tw-translate-x-20 tw-scale-0 lg:-tw-translate-y-20 lg:tw-translate-x-0',
-                            'tw-text-extra-light-cyan tw-absolute tw-bottom-[80px] tw-right-[-60px] tw-transition-all lg:tw-bottom-[-40px] lg:tw-right-[40px] lg:tw-rotate-90',
+                            'tw-absolute tw-bottom-[80px] tw-right-[-60px] tw-text-extra-light-cyan tw-transition-all lg:tw-bottom-[-40px] lg:tw-right-[40px] lg:tw-rotate-90',
                         )}
                     />
                     <RightBrain className="tw-relative tw-z-[2] tw-w-full tw-fill-grey" />
-                    <img
+                    <NetlifyImg
                         alt=""
-                        src="/home/brainRightOverLay.png"
+                        width={256}
+                        originalSrc="/home/brainRightOverLay.png"
                         className={merge(
                             isPhotoInView ? 'tw-scale-1 tw-opacity-100' : 'tw-scale-0 tw-opacity-0',
                             'tw-absolute tw-top-0 tw-z-[3] tw-h-full tw-w-auto tw-max-w-[unset] tw-origin-left tw-transition-all',

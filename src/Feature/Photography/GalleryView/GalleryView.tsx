@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { PropsWithChildren } from 'react';
 import ReactFocusLock from 'react-focus-lock';
 
+import { NetlifyImg } from '../../../Common/NetflifyImage/NetlifyImage';
 import { FOCUS_VISIBLE_STYLES } from '../../../Utility/focusStyles';
 import { merge } from '../../../Utility/merge';
 import { useKeypress } from '../../../Utility/useKeypress';
@@ -25,8 +26,8 @@ export const GalleryView = ({ onExit, onPrev, onNext, imageSrc, alt }: GalleryVi
                     className="tw-fixed tw-left-0 tw-top-0 tw-z-[6] tw-h-full tw-w-full tw-bg-black/70"
                     onClick={onExit}
                 />
-                <img
-                    src={imageSrc}
+                <NetlifyImg
+                    originalSrc={imageSrc}
                     alt={alt}
                     className="tw-z-[100] tw-max-h-[90%] tw-w-[85%] tw-max-w-[1000px] tw-object-contain"
                 />
