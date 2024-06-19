@@ -64,6 +64,7 @@ const CarouselImage = ({
     direction,
     onTouch,
 }: CarouselImageProps) => {
+    const isDragging = useRef(false);
     const fullWidthSrc = convertUrlToNetlifyUrl(src);
     const placeholderSrc = convertUrlToNetlifyUrl(src, 100);
 
@@ -74,7 +75,11 @@ const CarouselImage = ({
             custom={direction}
             className="tw-fixed tw-z-[100] tw-m-auto tw-flex tw-max-w-[1000px]"
             variants={variants}
-            onTouchStart={onTouch}
+            onTouchEnd={() => {
+                if (!isDragging.current) {
+                    onTouch();
+                }
+            }}
             initial="enter"
             animate="center"
             exit="exit"
@@ -85,6 +90,9 @@ const CarouselImage = ({
             drag="x"
             dragConstraints={{ left: 0, right: 0 }}
             dragElastic={1}
+            onDragStart={() => {
+                isDragging.current = true;
+            }}
             onDragEnd={(_event, { offset, velocity }) => {
                 const swipe = swipePower(offset.x, velocity.x);
 
@@ -93,6 +101,7 @@ const CarouselImage = ({
                 } else if (swipe > swipeConfidenceThreshold) {
                     onSwipeLeft();
                 }
+                isDragging.current = false;
             }}
         >
             <img
