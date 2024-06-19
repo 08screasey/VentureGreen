@@ -86,6 +86,7 @@ export const Home = () => {
                             isDevInView ? 'tw-translate-x-0 tw-delay-150' : 'tw-translate-x-14',
                             'tw-absolute tw-left-[-30px] tw-top-[10px] tw-w-[52px] tw-max-w-[unset] tw-transition-all',
                         )}
+                        usePlaceholder={false}
                     />
                     <NetlifyImg
                         alt=""
@@ -95,6 +96,7 @@ export const Home = () => {
                             isDevInView ? 'tw-translate-x-0 tw-delay-75' : 'tw-translate-x-14',
                             'tw-absolute tw-left-[-30px] tw-top-[100px] tw-w-[52px] tw-max-w-[unset] tw-transition-all',
                         )}
+                        usePlaceholder={false}
                     />
                     <FontAwesomeIcon
                         icon={faLevelUpAlt}
@@ -134,6 +136,7 @@ export const Home = () => {
                             isPhotoInView ? 'tw-translate-x-0 tw-delay-150' : '-tw-translate-x-14',
                             'tw-absolute tw-right-[-28px] tw-top-[5px] tw-w-[52px] tw-max-w-[unset] tw-transition-all',
                         )}
+                        usePlaceholder={false}
                     />
                     <NetlifyImg
                         alt=""
@@ -143,6 +146,7 @@ export const Home = () => {
                             isPhotoInView ? 'tw-translate-x-0 tw-delay-75' : '-tw-translate-x-14',
                             'tw-absolute tw-right-[-28px] tw-top-[90px] tw-w-[52px] tw-max-w-[unset] tw-transition-all',
                         )}
+                        usePlaceholder={false}
                     />
                     <FontAwesomeIcon
                         icon={faLevelUpAlt}

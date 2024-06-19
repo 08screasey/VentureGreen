@@ -11,14 +11,19 @@ type NetlifyImageProps = {
     placeholderWidth?: number;
     onLoad?: () => void;
     className?: string;
+    blurPlaceholder?: boolean;
+    usePlaceholder?: boolean;
 };
 
 const loadImageSrc = (src: string) =>
-    new Promise((resolve, reject) => {
+    new Promise<void>((resolve, reject) => {
         const image = new Image();
-        image.onload = resolve;
-        image.onerror = reject;
+        image.onload = () => resolve();
+        image.onerror = () => reject();
         image.src = src;
+        if (image.complete) {
+            resolve();
+        }
     });
 
 const convertUrlToNetlifyUrl = (url: string, width?: number) => {
@@ -41,6 +46,8 @@ export const NetlifyImg = ({
     originalWidth,
     alt,
     width,
+    usePlaceholder = true,
+    blurPlaceholder = true,
     placeholderWidth = 100,
     onLoad,
     className,
@@ -69,12 +76,18 @@ export const NetlifyImg = ({
         };
     }, [fullWidthSrc, onLoad]);
 
+    const isRenderingFullImage = !usePlaceholder || isLoaded;
+
     return (
         <img
             width={originalWidth}
             height={originalHeight}
-            src={isLoaded ? fullWidthSrc : placeholderSrc}
-            className={merge(className, isLoaded ? 'tw-blur-0' : 'tw-blur-sm', 'tw-transition')}
+            src={isRenderingFullImage ? fullWidthSrc : placeholderSrc}
+            className={merge(
+                className,
+                isRenderingFullImage || !blurPlaceholder ? 'tw-blur-0' : 'tw-blur-sm',
+                'tw-transition',
+            )}
             alt={alt}
         />
     );
