@@ -29,7 +29,7 @@ export const Laptop = () => {
             </div>
             <NetlifyImg
                 originalSrc="/home/edited laptop.png"
-                className="tw-pointer-events-none tw-relative tw-z-[2] tw-block tw-w-full tw-drop-shadow-2xl"
+                wrapperClassName="tw-pointer-events-none tw-relative tw-z-[2] tw-block tw-w-full tw-drop-shadow-2xl"
                 alt="Outer laptop"
                 width={450}
                 originalWidth={2000}

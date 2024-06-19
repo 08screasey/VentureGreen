@@ -29,12 +29,14 @@ export const PhotoCard = ({ coverArt, children, link }: PhotoCardProps) => (
             )}
         >
             <NetlifyImg
-                className="tw-absolute tw-left-0 tw-top-0 tw-h-full tw-w-full tw-object-cover"
+                wrapperClassName="tw-left-0 tw-top-0 tw-h-full tw-w-full"
                 originalSrc={coverArt.src}
+                objectFit="cover"
                 width={800}
                 alt=""
                 originalHeight={coverArt.height}
                 originalWidth={coverArt.width}
+                wrapperPosition="absolute"
             />
             <div
                 className={merge(

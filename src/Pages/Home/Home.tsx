@@ -82,10 +82,11 @@ export const Home = () => {
                         alt=""
                         width={64}
                         originalSrc="/home/brainLeftText1.png"
-                        className={merge(
+                        wrapperClassName={merge(
                             isDevInView ? 'tw-translate-x-0 tw-delay-150' : 'tw-translate-x-14',
-                            'tw-absolute tw-left-[-30px] tw-top-[10px] tw-w-[52px] tw-max-w-[unset] tw-transition-all',
+                            'tw-left-[-30px] tw-top-[10px] tw-w-[52px] tw-transition-all',
                         )}
+                        wrapperPosition="absolute"
                         usePlaceholder={false}
                         originalWidth={316}
                         originalHeight={506}
@@ -94,10 +95,11 @@ export const Home = () => {
                         alt=""
                         width={64}
                         originalSrc="/home/brainLeftText2.png"
-                        className={merge(
+                        wrapperClassName={merge(
                             isDevInView ? 'tw-translate-x-0 tw-delay-75' : 'tw-translate-x-14',
-                            'tw-absolute tw-left-[-30px] tw-top-[100px] tw-w-[52px] tw-max-w-[unset] tw-transition-all',
+                            'tw-left-[-30px] tw-top-[100px] tw-w-[52px] tw-transition-all',
                         )}
+                        wrapperPosition="absolute"
                         usePlaceholder={false}
                         originalWidth={316}
                         originalHeight={506}
@@ -112,15 +114,21 @@ export const Home = () => {
                             'tw-absolute tw-left-[-60px] tw-top-[85px] tw-rotate-180 tw-text-extra-light-green tw-transition-all lg:tw-left-[40px] lg:tw-top-[-40px] lg:-tw-rotate-90',
                         )}
                     />
-                    <LeftBrain className="tw-relative tw-z-[2] tw-w-full tw-fill-grey" />
+                    <LeftBrain
+                        className={merge(
+                            'tw-relative tw-z-[2] tw-w-full tw-fill-grey tw-transition',
+                            isDevInView && 'tw-scale-95',
+                        )}
+                    />
                     <NetlifyImg
                         alt=""
                         width={256}
                         originalSrc="/home/brainLeftOverLay.png"
-                        className={merge(
+                        wrapperClassName={merge(
                             isDevInView ? 'tw-scale-1 tw-opacity-100' : 'tw-scale-0 tw-opacity-0',
-                            'tw-absolute tw-right-0 tw-top-0 tw-z-[3] tw-h-full tw-w-auto tw-max-w-[unset] tw-origin-right tw-transition-all',
+                            'tw-right-0 tw-top-0 tw-z-[3] tw-h-full tw-w-[150px] tw-origin-right tw-transition-all',
                         )}
+                        wrapperPosition="absolute"
                         originalHeight={916}
                         originalWidth={800}
                     />
@@ -138,10 +146,11 @@ export const Home = () => {
                         alt=""
                         originalSrc="/home/brainRightText1.png"
                         width={64}
-                        className={merge(
+                        wrapperClassName={merge(
                             isPhotoInView ? 'tw-translate-x-0 tw-delay-150' : '-tw-translate-x-14',
-                            'tw-absolute tw-right-[-28px] tw-top-[5px] tw-w-[52px] tw-max-w-[unset] tw-transition-all',
+                            'tw-right-[-28px] tw-top-[5px] tw-w-[52px] tw-transition-all',
                         )}
+                        wrapperPosition="absolute"
                         usePlaceholder={false}
                         originalHeight={302}
                         originalWidth={439}
@@ -150,10 +159,11 @@ export const Home = () => {
                         alt=""
                         width={64}
                         originalSrc="/home/brainRightText2.png"
-                        className={merge(
+                        wrapperClassName={merge(
                             isPhotoInView ? 'tw-translate-x-0 tw-delay-75' : '-tw-translate-x-14',
-                            'tw-absolute tw-right-[-28px] tw-top-[90px] tw-w-[52px] tw-max-w-[unset] tw-transition-all',
+                            'tw-right-[-28px] tw-top-[90px] tw-w-[52px] tw-transition-all',
                         )}
+                        wrapperPosition="absolute"
                         usePlaceholder={false}
                         originalHeight={302}
                         originalWidth={439}
@@ -168,15 +178,21 @@ export const Home = () => {
                             'tw-absolute tw-bottom-[80px] tw-right-[-60px] tw-text-extra-light-cyan tw-transition-all lg:tw-bottom-[-40px] lg:tw-right-[40px] lg:tw-rotate-90',
                         )}
                     />
-                    <RightBrain className="tw-relative tw-z-[2] tw-w-full tw-fill-grey" />
+                    <RightBrain
+                        className={merge(
+                            'tw-relative tw-z-[2] tw-w-full tw-fill-grey tw-transition',
+                            isPhotoInView && 'tw-scale-95',
+                        )}
+                    />
                     <NetlifyImg
                         alt=""
                         width={256}
                         originalSrc="/home/brainRightOverLay.png"
-                        className={merge(
+                        wrapperClassName={merge(
                             isPhotoInView ? 'tw-scale-1 tw-opacity-100' : 'tw-scale-0 tw-opacity-0',
-                            'tw-absolute tw-top-0 tw-z-[3] tw-h-full tw-w-auto tw-max-w-[unset] tw-origin-left tw-transition-all',
+                            'tw-top-0 tw-z-[3] tw-h-full tw-origin-left tw-transition-all tw-w-[150px]',
                         )}
+                        wrapperPosition="absolute"
                         originalWidth={800}
                         originalHeight={917}
                     />

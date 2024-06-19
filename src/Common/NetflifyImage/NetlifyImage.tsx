@@ -1,16 +1,16 @@
-import { useLayoutEffect, useState } from 'react';
-
-import { merge } from '../../Utility/merge';
+import { CSSProperties, useLayoutEffect, useState } from 'react';
 
 type NetlifyImageProps = {
     originalSrc: string;
     originalWidth?: number;
     originalHeight?: number;
+    objectFit?: CSSProperties['objectFit'];
     alt: string;
     width?: number;
     placeholderWidth?: number;
     onLoad?: () => void;
-    className?: string;
+    wrapperPosition?: CSSProperties['position'];
+    wrapperClassName?: string;
     blurPlaceholder?: boolean;
     usePlaceholder?: boolean;
 };
@@ -50,7 +50,9 @@ export const NetlifyImg = ({
     blurPlaceholder = true,
     placeholderWidth = 100,
     onLoad,
-    className,
+    objectFit,
+    wrapperClassName,
+    wrapperPosition = 'relative',
 }: NetlifyImageProps) => {
     const [isLoaded, setIsLoaded] = useState(false);
 
@@ -78,17 +80,21 @@ export const NetlifyImg = ({
 
     const isRenderingFullImage = !usePlaceholder || isLoaded;
 
+    const showBlurEffect = !isRenderingFullImage && blurPlaceholder;
+
     return (
-        <img
-            width={originalWidth}
-            height={originalHeight}
-            src={isRenderingFullImage ? fullWidthSrc : placeholderSrc}
-            className={merge(
-                className,
-                isRenderingFullImage || !blurPlaceholder ? 'tw-blur-0' : 'tw-blur-sm',
-                'tw-transition',
+        <div className={wrapperClassName} style={{ position: wrapperPosition, display: 'inline-flex' }}>
+            <img
+                width={originalWidth}
+                height={originalHeight}
+                src={isRenderingFullImage ? fullWidthSrc : placeholderSrc}
+                className="tw-block tw-max-h-full tw-max-w-full"
+                alt={alt}
+                style={{ objectFit }}
+            />
+            {showBlurEffect && (
+                <span className="tw-absolute tw-left-0 tw-top-0 tw-h-full tw-w-full tw-backdrop-blur-[2px]" />
             )}
-            alt={alt}
-        />
+        </div>
     );
 };

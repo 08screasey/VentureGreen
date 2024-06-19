@@ -33,7 +33,8 @@ export const GalleryView = ({ onExit, onPrev, onNext, image }: GalleryViewProps)
                     alt={alt ?? ''}
                     originalWidth={width}
                     originalHeight={height}
-                    className="tw-z-[100] tw-max-h-[90%] tw-w-[85%] tw-max-w-[1000px] tw-object-contain"
+                    objectFit="contain"
+                    wrapperClassName="tw-z-[100] tw-max-h-[90%] tw-w-[85%] tw-max-w-[1000px]"
                 />
                 <button
                     className={merge(
