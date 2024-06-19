@@ -72,7 +72,7 @@ const CarouselImage = ({
     return (
         <motion.div
             custom={direction}
-            className="tw-fixed tw-z-[100] tw-m-auto tw-flex tw-max-h-[90%] tw-w-[85%] tw-max-w-[1000px]"
+            className="tw-fixed tw-z-[100] tw-m-auto tw-flex tw-max-w-[1000px]"
             variants={variants}
             onTouchStart={onTouch}
             initial="enter"
@@ -96,7 +96,7 @@ const CarouselImage = ({
             }}
         >
             <img
-                className="tw-pointer-events-none tw-block tw-max-h-full tw-max-w-full tw-object-contain"
+                className="tw-pointer-events-none tw-max-h-[90vh] tw-max-w-[85vw] tw-object-contain"
                 src={isLoaded ? fullWidthSrc : placeholderSrc}
                 alt={alt}
                 width={width}
@@ -152,8 +152,12 @@ export const Carousel = ({ images, startingIndex, onExit }: CarouselProps) => {
     }, [showButtonsAndTriggerTimeout]);
 
     useEffect(() => {
+        const originalOverflow = document.body.style.overflow;
+        document.body.style.overflow = 'hidden';
+
         return () => {
             clearTimeout(timeoutRef.current);
+            document.body.style.overflow = originalOverflow;
         };
     }, []);
 
