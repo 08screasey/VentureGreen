@@ -207,7 +207,7 @@ export const Home = () => {
 
             <EqualSizingCol>
                 <PhotoStack
-                    isInView={isPhotoInView}
+                    isInView={shouldAnimateRightBrain}
                     ref={photoCardRef}
                     onLoad={useCallback(() => setHasPhotoStackLoaded(true), [])}
                 />
