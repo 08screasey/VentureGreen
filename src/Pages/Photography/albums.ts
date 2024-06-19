@@ -1457,12 +1457,12 @@ const EUROPE_ALBUM: Album = {
 
 const TRAVEL_ALBUMS = {
     header: 'Travel',
-    coverArt: { src: '/cover-art/travel.jpg', width: 900, height: 1128 },
+    coverArt: { src: '/cover-art/travel.jpg', width: 900, height: 1128, alt: '' },
     albums: [OCEANIA_ALBUM, ASIA_ALBUM, EUROPE_ALBUM, CANADA_ALBUM],
 };
 const CLIENT_ALBUMS = {
     header: 'Client',
-    coverArt: { src: '/cover-art/client.jpg', height: 1198, width: 900 },
+    coverArt: { src: '/cover-art/client.jpg', height: 1198, width: 900, alt: '' },
     albums: [CAT_MOTORS_ALBUM, SPROUT_ALBUM, LUNA_GALLERY, CLIMATE_GALLERY, GEMMA_ALBUM],
 };
 
