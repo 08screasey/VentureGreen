@@ -122,7 +122,7 @@ export const Home = () => {
                         originalSrc="/home/brainLeftOverLay.png"
                         className={merge(
                             isDevInView ? 'tw-scale-1 tw-opacity-100' : 'tw-scale-0 tw-opacity-0',
-                            'tw-absolute tw-right-0 tw-top-0 tw-z-[3] tw-h-full tw-w-[150px] tw-origin-right tw-transition-all',
+                            'tw-absolute tw-right-0 tw-top-0 tw-z-[3] tw-h-full tw-w-[150px] tw-max-w-[unset] tw-origin-right tw-transition-all',
                         )}
                         originalHeight={916}
                         originalWidth={800}
@@ -181,7 +181,7 @@ export const Home = () => {
                         originalSrc="/home/brainRightOverLay.png"
                         className={merge(
                             isPhotoInView ? 'tw-scale-1 tw-opacity-100' : 'tw-scale-0 tw-opacity-0',
-                            'tw-absolute tw-top-0 tw-z-[3] tw-h-full tw-w-[150px] tw-origin-left tw-transition-all',
+                            'tw-absolute tw-top-0 tw-z-[3] tw-h-full tw-w-[150px] tw-max-w-[unset] tw-origin-left tw-transition-all',
                         )}
                         originalWidth={800}
                         originalHeight={917}

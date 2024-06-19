@@ -58,7 +58,7 @@ export const PhotoStack = forwardRef<HTMLAnchorElement, { isInView: boolean }>((
         />
         <NetlifyImg
             className={merge(
-                'tw-origin-center tw-shadow-lg tw-transition-all group-hover/photos:tw-scale-105 group-hover/photos:tw-shadow-2xl group-focus-visible/photos:tw-scale-105 group-focus-visible/photos:tw-shadow-2xl',
+                'tw-relative tw-origin-center tw-shadow-lg tw-transition-all group-hover/photos:tw-scale-105 group-hover/photos:tw-shadow-2xl group-focus-visible/photos:tw-scale-105 group-focus-visible/photos:tw-shadow-2xl',
             )}
             alt=""
             originalSrc="/home/Home Image.jpg"
