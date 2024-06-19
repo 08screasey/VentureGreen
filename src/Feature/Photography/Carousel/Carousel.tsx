@@ -96,7 +96,7 @@ const CarouselImage = ({
             }}
         >
             <img
-                className="tw-pointer-events-none tw-max-h-[90vh] tw-max-w-[85vw] tw-object-contain"
+                className="tw-pointer-events-none tw-max-h-[90vh] tw-max-w-[90vw] tw-object-contain"
                 src={isLoaded ? fullWidthSrc : placeholderSrc}
                 alt={alt}
                 width={width}
@@ -165,7 +165,7 @@ export const Carousel = ({ images, startingIndex, onExit }: CarouselProps) => {
         <ReactFocusLock returnFocus>
             <div
                 className="tw-fixed tw-left-0 tw-top-0 tw-z-[100] tw-flex tw-h-full tw-w-full tw-items-center tw-justify-center"
-                onMouseMove={showButtonsAndTriggerTimeout}
+                onMouseOver={showButtonsAndTriggerTimeout}
             >
                 <button className="tw-sr-only" aria-label="Exit Gallery" />
                 <div
@@ -184,7 +184,7 @@ export const Carousel = ({ images, startingIndex, onExit }: CarouselProps) => {
                 </AnimatePresence>
                 <button
                     className={merge(
-                        'tw-fixed tw-left-0 tw-top-0 tw-z-[108] tw-h-full -tw-scale-100 tw-cursor-pointer tw-bg-black/40 tw-px-2 tw-text-4xl tw-text-white tw-transition hover:tw-bg-black/60 focus-visible:tw-opacity-100 active:tw-bg-black/70',
+                        'tw-fixed tw-left-0 tw-top-0 tw-z-[108] tw-h-full tw-w-[5vw] tw-max-w-[32px] -tw-scale-100 tw-cursor-pointer tw-bg-black/40 tw-text-4xl tw-text-white tw-transition hover:tw-bg-black/60 focus-visible:tw-opacity-100 active:tw-bg-black/70',
                         FOCUS_VISIBLE_STYLES,
                         showButtons ? 'tw-opacity-100' : 'tw-opacity-0',
                     )}
@@ -198,7 +198,7 @@ export const Carousel = ({ images, startingIndex, onExit }: CarouselProps) => {
                 </button>
                 <button
                     className={merge(
-                        'tw-fixed tw-right-0 tw-top-0 tw-z-[108] tw-h-full tw-cursor-pointer tw-bg-black/40 tw-px-2 tw-text-4xl tw-text-white tw-transition hover:tw-bg-black/60 focus-visible:tw-opacity-100 active:tw-bg-black/70',
+                        'tw-fixed tw-right-0 tw-top-0 tw-z-[108] tw-h-full tw-w-[5vw] tw-max-w-[32px] tw-cursor-pointer tw-bg-black/40 tw-text-4xl tw-text-white tw-transition hover:tw-bg-black/60 focus-visible:tw-opacity-100 active:tw-bg-black/70',
                         FOCUS_VISIBLE_STYLES,
                         showButtons ? 'tw-opacity-100' : 'tw-opacity-0',
                     )}
