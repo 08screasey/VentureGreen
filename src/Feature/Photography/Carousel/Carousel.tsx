@@ -43,6 +43,17 @@ const swipePower = (offset: number, velocity: number) => {
 
 type CarouselProps = { images: Image[]; startingIndex: number; onExit: () => void };
 
+type CarouselImageProps = {
+    src: string;
+    height: number;
+    width: number;
+    alt: string;
+    direction: number;
+    onSwipeLeft: () => void;
+    onSwipeRight: () => void;
+    onTouch: () => void;
+};
+
 const CarouselImage = ({
     src,
     onSwipeLeft,
@@ -52,16 +63,7 @@ const CarouselImage = ({
     alt,
     direction,
     onTouch,
-}: {
-    src: string;
-    height: number;
-    width: number;
-    alt: string;
-    direction: number;
-    onSwipeLeft: () => void;
-    onSwipeRight: () => void;
-    onTouch: () => void;
-}) => {
+}: CarouselImageProps) => {
     const fullWidthSrc = convertUrlToNetlifyUrl(src);
     const placeholderSrc = convertUrlToNetlifyUrl(src, 100);
 
@@ -94,7 +96,7 @@ const CarouselImage = ({
             }}
         >
             <img
-                className="tw-block tw-max-h-full tw-max-w-full tw-object-contain"
+                className="tw-pointer-events-none tw-block tw-max-h-full tw-max-w-full tw-object-contain"
                 src={isLoaded ? fullWidthSrc : placeholderSrc}
                 alt={alt}
                 width={width}
