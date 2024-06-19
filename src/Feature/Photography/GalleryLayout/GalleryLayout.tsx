@@ -7,7 +7,7 @@ import { FOCUS_VISIBLE_STYLES } from '../../../Utility/focusStyles';
 import { merge } from '../../../Utility/merge';
 import { GalleryView } from '../GalleryView/GalleryView';
 
-import { GALLERY_CONTAINER_VARIANTS, GALLERY_ITEM_VARIANTS } from './animations';
+import { GALLERY_CONTAINER_VARIANTS, GALLERY_HEADER_VARIANTS, GALLERY_ITEM_VARIANTS } from './animations';
 
 type GalleryLayoutProps = {
     album: Album;
@@ -51,7 +51,7 @@ export const GalleryLayout = ({ album }: GalleryLayoutProps) => {
             >
                 <div className="tw-mb-2 tw-flex tw-flex-col tw-gap-4 tw-bg-black/80 tw-p-4 tw-text-white">
                     <motion.h2
-                        variants={GALLERY_ITEM_VARIANTS}
+                        variants={GALLERY_HEADER_VARIANTS}
                         transition={{ type: 'tween' }}
                         className="tw-text-center tw-font-lora tw-text-4xl"
                     >
@@ -59,7 +59,7 @@ export const GalleryLayout = ({ album }: GalleryLayoutProps) => {
                     </motion.h2>
                     {subheader && (
                         <motion.p
-                            variants={GALLERY_ITEM_VARIANTS}
+                            variants={GALLERY_HEADER_VARIANTS}
                             transition={{ type: 'tween' }}
                             className="tw-mb-4 tw-text-center tw-font-lora"
                         >
@@ -78,7 +78,7 @@ export const GalleryLayout = ({ album }: GalleryLayoutProps) => {
                             'focus-visible:tw-z-[2]',
                         )}
                         variants={GALLERY_ITEM_VARIANTS}
-                        transition={{ type: 'tween' }}
+                        transition={{ type: 'tween', ease: 'easeOut' }}
                     >
                         <PlaceholderImage
                             wrapperClassName="tw-w-full"
