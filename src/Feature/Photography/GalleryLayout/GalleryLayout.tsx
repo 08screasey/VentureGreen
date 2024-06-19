@@ -87,6 +87,7 @@ export const GalleryLayout = ({ album }: GalleryLayoutProps) => {
                             width={600}
                             originalWidth={width}
                             originalHeight={height}
+                            lazy
                         />
                     </motion.button>
                 ))}

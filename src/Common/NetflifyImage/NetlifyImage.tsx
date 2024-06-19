@@ -1,4 +1,6 @@
-import { CSSProperties, useLayoutEffect, useState } from 'react';
+import { CSSProperties, useCallback, useLayoutEffect, useRef, useState } from 'react';
+
+import { useIntersectionObserver } from '../../Utility/useIntersectionObserver';
 
 type NetlifyImageProps = {
     originalSrc: string;
@@ -9,6 +11,7 @@ type NetlifyImageProps = {
     width?: number;
     placeholderWidth?: number;
     onLoad?: () => void;
+    lazy?: boolean;
     wrapperPosition?: CSSProperties['position'];
     wrapperClassName?: string;
     blurPlaceholder?: boolean;
@@ -51,32 +54,45 @@ export const NetlifyImg = ({
     placeholderWidth = 100,
     onLoad,
     objectFit,
+    lazy = false,
     wrapperClassName,
     wrapperPosition = 'relative',
 }: NetlifyImageProps) => {
     const [isLoaded, setIsLoaded] = useState(false);
+    const [isInViewport, setIsInViewport] = useState(false);
 
     const fullWidthSrc = convertUrlToNetlifyUrl(originalSrc, width);
     const placeholderSrc = convertUrlToNetlifyUrl(originalSrc, placeholderWidth);
 
+    const observerRef = useRef<HTMLImageElement>(null);
+    useIntersectionObserver({
+        ref: observerRef,
+        onEnter: useCallback(() => {
+            setIsInViewport(true);
+        }, []),
+        bottomOffset: 400,
+    });
+
     useLayoutEffect(() => {
-        let isMounted = true;
+        if (!lazy || isInViewport) {
+            let isMounted = true;
 
-        loadImageSrc(fullWidthSrc)
-            .then(() => {
-                if (isMounted) {
-                    setIsLoaded(true);
-                    onLoad?.();
-                }
-            })
-            .catch((error) => {
-                console.error(error);
-            });
+            loadImageSrc(fullWidthSrc)
+                .then(() => {
+                    if (isMounted) {
+                        setIsLoaded(true);
+                        onLoad?.();
+                    }
+                })
+                .catch((error) => {
+                    console.error(error);
+                });
 
-        return () => {
-            isMounted = false;
-        };
-    }, [fullWidthSrc, onLoad]);
+            return () => {
+                isMounted = false;
+            };
+        }
+    }, [fullWidthSrc, onLoad, isInViewport, lazy]);
 
     const isRenderingFullImage = !usePlaceholder || isLoaded;
 
@@ -91,6 +107,7 @@ export const NetlifyImg = ({
                 className="tw-block tw-max-h-full tw-max-w-full"
                 alt={alt}
                 style={{ objectFit }}
+                ref={observerRef}
             />
             {showBlurEffect && (
                 <span className="tw-absolute tw-left-0 tw-top-0 tw-h-full tw-w-full tw-backdrop-blur-[2px]" />
