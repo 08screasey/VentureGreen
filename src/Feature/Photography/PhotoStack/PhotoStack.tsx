@@ -60,6 +60,7 @@ export const PhotoStack = forwardRef<HTMLAnchorElement, { isInView: boolean }>((
                 'tw-origin-center tw-shadow-lg tw-transition-all group-hover/photos:tw-scale-105 group-hover/photos:tw-shadow-2xl group-focus-visible/photos:tw-scale-105 group-focus-visible/photos:tw-shadow-2xl',
             )}
             alt=""
+            usePlaceholder={false}
             originalSrc="/home/Home Image.jpg"
             width={450}
             originalWidth={1500}

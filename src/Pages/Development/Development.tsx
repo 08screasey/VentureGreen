@@ -44,14 +44,15 @@ export const Development = () => {
 
     return (
         <motion.div
-            variants={getDevCardVariants(hasVisited ? 0 : 5)}
+            variants={getDevCardVariants(hasVisited ? 0 : 3.2)}
             initial="hidden"
             animate="show"
             className="tw-w-full tw-bg-[url(/development/background.jpg)] tw-bg-cover tw-bg-fixed tw-bg-center tw-bg-no-repeat tw-px-2 tw-pb-[150px] tw-pt-[50px] md:tw-px-10"
         >
             <motion.h2
                 className="tw-text-center tw-font-lora tw-text-4xl tw-font-bold tw-text-green"
-                variants={DEV_CARD_VARIANTS}
+                initial={DEV_CARD_VARIANTS.hidden}
+                animate={DEV_CARD_VARIANTS.show}
                 transition={{ type: 'tween' }}
             >
                 Web Development
@@ -63,7 +64,7 @@ export const Development = () => {
                             {convertNodesToSpanElements(CONTENT)}
                         </motion.span>
                     ) : (
-                        <TypingEffect content={CONTENT} enabled minSpeed={8} maxSpeed={30} />
+                        <TypingEffect content={CONTENT} enabled minSpeed={6} maxSpeed={18} />
                     )}
                 </p>
             </div>
