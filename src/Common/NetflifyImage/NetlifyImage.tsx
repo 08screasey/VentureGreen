@@ -51,7 +51,7 @@ export const NetlifyImg = ({
     width,
     usePlaceholder = true,
     blurPlaceholder = true,
-    placeholderWidth = 100,
+    placeholderWidth = 16,
     onLoad,
     objectFit,
     lazy = false,
