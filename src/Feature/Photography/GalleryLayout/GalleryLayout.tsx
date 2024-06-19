@@ -73,7 +73,7 @@ export const GalleryLayout = ({ album }: GalleryLayoutProps) => {
                         onClick={() => openGallery(i)}
                         aria-label={`Open gallery view for ${alt ?? src}`}
                         className={merge(
-                            'tw-relative tw-mx-auto tw-mb-2 tw-block tw-w-full tw-transition hover:tw-brightness-95 active:tw-brightness-90',
+                            'tw-relative tw-mx-auto tw-block tw-w-full tw-transition hover:tw-brightness-95 active:tw-brightness-90',
                             FOCUS_VISIBLE_STYLES,
                             'focus-visible:tw-z-[2]',
                         )}
