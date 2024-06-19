@@ -1,0 +1,19 @@
+{
+	"geolocation": {
+		"data": {
+			"city": "Kawakawa",
+			"country": {
+				"code": "NZ",
+				"name": "New Zealand"
+			},
+			"subdivision": {
+				"code": "NTL",
+				"name": "Northland"
+			},
+			"timezone": "Pacific/Auckland",
+			"latitude": -35.3325,
+			"longitude": 174.2285
+		},
+		"timestamp": 1718717181391
+	}
+}
