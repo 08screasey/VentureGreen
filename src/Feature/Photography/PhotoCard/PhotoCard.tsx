@@ -24,12 +24,12 @@ export const PhotoCard = ({ coverArt, children, link }: PhotoCardProps) => (
         <NavLink
             to={link}
             className={merge(
-                'tw-group/card tw-relative tw-flex tw-h-[550px] tw-flex-none tw-cursor-pointer tw-flex-col tw-justify-center tw-overflow-hidden tw-font-lora tw-text-4xl tw-text-white',
+                'tw-group/card tw-relative tw-flex tw-h-[550px] tw-flex-none tw-cursor-pointer tw-flex-col tw-justify-end tw-overflow-hidden tw-font-lora tw-text-white',
                 FOCUS_VISIBLE_STYLES,
             )}
         >
             <PlaceholderImage
-                wrapperClassName="tw-left-0 tw-top-0 tw-h-full tw-w-full"
+                wrapperClassName="tw-left-0 tw-top-0 tw-h-full tw-w-full group-hover/card:tw-brightness-75 tw-transition"
                 originalSrc={coverArt.src}
                 objectFit="cover"
                 width={800}
@@ -38,14 +38,14 @@ export const PhotoCard = ({ coverArt, children, link }: PhotoCardProps) => (
                 originalWidth={coverArt.width}
                 wrapperPosition="absolute"
             />
-            <div
-                className={merge(
-                    'tw-absolute tw-left-0 tw-top-0 tw-z-[2] tw-h-full tw-w-full tw-bg-black/80 tw-opacity-60 tw-transition-all group-hover/card:tw-opacity-100 group-focus-visible/card:tw-opacity-100',
-                )}
-            />
-            <div className="tw-relative tw-z-[3] tw-py-4 tw-text-center tw-text-6xl tw-transition-all group-hover/card:tw-bg-transparent group-focus-visible/card:tw-bg-transparent">
+            <div className="tw-relative tw-z-[2] tw-bg-black/90 tw-py-4 tw-text-center tw-text-4xl tw-transition-all">
                 {children}
             </div>
+            <div
+                className={merge(
+                    'tw-absolute tw-left-0 tw-top-0 tw-z-[3] tw-h-full tw-w-full tw-bg-transparent tw-transition-all group-hover/card:tw-shadow-inner group-focus-visible/card:tw-shadow-inner',
+                )}
+            />
         </NavLink>
     </motion.div>
 );

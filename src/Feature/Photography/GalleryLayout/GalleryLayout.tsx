@@ -49,7 +49,7 @@ export const GalleryLayout = ({ album }: GalleryLayoutProps) => {
                 initial="hidden"
                 animate="show"
             >
-                <div className="tw-mb-2 tw-flex tw-flex-col tw-gap-4 tw-bg-black/70 tw-p-4 tw-text-white">
+                <div className="tw-mb-2 tw-flex tw-flex-col tw-gap-4 tw-bg-black/80 tw-p-4 tw-text-white">
                     <motion.h2
                         variants={GALLERY_ITEM_VARIANTS}
                         transition={{ type: 'tween' }}

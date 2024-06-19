@@ -18,7 +18,5 @@ export const useKeypress = ({ key, enabled = true, callback }: UseKeypressOption
                 document.removeEventListener('keydown', callbackIfKeyPressed);
             }
         };
-
-        // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [key, enabled]);
+    }, [key, enabled, callback]);
 };
