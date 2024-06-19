@@ -43,7 +43,7 @@ export const Home = () => {
     useIntersectionObserver({
         onEnter: useCallback(() => setIsPhotoInView(true), []),
         onLeave: useCallback(() => setIsPhotoInView(false), []),
-        topOffset: 300,
+        topOffset: -300,
         bottomOffset: 100,
         ref: photoCardRef,
     });
@@ -53,7 +53,7 @@ export const Home = () => {
         onEnter: useCallback(() => setIsDevInView(true), []),
         onLeave: useCallback(() => setIsDevInView(false), []),
         topOffset: 300,
-        bottomOffset: 100,
+        bottomOffset: -200,
         ref: devCardRef,
     });
 
@@ -99,7 +99,7 @@ export const Home = () => {
                         width={64}
                         originalSrc="/home/brainLeftText1.png"
                         className={merge(
-                            shouldAnimateLeftBrain ? 'tw-translate-x-0 tw-delay-150' : 'tw-translate-x-14',
+                            shouldAnimateLeftBrain ? 'tw-translate-x-0 tw-delay-150' : 'tw-translate-x-14 tw-scale-50',
                             'tw-absolute tw-left-[-30px] tw-top-[10px] tw-w-[52px] tw-transition-all',
                         )}
                         originalWidth={316}
@@ -110,7 +110,7 @@ export const Home = () => {
                         width={64}
                         originalSrc="/home/brainLeftText2.png"
                         className={merge(
-                            shouldAnimateLeftBrain ? 'tw-translate-x-0 tw-delay-150' : 'tw-translate-x-14',
+                            shouldAnimateLeftBrain ? 'tw-translate-x-0 tw-delay-150' : 'tw-translate-x-14 tw-scale-50',
                             'tw-absolute tw-left-[-30px] tw-top-[100px] tw-w-[52px] tw-transition-all',
                         )}
                         originalWidth={316}
@@ -158,7 +158,9 @@ export const Home = () => {
                         originalSrc="/home/brainRightText1.png"
                         width={64}
                         className={merge(
-                            shouldAnimateRightBrain ? 'tw-translate-x-0 tw-delay-150' : '-tw-translate-x-14',
+                            shouldAnimateRightBrain
+                                ? 'tw-translate-x-0 tw-delay-150'
+                                : '-tw-translate-x-14 tw-scale-50',
                             'tw-absolute tw-right-[-28px] tw-top-[5px] tw-w-[52px] tw-transition-all',
                         )}
                         originalHeight={302}
@@ -169,7 +171,9 @@ export const Home = () => {
                         width={64}
                         originalSrc="/home/brainRightText2.png"
                         className={merge(
-                            shouldAnimateRightBrain ? 'tw-translate-x-0 tw-delay-150' : '-tw-translate-x-14',
+                            shouldAnimateRightBrain
+                                ? 'tw-translate-x-0 tw-delay-150'
+                                : '-tw-translate-x-14 tw-scale-50',
                             'tw-absolute tw-right-[-28px] tw-top-[90px] tw-w-[52px] tw-transition-all',
                         )}
                         originalHeight={302}
