@@ -122,7 +122,7 @@ export const Home = () => {
                     />
                     <NetlifyImg
                         alt=""
-                        width={256}
+                        width={150}
                         originalSrc="/home/brainLeftOverLay.png"
                         wrapperClassName={merge(
                             isDevInView ? 'tw-scale-1 tw-opacity-100' : 'tw-scale-0 tw-opacity-0',
@@ -131,6 +131,7 @@ export const Home = () => {
                         wrapperPosition="absolute"
                         originalHeight={916}
                         originalWidth={800}
+                        usePlaceholder={false}
                     />
                 </Link>
 
@@ -186,7 +187,7 @@ export const Home = () => {
                     />
                     <NetlifyImg
                         alt=""
-                        width={256}
+                        width={150}
                         originalSrc="/home/brainRightOverLay.png"
                         wrapperClassName={merge(
                             isPhotoInView ? 'tw-scale-1 tw-opacity-100' : 'tw-scale-0 tw-opacity-0',
@@ -195,6 +196,7 @@ export const Home = () => {
                         wrapperPosition="absolute"
                         originalWidth={800}
                         originalHeight={917}
+                        usePlaceholder={false}
                     />
                 </Link>
             </div>
