@@ -1,18 +1,10 @@
-import { CSSProperties, forwardRef, useCallback, useLayoutEffect, useRef, useState } from 'react';
+import { type CSSProperties, useLayoutEffect, useRef, useState, useCallback } from 'react';
 
+import { convertUrlToNetlifyUrl } from '../../Helpers/convertToNetlifyUrl';
+import { loadImageSrc } from '../../Utility/loadImageSrc';
 import { merge } from '../../Utility/merge';
 import { useIntersectionObserver } from '../../Utility/useIntersectionObserver';
-
-type NetlifyImageProps = {
-    originalSrc: string;
-    originalWidth?: number;
-    originalHeight?: number;
-    alt: string;
-    width?: number;
-    onLoad?: () => void;
-    lazy?: boolean;
-    className?: string;
-};
+import { NetlifyImg } from '../NetlifyImage/NetlifyImage';
 
 type PlaceholderImageProps = {
     originalSrc: string;
@@ -28,31 +20,6 @@ type PlaceholderImageProps = {
     wrapperClassName?: string;
     blurPlaceholder?: boolean;
     usePlaceholder?: boolean;
-};
-
-const loadImageSrc = (src: string) =>
-    new Promise<void>((resolve, reject) => {
-        const image = new Image();
-        image.onload = () => resolve();
-        image.onerror = () => reject();
-        image.src = src;
-        if (image.complete) {
-            resolve();
-        }
-    });
-
-const convertUrlToNetlifyUrl = (url: string, width?: number) => {
-    if (process.env.NODE_ENV === 'production') {
-        let netlifyUrl = `/.netlify/images?url=${encodeURIComponent(url)}`;
-
-        if (width) {
-            netlifyUrl += `&width=${width * Math.ceil(window.devicePixelRatio)}`;
-        }
-
-        return netlifyUrl;
-    } else {
-        return url;
-    }
 };
 
 export const PlaceholderImage = ({
@@ -129,17 +96,3 @@ export const PlaceholderImage = ({
         </div>
     );
 };
-
-export const NetlifyImg = forwardRef<HTMLImageElement, NetlifyImageProps>(
-    ({ originalSrc, originalWidth, originalHeight, onLoad, alt, width, className }: NetlifyImageProps, ref) => (
-        <img
-            width={originalWidth}
-            height={originalHeight}
-            src={convertUrlToNetlifyUrl(originalSrc, width)}
-            className={className}
-            onLoad={onLoad}
-            alt={alt}
-            ref={ref}
-        />
-    ),
-);

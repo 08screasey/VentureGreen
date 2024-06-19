@@ -3,7 +3,7 @@ import { faLink } from '@fortawesome/free-solid-svg-icons';
 import { motion } from 'framer-motion';
 import { useState } from 'react';
 
-import { PlaceholderImage } from '../../../../Common/NetflifyImage/NetlifyImage';
+import { PlaceholderImage } from '../../../../Common/PlaceholderImage/PlaceholderImage';
 import { Image } from '../../../../Pages/Photography/albums';
 import { merge } from '../../../../Utility/merge';
 

@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 import { type ReactNode } from 'react';
 import { NavLink } from 'react-router-dom';
 
-import { PlaceholderImage } from '../../../Common/NetflifyImage/NetlifyImage';
+import { PlaceholderImage } from '../../../Common/PlaceholderImage/PlaceholderImage';
 import { type Image } from '../../../Pages/Photography/albums';
 import { FOCUS_VISIBLE_STYLES } from '../../../Utility/focusStyles';
 import { merge } from '../../../Utility/merge';

@@ -1,6 +1,7 @@
 import { useCallback, useRef, useState } from 'react';
 
-import { NetlifyImg, PlaceholderImage } from '../../../Common/NetflifyImage/NetlifyImage';
+import { NetlifyImg } from '../../../Common/NetlifyImage/NetlifyImage';
+import { PlaceholderImage } from '../../../Common/PlaceholderImage/PlaceholderImage';
 import { merge } from '../../../Utility/merge';
 import { useAutoScroll } from '../../../Utility/useAutoScroll';
 

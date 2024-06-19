@@ -1,7 +1,8 @@
 import { forwardRef } from 'react';
 import { Link } from 'react-router-dom';
 
-import { NetlifyImg, PlaceholderImage } from '../../../Common/NetflifyImage/NetlifyImage';
+import { NetlifyImg } from '../../../Common/NetlifyImage/NetlifyImage';
+import { PlaceholderImage } from '../../../Common/PlaceholderImage/PlaceholderImage';
 import { merge } from '../../../Utility/merge';
 
 const BASE_IMAGE_CLASS = 'tw-top-0 tw-left-0 tw-transition-all tw-shadow-lg tw-origin-center';

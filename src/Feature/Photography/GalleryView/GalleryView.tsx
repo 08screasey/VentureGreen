@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { PropsWithChildren } from 'react';
 import ReactFocusLock from 'react-focus-lock';
 
-import { PlaceholderImage } from '../../../Common/NetflifyImage/NetlifyImage';
+import { PlaceholderImage } from '../../../Common/PlaceholderImage/PlaceholderImage';
 import { type Image } from '../../../Pages/Photography/albums';
 import { FOCUS_VISIBLE_STYLES } from '../../../Utility/focusStyles';
 import { merge } from '../../../Utility/merge';

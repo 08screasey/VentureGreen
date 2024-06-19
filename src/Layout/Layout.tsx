@@ -5,7 +5,7 @@ import { type ReactNode, useState, useEffect, useCallback } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 
 import { Hamburger } from '../Common/Hamburger/Hamburger';
-import { NetlifyImg } from '../Common/NetflifyImage/NetlifyImage';
+import { NetlifyImg } from '../Common/NetlifyImage/NetlifyImage';
 import { FOCUS_VISIBLE_STYLES } from '../Utility/focusStyles';
 import { merge } from '../Utility/merge';
 

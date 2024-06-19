@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { PropsWithChildren, useCallback, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 
-import { NetlifyImg } from '../../Common/NetflifyImage/NetlifyImage';
+import { NetlifyImg } from '../../Common/NetlifyImage/NetlifyImage';
 import { TypingEffect } from '../../Common/TypingEffect';
 import { Laptop } from '../../Feature/Development/Laptop/Laptop';
 import { PhotoStack } from '../../Feature/Photography/PhotoStack/PhotoStack';
