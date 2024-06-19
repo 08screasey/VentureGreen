@@ -47,10 +47,13 @@ export const NetlifyImg = ({
 }: NetlifyImageProps) => {
     const [isLoaded, setIsLoaded] = useState(false);
 
+    const fullWidthSrc = convertUrlToNetlifyUrl(originalSrc, width);
+    const placeholderSrc = convertUrlToNetlifyUrl(originalSrc, placeholderWidth);
+
     useEffect(() => {
         let isMounted = true;
 
-        loadImageSrc(originalSrc)
+        loadImageSrc(fullWidthSrc)
             .then(() => {
                 if (isMounted) {
                     setIsLoaded(true);
@@ -64,16 +67,13 @@ export const NetlifyImg = ({
         return () => {
             isMounted = false;
         };
-    }, [originalSrc, onLoad]);
-
-    const fullWidthSrc = convertUrlToNetlifyUrl(originalSrc, width);
-    const placeholderSrc = convertUrlToNetlifyUrl(originalSrc, placeholderWidth);
+    }, [fullWidthSrc, onLoad]);
 
     return (
         <img
             width={originalWidth}
             height={originalHeight}
-            src={isLoaded ? placeholderSrc : fullWidthSrc}
+            src={isLoaded ? fullWidthSrc : placeholderSrc}
             className={merge(className, !isLoaded && 'tw-blur-lg')}
             alt={alt}
         />
