@@ -4,6 +4,7 @@ import { GalleryLayout } from '../../Feature/Photography/GalleryLayout/GalleryLa
 import { PhotoCard } from '../../Feature/Photography/PhotoCard/PhotoCard';
 import { PhotoGrid } from '../../Feature/Photography/PhotoGrid/PhotoGrid';
 import { useDocumentTitle } from '../../Utility/useDocumentTitle';
+import { useScrollToTop } from '../../Utility/useScrollToTop';
 
 import { PHOTOGRAPHY_COLLECTIONS } from './albums';
 
@@ -39,6 +40,7 @@ const PhotoCollection = ({ albums }: { albums: typeof PHOTOGRAPHY_COLLECTIONS })
 
 export const Photography = () => {
     useDocumentTitle("Sam Creasey's Photography Portfolio");
+    useScrollToTop();
 
     return (
         <div className="tw-w-full tw-bg-[url('/backgrounds/berg.jpg')] tw-bg-cover tw-bg-fixed tw-bg-bottom tw-bg-no-repeat">

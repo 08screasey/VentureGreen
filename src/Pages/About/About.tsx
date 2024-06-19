@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 
 import { ContactLink } from '../../Feature/About/ContactLink/ContactLink';
 import { useDocumentTitle } from '../../Utility/useDocumentTitle';
+import { useScrollToTop } from '../../Utility/useScrollToTop';
 
 const ABOUT_VARIANTS = {
     hidden: {},
@@ -18,6 +19,7 @@ const ABOUT_CONTENT_VARIANTS = { hidden: { opacity: 0, y: 30 }, show: { opacity:
 
 export const About = () => {
     useDocumentTitle("Sam Creasey's Portfolio");
+    useScrollToTop();
 
     return (
         <motion.div
