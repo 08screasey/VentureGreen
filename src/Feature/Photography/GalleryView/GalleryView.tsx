@@ -3,6 +3,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { PropsWithChildren } from 'react';
 import ReactFocusLock from 'react-focus-lock';
 
+import { NetlifyImg } from '../../../Common/NetflifyImage/NetlifyImage';
+import { type Image } from '../../../Pages/Photography/albums';
 import { FOCUS_VISIBLE_STYLES } from '../../../Utility/focusStyles';
 import { merge } from '../../../Utility/merge';
 import { useKeypress } from '../../../Utility/useKeypress';
@@ -11,12 +13,13 @@ type GalleryViewProps = PropsWithChildren<{
     onExit: () => void;
     onPrev: () => void;
     onNext: () => void;
-    imageSrc: string;
-    alt: string;
+    image: Image;
 }>;
 
-export const GalleryView = ({ onExit, onPrev, onNext, imageSrc, alt }: GalleryViewProps) => {
+export const GalleryView = ({ onExit, onPrev, onNext, image }: GalleryViewProps) => {
     useKeypress({ key: 'Escape', callback: onExit });
+
+    const { src, alt, width, height } = image;
 
     return (
         <ReactFocusLock returnFocus>
@@ -25,10 +28,13 @@ export const GalleryView = ({ onExit, onPrev, onNext, imageSrc, alt }: GalleryVi
                     className="tw-fixed tw-left-0 tw-top-0 tw-z-[6] tw-h-full tw-w-full tw-bg-black/70"
                     onClick={onExit}
                 />
-                <img
-                    src={imageSrc}
-                    alt={alt}
-                    className="tw-z-[100] tw-max-h-[90%] tw-w-[85%] tw-max-w-[1000px] tw-object-contain"
+                <NetlifyImg
+                    originalSrc={src}
+                    alt={alt ?? ''}
+                    originalWidth={width}
+                    originalHeight={height}
+                    objectFit="contain"
+                    wrapperClassName="tw-z-[100] tw-max-h-[90%] tw-w-[85%] tw-max-w-[1000px]"
                 />
                 <button
                     className={merge(

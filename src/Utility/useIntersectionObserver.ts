@@ -25,6 +25,7 @@ export const useIntersectionObserver = <T extends HTMLElement>({
             entries.forEach((entry) => {
                 if (entry.isIntersecting) {
                     if (!hasEntered.current && onEnter) {
+                        console.log('enter');
                         onEnter();
                     }
                     hasEntered.current = true;

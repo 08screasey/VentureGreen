@@ -32,6 +32,8 @@ export const About = () => {
                     className="tw-aspect-square tw-w-[75vw] tw-max-w-[350px] tw-rounded-full tw-object-cover"
                     src="/about/about-mountain.jpg"
                     transition={{ type: 'tween' }}
+                    height={1000}
+                    width={1000}
                 />
                 <div className="tw-text-center lg:tw-text-left">
                     <motion.h2

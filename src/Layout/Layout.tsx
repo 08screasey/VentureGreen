@@ -5,6 +5,7 @@ import { type ReactNode, useState, useEffect, useCallback } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 
 import { Hamburger } from '../Common/Hamburger/Hamburger';
+import { NetlifyImg } from '../Common/NetflifyImage/NetlifyImage';
 import { FOCUS_VISIBLE_STYLES } from '../Utility/focusStyles';
 import { merge } from '../Utility/merge';
 
@@ -69,10 +70,14 @@ export const Layout = ({ children }: LayoutProps) => {
                     </a>
                     <h1 className="tw-text-l tw-m-auto tw-mb-0 tw-flex tw-max-w-[500px] tw-flex-col tw-items-center tw-font-lora tw-font-bold tw-text-green lg:tw-text-xl">
                         <Link to="/" className={merge(FOCUS_VISIBLE_STYLES, 'tw-rounded')} aria-label="Home">
-                            <img
-                                src="/venturegreen.png"
-                                className="tw-mx-auto tw-block tw-h-[60px] lg:tw-h-[75px]"
+                            <NetlifyImg
+                                originalSrc="/venturegreen.png"
+                                wrapperClassName="tw-mx-auto tw-h-[60px] lg:tw-h-[75px]"
+                                objectFit="contain"
                                 alt="Venture Green Logo"
+                                width={300}
+                                originalHeight={376}
+                                originalWidth={1500}
                             />
                         </Link>
                         <div className="tw-text-center">Adventure Photography & Web Development</div>

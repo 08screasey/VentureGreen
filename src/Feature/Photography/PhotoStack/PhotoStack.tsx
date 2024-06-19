@@ -1,9 +1,10 @@
 import { forwardRef } from 'react';
 import { Link } from 'react-router-dom';
 
+import { NetlifyImg } from '../../../Common/NetflifyImage/NetlifyImage';
 import { merge } from '../../../Utility/merge';
 
-const BASE_IMAGE_CLASS = 'tw-absolute tw-top-0 tw-left-0 tw-transition-all tw-shadow-lg tw-origin-center';
+const BASE_IMAGE_CLASS = 'tw-top-0 tw-left-0 tw-transition-all tw-shadow-lg tw-origin-center';
 
 export const PhotoStack = forwardRef<HTMLAnchorElement, { isInView: boolean }>(({ isInView }, ref) => (
     <Link
@@ -12,38 +13,57 @@ export const PhotoStack = forwardRef<HTMLAnchorElement, { isInView: boolean }>((
         ref={ref}
         aria-label="Photography portfolio"
     >
-        <img
-            className={merge(BASE_IMAGE_CLASS, isInView && '-tw-translate-x-1 -tw-translate-y-1')}
+        <NetlifyImg
+            wrapperClassName={merge(BASE_IMAGE_CLASS, isInView && '-tw-translate-x-1 -tw-translate-y-1')}
             alt=""
-            src="/home/Home Image 5.jpg"
+            wrapperPosition="absolute"
+            originalSrc="/home/Home Image 5.jpg"
+            width={450}
+            originalWidth={1600}
+            originalHeight={1067}
         />
-        <img
-            className={merge(
+        <NetlifyImg
+            wrapperClassName={merge(
                 BASE_IMAGE_CLASS,
                 isInView && '-tw-translate-x-0.5 -tw-translate-y-5 tw-rotate-6 tw-delay-100',
             )}
+            wrapperPosition="absolute"
             alt=""
-            src="/home/Home Image 4.jpg"
+            originalSrc="/home/Home Image 4.jpg"
+            width={450}
+            originalWidth={1600}
+            originalHeight={1067}
         />
-        <img
-            className={merge(BASE_IMAGE_CLASS, isInView && '-tw-translate-x-1 -tw-translate-y-3 -tw-rotate-6')}
+        <NetlifyImg
+            wrapperClassName={merge(BASE_IMAGE_CLASS, isInView && '-tw-translate-x-1 -tw-translate-y-3 -tw-rotate-6')}
+            wrapperPosition="absolute"
             alt=""
-            src="/home/Home Image 3.jpg"
+            originalSrc="/home/Home Image 3.jpg"
+            width={450}
+            originalWidth={1600}
+            originalHeight={1067}
         />
-        <img
-            className={merge(
+        <NetlifyImg
+            wrapperClassName={merge(
                 BASE_IMAGE_CLASS,
                 isInView && '-tw-translate-x-0.5 tw-translate-y-2.5 tw-rotate-12 tw-delay-100',
             )}
+            wrapperPosition="absolute"
             alt=""
-            src="/home/Home Image 2.jpg"
+            originalSrc="/home/Home Image 2.jpg"
+            width={450}
+            originalWidth={1600}
+            originalHeight={951}
         />
-        <img
-            className={merge(
-                'tw-relative tw-origin-center tw-shadow-lg tw-transition-all group-hover/photos:tw-scale-105 group-hover/photos:tw-shadow-2xl group-focus-visible/photos:tw-scale-105 group-focus-visible/photos:tw-shadow-2xl',
+        <NetlifyImg
+            wrapperClassName={merge(
+                'tw-origin-center tw-shadow-lg tw-transition-all group-hover/photos:tw-scale-105 group-hover/photos:tw-shadow-2xl group-focus-visible/photos:tw-scale-105 group-focus-visible/photos:tw-shadow-2xl',
             )}
             alt=""
-            src="/home/Home Image.jpg"
+            originalSrc="/home/Home Image.jpg"
+            width={450}
+            originalWidth={1500}
+            originalHeight={966}
         />
     </Link>
 ));
