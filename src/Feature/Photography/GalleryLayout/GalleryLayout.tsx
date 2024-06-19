@@ -5,7 +5,7 @@ import { PlaceholderImage } from '../../../Common/PlaceholderImage/PlaceholderIm
 import { type Album } from '../../../Pages/Photography/albums';
 import { FOCUS_VISIBLE_STYLES } from '../../../Utility/focusStyles';
 import { merge } from '../../../Utility/merge';
-import { GalleryView } from '../GalleryView/GalleryView';
+import { Carousel } from '../Carousel/Carousel';
 
 import { GALLERY_CONTAINER_VARIANTS, GALLERY_HEADER_VARIANTS, GALLERY_ITEM_VARIANTS } from './animations';
 
@@ -21,28 +21,10 @@ export const GalleryLayout = ({ album }: GalleryLayoutProps) => {
     const openGallery = (index: number) => {
         setIndex(index);
     };
-    const closeGallery = () => {
-        setIndex(null);
-    };
-
-    const moveGallery = (num: number) => {
-        if (index === null) {
-            return;
-        }
-        const newIndex = (index + num + images.length) % images.length;
-        setIndex(newIndex);
-    };
 
     return (
         <>
-            {index !== null ? (
-                <GalleryView
-                    image={images[index]}
-                    onNext={() => moveGallery(+1)}
-                    onPrev={() => moveGallery(-1)}
-                    onExit={closeGallery}
-                />
-            ) : null}
+            {index !== null ? <Carousel startingIndex={index} images={images} onExit={() => setIndex(null)} /> : null}
             <motion.div
                 className="tw-mx-auto tw-w-full tw-max-w-[600px] tw-px-1 tw-py-10"
                 variants={GALLERY_CONTAINER_VARIANTS}
