@@ -57,11 +57,16 @@ export const Home = () => {
         ref: devCardRef,
     });
 
+    const hasContentLoaded = hasLaptopLoaded && hasPhotoStackLoaded;
+
+    const shouldAnimateLeftBrain = isDevInView && hasContentLoaded;
+    const shouldAnimateRightBrain = isPhotoInView && hasContentLoaded;
+
     return (
         <div
             className={merge(
                 'tw-flex tw-min-w-0 tw-flex-initial tw-flex-col-reverse tw-items-center tw-justify-around tw-gap-x-8 tw-gap-y-16 tw-self-center tw-px-10 tw-py-20 lg:tw-flex-row lg:tw-px-8 lg:tw-pb-10 lg:tw-pt-8',
-                hasLaptopLoaded && hasPhotoStackLoaded ? 'tw-visible' : 'tw-invisible',
+                hasContentLoaded ? 'tw-visible' : 'tw-invisible',
             )}
         >
             <EqualSizingCol>
@@ -94,7 +99,7 @@ export const Home = () => {
                         width={64}
                         originalSrc="/home/brainLeftText1.png"
                         className={merge(
-                            isDevInView ? 'tw-translate-x-0 tw-delay-150' : 'tw-translate-x-14',
+                            shouldAnimateLeftBrain ? 'tw-translate-x-0 tw-delay-150' : 'tw-translate-x-14',
                             'tw-absolute tw-left-[-30px] tw-top-[10px] tw-w-[52px] tw-transition-all',
                         )}
                         originalWidth={316}
@@ -105,7 +110,7 @@ export const Home = () => {
                         width={64}
                         originalSrc="/home/brainLeftText2.png"
                         className={merge(
-                            isDevInView ? 'tw-translate-x-0 tw-delay-150' : 'tw-translate-x-14',
+                            shouldAnimateLeftBrain ? 'tw-translate-x-0 tw-delay-150' : 'tw-translate-x-14',
                             'tw-absolute tw-left-[-30px] tw-top-[100px] tw-w-[52px] tw-transition-all',
                         )}
                         originalWidth={316}
@@ -115,7 +120,7 @@ export const Home = () => {
                         icon={faLevelUpAlt}
                         size="2x"
                         className={merge(
-                            isDevInView
+                            shouldAnimateLeftBrain
                                 ? 'tw-translate-y-0 tw-scale-100 tw-delay-200'
                                 : 'tw-translate-x-20 tw-scale-0 lg:tw-translate-x-0 lg:tw-translate-y-20',
                             'tw-absolute tw-left-[-60px] tw-top-[85px] tw-rotate-180 tw-text-extra-light-green tw-transition-all lg:tw-left-[40px] lg:tw-top-[-40px] lg:-tw-rotate-90',
@@ -124,7 +129,7 @@ export const Home = () => {
                     <LeftBrain
                         className={merge(
                             'tw-relative tw-z-[2] tw-w-full tw-fill-light-grey tw-transition',
-                            isDevInView && 'tw-scale-95',
+                            shouldAnimateLeftBrain && 'tw-scale-95',
                         )}
                     />
                     <NetlifyImg
@@ -132,7 +137,7 @@ export const Home = () => {
                         width={150}
                         originalSrc="/home/brainLeftOverLay.png"
                         className={merge(
-                            isDevInView ? 'tw-scale-1 tw-opacity-100' : 'tw-scale-0 tw-opacity-0',
+                            shouldAnimateLeftBrain ? 'tw-scale-1 tw-opacity-100' : 'tw-scale-0 tw-opacity-0',
                             'tw-absolute tw-right-0 tw-top-0 tw-z-[3] tw-h-full tw-w-[150px] tw-max-w-[unset] tw-origin-right tw-transition-all',
                         )}
                         originalHeight={916}
@@ -153,7 +158,7 @@ export const Home = () => {
                         originalSrc="/home/brainRightText1.png"
                         width={64}
                         className={merge(
-                            isPhotoInView ? 'tw-translate-x-0 tw-delay-150' : '-tw-translate-x-14',
+                            shouldAnimateRightBrain ? 'tw-translate-x-0 tw-delay-150' : '-tw-translate-x-14',
                             'tw-absolute tw-right-[-28px] tw-top-[5px] tw-w-[52px] tw-transition-all',
                         )}
                         originalHeight={302}
@@ -164,7 +169,7 @@ export const Home = () => {
                         width={64}
                         originalSrc="/home/brainRightText2.png"
                         className={merge(
-                            isPhotoInView ? 'tw-translate-x-0 tw-delay-150' : '-tw-translate-x-14',
+                            shouldAnimateRightBrain ? 'tw-translate-x-0 tw-delay-150' : '-tw-translate-x-14',
                             'tw-absolute tw-right-[-28px] tw-top-[90px] tw-w-[52px] tw-transition-all',
                         )}
                         originalHeight={302}
@@ -174,7 +179,7 @@ export const Home = () => {
                         icon={faLevelUpAlt}
                         size="2x"
                         className={merge(
-                            isPhotoInView
+                            shouldAnimateRightBrain
                                 ? 'tw-translate-y-0 tw-scale-100 tw-delay-200'
                                 : '-tw-translate-x-20 tw-scale-0 lg:-tw-translate-y-20 lg:tw-translate-x-0',
                             'tw-absolute tw-bottom-[80px] tw-right-[-60px] tw-text-extra-light-cyan tw-transition-all lg:tw-bottom-[-40px] lg:tw-right-[40px] lg:tw-rotate-90',
@@ -183,7 +188,7 @@ export const Home = () => {
                     <RightBrain
                         className={merge(
                             'tw-relative tw-z-[2] tw-w-full tw-fill-light-grey tw-transition',
-                            isPhotoInView && 'tw-scale-95',
+                            shouldAnimateRightBrain && 'tw-scale-95',
                         )}
                     />
                     <NetlifyImg
@@ -191,7 +196,7 @@ export const Home = () => {
                         width={150}
                         originalSrc="/home/brainRightOverLay.png"
                         className={merge(
-                            isPhotoInView ? 'tw-scale-1 tw-opacity-100' : 'tw-scale-0 tw-opacity-0',
+                            shouldAnimateRightBrain ? 'tw-scale-1 tw-opacity-100' : 'tw-scale-0 tw-opacity-0',
                             'tw-absolute tw-top-0 tw-z-[3] tw-h-full tw-w-[150px] tw-max-w-[unset] tw-origin-left tw-transition-all',
                         )}
                         originalWidth={800}
