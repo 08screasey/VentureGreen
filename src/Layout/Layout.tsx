@@ -111,7 +111,7 @@ export const Layout = ({ children }: LayoutProps) => {
                 <div className="tw-flex tw-items-center tw-gap-2">
                     <a
                         className={merge(
-                            'tw-flex tw-h-[50px] tw-w-[50px] tw-items-center tw-justify-center tw-rounded tw-p-2 tw-transition',
+                            'tw-flex tw-h-[40px] tw-w-[40px] tw-items-center tw-justify-center tw-rounded tw-p-2 tw-transition',
                             FOCUS_VISIBLE_STYLES,
                             'hover:tw-text-light-green active:tw-text-green',
                         )}
@@ -124,7 +124,7 @@ export const Layout = ({ children }: LayoutProps) => {
                     </a>
                     <a
                         className={merge(
-                            'tw-flex tw-h-[50px] tw-w-[50px] tw-items-center tw-justify-center tw-rounded tw-p-2 tw-transition',
+                            'tw-flex tw-h-[40px] tw-w-[40px] tw-items-center tw-justify-center tw-rounded tw-p-2 tw-transition',
                             FOCUS_VISIBLE_STYLES,
                             'hover:tw-text-light-green active:tw-text-green',
                         )}
