@@ -77,6 +77,7 @@ export const Layout = ({ children }: LayoutProps) => {
                                 alt="Venture Green Logo"
                                 width={300}
                                 originalHeight={376}
+                                usePlaceholder={false}
                                 originalWidth={1500}
                             />
                         </Link>
