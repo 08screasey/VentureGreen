@@ -96,7 +96,7 @@ export const Layout = ({ children }: LayoutProps) => {
                     </a>
                 </nav>
             </header>
-            <main className="tw-flex tw-w-full tw-flex-auto tw-justify-center tw-pb-[67px] tw-pt-[112px] lg:tw-pb-0 lg:tw-pt-[143px]">
+            <main className="tw-flex tw-w-full tw-flex-auto tw-justify-center tw-pb-[57px] tw-pt-[112px] lg:tw-pb-0 lg:tw-pt-[143px]">
                 {children}
             </main>
             <Footer />
