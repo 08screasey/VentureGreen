@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 import { type ReactNode } from 'react';
 import { NavLink } from 'react-router-dom';
 
-import { NetlifyImg } from '../../../Common/NetflifyImage/NetlifyImage';
+import { PlaceholderImage } from '../../../Common/NetflifyImage/NetlifyImage';
 import { type Image } from '../../../Pages/Photography/albums';
 import { FOCUS_VISIBLE_STYLES } from '../../../Utility/focusStyles';
 import { merge } from '../../../Utility/merge';
@@ -28,7 +28,7 @@ export const PhotoCard = ({ coverArt, children, link }: PhotoCardProps) => (
                 FOCUS_VISIBLE_STYLES,
             )}
         >
-            <NetlifyImg
+            <PlaceholderImage
                 wrapperClassName="tw-left-0 tw-top-0 tw-h-full tw-w-full"
                 originalSrc={coverArt.src}
                 objectFit="cover"
@@ -43,7 +43,7 @@ export const PhotoCard = ({ coverArt, children, link }: PhotoCardProps) => (
                     'tw-absolute tw-left-0 tw-top-0 tw-z-[2] tw-h-full tw-w-full tw-bg-black/80 tw-opacity-60 tw-transition-all group-hover/card:tw-opacity-100 group-focus-visible/card:tw-opacity-100',
                 )}
             />
-            <div className="tw-relative tw-z-[3] tw-bg-black/70 tw-py-4 tw-text-center tw-text-6xl tw-transition-all group-hover/card:tw-bg-transparent group-focus-visible/card:tw-bg-transparent">
+            <div className="tw-relative tw-z-[3] tw-py-4 tw-text-center tw-text-6xl tw-transition-all group-hover/card:tw-bg-transparent group-focus-visible/card:tw-bg-transparent">
                 {children}
             </div>
         </NavLink>

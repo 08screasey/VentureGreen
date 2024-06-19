@@ -3,7 +3,7 @@ import { faLink } from '@fortawesome/free-solid-svg-icons';
 import { motion } from 'framer-motion';
 import { useState } from 'react';
 
-import { NetlifyImg } from '../../../../Common/NetflifyImage/NetlifyImage';
+import { PlaceholderImage } from '../../../../Common/NetflifyImage/NetlifyImage';
 import { Image } from '../../../../Pages/Photography/albums';
 import { merge } from '../../../../Utility/merge';
 
@@ -91,7 +91,7 @@ export const DevCard = ({
                 </h4>
                 <div className="tw-grid tw-w-full tw-grid-cols-3 tw-items-center">
                     {images.map(({ src, height, width, alt }) => (
-                        <NetlifyImg
+                        <PlaceholderImage
                             key={src}
                             width={512}
                             originalSrc={src}

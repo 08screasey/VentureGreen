@@ -1,12 +1,24 @@
-import { CSSProperties, useCallback, useLayoutEffect, useRef, useState } from 'react';
+import { CSSProperties, forwardRef, useCallback, useLayoutEffect, useRef, useState } from 'react';
 
+import { merge } from '../../Utility/merge';
 import { useIntersectionObserver } from '../../Utility/useIntersectionObserver';
 
 type NetlifyImageProps = {
     originalSrc: string;
     originalWidth?: number;
     originalHeight?: number;
-    objectFit?: CSSProperties['objectFit'];
+    alt: string;
+    width?: number;
+    onLoad?: () => void;
+    lazy?: boolean;
+    className?: string;
+};
+
+type PlaceholderImageProps = {
+    originalSrc: string;
+    originalWidth?: number;
+    originalHeight?: number;
+    objectFit?: 'cover' | 'contain';
     alt: string;
     width?: number;
     placeholderWidth?: number;
@@ -43,26 +55,25 @@ const convertUrlToNetlifyUrl = (url: string, width?: number) => {
     }
 };
 
-export const NetlifyImg = ({
+export const PlaceholderImage = ({
     originalHeight,
     originalSrc,
     originalWidth,
     alt,
+    objectFit,
     width,
     usePlaceholder = true,
     blurPlaceholder = true,
     placeholderWidth = 16,
     onLoad,
-    objectFit,
     lazy = false,
     wrapperClassName,
     wrapperPosition = 'relative',
-}: NetlifyImageProps) => {
+}: PlaceholderImageProps) => {
     const [isLoaded, setIsLoaded] = useState(false);
     const [isInViewport, setIsInViewport] = useState(false);
 
     const fullWidthSrc = convertUrlToNetlifyUrl(originalSrc, width);
-    const placeholderSrc = convertUrlToNetlifyUrl(originalSrc, placeholderWidth);
 
     const observerRef = useRef<HTMLImageElement>(null);
     useIntersectionObserver({
@@ -100,13 +111,16 @@ export const NetlifyImg = ({
 
     return (
         <div className={wrapperClassName} style={{ position: wrapperPosition, display: 'inline-flex' }}>
-            <img
-                width={originalWidth}
-                height={originalHeight}
-                src={isRenderingFullImage ? fullWidthSrc : placeholderSrc}
-                className="tw-block tw-max-h-full tw-w-auto tw-max-w-full"
+            <NetlifyImg
+                originalWidth={originalWidth}
+                originalHeight={originalHeight}
+                width={isRenderingFullImage ? width : placeholderWidth}
+                originalSrc={originalSrc}
+                className={merge(
+                    'tw-block tw-max-h-full tw-max-w-full',
+                    objectFit === 'cover' ? 'tw-object-cover' : 'tw-object-contain',
+                )}
                 alt={alt}
-                style={{ objectFit }}
                 ref={observerRef}
             />
             {showBlurEffect && (
@@ -115,3 +129,17 @@ export const NetlifyImg = ({
         </div>
     );
 };
+
+export const NetlifyImg = forwardRef<HTMLImageElement, NetlifyImageProps>(
+    ({ originalSrc, originalWidth, originalHeight, onLoad, alt, width, className }: NetlifyImageProps, ref) => (
+        <img
+            width={originalWidth}
+            height={originalHeight}
+            src={convertUrlToNetlifyUrl(originalSrc, width)}
+            className={className}
+            onLoad={onLoad}
+            alt={alt}
+            ref={ref}
+        />
+    ),
+);

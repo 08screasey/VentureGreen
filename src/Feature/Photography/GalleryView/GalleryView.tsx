@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { PropsWithChildren } from 'react';
 import ReactFocusLock from 'react-focus-lock';
 
-import { NetlifyImg } from '../../../Common/NetflifyImage/NetlifyImage';
+import { PlaceholderImage } from '../../../Common/NetflifyImage/NetlifyImage';
 import { type Image } from '../../../Pages/Photography/albums';
 import { FOCUS_VISIBLE_STYLES } from '../../../Utility/focusStyles';
 import { merge } from '../../../Utility/merge';
@@ -18,6 +18,8 @@ type GalleryViewProps = PropsWithChildren<{
 
 export const GalleryView = ({ onExit, onPrev, onNext, image }: GalleryViewProps) => {
     useKeypress({ key: 'Escape', callback: onExit });
+    useKeypress({ key: 'ArrowRight', callback: onNext });
+    useKeypress({ key: 'ArrowLeft', callback: onPrev });
 
     const { src, alt, width, height } = image;
 
@@ -28,7 +30,7 @@ export const GalleryView = ({ onExit, onPrev, onNext, image }: GalleryViewProps)
                     className="tw-fixed tw-left-0 tw-top-0 tw-z-[6] tw-h-full tw-w-full tw-bg-black/70"
                     onClick={onExit}
                 />
-                <NetlifyImg
+                <PlaceholderImage
                     key={src}
                     originalSrc={src}
                     alt={alt ?? ''}

@@ -1,6 +1,6 @@
 import { useCallback, useRef, useState } from 'react';
 
-import { NetlifyImg } from '../../../Common/NetflifyImage/NetlifyImage';
+import { NetlifyImg, PlaceholderImage } from '../../../Common/NetflifyImage/NetlifyImage';
 import { merge } from '../../../Utility/merge';
 import { useAutoScroll } from '../../../Utility/useAutoScroll';
 
@@ -23,7 +23,7 @@ export const Laptop = () => {
                     {...scrollProps}
                     tabIndex={0}
                 >
-                    <NetlifyImg
+                    <PlaceholderImage
                         originalSrc="/home/website.jpg"
                         alt="Mock laptop screen preview showing development project"
                         width={300}
@@ -35,12 +35,11 @@ export const Laptop = () => {
             </div>
             <NetlifyImg
                 originalSrc="/home/edited laptop.png"
-                wrapperClassName="tw-pointer-events-none tw-relative tw-z-[2] tw-block tw-w-full tw-drop-shadow-2xl"
+                className="tw-pointer-events-none tw-relative tw-z-[2] tw-block tw-w-full tw-drop-shadow-2xl"
                 alt="Outer laptop"
                 width={450}
                 originalWidth={2000}
                 originalHeight={1457}
-                usePlaceholder={false}
                 onLoad={useCallback(() => setHasLaptopLoaded(true), [])}
             />
         </div>

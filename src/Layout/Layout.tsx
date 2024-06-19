@@ -72,12 +72,10 @@ export const Layout = ({ children }: LayoutProps) => {
                         <Link to="/" className={merge(FOCUS_VISIBLE_STYLES, 'tw-rounded')} aria-label="Home">
                             <NetlifyImg
                                 originalSrc="/venturegreen.png"
-                                wrapperClassName="tw-mx-auto tw-h-[60px] lg:tw-h-[75px]"
-                                objectFit="contain"
+                                className="tw-mx-auto tw-h-[60px] tw-w-auto lg:tw-h-[75px]"
                                 alt="Venture Green Logo"
                                 width={300}
                                 originalHeight={376}
-                                usePlaceholder={false}
                                 originalWidth={1500}
                             />
                         </Link>

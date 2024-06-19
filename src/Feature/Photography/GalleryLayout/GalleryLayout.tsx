@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import { useState } from 'react';
 
-import { NetlifyImg } from '../../../Common/NetflifyImage/NetlifyImage';
+import { PlaceholderImage } from '../../../Common/NetflifyImage/NetlifyImage';
 import { type Album } from '../../../Pages/Photography/albums';
 import { FOCUS_VISIBLE_STYLES } from '../../../Utility/focusStyles';
 import { merge } from '../../../Utility/merge';
@@ -80,7 +80,7 @@ export const GalleryLayout = ({ album }: GalleryLayoutProps) => {
                         variants={GALLERY_ITEM_VARIANTS}
                         transition={{ type: 'tween' }}
                     >
-                        <NetlifyImg
+                        <PlaceholderImage
                             wrapperClassName="tw-w-full"
                             originalSrc={src}
                             alt={alt ?? src}

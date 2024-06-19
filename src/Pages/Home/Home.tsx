@@ -82,12 +82,10 @@ export const Home = () => {
                         alt=""
                         width={64}
                         originalSrc="/home/brainLeftText1.png"
-                        wrapperClassName={merge(
+                        className={merge(
                             isDevInView ? 'tw-translate-x-0 tw-delay-150' : 'tw-translate-x-14',
-                            'tw-left-[-30px] tw-top-[10px] tw-w-[52px] tw-transition-all',
+                            'tw-absolute tw-left-[-30px] tw-top-[10px] tw-w-[52px] tw-transition-all',
                         )}
-                        wrapperPosition="absolute"
-                        usePlaceholder={false}
                         originalWidth={316}
                         originalHeight={506}
                     />
@@ -95,12 +93,10 @@ export const Home = () => {
                         alt=""
                         width={64}
                         originalSrc="/home/brainLeftText2.png"
-                        wrapperClassName={merge(
+                        className={merge(
                             isDevInView ? 'tw-translate-x-0 tw-delay-150' : 'tw-translate-x-14',
-                            'tw-left-[-30px] tw-top-[100px] tw-w-[52px] tw-transition-all',
+                            'tw-absolute tw-left-[-30px] tw-top-[100px] tw-w-[52px] tw-transition-all',
                         )}
-                        wrapperPosition="absolute"
-                        usePlaceholder={false}
                         originalWidth={316}
                         originalHeight={506}
                     />
@@ -124,14 +120,12 @@ export const Home = () => {
                         alt=""
                         width={150}
                         originalSrc="/home/brainLeftOverLay.png"
-                        wrapperClassName={merge(
+                        className={merge(
                             isDevInView ? 'tw-scale-1 tw-opacity-100' : 'tw-scale-0 tw-opacity-0',
-                            'tw-right-0 tw-top-0 tw-z-[3] tw-h-full tw-w-[150px] tw-origin-right tw-transition-all',
+                            'tw-absolute tw-right-0 tw-top-0 tw-z-[3] tw-h-full tw-w-[150px] tw-origin-right tw-transition-all',
                         )}
-                        wrapperPosition="absolute"
                         originalHeight={916}
                         originalWidth={800}
-                        usePlaceholder={false}
                     />
                 </Link>
 
@@ -147,12 +141,10 @@ export const Home = () => {
                         alt=""
                         originalSrc="/home/brainRightText1.png"
                         width={64}
-                        wrapperClassName={merge(
+                        className={merge(
                             isPhotoInView ? 'tw-translate-x-0 tw-delay-150' : '-tw-translate-x-14',
-                            'tw-right-[-28px] tw-top-[5px] tw-w-[52px] tw-transition-all',
+                            'tw-absolute tw-right-[-28px] tw-top-[5px] tw-w-[52px] tw-transition-all',
                         )}
-                        wrapperPosition="absolute"
-                        usePlaceholder={false}
                         originalHeight={302}
                         originalWidth={439}
                     />
@@ -160,12 +152,10 @@ export const Home = () => {
                         alt=""
                         width={64}
                         originalSrc="/home/brainRightText2.png"
-                        wrapperClassName={merge(
+                        className={merge(
                             isPhotoInView ? 'tw-translate-x-0 tw-delay-150' : '-tw-translate-x-14',
-                            'tw-right-[-28px] tw-top-[90px] tw-w-[52px] tw-transition-all',
+                            'tw-absolute tw-right-[-28px] tw-top-[90px] tw-w-[52px] tw-transition-all',
                         )}
-                        wrapperPosition="absolute"
-                        usePlaceholder={false}
                         originalHeight={302}
                         originalWidth={439}
                     />
@@ -189,14 +179,12 @@ export const Home = () => {
                         alt=""
                         width={150}
                         originalSrc="/home/brainRightOverLay.png"
-                        wrapperClassName={merge(
+                        className={merge(
                             isPhotoInView ? 'tw-scale-1 tw-opacity-100' : 'tw-scale-0 tw-opacity-0',
-                            'tw-top-0 tw-z-[3] tw-h-full tw-origin-left tw-transition-all tw-w-[150px]',
+                            'tw-absolute tw-top-0 tw-z-[3] tw-h-full tw-w-[150px] tw-origin-left tw-transition-all',
                         )}
-                        wrapperPosition="absolute"
                         originalWidth={800}
                         originalHeight={917}
-                        usePlaceholder={false}
                     />
                 </Link>
             </div>
