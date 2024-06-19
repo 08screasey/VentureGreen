@@ -1,14 +1,11 @@
-import { useCallback, useRef, useState } from 'react';
+import { useRef } from 'react';
 
 import { NetlifyImg } from '../../../Common/NetlifyImage/NetlifyImage';
 import { PlaceholderImage } from '../../../Common/PlaceholderImage/PlaceholderImage';
-import { merge } from '../../../Utility/merge';
 import { useAutoScroll } from '../../../Utility/useAutoScroll';
 
-export const Laptop = () => {
+export const Laptop = ({ onLoad }: { onLoad: () => void }) => {
     const scrollRef = useRef<HTMLDivElement>(null);
-
-    const [hasLaptopLoaded, setHasLaptopLoaded] = useState(false);
 
     const scrollProps = useAutoScroll({ scrollRef, duration: 120000, delay: 2 * 1000 });
 
@@ -16,10 +13,7 @@ export const Laptop = () => {
         <div className="tw-relative tw-w-full tw-leading-none">
             <div className="tw-group/screen tw-absolute tw-left-[10%] tw-top-[5.5%] tw-z-[1] tw-h-[74%] tw-w-[80%] tw-overflow-hidden">
                 <div
-                    className={merge(
-                        'tw-peer/inner-screen tw-relative tw-h-full tw-w-full tw-overflow-y-auto tw-scrollbar-none',
-                        hasLaptopLoaded ? 'tw-visible' : 'tw-invisible',
-                    )}
+                    className="tw-peer/inner-screen tw-relative tw-h-full tw-w-full tw-overflow-y-auto tw-scrollbar-none"
                     ref={scrollRef}
                     {...scrollProps}
                     tabIndex={0}
@@ -41,7 +35,7 @@ export const Laptop = () => {
                 width={450}
                 originalWidth={2000}
                 originalHeight={1457}
-                onLoad={useCallback(() => setHasLaptopLoaded(true), [])}
+                onLoad={onLoad}
             />
         </div>
     );

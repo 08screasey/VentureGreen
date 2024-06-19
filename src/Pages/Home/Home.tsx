@@ -36,6 +36,9 @@ export const Home = () => {
     const [isDevInView, setIsDevInView] = useState(false);
     const [isPhotoInView, setIsPhotoInView] = useState(false);
 
+    const [hasLaptopLoaded, setHasLaptopLoaded] = useState(false);
+    const [hasPhotoStackLoaded, setHasPhotoStackLoaded] = useState(false);
+
     const photoCardRef = useRef<HTMLAnchorElement>(null);
     useIntersectionObserver({
         onEnter: useCallback(() => setIsPhotoInView(true), []),
@@ -55,7 +58,12 @@ export const Home = () => {
     });
 
     return (
-        <div className="tw-flex tw-min-w-0 tw-flex-initial tw-flex-col-reverse tw-items-center tw-justify-around tw-gap-x-8 tw-gap-y-16 tw-self-center tw-px-10 tw-py-20 lg:tw-flex-row lg:tw-px-8 lg:tw-pb-10 lg:tw-pt-8">
+        <div
+            className={merge(
+                'tw-flex tw-min-w-0 tw-flex-initial tw-flex-col-reverse tw-items-center tw-justify-around tw-gap-x-8 tw-gap-y-16 tw-self-center tw-px-10 tw-py-20 lg:tw-flex-row lg:tw-px-8 lg:tw-pb-10 lg:tw-pt-8',
+                hasLaptopLoaded && hasPhotoStackLoaded ? 'tw-visible' : 'tw-invisible',
+            )}
+        >
             <EqualSizingCol>
                 <Link
                     to="/development"
@@ -65,7 +73,7 @@ export const Home = () => {
                     )}
                     ref={devCardRef}
                 >
-                    <Laptop />
+                    <Laptop onLoad={useCallback(() => setHasLaptopLoaded(true), [])} />
                     <h2 className="tw-z-[4] tw-mx-auto tw-w-full tw-text-center tw-font-code tw-text-3xl tw-drop-shadow-xl md:tw-text-4xl lg:tw-text-3xl xl:tw-text-4xl">
                         <TypingEffect enabled={isDevInView} content={CONTENT} />
                     </h2>
@@ -193,7 +201,11 @@ export const Home = () => {
             </div>
 
             <EqualSizingCol>
-                <PhotoStack isInView={isPhotoInView} ref={photoCardRef} />
+                <PhotoStack
+                    isInView={isPhotoInView}
+                    ref={photoCardRef}
+                    onLoad={useCallback(() => setHasPhotoStackLoaded(true), [])}
+                />
             </EqualSizingCol>
         </div>
     );
