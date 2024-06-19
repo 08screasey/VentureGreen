@@ -96,7 +96,7 @@ export const Home = () => {
                         width={64}
                         originalSrc="/home/brainLeftText2.png"
                         wrapperClassName={merge(
-                            isDevInView ? 'tw-translate-x-0 tw-delay-75' : 'tw-translate-x-14',
+                            isDevInView ? 'tw-translate-x-0 tw-delay-150' : 'tw-translate-x-14',
                             'tw-left-[-30px] tw-top-[100px] tw-w-[52px] tw-transition-all',
                         )}
                         wrapperPosition="absolute"
@@ -161,7 +161,7 @@ export const Home = () => {
                         width={64}
                         originalSrc="/home/brainRightText2.png"
                         wrapperClassName={merge(
-                            isPhotoInView ? 'tw-translate-x-0 tw-delay-75' : '-tw-translate-x-14',
+                            isPhotoInView ? 'tw-translate-x-0 tw-delay-150' : '-tw-translate-x-14',
                             'tw-right-[-28px] tw-top-[90px] tw-w-[52px] tw-transition-all',
                         )}
                         wrapperPosition="absolute"
