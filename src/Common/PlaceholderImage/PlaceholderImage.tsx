@@ -1,9 +1,10 @@
-import { type CSSProperties, useLayoutEffect, useRef, useState, useCallback } from 'react';
+import { type CSSProperties, useRef, useState, useCallback } from 'react';
 
 import { convertUrlToNetlifyUrl } from '../../Helpers/convertToNetlifyUrl';
-import { loadImageSrc } from '../../Utility/loadImageSrc';
 import { merge } from '../../Utility/merge';
 import { useIntersectionObserver } from '../../Utility/useIntersectionObserver';
+import { useLoadImage } from '../../Utility/useLoadImage';
+import { BlurPlaceholder } from '../BlurPlaceholder/BlurPlaceholder';
 import { NetlifyImg } from '../NetlifyImage/NetlifyImage';
 
 type PlaceholderImageProps = {
@@ -37,7 +38,6 @@ export const PlaceholderImage = ({
     wrapperClassName,
     wrapperPosition = 'relative',
 }: PlaceholderImageProps) => {
-    const [isLoaded, setIsLoaded] = useState(false);
     const [isInViewport, setIsInViewport] = useState(false);
 
     const fullWidthSrc = convertUrlToNetlifyUrl(originalSrc, width);
@@ -51,26 +51,7 @@ export const PlaceholderImage = ({
         bottomOffset: 400,
     });
 
-    useLayoutEffect(() => {
-        if (!lazy || isInViewport) {
-            let isMounted = true;
-
-            loadImageSrc(fullWidthSrc)
-                .then(() => {
-                    if (isMounted) {
-                        setIsLoaded(true);
-                        onLoad?.();
-                    }
-                })
-                .catch((error) => {
-                    console.error(error);
-                });
-
-            return () => {
-                isMounted = false;
-            };
-        }
-    }, [fullWidthSrc, onLoad, isInViewport, lazy]);
+    const { isLoaded } = useLoadImage({ src: fullWidthSrc, enabled: isInViewport || !lazy, onLoad });
 
     const isRenderingFullImage = !usePlaceholder || isLoaded;
 
@@ -90,9 +71,7 @@ export const PlaceholderImage = ({
                 alt={alt}
                 ref={observerRef}
             />
-            {showBlurEffect && (
-                <span className="tw-absolute tw-left-0 tw-top-0 tw-h-full tw-w-full tw-backdrop-blur-xl" />
-            )}
+            {showBlurEffect && <BlurPlaceholder />}
         </div>
     );
 };

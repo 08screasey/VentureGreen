@@ -2,11 +2,13 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { useCallback, useEffect, useRef, useState } from 'react';
 import ReactFocusLock from 'react-focus-lock';
 
+import { BlurPlaceholder } from '../../../Common/BlurPlaceholder/BlurPlaceholder';
 import { convertUrlToNetlifyUrl } from '../../../Helpers/convertToNetlifyUrl';
 import { Image } from '../../../Pages/Photography/albums';
 import { FOCUS_VISIBLE_STYLES } from '../../../Utility/focusStyles';
 import { merge } from '../../../Utility/merge';
 import { useKeypress } from '../../../Utility/useKeypress';
+import { useLoadImage } from '../../../Utility/useLoadImage';
 import { wrap } from '../../../Utility/wrap';
 
 const variants = {
@@ -41,10 +43,73 @@ const swipePower = (offset: number, velocity: number) => {
 
 type CarouselProps = { images: Image[]; startingIndex: number; onExit: () => void };
 
+const CarouselImage = ({
+    src,
+    onSwipeLeft,
+    onSwipeRight,
+    height,
+    width,
+    alt,
+    direction,
+    onTouch,
+}: {
+    src: string;
+    height: number;
+    width: number;
+    alt: string;
+    direction: number;
+    onSwipeLeft: () => void;
+    onSwipeRight: () => void;
+    onTouch: () => void;
+}) => {
+    const fullWidthSrc = convertUrlToNetlifyUrl(src);
+    const placeholderSrc = convertUrlToNetlifyUrl(src, 100);
+
+    const { isLoaded } = useLoadImage({ src: fullWidthSrc });
+
+    return (
+        <motion.div
+            custom={direction}
+            className="tw-fixed tw-z-[100] tw-m-auto tw-flex tw-max-h-[90%] tw-w-[85%] tw-max-w-[1000px]"
+            variants={variants}
+            onTouchStart={onTouch}
+            initial="enter"
+            animate="center"
+            exit="exit"
+            transition={{
+                x: { type: 'spring', stiffness: 300, damping: 30, bounce: 10, velocity: 600 },
+                opacity: { duration: 0.2 },
+            }}
+            drag="x"
+            dragConstraints={{ left: 0, right: 0 }}
+            dragElastic={1}
+            onDragEnd={(_event, { offset, velocity }) => {
+                const swipe = swipePower(offset.x, velocity.x);
+
+                if (swipe < -swipeConfidenceThreshold) {
+                    onSwipeRight();
+                } else if (swipe > swipeConfidenceThreshold) {
+                    onSwipeLeft();
+                }
+            }}
+        >
+            <img
+                className="tw-block tw-max-h-full tw-max-w-full tw-object-contain"
+                src={isLoaded ? fullWidthSrc : placeholderSrc}
+                alt={alt}
+                width={width}
+                height={height}
+            />
+            {!isLoaded && <BlurPlaceholder />}
+        </motion.div>
+    );
+};
+
 export const Carousel = ({ images, startingIndex, onExit }: CarouselProps) => {
     const timeoutRef = useRef<ReturnType<typeof setTimeout> | undefined>();
     const [showButtons, setShowButtons] = useState(true);
     const [[page, direction], setPage] = useState([startingIndex, 1]);
+    const [isAnimating, setIsAnimating] = useState(false);
 
     // We only have 3 images, but we paginate them absolutely (ie 1, 2, 3, 4, 5...) and
     // then wrap that within 0-2 to find our image ID in the array below. By passing an
@@ -54,11 +119,12 @@ export const Carousel = ({ images, startingIndex, onExit }: CarouselProps) => {
 
     const paginate = (newDirection: number) => {
         setPage([page + newDirection, newDirection]);
+        setIsAnimating(true);
     };
 
     useKeypress({ key: 'Escape', callback: onExit });
-    useKeypress({ key: 'ArrowRight', callback: () => paginate(1) });
-    useKeypress({ key: 'ArrowLeft', callback: () => paginate(-1) });
+    useKeypress({ key: 'ArrowRight', callback: () => paginate(1), enabled: !isAnimating });
+    useKeypress({ key: 'ArrowLeft', callback: () => paginate(-1), enabled: !isAnimating });
 
     const showButtonsAndTriggerTimeout = useCallback(() => {
         setShowButtons(true);
@@ -75,9 +141,19 @@ export const Carousel = ({ images, startingIndex, onExit }: CarouselProps) => {
         }
     }, [showButtons, showButtonsAndTriggerTimeout]);
 
+    const finishAnimation = useCallback(() => {
+        setIsAnimating(false);
+    }, []);
+
     useEffect(() => {
         showButtonsAndTriggerTimeout();
     }, [showButtonsAndTriggerTimeout]);
+
+    useEffect(() => {
+        return () => {
+            clearTimeout(timeoutRef.current);
+        };
+    }, []);
 
     return (
         <ReactFocusLock returnFocus>
@@ -90,36 +166,14 @@ export const Carousel = ({ images, startingIndex, onExit }: CarouselProps) => {
                     className="tw-fixed tw-left-0 tw-top-0 tw-z-[6] tw-h-full tw-w-full tw-bg-black/70"
                     onClick={onExit}
                 />
-                <AnimatePresence initial={false} custom={direction}>
-                    <motion.img
+                <AnimatePresence initial={false} custom={direction} onExitComplete={finishAnimation}>
+                    <CarouselImage
+                        {...images[imageIndex]}
                         key={page}
-                        src={convertUrlToNetlifyUrl(images[imageIndex].src)}
-                        custom={direction}
-                        alt={images[imageIndex].alt}
-                        width={images[imageIndex].width}
-                        className="tw-fixed tw-z-[100] tw-m-auto tw-max-h-[90%] tw-w-[85%] tw-max-w-[1000px] tw-object-contain"
-                        height={images[imageIndex].height}
-                        variants={variants}
-                        onTouchStart={toggleButtons}
-                        initial="enter"
-                        animate="center"
-                        exit="exit"
-                        transition={{
-                            x: { type: 'spring', stiffness: 300, damping: 30 },
-                            opacity: { duration: 0.2 },
-                        }}
-                        drag="x"
-                        dragConstraints={{ left: 0, right: 0 }}
-                        dragElastic={1}
-                        onDragEnd={(_event, { offset, velocity }) => {
-                            const swipe = swipePower(offset.x, velocity.x);
-
-                            if (swipe < -swipeConfidenceThreshold) {
-                                paginate(1);
-                            } else if (swipe > swipeConfidenceThreshold) {
-                                paginate(-1);
-                            }
-                        }}
+                        onSwipeLeft={() => paginate(-1)}
+                        onSwipeRight={() => paginate(1)}
+                        onTouch={toggleButtons}
+                        direction={direction}
                     />
                 </AnimatePresence>
                 <button
