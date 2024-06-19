@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useLayoutEffect, useState } from 'react';
 
 import { merge } from '../../Utility/merge';
 
@@ -50,7 +50,7 @@ export const NetlifyImg = ({
     const fullWidthSrc = convertUrlToNetlifyUrl(originalSrc, width);
     const placeholderSrc = convertUrlToNetlifyUrl(originalSrc, placeholderWidth);
 
-    useEffect(() => {
+    useLayoutEffect(() => {
         let isMounted = true;
 
         loadImageSrc(fullWidthSrc)

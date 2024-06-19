@@ -81,7 +81,7 @@ export const GalleryLayout = ({ album }: GalleryLayoutProps) => {
                         variants={GALLERY_ITEM_VARIANTS}
                         transition={{ type: 'tween' }}
                     >
-                        <NetlifyImg className="tw-w-full" originalSrc={src} alt={alt ?? src} />
+                        <NetlifyImg className="tw-w-full" originalSrc={src} alt={alt ?? src} width={600} />
                     </motion.button>
                 ))}
             </motion.div>

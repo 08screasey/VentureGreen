@@ -31,7 +31,7 @@ export const PhotoCard = ({ coverArt, children, link }: PhotoCardProps) => (
             <NetlifyImg
                 className="tw-absolute tw-left-0 tw-top-0 tw-h-full tw-w-full tw-object-cover"
                 originalSrc={coverArt.src}
-                width={1200}
+                width={800}
                 alt=""
             />
             <div
