@@ -72,7 +72,7 @@ export const Development = () => {
             >
                 Web Development
             </motion.h2>
-            <div className="tw-mx-auto tw-max-w-[600px] tw-p-4">
+            <div className="tw-mx-auto tw-max-w-[600px] tw-px-4 tw-pt-4">
                 <p className="tw-min-h-[100px] tw-text-center tw-font-code">
                     {hasVisited ? (
                         <motion.span variants={DEV_CARD_VARIANTS} transition={{ type: 'tween' }}>
