@@ -105,7 +105,7 @@ const CarouselImage = ({
             }}
         >
             <img
-                className="tw-pointer-events-none tw-max-h-[90vh] tw-max-w-[90vw] tw-object-contain"
+                className="tw-pointer-events-none tw-max-h-[90vh] tw-w-full tw-max-w-[90vw] tw-object-contain"
                 src={isLoaded ? fullWidthSrc : placeholderSrc}
                 alt={alt}
                 width={width}

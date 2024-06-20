@@ -18,7 +18,7 @@ export const PhotoStack = forwardRef<HTMLAnchorElement, { isInView: boolean; onL
                 className={merge(BASE_IMAGE_CLASS, isInView && '-tw-translate-x-1 -tw-translate-y-1')}
                 alt=""
                 originalSrc="/home/Home Image 5.jpg"
-                width={450}
+                width={225}
                 originalWidth={1600}
                 originalHeight={1067}
             />
@@ -29,7 +29,7 @@ export const PhotoStack = forwardRef<HTMLAnchorElement, { isInView: boolean; onL
                 )}
                 alt=""
                 originalSrc="/home/Home Image 4.jpg"
-                width={450}
+                width={225}
                 originalWidth={1600}
                 originalHeight={1067}
             />
@@ -37,7 +37,7 @@ export const PhotoStack = forwardRef<HTMLAnchorElement, { isInView: boolean; onL
                 className={merge(BASE_IMAGE_CLASS, isInView && '-tw-translate-x-1 -tw-translate-y-3 -tw-rotate-6')}
                 alt=""
                 originalSrc="/home/Home Image 3.jpg"
-                width={450}
+                width={225}
                 originalWidth={1600}
                 originalHeight={1067}
             />
@@ -48,14 +48,12 @@ export const PhotoStack = forwardRef<HTMLAnchorElement, { isInView: boolean; onL
                 )}
                 alt=""
                 originalSrc="/home/Home Image 2.jpg"
-                width={450}
+                width={225}
                 originalWidth={1600}
                 originalHeight={951}
             />
             <NetlifyImg
-                className={merge(
-                    'tw-relative tw-block tw-w-full tw-origin-center tw-shadow-lg tw-transition-all group-hover/photos:tw-scale-105 group-hover/photos:tw-shadow-2xl group-focus-visible/photos:tw-scale-105 group-focus-visible/photos:tw-shadow-2xl',
-                )}
+                className="tw-relative tw-block tw-w-full tw-origin-center tw-shadow-lg tw-transition-all group-hover/photos:tw-scale-105 group-hover/photos:tw-shadow-2xl group-focus-visible/photos:tw-scale-105 group-focus-visible/photos:tw-shadow-2xl"
                 alt=""
                 originalSrc="/home/Home Image.jpg"
                 width={450}
