@@ -32,7 +32,6 @@ export const PlaceholderImage = ({
     width,
     usePlaceholder = true,
     blurPlaceholder = true,
-    placeholderWidth = 16,
     onLoad,
     lazy = false,
     wrapperClassName,
@@ -62,7 +61,8 @@ export const PlaceholderImage = ({
             <NetlifyImg
                 originalWidth={originalWidth}
                 originalHeight={originalHeight}
-                width={isRenderingFullImage ? width : placeholderWidth}
+                width={width}
+                placeholder={!isRenderingFullImage}
                 originalSrc={isInViewport ? originalSrc : ''}
                 className={merge(
                     'tw-block tw-max-h-full tw-max-w-full',

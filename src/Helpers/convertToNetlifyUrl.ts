@@ -1,9 +1,9 @@
-export const convertUrlToNetlifyUrl = (url: string, width?: number) => {
+export const convertUrlToNetlifyUrl = (url: string, width?: number, format?: 'webp' | 'blurhash') => {
     if (process.env.NODE_ENV === 'production') {
-        let netlifyUrl = `/.netlify/images?url=${encodeURIComponent(url)}&fm=webp`;
+        let netlifyUrl = `/.netlify/images?url=${encodeURIComponent(url)}&fm=${format}`;
 
         if (width) {
-            netlifyUrl += `&width=${width * Math.ceil(window.devicePixelRatio)}`;
+            netlifyUrl += `&w=${width * Math.ceil(window.devicePixelRatio)}`;
         }
 
         return netlifyUrl;
