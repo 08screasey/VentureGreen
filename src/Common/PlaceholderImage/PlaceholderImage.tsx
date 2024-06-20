@@ -19,8 +19,6 @@ type PlaceholderImageProps = {
     lazy?: boolean;
     wrapperPosition?: CSSProperties['position'];
     wrapperClassName?: string;
-    blurPlaceholder?: boolean;
-    usePlaceholder?: boolean;
 };
 
 export const PlaceholderImage = ({
@@ -30,8 +28,6 @@ export const PlaceholderImage = ({
     alt,
     objectFit,
     width,
-    usePlaceholder = true,
-    blurPlaceholder = true,
     onLoad,
     lazy = false,
     wrapperClassName,
@@ -52,17 +48,13 @@ export const PlaceholderImage = ({
 
     const { isLoaded } = useLoadImage({ src: fullWidthSrc, enabled: isInViewport || !lazy, onLoad });
 
-    const isRenderingFullImage = !usePlaceholder || isLoaded;
-
-    const showBlurEffect = !isRenderingFullImage && blurPlaceholder;
-
     return (
         <div className={wrapperClassName} style={{ position: wrapperPosition, display: 'inline-flex' }}>
             <NetlifyImg
                 originalWidth={originalWidth}
                 originalHeight={originalHeight}
                 width={width}
-                placeholder={!isRenderingFullImage}
+                placeholder={!isLoaded}
                 originalSrc={isInViewport ? originalSrc : ''}
                 className={merge(
                     'tw-block tw-max-h-full tw-max-w-full',
@@ -71,7 +63,7 @@ export const PlaceholderImage = ({
                 alt={alt}
                 ref={observerRef}
             />
-            {showBlurEffect && <BlurPlaceholder />}
+            {!isLoaded && <BlurPlaceholder />}
         </div>
     );
 };
