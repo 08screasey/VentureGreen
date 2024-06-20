@@ -12,7 +12,7 @@ export const DevCardLink = ({ children, href, icon }: DevCardLinkProps) => (
         rel="noopener noreferrer"
         className={merge(
             FOCUS_VISIBLE_STYLES,
-            'tw-group/link tw-border-grey tw-font-active tw-relative tw-flex tw-items-center tw-gap-x-2 tw-rounded tw-border tw-py-2 tw-pl-3 tw-pr-6 tw-text-left tw-shadow-md tw-transition-all hover:tw-pr-8 focus-visible:tw-pr-8',
+            'tw-group/link tw-relative tw-flex tw-items-center tw-gap-x-2 tw-rounded tw-border tw-border-grey tw-bg-white tw-py-2 tw-pl-3 tw-pr-6 tw-text-left tw-font-active tw-shadow-md tw-transition-all hover:tw-pr-8 focus-visible:tw-pr-8',
         )}
         target="_blank"
     >

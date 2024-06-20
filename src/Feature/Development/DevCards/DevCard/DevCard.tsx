@@ -1,6 +1,7 @@
 import { faGithubSquare } from '@fortawesome/free-brands-svg-icons';
 import { faLink } from '@fortawesome/free-solid-svg-icons';
 import { motion } from 'framer-motion';
+import { type ReactElement } from 'react';
 
 import { PlaceholderImage } from '../../../../Common/PlaceholderImage/PlaceholderImage';
 import { Image } from '../../../../Pages/Photography/albums';
@@ -15,11 +16,13 @@ type DevCardProps = {
     altColor: string;
     header: string;
     description: string;
-    technologies: string[];
-    api: string[];
+    technologies?: string[];
+    resources?: string[];
+    role?: string;
+    logo?: ReactElement;
     link: string;
-    github: string;
-    images: [Image, Image, Image];
+    github?: string;
+    images?: [Image, Image, Image];
 };
 
 export const DevCard = ({
@@ -29,10 +32,12 @@ export const DevCard = ({
     header,
     description,
     technologies,
-    api,
+    resources,
     link,
+    role,
     github,
     images,
+    logo,
 }: DevCardProps) => (
     <motion.section
         variants={DEV_CARD_VARIANTS}
@@ -45,8 +50,9 @@ export const DevCard = ({
                 alt ? 'lg:tw-order-2' : 'lg:tw-order-1',
             )}
             style={{ color: altColor, background: color }}
+            {...(logo ? { 'aria-label': header } : {})}
         >
-            {header}
+            {logo ?? header}
         </h3>
         <div
             style={{ backgroundColor: altColor }}
@@ -55,45 +61,59 @@ export const DevCard = ({
                 alt ? 'lg:tw-order-1' : 'lg:tw-order-2',
             )}
         >
+            {role && (
+                <p>
+                    <strong className="tw-font-bold">Role: </strong>
+                    {role}
+                </p>
+            )}
             <p>
                 <strong className="tw-font-bold">Description:</strong> {description}
             </p>
-            <p>
-                <strong className="tw-font-bold">Technologies/Frameworks: </strong>
-                {technologies.join(', ')}
-            </p>
-            <p>
-                <strong className="tw-font-bold">API's: </strong>
-                {api.join(', ')}
-            </p>
+            {technologies && (
+                <p>
+                    <strong className="tw-font-bold">Tech Stack: </strong>
+                    {technologies.join(', ')}
+                </p>
+            )}
+            {resources && (
+                <p>
+                    <strong className="tw-font-bold">Additional Resources: </strong>
+                    {resources.join(', ')}
+                </p>
+            )}
             <div className="tw-flex tw-w-full tw-justify-around">
                 <DevCardLink href={link} icon={faLink}>
-                    Live Build
+                    Visit Website
                 </DevCardLink>
-                <DevCardLink href={github} icon={faGithubSquare}>
-                    Github Repo
-                </DevCardLink>
+                {github && (
+                    <DevCardLink href={github} icon={faGithubSquare}>
+                        Github Repo
+                    </DevCardLink>
+                )}
             </div>
         </div>
-        <div className="tw-order-3 tw-col-span-2 tw-border-t tw-border-solid tw-border-t-light-grey tw-bg-white tw-p-8">
-            <h4 className="tw-mb-3 tw-text-center tw-font-active tw-text-6xl tw-font-bold" style={{ color: color }}>
-                Previews
-            </h4>
-            <div className="tw-grid tw-w-full tw-grid-cols-3 tw-items-center">
-                {images.map(({ src, height, width, alt }) => (
-                    <PlaceholderImage
-                        key={src}
-                        width={512}
-                        originalSrc={src}
-                        originalHeight={height}
-                        originalWidth={width}
-                        alt={alt ?? ''}
-                        objectFit="contain"
-                        wrapperClassName="tw-col-span-3 tw-mx-auto tw-mt-5 tw-max-h-[25rem] tw-object-contain lg:tw-col-span-1"
-                        lazy
-                    />
-                ))}
+        {images && (
+            <div className="tw-order-3 tw-col-span-2 tw-border-t tw-border-solid tw-border-t-light-grey tw-bg-white tw-p-8">
+                <h4 className="tw-mb-3 tw-text-center tw-font-active tw-text-6xl tw-font-bold" style={{ color: color }}>
+                    Previews
+                </h4>
+                <div className="tw-grid tw-w-full tw-grid-cols-3 tw-items-center">
+                    {images.map(({ src, height, width, alt }) => (
+                        <PlaceholderImage
+                            key={src}
+                            width={512}
+                            originalSrc={src}
+                            originalHeight={height}
+                            originalWidth={width}
+                            alt={alt ?? ''}
+                            objectFit="contain"
+                            wrapperClassName="tw-col-span-3 tw-mx-auto tw-mt-5 tw-max-h-[25rem] tw-object-contain lg:tw-col-span-1"
+                            lazy
+                        />
+                    ))}
+                </div>
             </div>
-        </div>
+        )}
     </motion.section>
 );
