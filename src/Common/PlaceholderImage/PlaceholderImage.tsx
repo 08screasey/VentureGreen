@@ -48,7 +48,7 @@ export const PlaceholderImage = ({
         onEnter: useCallback(() => {
             setIsInViewport(true);
         }, []),
-        bottomOffset: 600,
+        bottomOffset: 1200,
     });
 
     const { isLoaded } = useLoadImage({ src: fullWidthSrc, enabled: isInViewport || !lazy, onLoad });
