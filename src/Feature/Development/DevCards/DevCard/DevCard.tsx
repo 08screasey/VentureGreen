@@ -106,7 +106,8 @@ export const DevCard = ({
                             originalHeight={height}
                             originalWidth={width}
                             alt={alt ?? ''}
-                            className="tw-col-span-3 tw-mx-auto tw-mt-5 tw-max-h-[25rem] tw-object-contain lg:tw-col-span-1"
+                            objectFit="contain"
+                            wrapperClassName="tw-col-span-3 tw-mx-auto tw-mt-5 tw-max-h-[25rem] tw-object-contain lg:tw-col-span-1"
                             lazy
                         />
                     ))}

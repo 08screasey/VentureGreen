@@ -63,7 +63,7 @@ export const GalleryLayout = ({ album }: GalleryLayoutProps) => {
                         transition={{ type: 'tween', ease: 'easeOut' }}
                     >
                         <PlaceholderImage
-                            className="tw-w-full"
+                            wrapperClassName="tw-w-full"
                             originalSrc={src}
                             alt={alt ?? src}
                             width={600}

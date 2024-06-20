@@ -1,8 +1,10 @@
-import { useRef, useState, useCallback } from 'react';
+import { type CSSProperties, useRef, useState, useCallback } from 'react';
 
 import { convertUrlToNetlifyUrl } from '../../Helpers/convertToNetlifyUrl';
+import { merge } from '../../Utility/merge';
 import { useIntersectionObserver } from '../../Utility/useIntersectionObserver';
 import { useLoadImage } from '../../Utility/useLoadImage';
+import { BlurPlaceholder } from '../BlurPlaceholder/BlurPlaceholder';
 import { NetlifyImg } from '../NetlifyImage/NetlifyImage';
 
 type PlaceholderImageProps = {
@@ -12,9 +14,11 @@ type PlaceholderImageProps = {
     objectFit?: 'cover' | 'contain';
     alt: string;
     width?: number;
+    placeholderWidth?: number;
     onLoad?: () => void;
     lazy?: boolean;
-    className?: string;
+    wrapperPosition?: CSSProperties['position'];
+    wrapperClassName?: string;
 };
 
 export const PlaceholderImage = ({
@@ -22,10 +26,12 @@ export const PlaceholderImage = ({
     originalSrc,
     originalWidth,
     alt,
-    className,
+    objectFit,
     width,
     onLoad,
     lazy = false,
+    wrapperClassName,
+    wrapperPosition = 'relative',
 }: PlaceholderImageProps) => {
     const [isInViewport, setIsInViewport] = useState(false);
 
@@ -43,15 +49,21 @@ export const PlaceholderImage = ({
     const { isLoaded } = useLoadImage({ src: fullWidthSrc, enabled: isInViewport || !lazy, onLoad });
 
     return (
-        <NetlifyImg
-            originalWidth={originalWidth}
-            originalHeight={originalHeight}
-            width={width}
-            placeholder={!isLoaded}
-            originalSrc={isInViewport ? originalSrc : ''}
-            className={className}
-            alt={alt}
-            ref={observerRef}
-        />
+        <div className={wrapperClassName} style={{ position: wrapperPosition, display: 'inline-flex' }}>
+            <NetlifyImg
+                originalWidth={originalWidth}
+                originalHeight={originalHeight}
+                width={width}
+                placeholder={!isLoaded}
+                originalSrc={isInViewport ? originalSrc : ''}
+                className={merge(
+                    'tw-block tw-max-h-full tw-max-w-full',
+                    objectFit === 'cover' ? 'tw-object-cover' : 'tw-object-contain',
+                )}
+                alt={alt}
+                ref={observerRef}
+            />
+            {!isLoaded && <BlurPlaceholder />}
+        </div>
     );
 };
