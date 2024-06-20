@@ -66,7 +66,7 @@ const CarouselImage = ({
 }: CarouselImageProps) => {
     const isDragging = useRef(false);
     const fullWidthSrc = convertUrlToNetlifyUrl(src);
-    const placeholderSrc = convertUrlToNetlifyUrl(src, 100);
+    const placeholderSrc = convertUrlToNetlifyUrl(src, undefined, 'blurhash');
 
     const { isLoaded } = useLoadImage({ src: fullWidthSrc });
 
