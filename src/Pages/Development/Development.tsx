@@ -90,6 +90,7 @@ export const Development = () => {
                     Want more information?
                     <a
                         href="/Sam Creasey Resume.pdf"
+                        target="_blank"
                         className={merge(
                             'tw-border-line tw-group/resume tw-inline-flex tw-items-center tw-gap-x-2 tw-rounded-sm tw-px-2 tw-py-0 tw-font-lora tw-text-2xl tw-text-white tw-underline tw-transition hover:tw-scale-105 hover:tw-text-light-grey',
                             FOCUS_VISIBLE_STYLES,
