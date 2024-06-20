@@ -10,7 +10,7 @@ import { merge } from '../../../../Utility/merge';
 import { DevCardLink } from './DevCardLink/DevCardLink';
 import { DEV_CARD_VARIANTS } from './animations';
 
-type DevCardProps = {
+export type DevCardProps = {
     alt?: boolean;
     color: string;
     altColor: string;
@@ -42,46 +42,42 @@ export const DevCard = ({
     <motion.section
         variants={DEV_CARD_VARIANTS}
         transition={{ type: 'tween' }}
-        className="tw-grid tw-max-w-[1100px] tw-grid-cols-2 tw-overflow-hidden tw-rounded-lg tw-border tw-border-light-grey tw-shadow-lg"
+        className="tw-grid tw-grid-cols-2 tw-overflow-hidden tw-rounded-lg tw-border tw-border-light-grey tw-shadow-lg"
     >
-        <h3
+        <h4
             className={merge(
-                'tw-order-1 tw-col-span-2 tw-flex tw-min-h-[225px] tw-w-full tw-items-center tw-justify-center tw-p-10 tw-text-center tw-font-active tw-text-7xl lg:tw-order-1 lg:tw-col-span-1 lg:tw-min-h-[450px]',
+                'tw-order-1 tw-col-span-2 tw-flex tw-min-h-[225px] tw-w-full tw-items-center tw-justify-center tw-p-8 tw-text-center tw-font-active tw-text-6xl lg:tw-order-1 lg:tw-col-span-1 lg:tw-min-h-[450px] lg:tw-p-10 lg:tw-text-7xl',
                 alt ? 'lg:tw-order-2' : 'lg:tw-order-1',
             )}
             style={{ color: altColor, background: color }}
             {...(logo ? { 'aria-label': header } : {})}
         >
             {logo ?? header}
-        </h3>
+        </h4>
         <div
             style={{ backgroundColor: altColor }}
             className={merge(
-                'tw-order-2 tw-col-span-2 tw-flex tw-h-full tw-flex-col tw-items-center tw-justify-center tw-gap-6 tw-p-5 tw-font-code lg:tw-col-span-1 lg:tw-p-8',
+                'tw-order-2 tw-col-span-2 tw-flex tw-h-full tw-flex-col tw-items-center tw-justify-center tw-gap-6 tw-p-5 tw-font-code tw-text-sm lg:tw-col-span-1 lg:tw-p-10 lg:tw-text-base',
                 alt ? 'lg:tw-order-1' : 'lg:tw-order-2',
             )}
         >
-            {role && (
-                <p>
-                    <strong className="tw-font-bold">Role: </strong>
-                    {role}
-                </p>
-            )}
-            <p>
-                <strong className="tw-font-bold">Description:</strong> {description}
-            </p>
-            {technologies && (
-                <p>
-                    <strong className="tw-font-bold">Tech Stack: </strong>
-                    {technologies.join(', ')}
-                </p>
-            )}
-            {resources && (
-                <p>
-                    <strong className="tw-font-bold">Additional Resources: </strong>
-                    {resources.join(', ')}
-                </p>
-            )}
+            <table>
+                {[
+                    { title: 'Role', value: role },
+                    { title: 'Description', value: description },
+                    { title: 'Tech Stack', value: technologies?.join(', ') },
+                    { title: 'Resources', value: resources?.join(', ') },
+                ]
+                    .filter(({ value }) => Boolean(value))
+                    .map(({ title, value }) => (
+                        <tr className="tw-group/row tw-border-b tw-border-b-light-grey tw-align-top last:tw-border-none even:tw-brightness-50">
+                            <td className="tw-py-2 tw-pr-2 tw-font-bold group-first/row:tw-pt-0 group-last/row:tw-pb-0">
+                                {title}:
+                            </td>
+                            <td className="tw-py-2 group-first/row:tw-pt-0 group-last/row:tw-pb-0">{value}</td>
+                        </tr>
+                    ))}
+            </table>
             <div className="tw-flex tw-w-full tw-justify-around">
                 <DevCardLink href={link} icon={faLink}>
                     Visit Website
