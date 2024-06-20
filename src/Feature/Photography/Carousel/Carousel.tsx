@@ -2,7 +2,6 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { useCallback, useEffect, useRef, useState } from 'react';
 import ReactFocusLock from 'react-focus-lock';
 
-import { BlurPlaceholder } from '../../../Common/BlurPlaceholder/BlurPlaceholder';
 import { convertUrlToNetlifyUrl } from '../../../Helpers/convertToNetlifyUrl';
 import { Image } from '../../../Pages/Photography/albums';
 import { FOCUS_VISIBLE_STYLES } from '../../../Utility/focusStyles';
@@ -71,9 +70,9 @@ const CarouselImage = ({
     const { isLoaded } = useLoadImage({ src: fullWidthSrc });
 
     return (
-        <motion.div
+        <motion.img
             custom={direction}
-            className="tw-fixed tw-z-[100] tw-m-auto tw-flex tw-max-w-[1000px]"
+            className="tw-fixed tw-z-[100] tw-m-auto tw-max-h-[90vh] tw-w-auto tw-max-w-[90vw] tw-object-contain"
             variants={variants}
             onTouchEnd={() => {
                 if (!isDragging.current) {
@@ -103,16 +102,11 @@ const CarouselImage = ({
                 }
                 isDragging.current = false;
             }}
-        >
-            <img
-                className="tw-pointer-events-none tw-max-h-[90vh] tw-w-full tw-max-w-[90vw] tw-object-contain"
-                src={isLoaded ? fullWidthSrc : placeholderSrc}
-                alt={alt}
-                width={width}
-                height={height}
-            />
-            {!isLoaded && <BlurPlaceholder />}
-        </motion.div>
+            src={isLoaded ? fullWidthSrc : placeholderSrc}
+            alt={alt}
+            width={width}
+            height={height}
+        />
     );
 };
 
