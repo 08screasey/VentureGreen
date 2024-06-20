@@ -19,7 +19,7 @@ export const Laptop = ({ onLoad }: { onLoad: () => void }) => {
                     tabIndex={0}
                 >
                     <PlaceholderImage
-                        originalSrc="/home/website.jpg"
+                        originalSrc="/home/website.webp"
                         alt="Mock laptop screen preview showing development project"
                         width={300}
                         originalHeight={2856}
