@@ -1,4 +1,4 @@
-export const convertUrlToNetlifyUrl = (url: string, width?: number, format: 'webp' | 'blurhash' = 'webp') => {
+export const convertUrlToNetlifyUrl = (url: string, width?: number, format?: 'webp' | 'blurhash') => {
     if (process.env.NODE_ENV === 'production') {
         let netlifyUrl = `/.netlify/images?url=${encodeURIComponent(url)}&fm=${format}`;
 
