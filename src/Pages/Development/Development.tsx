@@ -35,9 +35,13 @@ const CONTENT: TypingEffectProps['content'] = [
 const DEVELOPMENT_VISITED_KEY = 'development-visited';
 
 const DevelopmentHeader = ({ children }: PropsWithChildren) => (
-    <h3 className="tw-mb-6 tw-mt-12 tw-w-full tw-border-b tw-border-solid tw-border-b-grey tw-text-left tw-font-lora tw-text-2xl tw-font-bold tw-text-green">
+    <motion.h3
+        variants={DEV_CARD_VARIANTS}
+        transition={{ type: 'tween' }}
+        className="tw-mb-6 tw-mt-12 tw-w-full tw-border-b tw-border-solid tw-border-b-grey tw-text-left tw-font-lora tw-text-2xl tw-font-bold tw-text-green"
+    >
         {children}
-    </h3>
+    </motion.h3>
 );
 
 export const Development = () => {

@@ -12,8 +12,8 @@ export type TypingEffectProps = {
 };
 
 export const convertNodesToSpanElements = (content: TypingEffectNode[]) =>
-    content.map(({ text, className }) => (
-        <span key={className + text} className={className}>
+    content.map(({ text, className }, index) => (
+        <span key={className + text + index} className={className}>
             {text}
         </span>
     ));

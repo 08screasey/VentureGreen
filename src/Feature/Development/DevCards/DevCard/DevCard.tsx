@@ -19,6 +19,7 @@ export type DevCardProps = {
     technologies?: string[];
     resources?: string[];
     role?: string;
+    achievement?: string;
     logo?: ReactElement;
     link: string;
     github?: string;
@@ -37,6 +38,7 @@ export const DevCard = ({
     role,
     github,
     images,
+    achievement,
     logo,
 }: DevCardProps) => (
     <motion.section
@@ -65,6 +67,7 @@ export const DevCard = ({
                 {[
                     { title: 'Role', value: role },
                     { title: 'Description', value: description },
+                    { title: 'Achievements', value: achievement },
                     { title: 'Tech Stack', value: technologies?.join(', ') },
                     { title: 'Resources', value: resources?.join(', ') },
                 ]
