@@ -1,3 +1,5 @@
+import { faFile } from '@fortawesome/free-regular-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { motion } from 'framer-motion';
 import { PropsWithChildren, useEffect, useRef } from 'react';
 
@@ -6,6 +8,8 @@ import { DEV_CARD_VARIANTS } from '../../Feature/Development/DevCards/DevCard/an
 import { DevCards } from '../../Feature/Development/DevCards/DevCards';
 import { getDevCardVariants } from '../../Feature/Development/DevCards/animations';
 import { WORK_EXPERIENCE, PROJECT_EXPERIENCE } from '../../Feature/Development/DevCards/experience';
+import { FOCUS_VISIBLE_STYLES } from '../../Utility/focusStyles';
+import { merge } from '../../Utility/merge';
 import { useDocumentTitle } from '../../Utility/useDocumentTitle';
 import { useScrollToTop } from '../../Utility/useScrollToTop';
 import { TypingEffectProps, convertNodesToSpanElements } from '../../Utility/useTypingEffect';
@@ -79,9 +83,22 @@ export const Development = () => {
                     )}
                 </p>
             </div>
-            <div className="tw-mx-auto tw-w-full tw-max-w-[1100px]">
+            <div className="tw-relative tw-mx-auto tw-w-full tw-max-w-[1100px]">
                 <DevelopmentHeader>Work Experience</DevelopmentHeader>
                 <DevCards devCards={WORK_EXPERIENCE} />
+                <div className="tw-mx-auto tw-flex tw-w-[90vw] tw-max-w-[500px] tw-flex-col tw-items-center tw-gap-1 tw-rounded tw-border-grey tw-bg-black/50 tw-px-6 tw-py-4 tw-font-active tw-text-4xl tw-text-white tw-shadow lg:tw-px-10 lg:tw-py-8">
+                    Want more information?
+                    <a
+                        href="/Sam Creasey Resume.pdf"
+                        className={merge(
+                            'tw-border-line tw-group/resume tw-inline-flex tw-items-center tw-gap-x-2 tw-rounded-sm tw-px-2 tw-py-0 tw-font-lora tw-text-2xl tw-text-white tw-underline tw-transition hover:tw-scale-105 hover:tw-text-light-grey',
+                            FOCUS_VISIBLE_STYLES,
+                        )}
+                    >
+                        <FontAwesomeIcon icon={faFile} />
+                        View Resume
+                    </a>
+                </div>
                 <DevelopmentHeader>Development Projects</DevelopmentHeader>
                 <DevCards devCards={PROJECT_EXPERIENCE} />
             </div>
