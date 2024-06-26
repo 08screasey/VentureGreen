@@ -1,4 +1,4 @@
-import { Collection, type Album } from '../../../Routes/Photography/albums';
+import { Collection, type Album } from '../../../data/albums';
 import { PhotoCard } from '../PhotoCard/PhotoCard';
 import { PhotoGrid } from '../PhotoGrid/PhotoGrid';
 

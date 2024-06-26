@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import { forwardRef } from 'react';
 
 import { NetlifyImg } from '../../../Common/NetlifyImage/NetlifyImage';
@@ -7,7 +8,7 @@ const BASE_IMAGE_CLASS = 'tw-top-0 tw-left-0 tw-transition-all tw-shadow-lg tw-o
 
 export const PhotoStack = forwardRef<HTMLAnchorElement, { isInView: boolean; onLoad: () => void }>(
     ({ isInView, onLoad }, ref) => (
-        <a
+        <Link
             className="tw-group/photos tw-relative tw-block tw-aspect-[15/10] tw-w-full tw-outline-none"
             href="/photography"
             ref={ref}
@@ -60,7 +61,7 @@ export const PhotoStack = forwardRef<HTMLAnchorElement, { isInView: boolean; onL
                 originalHeight={966}
                 onLoad={onLoad}
             />
-        </a>
+        </Link>
     ),
 );
 

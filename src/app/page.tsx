@@ -2,6 +2,7 @@
 
 import { faLevelUpAlt } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import Link from 'next/link';
 import { PropsWithChildren, useCallback, useRef, useState } from 'react';
 
 import { LoadingCircle } from '../Common/LoadingCircle/LoadingCircle';
@@ -73,7 +74,7 @@ export default function HomePage() {
                 )}
             >
                 <EqualSizingCol>
-                    <a
+                    <Link
                         href="/development"
                         className={merge(
                             'tw-relative tw-flex tw-w-full tw-flex-col tw-items-center tw-gap-2',
@@ -85,11 +86,11 @@ export default function HomePage() {
                         <h2 className="tw-z-[4] tw-mx-auto tw-w-full tw-text-center tw-font-code tw-text-3xl tw-drop-shadow-xl md:tw-text-4xl lg:tw-text-3xl xl:tw-text-4xl">
                             <TypingEffect enabled={isDevInView} content={CONTENT} />
                         </h2>
-                    </a>
+                    </Link>
                 </EqualSizingCol>
 
                 <div className="tw-flex tw-flex-none tw-justify-center tw-gap-x-2 tw-px-10">
-                    <a
+                    <Link
                         href="/development"
                         className={merge(
                             'tw-group/left-brain tw-relative tw-w-[90px] tw-origin-right tw-transition hover:tw-scale-105 focus-visible:tw-scale-105',
@@ -150,9 +151,9 @@ export default function HomePage() {
                             originalHeight={916}
                             originalWidth={800}
                         />
-                    </a>
+                    </Link>
 
-                    <a
+                    <Link
                         href="/photography"
                         className={merge(
                             'tw-group/right-brain tw-relative tw-w-[90px] tw-origin-left tw-transition hover:tw-scale-105 focus-visible:tw-scale-105',
@@ -213,7 +214,7 @@ export default function HomePage() {
                             originalWidth={800}
                             originalHeight={917}
                         />
-                    </a>
+                    </Link>
                 </div>
 
                 <EqualSizingCol>

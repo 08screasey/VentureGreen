@@ -1,6 +1,6 @@
 import { RouterProvider, createBrowserRouter, useRoutes } from 'react-router-dom';
 
-import { Photography } from './Routes/Photography/Photography';
+import { Photography } from './data/Photography';
 
 const BaseApp = () => {
     const route = useRoutes([{ path: '/photography/*', element: <Photography /> }]);

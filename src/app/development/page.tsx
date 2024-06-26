@@ -3,18 +3,19 @@
 import { faFile } from '@fortawesome/free-regular-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { motion } from 'framer-motion';
+import Link from 'next/link';
 import { PropsWithChildren, useEffect, useRef } from 'react';
 
 import { TypingEffect } from '../../Common/TypingEffect';
 import { DEV_CARD_VARIANTS } from '../../Feature/Development/DevCards/DevCard/animations';
 import { DevCards } from '../../Feature/Development/DevCards/DevCards';
 import { getDevCardVariants } from '../../Feature/Development/DevCards/animations';
-import { WORK_EXPERIENCE, PROJECT_EXPERIENCE } from '../../Feature/Development/DevCards/experience';
 import { FOCUS_VISIBLE_STYLES } from '../../Utility/focusStyles';
 import { merge } from '../../Utility/merge';
 import { useDocumentTitle } from '../../Utility/useDocumentTitle';
 import { useScrollToTop } from '../../Utility/useScrollToTop';
 import { TypingEffectProps, convertNodesToSpanElements } from '../../Utility/useTypingEffect';
+import { WORK_EXPERIENCE, PROJECT_EXPERIENCE } from '../../data/experience';
 
 const CONTENT: TypingEffectProps['content'] = [
     { text: '<', className: 'tw-text-cyan' },
@@ -90,7 +91,7 @@ export default function DevelopmentPage() {
                 <DevCards devCards={WORK_EXPERIENCE} />
                 <div className="tw-mx-auto tw-flex tw-w-[90vw] tw-max-w-[500px] tw-flex-col tw-items-center tw-gap-1 tw-rounded tw-border-grey tw-bg-black/50 tw-px-6 tw-py-4 tw-font-active tw-text-4xl tw-text-white tw-shadow lg:tw-px-10 lg:tw-py-8">
                     Want more information?
-                    <a
+                    <Link
                         href="/Sam Creasey Resume.pdf"
                         target="_blank"
                         className={merge(
@@ -100,7 +101,7 @@ export default function DevelopmentPage() {
                     >
                         <FontAwesomeIcon icon={faFile} />
                         View Resume
-                    </a>
+                    </Link>
                 </div>
                 <DevelopmentHeader>Development Projects</DevelopmentHeader>
                 <DevCards devCards={PROJECT_EXPERIENCE} />

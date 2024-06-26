@@ -1,4 +1,6 @@
 import { motion } from 'framer-motion';
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import { PropsWithChildren } from 'react';
 
 import { FOCUS_VISIBLE_STYLES } from '../../../Utility/focusStyles';
@@ -6,10 +8,11 @@ import { isMatchingSlug } from '../../../Utility/isMatchingSlug';
 import { merge } from '../../../Utility/merge';
 
 export const FooterLink = ({ children, to }: PropsWithChildren<{ to: string }>) => {
-    const isActive = false;
+    const pathname = usePathname();
+    const isActive = isMatchingSlug(to, pathname);
 
     return (
-        <a
+        <Link
             href={to}
             className={merge(
                 FOCUS_VISIBLE_STYLES,
@@ -23,6 +26,6 @@ export const FooterLink = ({ children, to }: PropsWithChildren<{ to: string }>) 
                     layoutId="underline"
                 />
             )}
-        </a>
+        </Link>
     );
 };

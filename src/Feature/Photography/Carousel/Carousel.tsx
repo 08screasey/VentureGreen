@@ -4,7 +4,7 @@ import ReactFocusLock from 'react-focus-lock';
 
 import { BlurPlaceholder } from '../../../Common/BlurPlaceholder/BlurPlaceholder';
 import { convertUrlToNetlifyUrl } from '../../../Helpers/convertToNetlifyUrl';
-import { Image } from '../../../Routes/Photography/albums';
+import { Image } from '../../../data/albums';
 import { FOCUS_VISIBLE_STYLES } from '../../../Utility/focusStyles';
 import { merge } from '../../../Utility/merge';
 import { useKeypress } from '../../../Utility/useKeypress';

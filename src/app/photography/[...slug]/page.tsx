@@ -2,7 +2,7 @@ import get from 'lodash-es/get';
 
 import { GalleryLayout } from '../../../Feature/Photography/GalleryLayout/GalleryLayout';
 import { PhotoCollection } from '../../../Feature/Photography/PhotoCollection/PhotoCollection';
-import { Album, Collection, PHOTOGRAPHY_COLLECTIONS } from '../../../Routes/Photography/albums';
+import { Album, Collection, PHOTOGRAPHY_COLLECTIONS } from '../../../data/albums';
 
 export const generateStaticParams = () => {
     const items: { slug: string[] }[] = [];

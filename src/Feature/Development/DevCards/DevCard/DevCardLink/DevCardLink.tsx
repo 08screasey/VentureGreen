@@ -1,4 +1,5 @@
 import { FontAwesomeIcon, type FontAwesomeIconProps } from '@fortawesome/react-fontawesome';
+import Link from 'next/link';
 import { type PropsWithChildren } from 'react';
 
 import { FOCUS_VISIBLE_STYLES } from '../../../../../Utility/focusStyles';
@@ -12,7 +13,7 @@ type DevCardLinkProps = PropsWithChildren<{
 }>;
 
 export const DevCardLink = ({ children, href, icon, padding = 'md', showArrow = true }: DevCardLinkProps) => (
-    <a
+    <Link
         href={href}
         rel="noopener noreferrer"
         className={merge(
@@ -28,5 +29,5 @@ export const DevCardLink = ({ children, href, icon, padding = 'md', showArrow = 
         {showArrow && (
             <span className="tw-absolute tw-right-0 tw-top-1/2 tw-h-0 tw-w-0 tw--translate-y-1/2 tw-border-[8px] tw-border-[transparent] tw-border-l-light-green tw-opacity-0 tw-transition-opacity group-hover/link:tw-opacity-100 group-focus-visible/link:tw-opacity-100" />
         )}
-    </a>
+    </Link>
 );
