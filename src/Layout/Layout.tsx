@@ -3,12 +3,13 @@
 import { faGithub, faInstagram } from '@fortawesome/free-brands-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { AnimatePresence, MotionConfig } from 'framer-motion';
+import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { type ReactNode, useState, useEffect, useCallback } from 'react';
 
+import logo from '../../public/venturegreen.png';
 import { Hamburger } from '../Common/Hamburger/Hamburger';
-import { NetlifyImg } from '../Common/NetlifyImage/NetlifyImage';
 import { FOCUS_VISIBLE_STYLES } from '../Utility/focusStyles';
 import { merge } from '../Utility/merge';
 
@@ -73,13 +74,10 @@ export const Layout = ({ children }: LayoutProps) => {
                         </Link>
                         <h1 className="tw-text-l tw-m-auto tw-mb-0 tw-flex tw-max-w-[500px] tw-flex-col tw-items-center tw-font-lora tw-font-bold tw-text-green lg:tw-text-xl">
                             <Link href="/" className={merge(FOCUS_VISIBLE_STYLES, 'tw-rounded')} aria-label="Home">
-                                <NetlifyImg
-                                    originalSrc="/venturegreen.png"
+                                <Image
+                                    src={logo}
                                     className="tw-mx-auto tw-h-[60px] tw-w-auto lg:tw-h-[75px]"
                                     alt="Venture Green Logo"
-                                    width={300}
-                                    originalHeight={376}
-                                    originalWidth={1500}
                                 />
                             </Link>
                             <div className="tw-text-center">Adventure Photography & Web Development</div>

@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import Link from 'next/link';
 import { type ReactNode } from 'react';
 
-import { PlaceholderImage } from '../../../Common/PlaceholderImage/PlaceholderImage';
+import { NetlifyImg } from '../../../Common/NetlifyImage/NetlifyImage';
 import { FOCUS_VISIBLE_STYLES } from '../../../Utility/focusStyles';
 import { merge } from '../../../Utility/merge';
 import { type Image } from '../../../data/albums';
@@ -29,19 +29,14 @@ export const PhotoCard = ({ coverArt, children, link }: PhotoCardProps) => (
                 FOCUS_VISIBLE_STYLES,
             )}
         >
-            <PlaceholderImage
-                wrapperClassName="tw-left-0 tw-top-0 tw-h-full tw-w-full group-hover/card:tw-brightness-75 tw-transition"
-                originalSrc={coverArt.src}
-                objectFit="cover"
-                width={450}
-                alt=""
-                originalHeight={coverArt.height}
-                originalWidth={coverArt.width}
-                wrapperPosition="absolute"
-            />
             <div className="tw-relative tw-z-[2] tw-border-b tw-border-b-white tw-bg-black/90 tw-py-4 tw-text-center tw-text-4xl tw-transition-all">
                 {children}
             </div>
+            <NetlifyImg
+                className="tw-left-0 tw-top-0 tw-h-full tw-w-full tw-object-cover tw-transition group-hover/card:tw-brightness-75"
+                originalSrc={coverArt.src}
+                alt=""
+            />
             <div className="tw-absolute tw-left-0 tw-top-0 tw-z-[3] tw-h-full tw-w-full tw-bg-transparent tw-transition-all group-hover/card:tw-shadow-inner group-focus-visible/card:tw-shadow-inner" />
         </Link>
     </motion.div>

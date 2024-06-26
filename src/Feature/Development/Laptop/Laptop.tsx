@@ -1,7 +1,8 @@
 import { useRef } from 'react';
 
+import laptop from '../../../../public/home/edited laptop.png';
+import website from '../../../../public/home/website.webp';
 import { NetlifyImg } from '../../../Common/NetlifyImage/NetlifyImage';
-import { PlaceholderImage } from '../../../Common/PlaceholderImage/PlaceholderImage';
 import { useAutoScroll } from '../../../Utility/useAutoScroll';
 
 export const Laptop = ({ onLoad }: { onLoad: () => void }) => {
@@ -18,24 +19,22 @@ export const Laptop = ({ onLoad }: { onLoad: () => void }) => {
                     {...scrollProps}
                     tabIndex={0}
                 >
-                    <PlaceholderImage
-                        originalSrc="/home/website.webp"
+                    <NetlifyImg
+                        originalSrc={website}
                         alt="Mock laptop screen preview showing development project"
-                        width={300}
-                        originalHeight={2856}
-                        originalWidth={800}
+                        lazy={false}
                     />
                 </div>
                 <div className="tw-pointer-events-none tw-absolute tw-left-0 tw-top-0 tw-h-full tw-w-full tw-bg-white/15 tw-opacity-0 tw-bg-blend-screen tw-transition-all group-hover/screen:tw-opacity-100 peer-focus-visible/inner-screen:tw-opacity-100" />
             </div>
             <NetlifyImg
-                originalSrc="/home/edited laptop.png"
+                originalSrc={laptop}
                 className="tw-pointer-events-none tw-relative tw-z-[2] tw-block tw-w-full tw-drop-shadow-2xl"
                 alt="Outer laptop"
-                width={450}
-                originalWidth={2000}
-                originalHeight={1457}
                 onLoad={onLoad}
+                lazy={false}
+                blur={false}
+                priority
             />
         </div>
     );

@@ -97,7 +97,6 @@ export default function HomeClient() {
                     >
                         <NetlifyImg
                             alt=""
-                            width={64}
                             originalSrc="/home/brainLeftText1.png"
                             className={merge(
                                 shouldAnimateLeftBrain
@@ -107,10 +106,11 @@ export default function HomeClient() {
                             )}
                             originalWidth={316}
                             originalHeight={506}
+                            lazy={false}
+                            blur={false}
                         />
                         <NetlifyImg
                             alt=""
-                            width={64}
                             originalSrc="/home/brainLeftText2.png"
                             className={merge(
                                 shouldAnimateLeftBrain
@@ -120,6 +120,8 @@ export default function HomeClient() {
                             )}
                             originalWidth={316}
                             originalHeight={506}
+                            lazy={false}
+                            blur={false}
                         />
                         <FontAwesomeIcon
                             icon={faLevelUpAlt}
@@ -139,7 +141,6 @@ export default function HomeClient() {
                         />
                         <NetlifyImg
                             alt=""
-                            width={150}
                             originalSrc="/home/brainLeftOverLay.png"
                             className={merge(
                                 shouldAnimateLeftBrain ? 'tw-scale-1 tw-opacity-100' : 'tw-scale-0 tw-opacity-0',
@@ -147,6 +148,8 @@ export default function HomeClient() {
                             )}
                             originalHeight={916}
                             originalWidth={800}
+                            lazy={false}
+                            blur={false}
                         />
                     </Link>
 
@@ -161,7 +164,6 @@ export default function HomeClient() {
                         <NetlifyImg
                             alt=""
                             originalSrc="/home/brainRightText1.png"
-                            width={64}
                             className={merge(
                                 shouldAnimateRightBrain
                                     ? 'tw-translate-x-0 tw-delay-150'
@@ -170,10 +172,11 @@ export default function HomeClient() {
                             )}
                             originalHeight={302}
                             originalWidth={439}
+                            lazy={false}
+                            blur={false}
                         />
                         <NetlifyImg
                             alt=""
-                            width={64}
                             originalSrc="/home/brainRightText2.png"
                             className={merge(
                                 shouldAnimateRightBrain
@@ -183,6 +186,8 @@ export default function HomeClient() {
                             )}
                             originalHeight={302}
                             originalWidth={439}
+                            lazy={false}
+                            blur={false}
                         />
                         <FontAwesomeIcon
                             icon={faLevelUpAlt}
@@ -202,7 +207,6 @@ export default function HomeClient() {
                         />
                         <NetlifyImg
                             alt=""
-                            width={150}
                             originalSrc="/home/brainRightOverLay.png"
                             className={merge(
                                 shouldAnimateRightBrain ? 'tw-scale-1 tw-opacity-100' : 'tw-scale-0 tw-opacity-0',
@@ -210,6 +214,8 @@ export default function HomeClient() {
                             )}
                             originalWidth={800}
                             originalHeight={917}
+                            lazy={false}
+                            blur={false}
                         />
                     </Link>
                 </div>
