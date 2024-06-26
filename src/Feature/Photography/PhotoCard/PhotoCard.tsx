@@ -4,9 +4,9 @@ import Link from 'next/link';
 import { type ReactNode } from 'react';
 
 import { PlaceholderImage } from '../../../Common/PlaceholderImage/PlaceholderImage';
-import { type Image } from '../../../data/albums';
 import { FOCUS_VISIBLE_STYLES } from '../../../Utility/focusStyles';
 import { merge } from '../../../Utility/merge';
+import { type Image } from '../../../data/albums';
 
 import { PHOTO_CARD_VARIANTS } from './animation';
 

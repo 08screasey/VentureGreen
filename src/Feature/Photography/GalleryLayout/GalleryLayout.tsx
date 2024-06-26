@@ -3,9 +3,9 @@ import { motion } from 'framer-motion';
 import { useState } from 'react';
 
 import { PlaceholderImage } from '../../../Common/PlaceholderImage/PlaceholderImage';
-import { type Album } from '../../../data/albums';
 import { FOCUS_VISIBLE_STYLES } from '../../../Utility/focusStyles';
 import { merge } from '../../../Utility/merge';
+import { type Album } from '../../../data/albums';
 import { Carousel } from '../Carousel/Carousel';
 
 import { GALLERY_CONTAINER_VARIANTS, GALLERY_HEADER_VARIANTS, GALLERY_ITEM_VARIANTS } from './animations';

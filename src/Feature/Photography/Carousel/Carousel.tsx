@@ -4,12 +4,12 @@ import ReactFocusLock from 'react-focus-lock';
 
 import { BlurPlaceholder } from '../../../Common/BlurPlaceholder/BlurPlaceholder';
 import { convertUrlToNetlifyUrl } from '../../../Helpers/convertToNetlifyUrl';
-import { Image } from '../../../data/albums';
 import { FOCUS_VISIBLE_STYLES } from '../../../Utility/focusStyles';
 import { merge } from '../../../Utility/merge';
 import { useKeypress } from '../../../Utility/useKeypress';
 import { useLoadImage } from '../../../Utility/useLoadImage';
 import { wrap } from '../../../Utility/wrap';
+import { Image } from '../../../data/albums';
 
 const variants = {
     enter: (direction: number) => {

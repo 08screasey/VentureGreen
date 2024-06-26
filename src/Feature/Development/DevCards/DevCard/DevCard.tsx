@@ -4,8 +4,8 @@ import { motion } from 'framer-motion';
 import { type ReactElement } from 'react';
 
 import { PlaceholderImage } from '../../../../Common/PlaceholderImage/PlaceholderImage';
-import { Image } from '../../../../data/albums';
 import { merge } from '../../../../Utility/merge';
+import { Image } from '../../../../data/albums';
 
 import { DevCardLink } from './DevCardLink/DevCardLink';
 import { DEV_CARD_VARIANTS } from './animations';
