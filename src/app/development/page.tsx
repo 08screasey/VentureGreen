@@ -3,6 +3,7 @@
 import { faFile } from '@fortawesome/free-regular-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { motion } from 'framer-motion';
+import { type Metadata } from 'next';
 import Link from 'next/link';
 import { PropsWithChildren, useEffect, useRef } from 'react';
 
@@ -12,8 +13,6 @@ import { DevCards } from '../../Feature/Development/DevCards/DevCards';
 import { getDevCardVariants } from '../../Feature/Development/DevCards/animations';
 import { FOCUS_VISIBLE_STYLES } from '../../Utility/focusStyles';
 import { merge } from '../../Utility/merge';
-import { useDocumentTitle } from '../../Utility/useDocumentTitle';
-import { useScrollToTop } from '../../Utility/useScrollToTop';
 import { TypingEffectProps, convertNodesToSpanElements } from '../../Utility/useTypingEffect';
 import { WORK_EXPERIENCE, PROJECT_EXPERIENCE } from '../../data/experience';
 
@@ -51,11 +50,15 @@ const DevelopmentHeader = ({ children }: PropsWithChildren) => (
     </motion.h3>
 );
 
-export default function DevelopmentPage() {
-    const hasVisited = useRef(sessionStorage?.getItem(DEVELOPMENT_VISITED_KEY) === 'true')?.current ?? false;
+export const metadata: Metadata = {
+    title: "Sam Creasey's Development Portfolio",
+};
 
-    useDocumentTitle("Sam Creasey's Development Portfolio");
-    useScrollToTop();
+export default function DevelopmentPage() {
+    const hasVisited =
+        useRef(typeof window !== undefined ? sessionStorage.getItem(DEVELOPMENT_VISITED_KEY) === 'true' : false)
+            .current ?? false;
+
     useEffect(() => {
         sessionStorage.setItem(DEVELOPMENT_VISITED_KEY, 'true');
     }, []);

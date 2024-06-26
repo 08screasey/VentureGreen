@@ -3,10 +3,9 @@
 import { faInstagram, faFacebook, faLinkedinIn, faGithub } from '@fortawesome/free-brands-svg-icons';
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
 import { motion } from 'framer-motion';
+import { type Metadata } from 'next';
 
 import { ContactLink } from '../../Feature/About/ContactLink/ContactLink';
-import { useDocumentTitle } from '../../Utility/useDocumentTitle';
-import { useScrollToTop } from '../../Utility/useScrollToTop';
 
 const ABOUT_VARIANTS = {
     hidden: {},
@@ -19,10 +18,9 @@ const ABOUT_VARIANTS = {
 
 const ABOUT_CONTENT_VARIANTS = { hidden: { opacity: 0, y: 30 }, show: { opacity: 1, y: 0 } };
 
-export default function AboutPage() {
-    useDocumentTitle("Sam Creasey's Portfolio");
-    useScrollToTop();
+export const metadata: Metadata = { title: "Sam Creasey's Portfolio" };
 
+export default function AboutPage() {
     return (
         <motion.div
             className="tw-flex tw-flex-col tw-items-center tw-justify-center tw-py-10"

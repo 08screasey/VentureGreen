@@ -1,4 +1,4 @@
-import { DevCardProps } from '../feature/Development/DevCards/DevCard/DevCard';
+import { DevCardProps } from '../Feature/Development/DevCards/DevCard/DevCard';
 import FloquoteLogo from '../assets/floquote-logo.svg';
 import FrontifyLogo from '../assets/frontify-logo.svg';
 
