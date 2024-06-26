@@ -35,9 +35,7 @@ export const NetlifyImg = forwardRef<HTMLImageElement, NetlifyImageProps>(
         const imageRef = useForwardedRef(ref);
 
         useEffect(() => {
-            console.log(imageRef.current);
             if (imageRef.current?.complete) {
-                console.log('complete');
                 onLoad?.();
             }
         });
