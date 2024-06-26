@@ -64,3 +64,5 @@ export const PhotoStack = forwardRef<HTMLAnchorElement, { isInView: boolean; onL
         </Link>
     ),
 );
+
+PhotoStack.displayName = 'PhotoStack';

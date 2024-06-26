@@ -26,3 +26,5 @@ export const NetlifyImg = forwardRef<HTMLImageElement, NetlifyImageProps>(
         />
     ),
 );
+
+NetlifyImg.displayName = 'NetlifyImg';

@@ -43,13 +43,13 @@ export const About = () => {
                         variants={ABOUT_CONTENT_VARIANTS}
                         transition={{ type: 'tween' }}
                     >
-                        Hi! I'm Sam
+                        Hi! I&apos;m Sam
                     </motion.h2>
 
                     <motion.div variants={ABOUT_CONTENT_VARIANTS} transition={{ type: 'tween' }}>
                         <p className="tw-mb-3 tw-font-lora">
-                            I've spent the last 9 years travelling full-time, working remotely as a software engineer
-                            and photographer.
+                            I&apos;ve spent the last 9 years travelling full-time, working remotely as a software
+                            engineer and photographer.
                         </p>
                         <p className="tw-mb-3 tw-font-lora">
                             My portfolio is a showcase of everything I have taught myself. I started my journey into web

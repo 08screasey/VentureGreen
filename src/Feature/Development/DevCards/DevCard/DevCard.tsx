@@ -73,7 +73,10 @@ export const DevCard = ({
                 ]
                     .filter(({ value }) => Boolean(value))
                     .map(({ title, value }) => (
-                        <tr className="tw-group/row tw-border-b tw-border-b-light-grey tw-align-top last:tw-border-none even:tw-brightness-50">
+                        <tr
+                            key={title}
+                            className="tw-group/row tw-border-b tw-border-b-light-grey tw-align-top last:tw-border-none even:tw-brightness-50"
+                        >
                             <td className="tw-py-2 tw-pr-2 tw-font-bold group-first/row:tw-pt-0 group-last/row:tw-pb-0">
                                 {title}:
                             </td>

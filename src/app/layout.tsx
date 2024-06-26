@@ -13,7 +13,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             </head>
             <body>
                 <div id="root">{children}</div>
-                <script type="module" src="/src/main.tsx"></script>
             </body>
         </html>
     );
