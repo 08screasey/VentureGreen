@@ -3,7 +3,7 @@ export const convertUrlToNetlifyUrl = (url: string, width?: number) => {
         let netlifyUrl = `/.netlify/images?url=${encodeURIComponent(url)}&fm=webp`;
 
         if (width) {
-            netlifyUrl += `&width=${width * Math.ceil(window.devicePixelRatio)}`;
+            netlifyUrl += `&width=${width}`;
         }
 
         return netlifyUrl;
