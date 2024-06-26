@@ -1,28 +1,60 @@
-import { forwardRef } from 'react';
+'use client';
 
-import { convertUrlToNetlifyUrl } from '../../Helpers/convertToNetlifyUrl';
+import Image, { StaticImageData } from 'next/image';
+import { forwardRef, useEffect } from 'react';
+
+import { useForwardedRef } from '../../Utility/useForwardedRef';
 
 type NetlifyImageProps = {
-    originalSrc: string;
+    originalSrc: string | StaticImageData;
     originalWidth?: number;
     originalHeight?: number;
     alt: string;
-    width?: number;
     onLoad?: () => void;
     lazy?: boolean;
     className?: string;
+    blur?: boolean;
+    priority?: boolean;
 };
 
 export const NetlifyImg = forwardRef<HTMLImageElement, NetlifyImageProps>(
-    ({ originalSrc, originalWidth, originalHeight, onLoad, alt, width, className }: NetlifyImageProps, ref) => (
-        <img
-            width={originalWidth}
-            height={originalHeight}
-            src={convertUrlToNetlifyUrl(originalSrc, width)}
-            className={className}
-            onLoad={onLoad}
-            alt={alt}
-            ref={ref}
-        />
-    ),
+    (
+        {
+            originalSrc,
+            originalWidth,
+            originalHeight,
+            onLoad,
+            alt,
+            blur = true,
+            lazy = true,
+            priority = false,
+            className,
+        }: NetlifyImageProps,
+        ref,
+    ) => {
+        const imageRef = useForwardedRef(ref);
+
+        useEffect(() => {
+            if (imageRef.current?.complete) {
+                onLoad?.();
+            }
+        });
+
+        return (
+            <Image
+                width={originalWidth}
+                height={originalHeight}
+                src={originalSrc}
+                className={className}
+                onLoad={onLoad}
+                alt={alt}
+                placeholder={blur ? 'blur' : 'empty'}
+                loading={lazy ? 'lazy' : 'eager'}
+                ref={imageRef}
+                priority={priority}
+            />
+        );
+    },
 );
+
+NetlifyImg.displayName = 'NetlifyImg';

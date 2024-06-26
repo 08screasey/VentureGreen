@@ -1,4 +1,5 @@
 import { FontAwesomeIcon, type FontAwesomeIconProps } from '@fortawesome/react-fontawesome';
+import Link from 'next/link';
 
 import { FOCUS_VISIBLE_STYLES } from '../../../Utility/focusStyles';
 import { merge } from '../../../Utility/merge';
@@ -11,17 +12,17 @@ type ContactLinkProps = {
 };
 
 export const ContactLink = ({ href, label, animationDelay = '0', icon }: ContactLinkProps) => (
-    <a
+    <Link
         rel="noopener noreferrer"
         href={href}
         target="_blank"
         className={merge(
-            'tw-animate-pulse-green tw-inline-flex tw-h-12 tw-w-12 tw-items-center tw-justify-center tw-rounded-full tw-bg-green tw-p-2 tw-text-white',
+            'tw-inline-flex tw-h-12 tw-w-12 tw-animate-pulse-green tw-items-center tw-justify-center tw-rounded-full tw-bg-green tw-p-2 tw-text-white',
             FOCUS_VISIBLE_STYLES,
         )}
         aria-label={label}
         style={{ animationDelay }}
     >
         <FontAwesomeIcon icon={icon} size="2x" />
-    </a>
+    </Link>
 );

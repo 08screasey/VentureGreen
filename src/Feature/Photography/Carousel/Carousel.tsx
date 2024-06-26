@@ -1,15 +1,14 @@
 import { motion, AnimatePresence } from 'framer-motion';
+import { type StaticImageData } from 'next/image';
 import { useCallback, useEffect, useRef, useState } from 'react';
 import ReactFocusLock from 'react-focus-lock';
 
-import { BlurPlaceholder } from '../../../Common/BlurPlaceholder/BlurPlaceholder';
-import { convertUrlToNetlifyUrl } from '../../../Helpers/convertToNetlifyUrl';
-import { Image } from '../../../Pages/Photography/albums';
+import { NetlifyImg } from '../../../Common/NetlifyImage/NetlifyImage';
 import { FOCUS_VISIBLE_STYLES } from '../../../Utility/focusStyles';
 import { merge } from '../../../Utility/merge';
 import { useKeypress } from '../../../Utility/useKeypress';
-import { useLoadImage } from '../../../Utility/useLoadImage';
 import { wrap } from '../../../Utility/wrap';
+import { type Image } from '../../../data/albums';
 
 const variants = {
     enter: (direction: number) => {
@@ -44,7 +43,7 @@ const swipePower = (offset: number, velocity: number) => {
 type CarouselProps = { images: Image[]; startingIndex: number; onExit: () => void };
 
 type CarouselImageProps = {
-    src: string;
+    src: StaticImageData;
     height: number;
     width: number;
     alt: string;
@@ -54,21 +53,8 @@ type CarouselImageProps = {
     onTouch: () => void;
 };
 
-const CarouselImage = ({
-    src,
-    onSwipeLeft,
-    onSwipeRight,
-    height,
-    width,
-    alt,
-    direction,
-    onTouch,
-}: CarouselImageProps) => {
+const CarouselImage = ({ src, onSwipeLeft, onSwipeRight, alt, direction, onTouch }: CarouselImageProps) => {
     const isDragging = useRef(false);
-    const fullWidthSrc = convertUrlToNetlifyUrl(src);
-    const placeholderSrc = convertUrlToNetlifyUrl(src, 100);
-
-    const { isLoaded } = useLoadImage({ src: fullWidthSrc });
 
     return (
         <motion.div
@@ -104,14 +90,11 @@ const CarouselImage = ({
                 isDragging.current = false;
             }}
         >
-            <img
+            <NetlifyImg
                 className="tw-pointer-events-none tw-max-h-[90vh] tw-w-full tw-max-w-[90vw] tw-object-contain"
-                src={isLoaded ? fullWidthSrc : placeholderSrc}
                 alt={alt}
-                width={width}
-                height={height}
+                originalSrc={src}
             />
-            {!isLoaded && <BlurPlaceholder />}
         </motion.div>
     );
 };
