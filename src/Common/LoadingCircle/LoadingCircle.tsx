@@ -16,6 +16,6 @@ export const LoadingCircle = () => (
                 fill="currentFill"
             />
         </svg>
-        <span className="sr-only">Loading...</span>
+        <span className="tw-sr-only">Loading...</span>
     </div>
 );

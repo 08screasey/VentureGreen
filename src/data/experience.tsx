@@ -1,7 +1,15 @@
-import FloquoteLogo from '../../../assets/floquote-logo.svg';
-import FrontifyLogo from '../../../assets/frontify-logo.svg';
-
-import { DevCardProps } from './DevCard/DevCard';
+import cvhs1 from '../../public/development/cvhsmobile.jpg';
+import cvhs2 from '../../public/development/cvhsmobile2.jpg';
+import cvhs3 from '../../public/development/cvhsmobile3.jpg';
+import recipe1 from '../../public/development/recipe.jpg';
+import recipe2 from '../../public/development/recipe2.jpg';
+import recipe3 from '../../public/development/recipe3.jpg';
+import sprout1 from '../../public/development/sprout.jpg';
+import sprout2 from '../../public/development/sprout2.jpg';
+import sprout3 from '../../public/development/sprout3.jpg';
+import { DevCardProps } from '../Feature/Development/DevCards/DevCard/DevCard';
+import FloquoteLogo from '../assets/floquote-logo.svg';
+import FrontifyLogo from '../assets/frontify-logo.svg';
 
 export const WORK_EXPERIENCE: DevCardProps[] = [
     {
@@ -54,19 +62,19 @@ export const PROJECT_EXPERIENCE: DevCardProps[] = [
         link: 'https://columbiavalleyhutsociety.onrender.com/',
         images: [
             {
-                src: '/development/cvhsmobile.jpg',
+                src: cvhs1,
                 width: 633,
                 height: 854,
                 alt: '',
             },
             {
-                src: '/development/cvhsmobile3.jpg',
+                src: cvhs3,
                 width: 900,
                 height: 1206,
                 alt: '',
             },
             {
-                src: '/development/cvhsmobile2.jpg',
+                src: cvhs2,
                 width: 492,
                 height: 750,
                 alt: '',
@@ -86,19 +94,19 @@ export const PROJECT_EXPERIENCE: DevCardProps[] = [
         altColor: 'hsl(207.5, 20.7%, 98.9%)',
         images: [
             {
-                src: '/development/recipe.jpg',
+                src: recipe1,
                 width: 492,
                 height: 750,
                 alt: '',
             },
             {
-                src: '/development/recipe3.jpg',
+                src: recipe3,
                 width: 900,
                 height: 1206,
                 alt: '',
             },
             {
-                src: '/development/recipe2.jpg',
+                src: recipe2,
                 width: 633,
                 height: 880,
                 alt: '',
@@ -117,19 +125,19 @@ export const PROJECT_EXPERIENCE: DevCardProps[] = [
         altColor: 'hsl(207.5, 20.7%, 98.9%)',
         images: [
             {
-                src: '/development/sprout.jpg',
+                src: sprout1,
                 width: 492,
                 height: 750,
                 alt: '',
             },
             {
-                src: '/development/sprout2.jpg',
+                src: sprout2,
                 width: 900,
                 height: 674,
                 alt: '',
             },
             {
-                src: '/development/sprout3.jpg',
+                src: sprout3,
                 width: 840,
                 height: 923,
                 alt: '',

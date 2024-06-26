@@ -3,9 +3,9 @@ import { faLink } from '@fortawesome/free-solid-svg-icons';
 import { motion } from 'framer-motion';
 import { type ReactElement } from 'react';
 
-import { PlaceholderImage } from '../../../../Common/PlaceholderImage/PlaceholderImage';
-import { Image } from '../../../../Pages/Photography/albums';
+import { NetlifyImg } from '../../../../Common/NetlifyImage/NetlifyImage';
 import { merge } from '../../../../Utility/merge';
+import { Image } from '../../../../data/albums';
 
 import { DevCardLink } from './DevCardLink/DevCardLink';
 import { DEV_CARD_VARIANTS } from './animations';
@@ -73,7 +73,10 @@ export const DevCard = ({
                 ]
                     .filter(({ value }) => Boolean(value))
                     .map(({ title, value }) => (
-                        <tr className="tw-group/row tw-border-b tw-border-b-light-grey tw-align-top last:tw-border-none even:tw-brightness-50">
+                        <tr
+                            key={title}
+                            className="tw-group/row tw-border-b tw-border-b-light-grey tw-align-top last:tw-border-none even:tw-brightness-50"
+                        >
                             <td className="tw-py-2 tw-pr-2 tw-font-bold group-first/row:tw-pt-0 group-last/row:tw-pb-0">
                                 {title}:
                             </td>
@@ -99,16 +102,13 @@ export const DevCard = ({
                 </h4>
                 <div className="tw-grid tw-w-full tw-grid-cols-3 tw-items-center">
                     {images.map(({ src, height, width, alt }) => (
-                        <PlaceholderImage
-                            key={src}
-                            width={512}
+                        <NetlifyImg
+                            key={src.src}
                             originalSrc={src}
                             originalHeight={height}
                             originalWidth={width}
                             alt={alt ?? ''}
-                            objectFit="contain"
-                            wrapperClassName="tw-col-span-3 tw-mx-auto tw-mt-5 tw-max-h-[25rem] tw-object-contain lg:tw-col-span-1"
-                            lazy
+                            className="tw-col-span-3 tw-mx-auto tw-mt-5 tw-max-h-[25rem] tw-object-contain lg:tw-col-span-1"
                         />
                     ))}
                 </div>

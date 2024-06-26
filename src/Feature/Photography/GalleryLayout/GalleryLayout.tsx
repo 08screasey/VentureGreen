@@ -1,10 +1,11 @@
+'use client';
 import { motion } from 'framer-motion';
 import { useState } from 'react';
 
-import { PlaceholderImage } from '../../../Common/PlaceholderImage/PlaceholderImage';
-import { type Album } from '../../../Pages/Photography/albums';
+import { NetlifyImg } from '../../../Common/NetlifyImage/NetlifyImage';
 import { FOCUS_VISIBLE_STYLES } from '../../../Utility/focusStyles';
 import { merge } from '../../../Utility/merge';
+import { type Album } from '../../../data/albums';
 import { Carousel } from '../Carousel/Carousel';
 
 import { GALLERY_CONTAINER_VARIANTS, GALLERY_HEADER_VARIANTS, GALLERY_ITEM_VARIANTS } from './animations';
@@ -49,7 +50,7 @@ export const GalleryLayout = ({ album }: GalleryLayoutProps) => {
                         </motion.p>
                     )}
                 </div>
-                {images.map(({ src, alt, width, height }, i) => (
+                {images.map(({ src, alt }, i) => (
                     <motion.button
                         key={i}
                         onClick={() => openGallery(i)}
@@ -62,15 +63,7 @@ export const GalleryLayout = ({ album }: GalleryLayoutProps) => {
                         variants={GALLERY_ITEM_VARIANTS}
                         transition={{ type: 'tween', ease: 'easeOut' }}
                     >
-                        <PlaceholderImage
-                            wrapperClassName="tw-w-full"
-                            originalSrc={src}
-                            alt={alt ?? src}
-                            width={600}
-                            originalWidth={width}
-                            originalHeight={height}
-                            lazy
-                        />
+                        <NetlifyImg originalSrc={src} alt={alt ?? src} originalWidth={600} lazy />
                     </motion.button>
                 ))}
             </motion.div>

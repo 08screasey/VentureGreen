@@ -1,10 +1,10 @@
+'use client';
+
 import { faInstagram, faFacebook, faLinkedinIn, faGithub } from '@fortawesome/free-brands-svg-icons';
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
 import { motion } from 'framer-motion';
 
 import { ContactLink } from '../../Feature/About/ContactLink/ContactLink';
-import { useDocumentTitle } from '../../Utility/useDocumentTitle';
-import { useScrollToTop } from '../../Utility/useScrollToTop';
 
 const ABOUT_VARIANTS = {
     hidden: {},
@@ -17,10 +17,7 @@ const ABOUT_VARIANTS = {
 
 const ABOUT_CONTENT_VARIANTS = { hidden: { opacity: 0, y: 30 }, show: { opacity: 1, y: 0 } };
 
-export const About = () => {
-    useDocumentTitle("Sam Creasey's Portfolio");
-    useScrollToTop();
-
+export default function AboutClient() {
     return (
         <motion.div
             className="tw-flex tw-flex-col tw-items-center tw-justify-center tw-py-10"
@@ -43,13 +40,13 @@ export const About = () => {
                         variants={ABOUT_CONTENT_VARIANTS}
                         transition={{ type: 'tween' }}
                     >
-                        Hi! I'm Sam
+                        Hi! I&apos;m Sam
                     </motion.h2>
 
                     <motion.div variants={ABOUT_CONTENT_VARIANTS} transition={{ type: 'tween' }}>
                         <p className="tw-mb-3 tw-font-lora">
-                            I've spent the last 9 years travelling full-time, working remotely as a software engineer
-                            and photographer.
+                            I&apos;ve spent the last 9 years travelling full-time, working remotely as a software
+                            engineer and photographer.
                         </p>
                         <p className="tw-mb-3 tw-font-lora">
                             My portfolio is a showcase of everything I have taught myself. I started my journey into web
@@ -97,4 +94,4 @@ export const About = () => {
             </div>
         </motion.div>
     );
-};
+}
