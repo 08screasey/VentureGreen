@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 import { useState } from 'react';
 
 import { PlaceholderImage } from '../../../Common/PlaceholderImage/PlaceholderImage';
-import { type Album } from '../../../Pages/Photography/albums';
+import { type Album } from '../../../Routes/Photography/albums';
 import { FOCUS_VISIBLE_STYLES } from '../../../Utility/focusStyles';
 import { merge } from '../../../Utility/merge';
 import { Carousel } from '../Carousel/Carousel';

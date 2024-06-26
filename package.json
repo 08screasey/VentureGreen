@@ -1,10 +1,9 @@
 {
-    "name": "vite-project",
+    "name": "venture-green",
     "private": true,
     "version": "0.0.0",
     "type": "module",
     "scripts": {
-        "preview": "vite preview",
         "typecheck": "tsc",
         "test:ci": "vitest run",
         "dev": "next dev",

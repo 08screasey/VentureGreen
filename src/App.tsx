@@ -1,12 +1,12 @@
 import { AnimatePresence, MotionConfig } from 'framer-motion';
 import { cloneElement } from 'react';
-import { BrowserRouter, RouterProvider, createBrowserRouter, useLocation, useRoutes } from 'react-router-dom';
+import { RouterProvider, createBrowserRouter, useLocation, useRoutes } from 'react-router-dom';
 
 import { Layout } from './Layout/Layout';
-import { About } from './Pages/About/About';
-import { Development } from './Pages/Development/Development';
-import { Home } from './Pages/Home/Home';
-import { Photography } from './Pages/Photography/Photography';
+import { About } from './Routes/About/About';
+import { Development } from './Routes/Development/Development';
+import { Home } from './Routes/Home/Home';
+import { Photography } from './Routes/Photography/Photography';
 
 const BaseApp = () => {
     const { pathname } = useLocation();
@@ -34,9 +34,3 @@ const BaseApp = () => {
 const router = createBrowserRouter([{ path: '*', element: <BaseApp /> }]);
 
 export const AppWithRouter = () => <RouterProvider router={router} />;
-
-export const App = () => (
-    <BrowserRouter>
-        <BaseApp />
-    </BrowserRouter>
-);
