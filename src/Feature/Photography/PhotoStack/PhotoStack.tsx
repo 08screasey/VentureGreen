@@ -23,8 +23,7 @@ export const PhotoStack = forwardRef<HTMLAnchorElement, { isInView: boolean; onL
                 className={merge(BASE_IMAGE_CLASS, isInView && '-tw-translate-x-1 -tw-translate-y-1')}
                 alt=""
                 originalSrc={home5}
-                originalWidth={1600}
-                originalHeight={1067}
+                originalWidth={450}
                 lazy={false}
             />
             <NetlifyImg
@@ -34,16 +33,14 @@ export const PhotoStack = forwardRef<HTMLAnchorElement, { isInView: boolean; onL
                 )}
                 alt=""
                 originalSrc={home4}
-                originalWidth={1600}
-                originalHeight={1067}
+                originalWidth={450}
                 lazy={false}
             />
             <NetlifyImg
                 className={merge(BASE_IMAGE_CLASS, isInView && '-tw-translate-x-1 -tw-translate-y-3 -tw-rotate-6')}
                 alt=""
                 originalSrc={home3}
-                originalWidth={1600}
-                originalHeight={1067}
+                originalWidth={450}
                 lazy={false}
             />
             <NetlifyImg
@@ -53,8 +50,7 @@ export const PhotoStack = forwardRef<HTMLAnchorElement, { isInView: boolean; onL
                 )}
                 alt=""
                 originalSrc={home2}
-                originalWidth={1600}
-                originalHeight={951}
+                originalWidth={450}
                 lazy={false}
             />
             <NetlifyImg
@@ -65,6 +61,7 @@ export const PhotoStack = forwardRef<HTMLAnchorElement, { isInView: boolean; onL
                 lazy={false}
                 blur={false}
                 priority
+                originalWidth={450}
             />
         </Link>
     ),

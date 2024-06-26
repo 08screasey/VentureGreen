@@ -35,6 +35,7 @@ export const PhotoCard = ({ coverArt, children, link }: PhotoCardProps) => (
             <NetlifyImg
                 className="tw-left-0 tw-top-0 tw-h-full tw-w-full tw-object-cover tw-transition group-hover/card:tw-brightness-75"
                 originalSrc={coverArt.src}
+                originalWidth={450}
                 alt=""
             />
             <div className="tw-absolute tw-left-0 tw-top-0 tw-z-[3] tw-h-full tw-w-full tw-bg-transparent tw-transition-all group-hover/card:tw-shadow-inner group-focus-visible/card:tw-shadow-inner" />

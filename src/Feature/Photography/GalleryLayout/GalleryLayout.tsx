@@ -50,7 +50,7 @@ export const GalleryLayout = ({ album }: GalleryLayoutProps) => {
                         </motion.p>
                     )}
                 </div>
-                {images.map(({ src, alt, width, height }, i) => (
+                {images.map(({ src, alt }, i) => (
                     <motion.button
                         key={i}
                         onClick={() => openGallery(i)}
@@ -63,13 +63,7 @@ export const GalleryLayout = ({ album }: GalleryLayoutProps) => {
                         variants={GALLERY_ITEM_VARIANTS}
                         transition={{ type: 'tween', ease: 'easeOut' }}
                     >
-                        <NetlifyImg
-                            originalSrc={src}
-                            alt={alt ?? src}
-                            originalWidth={width}
-                            originalHeight={height}
-                            lazy
-                        />
+                        <NetlifyImg originalSrc={src} alt={alt ?? src} originalWidth={600} lazy />
                     </motion.button>
                 ))}
             </motion.div>
