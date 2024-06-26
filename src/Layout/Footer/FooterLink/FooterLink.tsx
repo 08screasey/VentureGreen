@@ -1,19 +1,16 @@
 import { motion } from 'framer-motion';
 import { PropsWithChildren } from 'react';
-import { Link, useLocation } from 'react-router-dom';
 
 import { FOCUS_VISIBLE_STYLES } from '../../../Utility/focusStyles';
 import { isMatchingSlug } from '../../../Utility/isMatchingSlug';
 import { merge } from '../../../Utility/merge';
 
 export const FooterLink = ({ children, to }: PropsWithChildren<{ to: string }>) => {
-    const { pathname } = useLocation();
-
-    const isActive = isMatchingSlug(to, pathname);
+    const isActive = false;
 
     return (
-        <Link
-            to={to}
+        <a
+            href={to}
             className={merge(
                 FOCUS_VISIBLE_STYLES,
                 'tw-relative tw-rounded tw-p-4 tw-font-lora tw-font-medium tw-text-green hover:tw-text-extra-light-green active:tw-text-light-green',
@@ -26,6 +23,6 @@ export const FooterLink = ({ children, to }: PropsWithChildren<{ to: string }>) 
                     layoutId="underline"
                 />
             )}
-        </Link>
+        </a>
     );
 };

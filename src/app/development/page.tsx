@@ -1,3 +1,5 @@
+'use client';
+
 import { faFile } from '@fortawesome/free-regular-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { motion } from 'framer-motion';
@@ -48,14 +50,14 @@ const DevelopmentHeader = ({ children }: PropsWithChildren) => (
     </motion.h3>
 );
 
-export const Development = () => {
+export default function DevelopmentPage() {
+    const hasVisited = useRef(sessionStorage?.getItem(DEVELOPMENT_VISITED_KEY) === 'true')?.current ?? false;
+
     useDocumentTitle("Sam Creasey's Development Portfolio");
     useScrollToTop();
     useEffect(() => {
         sessionStorage.setItem(DEVELOPMENT_VISITED_KEY, 'true');
     }, []);
-
-    const hasVisited = useRef(sessionStorage.getItem(DEVELOPMENT_VISITED_KEY) === 'true').current;
 
     return (
         <motion.div
@@ -105,4 +107,4 @@ export const Development = () => {
             </div>
         </motion.div>
     );
-};
+}

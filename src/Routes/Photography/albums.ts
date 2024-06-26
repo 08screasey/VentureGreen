@@ -1,5 +1,6 @@
 export type Image = { src: string; alt: string; height: number; width: number };
 export type Album = { images: Image[]; header: string; subheader?: string; quote?: string; coverArt: Image };
+export type Collection = { coverArt: Image; header: string; albums: Record<string, Album> };
 
 const PORTRAIT_ALBUM: Album = {
     header: 'Portrait',
@@ -1455,15 +1456,26 @@ const EUROPE_ALBUM: Album = {
 
 // Album Collections
 
-const TRAVEL_ALBUMS = {
+const TRAVEL_COLLECTION: Collection = {
     header: 'Travel',
     coverArt: { src: '/cover-art/travel.jpg', width: 900, height: 1128, alt: '' },
-    albums: [OCEANIA_ALBUM, ASIA_ALBUM, EUROPE_ALBUM, CANADA_ALBUM],
+    albums: { oceania: OCEANIA_ALBUM, asia: ASIA_ALBUM, europe: EUROPE_ALBUM, canada: CANADA_ALBUM },
 };
-const CLIENT_ALBUMS = {
+const CLIENT_COLLECTION: Collection = {
     header: 'Client',
     coverArt: { src: '/cover-art/client.jpg', height: 1198, width: 900, alt: '' },
-    albums: [CAT_MOTORS_ALBUM, SPROUT_ALBUM, LUNA_GALLERY, CLIMATE_GALLERY, GEMMA_ALBUM],
+    albums: {
+        'cat-motors': CAT_MOTORS_ALBUM,
+        sprout: SPROUT_ALBUM,
+        'luna-and-the-moon': LUNA_GALLERY,
+        'climate-strike': CLIMATE_GALLERY,
+        gemma: GEMMA_ALBUM,
+    },
 };
 
-export const PHOTOGRAPHY_COLLECTIONS = [TRAVEL_ALBUMS, CLIENT_ALBUMS, PORTRAIT_ALBUM, ANIMAL_ALBUM];
+export const PHOTOGRAPHY_COLLECTIONS = {
+    travel: TRAVEL_COLLECTION,
+    client: CLIENT_COLLECTION,
+    portrait: PORTRAIT_ALBUM,
+    animal: ANIMAL_ALBUM,
+};

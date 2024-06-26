@@ -1,5 +1,4 @@
 import { forwardRef } from 'react';
-import { Link } from 'react-router-dom';
 
 import { NetlifyImg } from '../../../Common/NetlifyImage/NetlifyImage';
 import { merge } from '../../../Utility/merge';
@@ -8,9 +7,9 @@ const BASE_IMAGE_CLASS = 'tw-top-0 tw-left-0 tw-transition-all tw-shadow-lg tw-o
 
 export const PhotoStack = forwardRef<HTMLAnchorElement, { isInView: boolean; onLoad: () => void }>(
     ({ isInView, onLoad }, ref) => (
-        <Link
+        <a
             className="tw-group/photos tw-relative tw-block tw-aspect-[15/10] tw-w-full tw-outline-none"
-            to="/photography"
+            href="/photography"
             ref={ref}
             aria-label="Photography portfolio"
         >
@@ -61,7 +60,7 @@ export const PhotoStack = forwardRef<HTMLAnchorElement, { isInView: boolean; onL
                 originalHeight={966}
                 onLoad={onLoad}
             />
-        </Link>
+        </a>
     ),
 );
 

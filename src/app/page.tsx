@@ -1,19 +1,20 @@
+'use client';
+
 import { faLevelUpAlt } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { PropsWithChildren, useCallback, useRef, useState } from 'react';
-import { Link } from 'react-router-dom';
 
-import { LoadingCircle } from '../../Common/LoadingCircle/LoadingCircle';
-import { NetlifyImg } from '../../Common/NetlifyImage/NetlifyImage';
-import { TypingEffect } from '../../Common/TypingEffect';
-import { Laptop } from '../../Feature/Development/Laptop/Laptop';
-import { PhotoStack } from '../../Feature/Photography/PhotoStack/PhotoStack';
-import { FOCUS_VISIBLE_STYLES } from '../../Utility/focusStyles';
-import { merge } from '../../Utility/merge';
-import { useDocumentTitle } from '../../Utility/useDocumentTitle';
-import { useIntersectionObserver } from '../../Utility/useIntersectionObserver';
-import LeftBrain from '../../assets/brainLeft.svg';
-import RightBrain from '../../assets/brainRight.svg';
+import { LoadingCircle } from '../Common/LoadingCircle/LoadingCircle';
+import { NetlifyImg } from '../Common/NetlifyImage/NetlifyImage';
+import { TypingEffect } from '../Common/TypingEffect';
+import { Laptop } from '../Feature/Development/Laptop/Laptop';
+import { PhotoStack } from '../Feature/Photography/PhotoStack/PhotoStack';
+import { FOCUS_VISIBLE_STYLES } from '../Utility/focusStyles';
+import { merge } from '../Utility/merge';
+import { useDocumentTitle } from '../Utility/useDocumentTitle';
+import { useIntersectionObserver } from '../Utility/useIntersectionObserver';
+import LeftBrain from '../assets/brainLeft.svg';
+import RightBrain from '../assets/brainRight.svg';
 
 const CONTENT = [
     { text: '<', className: 'tw-text-cyan' },
@@ -31,7 +32,7 @@ const EqualSizingCol = ({ children }: PropsWithChildren) => (
     </div>
 );
 
-export const Home = () => {
+export default function HomePage() {
     useDocumentTitle("Sam Creasey's Portfolio");
 
     const [isDevInView, setIsDevInView] = useState(false);
@@ -72,8 +73,8 @@ export const Home = () => {
                 )}
             >
                 <EqualSizingCol>
-                    <Link
-                        to="/development"
+                    <a
+                        href="/development"
                         className={merge(
                             'tw-relative tw-flex tw-w-full tw-flex-col tw-items-center tw-gap-2',
                             FOCUS_VISIBLE_STYLES,
@@ -84,12 +85,12 @@ export const Home = () => {
                         <h2 className="tw-z-[4] tw-mx-auto tw-w-full tw-text-center tw-font-code tw-text-3xl tw-drop-shadow-xl md:tw-text-4xl lg:tw-text-3xl xl:tw-text-4xl">
                             <TypingEffect enabled={isDevInView} content={CONTENT} />
                         </h2>
-                    </Link>
+                    </a>
                 </EqualSizingCol>
 
                 <div className="tw-flex tw-flex-none tw-justify-center tw-gap-x-2 tw-px-10">
-                    <Link
-                        to="/development"
+                    <a
+                        href="/development"
                         className={merge(
                             'tw-group/left-brain tw-relative tw-w-[90px] tw-origin-right tw-transition hover:tw-scale-105 focus-visible:tw-scale-105',
                             FOCUS_VISIBLE_STYLES,
@@ -149,10 +150,10 @@ export const Home = () => {
                             originalHeight={916}
                             originalWidth={800}
                         />
-                    </Link>
+                    </a>
 
-                    <Link
-                        to="/photography"
+                    <a
+                        href="/photography"
                         className={merge(
                             'tw-group/right-brain tw-relative tw-w-[90px] tw-origin-left tw-transition hover:tw-scale-105 focus-visible:tw-scale-105',
                             FOCUS_VISIBLE_STYLES,
@@ -212,7 +213,7 @@ export const Home = () => {
                             originalWidth={800}
                             originalHeight={917}
                         />
-                    </Link>
+                    </a>
                 </div>
 
                 <EqualSizingCol>
@@ -230,4 +231,4 @@ export const Home = () => {
             )}
         </>
     );
-};
+}

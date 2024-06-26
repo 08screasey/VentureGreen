@@ -1,3 +1,5 @@
+'use client';
+
 import { faInstagram, faFacebook, faLinkedinIn, faGithub } from '@fortawesome/free-brands-svg-icons';
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
 import { motion } from 'framer-motion';
@@ -17,7 +19,7 @@ const ABOUT_VARIANTS = {
 
 const ABOUT_CONTENT_VARIANTS = { hidden: { opacity: 0, y: 30 }, show: { opacity: 1, y: 0 } };
 
-export const About = () => {
+export default function AboutPage() {
     useDocumentTitle("Sam Creasey's Portfolio");
     useScrollToTop();
 
@@ -97,4 +99,4 @@ export const About = () => {
             </div>
         </motion.div>
     );
-};
+}
