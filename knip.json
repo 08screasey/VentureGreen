@@ -1,3 +1,4 @@
 {
-    "ignoreDependencies": ["cssnano", "@svgr/webpack"]
+    "ignoreDependencies": ["cssnano", "@svgr/webpack"],
+    "ignore": ["cli/bulk-import.js"]
 }
