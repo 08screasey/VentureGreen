@@ -1,78 +1,309 @@
-export type Image = { src: string; alt: string; height: number; width: number };
+import { type StaticImageData } from 'next/image';
+
+import coverAnimal from '../../public/cover-art/animal.jpg';
+import coverAsia from '../../public/cover-art/asia.jpg';
+import coverCanada from '../../public/cover-art/canada.jpg';
+import coverCatMotors from '../../public/cover-art/cat-motors.jpg';
+import coverClient from '../../public/cover-art/client.jpg';
+import coverClimate from '../../public/cover-art/climate.jpg';
+import coverEurope from '../../public/cover-art/europe.jpg';
+import coverGemma from '../../public/cover-art/gemma.jpg';
+import coverLuna from '../../public/cover-art/luna.jpg';
+import coverOceania from '../../public/cover-art/oceania.jpg';
+import coverPortrait from '../../public/cover-art/portrait.jpg';
+import coverSprout from '../../public/cover-art/sprout.jpg';
+import coverTravel from '../../public/cover-art/travel.jpg';
+import animals1 from '../../public/photos/animals/bird+hand-2.jpg';
+import animals2 from '../../public/photos/animals/brad+cliffs+3.jpg';
+import animals3 from '../../public/photos/animals/brown+snake-2.jpg';
+import animals4 from '../../public/photos/animals/crab+1.jpg';
+import animals5 from '../../public/photos/animals/dog+2.jpg';
+import animals6 from '../../public/photos/animals/dog+photo+2.jpg';
+import animals7 from '../../public/photos/animals/echidna+tassie.jpg';
+import animals8 from '../../public/photos/animals/harley+17.jpg';
+import animals9 from '../../public/photos/animals/harley+2.jpg';
+import animals10 from '../../public/photos/animals/harley+3.jpg';
+import animals11 from '../../public/photos/animals/harley+5.jpg';
+import animals12 from '../../public/photos/animals/harley+6.jpg';
+import animals13 from '../../public/photos/animals/harley+9.jpg';
+import animals14 from '../../public/photos/animals/kangaroo.jpg';
+import animals15 from '../../public/photos/animals/kookaburah+2.jpg';
+import animals16 from '../../public/photos/animals/mbai+pay+7_1.jpg';
+import animals17 from '../../public/photos/animals/nam+30.jpg';
+import animals18 from '../../public/photos/animals/poppy.jpg';
+import animals19 from '../../public/photos/animals/sheep+snowdon+2.jpg';
+import animals20 from '../../public/photos/animals/sunset+pen+y+fan+6.jpg';
+import animals21 from '../../public/photos/animals/wombat.jpg';
+import catMotors1 from '../../public/photos/client/cat-motors/cat.jpg';
+import catMotors2 from '../../public/photos/client/cat-motors/cat10.jpg';
+import catMotors3 from '../../public/photos/client/cat-motors/cat11.jpg';
+import catMotors4 from '../../public/photos/client/cat-motors/cat12.jpg';
+import catMotors5 from '../../public/photos/client/cat-motors/cat13.jpg';
+import catMotors6 from '../../public/photos/client/cat-motors/cat2.jpg';
+import catMotors7 from '../../public/photos/client/cat-motors/cat3.jpg';
+import catMotors8 from '../../public/photos/client/cat-motors/cat4.jpg';
+import catMotors9 from '../../public/photos/client/cat-motors/cat5.jpg';
+import catMotors10 from '../../public/photos/client/cat-motors/cat6.jpg';
+import catMotors11 from '../../public/photos/client/cat-motors/cat7.jpg';
+import catMotors12 from '../../public/photos/client/cat-motors/cat8.jpg';
+import catMotors13 from '../../public/photos/client/cat-motors/cat9.jpg';
+import climate1 from '../../public/photos/client/climate/climate.jpg';
+import climate2 from '../../public/photos/client/climate/climate10.jpg';
+import climate3 from '../../public/photos/client/climate/climate11.jpg';
+import climate4 from '../../public/photos/client/climate/climate12.jpg';
+import climate5 from '../../public/photos/client/climate/climate13.jpg';
+import climate6 from '../../public/photos/client/climate/climate14.jpg';
+import climate7 from '../../public/photos/client/climate/climate15.jpg';
+import climate8 from '../../public/photos/client/climate/climate16.jpg';
+import climate9 from '../../public/photos/client/climate/climate17.jpg';
+import climate10 from '../../public/photos/client/climate/climate18.jpg';
+import climate11 from '../../public/photos/client/climate/climate19.jpg';
+import climate12 from '../../public/photos/client/climate/climate2.jpg';
+import climate13 from '../../public/photos/client/climate/climate3.jpg';
+import climate14 from '../../public/photos/client/climate/climate4.jpg';
+import climate15 from '../../public/photos/client/climate/climate5.jpg';
+import climate16 from '../../public/photos/client/climate/climate6.jpg';
+import climate17 from '../../public/photos/client/climate/climate7.jpg';
+import climate18 from '../../public/photos/client/climate/climate8.jpg';
+import climate19 from '../../public/photos/client/climate/climate9.jpg';
+import gemma12 from '../../public/photos/client/gemma/gem.jpg';
+import gemma13 from '../../public/photos/client/gemma/gem1.jpg';
+import gemma14 from '../../public/photos/client/gemma/gem10.jpg';
+import gemma15 from '../../public/photos/client/gemma/gem11.jpg';
+import gemma16 from '../../public/photos/client/gemma/gem12.jpg';
+import gemma17 from '../../public/photos/client/gemma/gem13.jpg';
+import gemma18 from '../../public/photos/client/gemma/gem14.jpg';
+import gemma19 from '../../public/photos/client/gemma/gem15.jpg';
+import gemma20 from '../../public/photos/client/gemma/gem16.jpg';
+import gemma21 from '../../public/photos/client/gemma/gem17.jpg';
+import gemma22 from '../../public/photos/client/gemma/gem18.jpg';
+import gemma23 from '../../public/photos/client/gemma/gem19.jpg';
+import gemma24 from '../../public/photos/client/gemma/gem2.jpg';
+import gemma25 from '../../public/photos/client/gemma/gem20.jpg';
+import gemma1 from '../../public/photos/client/gemma/gem21.jpg';
+import gemma2 from '../../public/photos/client/gemma/gem22.jpg';
+import gemma3 from '../../public/photos/client/gemma/gem23.jpg';
+import gemma4 from '../../public/photos/client/gemma/gem24.jpg';
+import gemma5 from '../../public/photos/client/gemma/gem25.jpg';
+import gemma6 from '../../public/photos/client/gemma/gem3.jpg';
+import gemma7 from '../../public/photos/client/gemma/gem4.jpg';
+import gemma8 from '../../public/photos/client/gemma/gem5.jpg';
+import gemma9 from '../../public/photos/client/gemma/gem6.jpg';
+import gemma10 from '../../public/photos/client/gemma/gem8.jpg';
+import gemma11 from '../../public/photos/client/gemma/gem9.jpg';
+import luna1 from '../../public/photos/client/luna/Luna.jpg';
+import luna2 from '../../public/photos/client/luna/Luna10.jpg';
+import luna3 from '../../public/photos/client/luna/Luna11.jpg';
+import luna4 from '../../public/photos/client/luna/Luna12.jpg';
+import luna5 from '../../public/photos/client/luna/Luna13.jpg';
+import luna6 from '../../public/photos/client/luna/Luna2.jpg';
+import luna7 from '../../public/photos/client/luna/Luna3.jpg';
+import luna8 from '../../public/photos/client/luna/Luna4.jpg';
+import luna9 from '../../public/photos/client/luna/Luna5.jpg';
+import luna10 from '../../public/photos/client/luna/Luna6.jpg';
+import luna11 from '../../public/photos/client/luna/Luna7.jpg';
+import luna12 from '../../public/photos/client/luna/Luna8.jpg';
+import luna13 from '../../public/photos/client/luna/Luna9.jpg';
+import sprout1 from '../../public/photos/client/sprout/sprout.jpg';
+import sprout2 from '../../public/photos/client/sprout/sprout10.jpg';
+import sprout3 from '../../public/photos/client/sprout/sprout11.jpg';
+import sprout4 from '../../public/photos/client/sprout/sprout12.jpg';
+import sprout5 from '../../public/photos/client/sprout/sprout13.jpg';
+import sprout6 from '../../public/photos/client/sprout/sprout14.jpg';
+import sprout7 from '../../public/photos/client/sprout/sprout15.jpg';
+import sprout8 from '../../public/photos/client/sprout/sprout16.jpg';
+import sprout9 from '../../public/photos/client/sprout/sprout17.jpg';
+import sprout10 from '../../public/photos/client/sprout/sprout2.jpg';
+import sprout11 from '../../public/photos/client/sprout/sprout3.jpg';
+import sprout12 from '../../public/photos/client/sprout/sprout4.jpg';
+import sprout13 from '../../public/photos/client/sprout/sprout5.jpg';
+import sprout14 from '../../public/photos/client/sprout/sprout6.jpg';
+import sprout15 from '../../public/photos/client/sprout/sprout7.jpg';
+import sprout16 from '../../public/photos/client/sprout/sprout8.jpg';
+import sprout17 from '../../public/photos/client/sprout/sprout9.jpg';
+import portrait1 from '../../public/photos/portrait/portrait.jpg';
+import portrait2 from '../../public/photos/portrait/portrait10.jpg';
+import portrait3 from '../../public/photos/portrait/portrait11.jpg';
+import portrait4 from '../../public/photos/portrait/portrait2.jpg';
+import portrait5 from '../../public/photos/portrait/portrait3.jpg';
+import portrait6 from '../../public/photos/portrait/portrait4.jpg';
+import portrait7 from '../../public/photos/portrait/portrait5.jpg';
+import portrait8 from '../../public/photos/portrait/portrait6.jpg';
+import portrait9 from '../../public/photos/portrait/portrait7.jpg';
+import portrait10 from '../../public/photos/portrait/portrait8.jpg';
+import portrait11 from '../../public/photos/portrait/portrait9.jpg';
+import asia1 from '../../public/photos/travel/asia/asia.jpg';
+import asia2 from '../../public/photos/travel/asia/asia10.jpg';
+import asia3 from '../../public/photos/travel/asia/asia11.jpg';
+import asia4 from '../../public/photos/travel/asia/asia12.jpg';
+import asia5 from '../../public/photos/travel/asia/asia13.jpg';
+import asia6 from '../../public/photos/travel/asia/asia14.jpg';
+import asia7 from '../../public/photos/travel/asia/asia15.jpg';
+import asia8 from '../../public/photos/travel/asia/asia16.jpg';
+import asia9 from '../../public/photos/travel/asia/asia18.jpg';
+import asia10 from '../../public/photos/travel/asia/asia19.jpg';
+import asia11 from '../../public/photos/travel/asia/asia2.jpg';
+import asia12 from '../../public/photos/travel/asia/asia20.jpg';
+import asia13 from '../../public/photos/travel/asia/asia21.jpg';
+import asia14 from '../../public/photos/travel/asia/asia3.jpg';
+import asia15 from '../../public/photos/travel/asia/asia4.jpg';
+import asia16 from '../../public/photos/travel/asia/asia5.jpg';
+import asia17 from '../../public/photos/travel/asia/asia6.jpg';
+import asia18 from '../../public/photos/travel/asia/asia7.jpg';
+import asia19 from '../../public/photos/travel/asia/asia8.jpg';
+import asia20 from '../../public/photos/travel/asia/asia9.jpg';
+import canada1 from '../../public/photos/travel/canada/Athabasca+falls+complete.jpg';
+import canada2 from '../../public/photos/travel/canada/Athabasca+falls+sunswet+3.jpg';
+import canada3 from '../../public/photos/travel/canada/Goat+Parker+Ridge.jpg';
+import canada4 from '../../public/photos/travel/canada/Mandy+panorama+parker+ridge.jpg';
+import canada5 from '../../public/photos/travel/canada/PF-new-32.jpg';
+import canada6 from '../../public/photos/travel/canada/PF-new-4.jpg';
+import canada7 from '../../public/photos/travel/canada/Peyto+Lake+5.jpg';
+import canada8 from '../../public/photos/travel/canada/Peyto+Lake.jpg';
+import canada9 from '../../public/photos/travel/canada/Pyramid+Mountain.jpg';
+import canada10 from '../../public/photos/travel/canada/alex+6.jpg';
+import canada11 from '../../public/photos/travel/canada/avalanche+jpeg.jpg';
+import canada12 from '../../public/photos/travel/canada/canada.jpg';
+import canada13 from '../../public/photos/travel/canada/canada2.jpg';
+import canada14 from '../../public/photos/travel/canada/canada3.jpg';
+import canada15 from '../../public/photos/travel/canada/canada4.jpg';
+import canada16 from '../../public/photos/travel/canada/reflection+pyramid+1.jpg';
+import canada17 from '../../public/photos/travel/canada/snow+2.jpg';
+import canada18 from '../../public/photos/travel/canada/snow+4.jpg';
+import canada19 from '../../public/photos/travel/canada/snow+7.jpg';
+import europe1 from '../../public/photos/travel/europe/europe.jpg';
+import europe2 from '../../public/photos/travel/europe/europe1.jpg';
+import europe3 from '../../public/photos/travel/europe/europe10.jpg';
+import europe4 from '../../public/photos/travel/europe/europe11.jpg';
+import europe5 from '../../public/photos/travel/europe/europe12.jpg';
+import europe6 from '../../public/photos/travel/europe/europe13.jpg';
+import europe7 from '../../public/photos/travel/europe/europe14.jpg';
+import europe8 from '../../public/photos/travel/europe/europe15.jpg';
+import europe9 from '../../public/photos/travel/europe/europe16.jpg';
+import europe10 from '../../public/photos/travel/europe/europe17.jpg';
+import europe11 from '../../public/photos/travel/europe/europe18.jpg';
+import europe12 from '../../public/photos/travel/europe/europe19.jpg';
+import europe13 from '../../public/photos/travel/europe/europe2.jpg';
+import europe14 from '../../public/photos/travel/europe/europe20.jpg';
+import europe15 from '../../public/photos/travel/europe/europe21.jpg';
+import europe16 from '../../public/photos/travel/europe/europe22.jpg';
+import europe17 from '../../public/photos/travel/europe/europe23.jpg';
+import europe18 from '../../public/photos/travel/europe/europe24.jpg';
+import europe19 from '../../public/photos/travel/europe/europe25.jpg';
+import europe20 from '../../public/photos/travel/europe/europe26.jpg';
+import europe21 from '../../public/photos/travel/europe/europe27.jpg';
+import europe22 from '../../public/photos/travel/europe/europe28.jpg';
+import europe23 from '../../public/photos/travel/europe/europe3.jpg';
+import europe24 from '../../public/photos/travel/europe/europe4.jpg';
+import europe25 from '../../public/photos/travel/europe/europe5.jpg';
+import europe26 from '../../public/photos/travel/europe/europe6.jpg';
+import europe27 from '../../public/photos/travel/europe/europe7.jpg';
+import europe28 from '../../public/photos/travel/europe/europe8.jpg';
+import europe29 from '../../public/photos/travel/europe/europe9.jpg';
+import oceania1 from '../../public/photos/travel/oceania/oceania.jpg';
+import oceania2 from '../../public/photos/travel/oceania/oceania10.jpg';
+import oceania3 from '../../public/photos/travel/oceania/oceania11.jpg';
+import oceania4 from '../../public/photos/travel/oceania/oceania12.jpg';
+import oceania5 from '../../public/photos/travel/oceania/oceania13.jpg';
+import oceania6 from '../../public/photos/travel/oceania/oceania14.jpg';
+import oceania7 from '../../public/photos/travel/oceania/oceania15.jpg';
+import oceania8 from '../../public/photos/travel/oceania/oceania16.jpg';
+import oceania9 from '../../public/photos/travel/oceania/oceania17.jpg';
+import oceania10 from '../../public/photos/travel/oceania/oceania18.jpg';
+import oceania11 from '../../public/photos/travel/oceania/oceania19.jpg';
+import oceania12 from '../../public/photos/travel/oceania/oceania2.jpg';
+import oceania13 from '../../public/photos/travel/oceania/oceania20.jpg';
+import oceania14 from '../../public/photos/travel/oceania/oceania21.jpg';
+import oceania15 from '../../public/photos/travel/oceania/oceania22.jpg';
+import oceania16 from '../../public/photos/travel/oceania/oceania23.jpg';
+import oceania17 from '../../public/photos/travel/oceania/oceania24.jpg';
+import oceania18 from '../../public/photos/travel/oceania/oceania25.jpg';
+import oceania19 from '../../public/photos/travel/oceania/oceania26.jpg';
+import oceania20 from '../../public/photos/travel/oceania/oceania27.jpg';
+import oceania21 from '../../public/photos/travel/oceania/oceania28.jpg';
+import oceania22 from '../../public/photos/travel/oceania/oceania3.jpg';
+import oceania23 from '../../public/photos/travel/oceania/oceania4.jpg';
+import oceania24 from '../../public/photos/travel/oceania/oceania5.jpg';
+import oceania25 from '../../public/photos/travel/oceania/oceania6.jpg';
+import oceania26 from '../../public/photos/travel/oceania/oceania7.jpg';
+import oceania27 from '../../public/photos/travel/oceania/oceania8.jpg';
+import oceania28 from '../../public/photos/travel/oceania/oceania9.jpg';
+
+export type Image = { src: StaticImageData; alt: string; height: number; width: number };
 export type Album = { images: Image[]; header: string; subheader?: string; quote?: string; coverArt: Image };
 export type Collection = { coverArt: Image; header: string; albums: Record<string, Album> };
 
 const PORTRAIT_ALBUM: Album = {
     header: 'Portrait',
     coverArt: {
-        src: '/cover-art/portrait.jpg',
+        src: coverPortrait,
         width: 944,
         height: 998,
         alt: '',
     },
     images: [
         {
-            src: '/photos/portrait/portrait.jpg',
+            src: portrait1,
             width: 1600,
             height: 998,
             alt: '',
         },
         {
-            src: '/photos/portrait/portrait10.jpg',
+            src: portrait2,
             width: 1600,
             height: 939,
             alt: '',
         },
         {
-            src: '/photos/portrait/portrait11.jpg',
+            src: portrait3,
             width: 1600,
             height: 1076,
             alt: '',
         },
         {
-            src: '/photos/portrait/portrait2.jpg',
+            src: portrait4,
             width: 1380,
             height: 1200,
             alt: '',
         },
         {
-            src: '/photos/portrait/portrait3.jpg',
+            src: portrait5,
             width: 1334,
             height: 1200,
             alt: '',
         },
         {
-            src: '/photos/portrait/portrait4.jpg',
+            src: portrait6,
             width: 1200,
             height: 1276,
             alt: '',
         },
         {
-            src: '/photos/portrait/portrait5.jpg',
+            src: portrait7,
             width: 1200,
             height: 1497,
             alt: '',
         },
         {
-            src: '/photos/portrait/portrait6.jpg',
+            src: portrait8,
             width: 1200,
             height: 1500,
             alt: '',
         },
         {
-            src: '/photos/portrait/portrait7.jpg',
+            src: portrait9,
             width: 1200,
             height: 1497,
             alt: '',
         },
         {
-            src: '/photos/portrait/portrait8.jpg',
+            src: portrait10,
             width: 1200,
             height: 1517,
             alt: '',
         },
         {
-            src: '/photos/portrait/portrait9.jpg',
+            src: portrait11,
             width: 1600,
             height: 1137,
             alt: '',
@@ -83,134 +314,134 @@ const PORTRAIT_ALBUM: Album = {
 const ANIMAL_ALBUM: Album = {
     header: 'Animal',
     coverArt: {
-        src: '/cover-art/animal.jpg',
+        src: coverAnimal,
         width: 948,
         height: 1075,
         alt: '',
     },
     images: [
         {
-            src: '/photos/animals/bird+hand-2.jpg',
+            src: animals1,
             width: 1308,
             height: 1200,
             alt: '',
         },
         {
-            src: '/photos/animals/brad+cliffs+3.jpg',
+            src: animals2,
             width: 1200,
             height: 1315,
             alt: '',
         },
         {
-            src: '/photos/animals/brown+snake-2.jpg',
+            src: animals3,
             width: 1200,
             height: 1500,
             alt: '',
         },
         {
-            src: '/photos/animals/crab+1.jpg',
+            src: animals4,
             width: 1200,
             height: 1504,
             alt: '',
         },
         {
-            src: '/photos/animals/dog+2.jpg',
+            src: animals5,
             width: 1200,
             height: 1505,
             alt: '',
         },
         {
-            src: '/photos/animals/dog+photo+2.jpg',
+            src: animals6,
             width: 1067,
             height: 1600,
             alt: '',
         },
         {
-            src: '/photos/animals/echidna+tassie.jpg',
+            src: animals7,
             width: 1600,
             height: 1067,
             alt: '',
         },
         {
-            src: '/photos/animals/harley+17.jpg',
+            src: animals8,
             width: 1077,
             height: 1600,
             alt: '',
         },
         {
-            src: '/photos/animals/harley+2.jpg',
+            src: animals9,
             width: 1200,
             height: 1504,
             alt: '',
         },
         {
-            src: '/photos/animals/harley+3.jpg',
+            src: animals10,
             width: 1600,
             height: 987,
             alt: '',
         },
         {
-            src: '/photos/animals/harley+5.jpg',
+            src: animals11,
             width: 1600,
             height: 1151,
             alt: '',
         },
         {
-            src: '/photos/animals/harley+6.jpg',
+            src: animals12,
             width: 1600,
             height: 897,
             alt: '',
         },
         {
-            src: '/photos/animals/harley+9.jpg',
+            src: animals13,
             width: 1486,
             height: 1200,
             alt: '',
         },
         {
-            src: '/photos/animals/kangaroo.jpg',
+            src: animals14,
             width: 1121,
             height: 1600,
             alt: '',
         },
         {
-            src: '/photos/animals/kookaburah+2.jpg',
+            src: animals15,
             width: 1200,
             height: 1504,
             alt: '',
         },
         {
-            src: '/photos/animals/mbai+pay+7_1.jpg',
+            src: animals16,
             width: 1600,
             height: 1075,
             alt: '',
         },
         {
-            src: '/photos/animals/nam+30.jpg',
+            src: animals17,
             width: 1200,
             height: 1491,
             alt: '',
         },
         {
-            src: '/photos/animals/poppy.jpg',
+            src: animals18,
             width: 1600,
             height: 1130,
             alt: '',
         },
         {
-            src: '/photos/animals/sheep+snowdon+2.jpg',
+            src: animals19,
             width: 1399,
             height: 1200,
             alt: '',
         },
         {
-            src: '/photos/animals/sunset+pen+y+fan+6.jpg',
+            src: animals20,
             width: 1200,
             height: 1500,
             alt: '',
         },
         {
-            src: '/photos/animals/wombat.jpg',
+            src: animals21,
             width: 1500,
             height: 1200,
             alt: '',
@@ -228,158 +459,158 @@ const GEMMA_ALBUM: Album = {
         full potential. Whether its hanging from a trapeze or hand-standing tall, this place is teeming with
         strength, grace and precision. Gemma is a combination of all 3.`,
     coverArt: {
-        src: '/cover-art/gemma.jpg',
+        src: coverGemma,
         width: 900,
         height: 1061,
         alt: '',
     },
     images: [
         {
-            src: '/photos/client/gemma/gem.jpg',
+            src: gemma1,
             width: 1123,
             height: 1600,
             alt: '',
         },
         {
-            src: '/photos/client/gemma/gem1.jpg',
+            src: gemma2,
             width: 1048,
             height: 1600,
             alt: '',
         },
         {
-            src: '/photos/client/gemma/gem10.jpg',
+            src: gemma3,
             width: 983,
             height: 1600,
             alt: '',
         },
         {
-            src: '/photos/client/gemma/gem11.jpg',
+            src: gemma4,
             width: 1067,
             height: 1600,
             alt: '',
         },
         {
-            src: '/photos/client/gemma/gem12.jpg',
+            src: gemma5,
             width: 1200,
             height: 1446,
             alt: '',
         },
         {
-            src: '/photos/client/gemma/gem13.jpg',
+            src: gemma6,
             width: 1200,
             height: 1435,
             alt: '',
         },
         {
-            src: '/photos/client/gemma/gem14.jpg',
+            src: gemma7,
             width: 1132,
             height: 1600,
             alt: '',
         },
         {
-            src: '/photos/client/gemma/gem15.jpg',
+            src: gemma8,
             width: 1129,
             height: 1600,
             alt: '',
         },
         {
-            src: '/photos/client/gemma/gem16.jpg',
+            src: gemma9,
             width: 973,
             height: 1600,
             alt: '',
         },
         {
-            src: '/photos/client/gemma/gem17.jpg',
+            src: gemma10,
             width: 1200,
             height: 1415,
             alt: '',
         },
         {
-            src: '/photos/client/gemma/gem18.jpg',
+            src: gemma11,
             width: 1160,
             height: 1600,
             alt: '',
         },
         {
-            src: '/photos/client/gemma/gem19.jpg',
+            src: gemma12,
             width: 1050,
             height: 1600,
             alt: '',
         },
         {
-            src: '/photos/client/gemma/gem2.jpg',
+            src: gemma13,
             width: 1063,
             height: 1600,
             alt: '',
         },
         {
-            src: '/photos/client/gemma/gem20.jpg',
+            src: gemma14,
             width: 1025,
             height: 1600,
             alt: '',
         },
         {
-            src: '/photos/client/gemma/gem21.jpg',
+            src: gemma15,
             width: 943,
             height: 1600,
             alt: '',
         },
         {
-            src: '/photos/client/gemma/gem22.jpg',
+            src: gemma16,
             width: 1067,
             height: 1600,
             alt: '',
         },
         {
-            src: '/photos/client/gemma/gem23.jpg',
+            src: gemma17,
             width: 866,
             height: 1600,
             alt: '',
         },
         {
-            src: '/photos/client/gemma/gem24.jpg',
+            src: gemma18,
             width: 1054,
             height: 1600,
             alt: '',
         },
         {
-            src: '/photos/client/gemma/gem25.jpg',
+            src: gemma19,
             width: 996,
             height: 1600,
             alt: '',
         },
         {
-            src: '/photos/client/gemma/gem3.jpg',
+            src: gemma20,
             width: 1030,
             height: 1600,
             alt: '',
         },
         {
-            src: '/photos/client/gemma/gem4.jpg',
+            src: gemma21,
             width: 1475,
             height: 1200,
             alt: '',
         },
         {
-            src: '/photos/client/gemma/gem5.jpg',
+            src: gemma22,
             width: 1200,
             height: 1435,
             alt: '',
         },
         {
-            src: '/photos/client/gemma/gem6.jpg',
+            src: gemma23,
             width: 1200,
             height: 1580,
             alt: '',
         },
         {
-            src: '/photos/client/gemma/gem8.jpg',
+            src: gemma24,
             width: 1160,
             height: 1600,
             alt: '',
         },
         {
-            src: '/photos/client/gemma/gem9.jpg',
+            src: gemma25,
             width: 1070,
             height: 1600,
             alt: '',
@@ -395,86 +626,86 @@ const CAT_MOTORS_ALBUM: Album = {
     bike maintenance alone.`,
     quote: 'Created by travellers, for travellers',
     coverArt: {
-        src: '/cover-art/cat-motors.jpg',
+        src: coverCatMotors,
         width: 800,
         height: 929,
         alt: '',
     },
     images: [
         {
-            src: '/photos/client/cat-motors/cat.jpg',
+            src: catMotors1,
             width: 1600,
             height: 1067,
             alt: '',
         },
         {
-            src: '/photos/client/cat-motors/cat10.jpg',
+            src: catMotors2,
             width: 1153,
             height: 1600,
             alt: '',
         },
         {
-            src: '/photos/client/cat-motors/cat11.jpg',
+            src: catMotors3,
             width: 1600,
             height: 1055,
             alt: '',
         },
         {
-            src: '/photos/client/cat-motors/cat12.jpg',
+            src: catMotors4,
             width: 1600,
             height: 1067,
             alt: '',
         },
         {
-            src: '/photos/client/cat-motors/cat13.jpg',
+            src: catMotors5,
             width: 1067,
             height: 1600,
             alt: '',
         },
         {
-            src: '/photos/client/cat-motors/cat2.jpg',
+            src: catMotors6,
             width: 1600,
             height: 1067,
             alt: '',
         },
         {
-            src: '/photos/client/cat-motors/cat3.jpg',
+            src: catMotors7,
             width: 1600,
             height: 1067,
             alt: '',
         },
         {
-            src: '/photos/client/cat-motors/cat4.jpg',
+            src: catMotors8,
             width: 1279,
             height: 1600,
             alt: '',
         },
         {
-            src: '/photos/client/cat-motors/cat5.jpg',
+            src: catMotors9,
             width: 1600,
             height: 1067,
             alt: '',
         },
         {
-            src: '/photos/client/cat-motors/cat6.jpg',
+            src: catMotors10,
             width: 1600,
             height: 1067,
             alt: '',
         },
         {
-            src: '/photos/client/cat-motors/cat7.jpg',
+            src: catMotors11,
             width: 1600,
             height: 1203,
             alt: '',
         },
         {
-            src: '/photos/client/cat-motors/cat8.jpg',
+            src: catMotors12,
             width: 1600,
             height: 1153,
             alt: '',
         },
         {
-            src: '/photos/client/cat-motors/cat9.jpg',
+            src: catMotors13,
             width: 1600,
             height: 1067,
             alt: '',
@@ -490,122 +721,122 @@ const CLIMATE_GALLERY: Album = {
     the march, lead by the youth organisation. With the highest %percentage of attendees Per Capita in
     Canada, Nelson has set its sights on a sustainable future.`,
     coverArt: {
-        src: '/cover-art/climate.jpg',
+        src: coverClimate,
         width: 900,
         height: 990,
         alt: '',
     },
     images: [
         {
-            src: '/photos/client/climate/climate.jpg',
+            src: climate1,
             width: 1600,
             height: 1067,
             alt: '',
         },
         {
-            src: '/photos/client/climate/climate10.jpg',
+            src: climate2,
             width: 1600,
             height: 1067,
             alt: '',
         },
         {
-            src: '/photos/client/climate/climate11.jpg',
+            src: climate3,
             width: 1600,
             height: 1067,
             alt: '',
         },
         {
-            src: '/photos/client/climate/climate12.jpg',
+            src: climate4,
             width: 1600,
             height: 1067,
             alt: '',
         },
         {
-            src: '/photos/client/climate/climate13.jpg',
+            src: climate5,
             width: 1600,
             height: 1067,
             alt: '',
         },
         {
-            src: '/photos/client/climate/climate14.jpg',
+            src: climate6,
             width: 1600,
             height: 1067,
             alt: '',
         },
         {
-            src: '/photos/client/climate/climate15.jpg',
+            src: climate7,
             width: 1600,
             height: 1067,
             alt: '',
         },
         {
-            src: '/photos/client/climate/climate16.jpg',
+            src: climate8,
             width: 1600,
             height: 1067,
             alt: '',
         },
         {
-            src: '/photos/client/climate/climate17.jpg',
+            src: climate9,
             width: 1600,
             height: 1067,
             alt: '',
         },
         {
-            src: '/photos/client/climate/climate18.jpg',
+            src: climate10,
             width: 1600,
             height: 1067,
             alt: '',
         },
         {
-            src: '/photos/client/climate/climate19.jpg',
+            src: climate11,
             width: 1600,
             height: 1067,
             alt: '',
         },
         {
-            src: '/photos/client/climate/climate2.jpg',
+            src: climate12,
             width: 1280,
             height: 1600,
             alt: '',
         },
         {
-            src: '/photos/client/climate/climate3.jpg',
+            src: climate13,
             width: 1600,
             height: 1067,
             alt: '',
         },
         {
-            src: '/photos/client/climate/climate4.jpg',
+            src: climate14,
             width: 1600,
             height: 1067,
             alt: '',
         },
         {
-            src: '/photos/client/climate/climate5.jpg',
+            src: climate15,
             width: 1600,
             height: 1067,
             alt: '',
         },
         {
-            src: '/photos/client/climate/climate6.jpg',
+            src: climate16,
             width: 1600,
             height: 1067,
             alt: '',
         },
         {
-            src: '/photos/client/climate/climate7.jpg',
+            src: climate17,
             width: 1600,
             height: 1067,
             alt: '',
         },
         {
-            src: '/photos/client/climate/climate8.jpg',
+            src: climate18,
             width: 1600,
             height: 1067,
             alt: '',
         },
         {
-            src: '/photos/client/climate/climate9.jpg',
+            src: climate19,
             width: 1600,
             height: 1067,
             alt: '',
@@ -621,86 +852,86 @@ love of an independent artist. These scrunchies and headbands are made with 100%
 sourced from within Canada as much as possible. They are a perfect gift for anyone, and great to hold
 your hair in place while you do your morning sun salutations.`,
     coverArt: {
-        src: '/cover-art/luna.jpg',
+        src: coverLuna,
         width: 900,
         height: 1125,
         alt: '',
     },
     images: [
         {
-            src: '/photos/client/luna/Luna.jpg',
+            src: luna1,
             width: 1600,
             height: 1067,
             alt: '',
         },
         {
-            src: '/photos/client/luna/Luna10.jpg',
+            src: luna2,
             width: 1280,
             height: 1600,
             alt: '',
         },
         {
-            src: '/photos/client/luna/Luna11.jpg',
+            src: luna3,
             width: 1280,
             height: 1600,
             alt: '',
         },
         {
-            src: '/photos/client/luna/Luna12.jpg',
+            src: luna4,
             width: 1239,
             height: 1600,
             alt: '',
         },
         {
-            src: '/photos/client/luna/Luna13.jpg',
+            src: luna5,
             width: 1600,
             height: 1067,
             alt: '',
         },
         {
-            src: '/photos/client/luna/Luna2.jpg',
+            src: luna6,
             width: 1280,
             height: 1600,
             alt: '',
         },
         {
-            src: '/photos/client/luna/Luna3.jpg',
+            src: luna7,
             width: 1600,
             height: 1067,
             alt: '',
         },
         {
-            src: '/photos/client/luna/Luna4.jpg',
+            src: luna8,
             width: 1280,
             height: 1600,
             alt: '',
         },
         {
-            src: '/photos/client/luna/Luna5.jpg',
+            src: luna9,
             width: 1600,
             height: 1067,
             alt: '',
         },
         {
-            src: '/photos/client/luna/Luna6.jpg',
+            src: luna10,
             width: 1600,
             height: 1099,
             alt: '',
         },
         {
-            src: '/photos/client/luna/Luna7.jpg',
+            src: luna11,
             width: 1600,
             height: 932,
             alt: '',
         },
         {
-            src: '/photos/client/luna/Luna8.jpg',
+            src: luna12,
             width: 1280,
             height: 1600,
             alt: '',
         },
         {
-            src: '/photos/client/luna/Luna9.jpg',
+            src: luna13,
             width: 1280,
             height: 1600,
             alt: '',
@@ -717,110 +948,110 @@ fresh images to showcase the mouth-watering bowls and wraps down at Sprout. If y
 Wing Wednesday in your calendar, join the community for a bowl of cauliflower wings and a vegan beer or
 three!`,
     coverArt: {
-        src: '/cover-art/sprout.jpg',
+        src: coverSprout,
         width: 800,
         height: 1000,
         alt: '',
     },
     images: [
         {
-            src: '/photos/client/sprout/sprout.jpg',
+            src: sprout1,
             width: 1600,
             height: 1067,
             alt: '',
         },
         {
-            src: '/photos/client/sprout/sprout10.jpg',
+            src: sprout2,
             width: 1600,
             height: 1067,
             alt: '',
         },
         {
-            src: '/photos/client/sprout/sprout11.jpg',
+            src: sprout3,
             width: 1600,
             height: 1067,
             alt: '',
         },
         {
-            src: '/photos/client/sprout/sprout12.jpg',
+            src: sprout4,
             width: 1280,
             height: 1600,
             alt: '',
         },
         {
-            src: '/photos/client/sprout/sprout13.jpg',
+            src: sprout5,
             width: 1600,
             height: 1067,
             alt: '',
         },
         {
-            src: '/photos/client/sprout/sprout14.jpg',
+            src: sprout6,
             width: 1600,
             height: 1067,
             alt: '',
         },
         {
-            src: '/photos/client/sprout/sprout15.jpg',
+            src: sprout7,
             width: 1600,
             height: 1067,
             alt: '',
         },
         {
-            src: '/photos/client/sprout/sprout16.jpg',
+            src: sprout8,
             width: 1600,
             height: 1067,
             alt: '',
         },
         {
-            src: '/photos/client/sprout/sprout17.jpg',
+            src: sprout9,
             width: 1600,
             height: 1067,
             alt: '',
         },
         {
-            src: '/photos/client/sprout/sprout2.jpg',
+            src: sprout10,
             width: 1600,
             height: 1067,
             alt: '',
         },
         {
-            src: '/photos/client/sprout/sprout3.jpg',
+            src: sprout11,
             width: 1600,
             height: 1067,
             alt: '',
         },
         {
-            src: '/photos/client/sprout/sprout4.jpg',
+            src: sprout12,
             width: 1600,
             height: 1046,
             alt: '',
         },
         {
-            src: '/photos/client/sprout/sprout5.jpg',
+            src: sprout13,
             width: 1600,
             height: 1067,
             alt: '',
         },
         {
-            src: '/photos/client/sprout/sprout6.jpg',
+            src: sprout14,
             width: 1600,
             height: 1067,
             alt: '',
         },
         {
-            src: '/photos/client/sprout/sprout7.jpg',
+            src: sprout15,
             width: 1600,
             height: 1067,
             alt: '',
         },
         {
-            src: '/photos/client/sprout/sprout8.jpg',
+            src: sprout16,
             width: 1600,
             height: 1067,
             alt: '',
         },
         {
-            src: '/photos/client/sprout/sprout9.jpg',
+            src: sprout17,
             width: 1600,
             height: 785,
             alt: '',
@@ -833,128 +1064,128 @@ three!`,
 const ASIA_ALBUM: Album = {
     header: 'Asia',
     coverArt: {
-        src: '/cover-art/asia.jpg',
+        src: coverAsia,
         width: 897,
         height: 1085,
         alt: '',
     },
     images: [
         {
-            src: '/photos/travel/asia/asia.jpg',
+            src: asia1,
             width: 1600,
             height: 1198,
             alt: '',
         },
         {
-            src: '/photos/travel/asia/asia10.jpg',
+            src: asia2,
             width: 1200,
             height: 1504,
             alt: '',
         },
         {
-            src: '/photos/travel/asia/asia11.jpg',
+            src: asia3,
             width: 1600,
             height: 991,
             alt: '',
         },
         {
-            src: '/photos/travel/asia/asia12.jpg',
+            src: asia4,
             width: 1600,
             height: 1014,
             alt: '',
         },
         {
-            src: '/photos/travel/asia/asia13.jpg',
+            src: asia5,
             width: 1600,
             height: 1067,
             alt: '',
         },
         {
-            src: '/photos/travel/asia/asia14.jpg',
+            src: asia6,
             width: 1600,
             height: 983,
             alt: '',
         },
         {
-            src: '/photos/travel/asia/asia15.jpg',
+            src: asia7,
             width: 1200,
             height: 1501,
             alt: '',
         },
         {
-            src: '/photos/travel/asia/asia16.jpg',
+            src: asia8,
             width: 1600,
             height: 1067,
             alt: '',
         },
         {
-            src: '/photos/travel/asia/asia18.jpg',
+            src: asia9,
             width: 1600,
             height: 1067,
             alt: '',
         },
         {
-            src: '/photos/travel/asia/asia19.jpg',
+            src: asia10,
             width: 1600,
             height: 1198,
             alt: '',
         },
         {
-            src: '/photos/travel/asia/asia2.jpg',
+            src: asia11,
             width: 1600,
             height: 1033,
             alt: '',
         },
         {
-            src: '/photos/travel/asia/asia20.jpg',
+            src: asia12,
             width: 1600,
             height: 1009,
             alt: '',
         },
         {
-            src: '/photos/travel/asia/asia21.jpg',
+            src: asia13,
             width: 1600,
             height: 1067,
             alt: '',
         },
         {
-            src: '/photos/travel/asia/asia3.jpg',
+            src: asia14,
             width: 1600,
             height: 1067,
             alt: '',
         },
         {
-            src: '/photos/travel/asia/asia4.jpg',
+            src: asia15,
             width: 1600,
             height: 1067,
             alt: '',
         },
         {
-            src: '/photos/travel/asia/asia5.jpg',
+            src: asia16,
             width: 1600,
             height: 1198,
             alt: '',
         },
         {
-            src: '/photos/travel/asia/asia6.jpg',
+            src: asia17,
             width: 1600,
             height: 1087,
             alt: '',
         },
         {
-            src: '/photos/travel/asia/asia7.jpg',
+            src: asia18,
             width: 1600,
             height: 1067,
             alt: '',
         },
         {
-            src: '/photos/travel/asia/asia8.jpg',
+            src: asia19,
             width: 1600,
             height: 1016,
             alt: '',
         },
         {
-            src: '/photos/travel/asia/asia9.jpg',
+            src: asia20,
             width: 1200,
             height: 1505,
             alt: '',
@@ -965,122 +1196,122 @@ const ASIA_ALBUM: Album = {
 const CANADA_ALBUM: Album = {
     header: 'Canada',
     coverArt: {
-        src: '/cover-art/canada.jpg',
+        src: coverCanada,
         width: 1000,
         height: 1250,
         alt: '',
     },
     images: [
         {
-            src: '/photos/travel/canada/Athabasca+falls+complete.jpg',
+            src: canada1,
             width: 1280,
             height: 1600,
             alt: '',
         },
         {
-            src: '/photos/travel/canada/Athabasca+falls+sunswet+3.jpg',
+            src: canada2,
             width: 1280,
             height: 1600,
             alt: '',
         },
         {
-            src: '/photos/travel/canada/Goat+Parker+Ridge.jpg',
+            src: canada3,
             width: 1280,
             height: 1600,
             alt: '',
         },
         {
-            src: '/photos/travel/canada/Mandy+panorama+parker+ridge.jpg',
+            src: canada4,
             width: 1600,
             height: 858,
             alt: '',
         },
         {
-            src: '/photos/travel/canada/PF-new-32.jpg',
+            src: canada5,
             width: 1600,
             height: 863,
             alt: '',
         },
         {
-            src: '/photos/travel/canada/PF-new-4.jpg',
+            src: canada6,
             width: 1600,
             height: 1067,
             alt: '',
         },
         {
-            src: '/photos/travel/canada/Peyto+Lake+5.jpg',
+            src: canada7,
             width: 1280,
             height: 1600,
             alt: '',
         },
         {
-            src: '/photos/travel/canada/Peyto+Lake.jpg',
+            src: canada8,
             width: 1600,
             height: 667,
             alt: '',
         },
         {
-            src: '/photos/travel/canada/Pyramid+Mountain.jpg',
+            src: canada9,
             width: 2500,
             height: 3125,
             alt: '',
         },
         {
-            src: '/photos/travel/canada/Untitled Export/canada.jpg',
+            src: canada10,
             width: 1600,
             height: 951,
             alt: '',
         },
         {
-            src: '/photos/travel/canada/Untitled Export/canada2.jpg',
+            src: canada11,
             width: 1600,
             height: 987,
             alt: '',
         },
         {
-            src: '/photos/travel/canada/Untitled Export/canada3.jpg',
+            src: canada12,
             width: 1600,
             height: 1067,
             alt: '',
         },
         {
-            src: '/photos/travel/canada/Untitled Export/canada4.jpg',
+            src: canada13,
             width: 1189,
             height: 1600,
             alt: '',
         },
         {
-            src: '/photos/travel/canada/alex+6.jpg',
+            src: canada14,
             width: 1600,
             height: 1067,
             alt: '',
         },
         {
-            src: '/photos/travel/canada/avalanche+jpeg.jpg',
+            src: canada15,
             width: 1280,
             height: 1600,
             alt: '',
         },
         {
-            src: '/photos/travel/canada/reflection+pyramid+1.jpg',
+            src: canada16,
             width: 1600,
             height: 1044,
             alt: '',
         },
         {
-            src: '/photos/travel/canada/snow+2.jpg',
+            src: canada17,
             width: 1600,
             height: 898,
             alt: '',
         },
         {
-            src: '/photos/travel/canada/snow+4.jpg',
+            src: canada18,
             width: 1600,
             height: 1197,
             alt: '',
         },
         {
-            src: '/photos/travel/canada/snow+7.jpg',
+            src: canada19,
             width: 1280,
             height: 1600,
             alt: '',
@@ -1091,176 +1322,176 @@ const CANADA_ALBUM: Album = {
 const OCEANIA_ALBUM: Album = {
     header: 'Oceania',
     coverArt: {
-        src: '/cover-art/oceania.jpg',
+        src: coverOceania,
         width: 900,
         height: 950,
         alt: '',
     },
     images: [
         {
-            src: '/photos/travel/oceania/oceania.jpg',
+            src: oceania1,
             width: 1600,
             height: 1064,
             alt: '',
         },
         {
-            src: '/photos/travel/oceania/oceania10.jpg',
+            src: oceania2,
             width: 1200,
             height: 1502,
             alt: '',
         },
         {
-            src: '/photos/travel/oceania/oceania11.jpg',
+            src: oceania3,
             width: 1600,
             height: 1067,
             alt: '',
         },
         {
-            src: '/photos/travel/oceania/oceania12.jpg',
+            src: oceania4,
             width: 1600,
             height: 1067,
             alt: '',
         },
         {
-            src: '/photos/travel/oceania/oceania13.jpg',
+            src: oceania5,
             width: 1600,
             height: 1067,
             alt: '',
         },
         {
-            src: '/photos/travel/oceania/oceania14.jpg',
+            src: oceania6,
             width: 1067,
             height: 1600,
             alt: '',
         },
         {
-            src: '/photos/travel/oceania/oceania15.jpg',
+            src: oceania7,
             width: 1600,
             height: 1052,
             alt: '',
         },
         {
-            src: '/photos/travel/oceania/oceania16.jpg',
+            src: oceania8,
             width: 1200,
             height: 1495,
             alt: '',
         },
         {
-            src: '/photos/travel/oceania/oceania17.jpg',
+            src: oceania9,
             width: 1600,
             height: 1067,
             alt: '',
         },
         {
-            src: '/photos/travel/oceania/oceania18.jpg',
+            src: oceania10,
             width: 1200,
             height: 1499,
             alt: '',
         },
         {
-            src: '/photos/travel/oceania/oceania19.jpg',
+            src: oceania11,
             width: 1200,
             height: 1500,
             alt: '',
         },
         {
-            src: '/photos/travel/oceania/oceania2.jpg',
+            src: oceania12,
             width: 1600,
             height: 1074,
             alt: '',
         },
         {
-            src: '/photos/travel/oceania/oceania20.jpg',
+            src: oceania13,
             width: 1200,
             height: 1500,
             alt: '',
         },
         {
-            src: '/photos/travel/oceania/oceania21.jpg',
+            src: oceania14,
             width: 1200,
             height: 1511,
             alt: '',
         },
         {
-            src: '/photos/travel/oceania/oceania22.jpg',
+            src: oceania15,
             width: 1600,
             height: 1195,
             alt: '',
         },
         {
-            src: '/photos/travel/oceania/oceania23.jpg',
+            src: oceania16,
             width: 1600,
             height: 1081,
             alt: '',
         },
         {
-            src: '/photos/travel/oceania/oceania24.jpg',
+            src: oceania17,
             width: 1051,
             height: 1600,
             alt: '',
         },
         {
-            src: '/photos/travel/oceania/oceania25.jpg',
+            src: oceania18,
             width: 1067,
             height: 1600,
             alt: '',
         },
         {
-            src: '/photos/travel/oceania/oceania26.jpg',
+            src: oceania19,
             width: 1600,
             height: 1067,
             alt: '',
         },
         {
-            src: '/photos/travel/oceania/oceania27.jpg',
+            src: oceania20,
             width: 1200,
             height: 1499,
             alt: '',
         },
         {
-            src: '/photos/travel/oceania/oceania28.jpg',
+            src: oceania21,
             width: 1600,
             height: 1145,
             alt: '',
         },
         {
-            src: '/photos/travel/oceania/oceania3.jpg',
+            src: oceania22,
             width: 1200,
             height: 1414,
             alt: '',
         },
         {
-            src: '/photos/travel/oceania/oceania4.jpg',
+            src: oceania23,
             width: 1600,
             height: 1067,
             alt: '',
         },
         {
-            src: '/photos/travel/oceania/oceania5.jpg',
+            src: oceania24,
             width: 1200,
             height: 1500,
             alt: '',
         },
         {
-            src: '/photos/travel/oceania/oceania6.jpg',
+            src: oceania25,
             width: 1600,
             height: 1185,
             alt: '',
         },
         {
-            src: '/photos/travel/oceania/oceania7.jpg',
+            src: oceania26,
             width: 1600,
             height: 1167,
             alt: '',
         },
         {
-            src: '/photos/travel/oceania/oceania8.jpg',
+            src: oceania27,
             width: 1600,
             height: 1067,
             alt: '',
         },
         {
-            src: '/photos/travel/oceania/oceania9.jpg',
+            src: oceania28,
             width: 1200,
             height: 1349,
             alt: '',
@@ -1271,182 +1502,182 @@ const OCEANIA_ALBUM: Album = {
 const EUROPE_ALBUM: Album = {
     header: 'Europe',
     coverArt: {
-        src: '/cover-art/europe.jpg',
+        src: coverEurope,
         width: 970,
         height: 1067,
         alt: '',
     },
     images: [
         {
-            src: '/photos/travel/europe/europe.jpg',
+            src: europe1,
             width: 1600,
             height: 1067,
             alt: '',
         },
         {
-            src: '/photos/travel/europe/europe1.jpg',
+            src: europe2,
             width: 1600,
             height: 1067,
             alt: '',
         },
         {
-            src: '/photos/travel/europe/europe10.jpg',
+            src: europe3,
             width: 1600,
             height: 1199,
             alt: '',
         },
         {
-            src: '/photos/travel/europe/europe11.jpg',
+            src: europe4,
             width: 1600,
             height: 1067,
             alt: '',
         },
         {
-            src: '/photos/travel/europe/europe12.jpg',
+            src: europe5,
             width: 1200,
             height: 1499,
             alt: '',
         },
         {
-            src: '/photos/travel/europe/europe13.jpg',
+            src: europe6,
             width: 1200,
             height: 1498,
             alt: '',
         },
         {
-            src: '/photos/travel/europe/europe14.jpg',
+            src: europe7,
             width: 1600,
             height: 1067,
             alt: '',
         },
         {
-            src: '/photos/travel/europe/europe15.jpg',
+            src: europe8,
             width: 1600,
             height: 958,
             alt: '',
         },
         {
-            src: '/photos/travel/europe/europe16.jpg',
+            src: europe9,
             width: 1600,
             height: 1067,
             alt: '',
         },
         {
-            src: '/photos/travel/europe/europe17.jpg',
+            src: europe10,
             width: 1287,
             height: 1200,
             alt: '',
         },
         {
-            src: '/photos/travel/europe/europe18.jpg',
+            src: europe11,
             width: 1200,
             height: 1496,
             alt: '',
         },
         {
-            src: '/photos/travel/europe/europe19.jpg',
+            src: europe12,
             width: 1067,
             height: 1600,
             alt: '',
         },
         {
-            src: '/photos/travel/europe/europe2.jpg',
+            src: europe13,
             width: 1200,
             height: 1414,
             alt: '',
         },
         {
-            src: '/photos/travel/europe/europe20.jpg',
+            src: europe14,
             width: 1200,
             height: 1505,
             alt: '',
         },
         {
-            src: '/photos/travel/europe/europe21.jpg',
+            src: europe15,
             width: 1600,
             height: 1067,
             alt: '',
         },
         {
-            src: '/photos/travel/europe/europe22.jpg',
+            src: europe16,
             width: 1600,
             height: 1067,
             alt: '',
         },
         {
-            src: '/photos/travel/europe/europe23.jpg',
+            src: europe17,
             width: 1600,
             height: 1067,
             alt: '',
         },
         {
-            src: '/photos/travel/europe/europe24.jpg',
+            src: europe18,
             width: 1600,
             height: 1067,
             alt: '',
         },
         {
-            src: '/photos/travel/europe/europe25.jpg',
+            src: europe19,
             width: 1067,
             height: 1600,
             alt: '',
         },
         {
-            src: '/photos/travel/europe/europe26.jpg',
+            src: europe20,
             width: 1600,
             height: 1052,
             alt: '',
         },
         {
-            src: '/photos/travel/europe/europe27.jpg',
+            src: europe21,
             width: 1200,
             height: 1502,
             alt: '',
         },
         {
-            src: '/photos/travel/europe/europe28.jpg',
+            src: europe22,
             width: 1200,
             height: 1480,
             alt: '',
         },
         {
-            src: '/photos/travel/europe/europe3.jpg',
+            src: europe23,
             width: 1600,
             height: 1153,
             alt: '',
         },
         {
-            src: '/photos/travel/europe/europe4.jpg',
+            src: europe24,
             width: 1600,
             height: 1067,
             alt: '',
         },
         {
-            src: '/photos/travel/europe/europe5.jpg',
+            src: europe25,
             width: 1600,
             height: 1065,
             alt: '',
         },
         {
-            src: '/photos/travel/europe/europe6.jpg',
+            src: europe26,
             width: 1481,
             height: 1200,
             alt: '',
         },
         {
-            src: '/photos/travel/europe/europe7.jpg',
+            src: europe27,
             width: 1600,
             height: 1067,
             alt: '',
         },
         {
-            src: '/photos/travel/europe/europe8.jpg',
+            src: europe28,
             width: 1600,
             height: 1067,
             alt: '',
         },
         {
-            src: '/photos/travel/europe/europe9.jpg',
+            src: europe29,
             width: 1200,
             height: 1500,
             alt: '',
@@ -1458,12 +1689,12 @@ const EUROPE_ALBUM: Album = {
 
 const TRAVEL_COLLECTION: Collection = {
     header: 'Travel',
-    coverArt: { src: '/cover-art/travel.jpg', width: 900, height: 1128, alt: '' },
+    coverArt: { src: coverTravel, width: 900, height: 1128, alt: '' },
     albums: { oceania: OCEANIA_ALBUM, asia: ASIA_ALBUM, europe: EUROPE_ALBUM, canada: CANADA_ALBUM },
 };
 const CLIENT_COLLECTION: Collection = {
     header: 'Client',
-    coverArt: { src: '/cover-art/client.jpg', height: 1198, width: 900, alt: '' },
+    coverArt: { src: coverClient, height: 1198, width: 900, alt: '' },
     albums: {
         'cat-motors': CAT_MOTORS_ALBUM,
         sprout: SPROUT_ALBUM,
