@@ -25,6 +25,6 @@
             }
         ]
     },
-    "include": ["svgr.d.ts", "./src", "./dist/types/**/*.ts", "./next-env.d.ts", ".next/types/**/*.ts"],
+    "include": ["svgr.d.ts", "./src", "./dist/types/**/*.ts", "./next-env.d.ts", ".next/types/**/*.ts", "./public"],
     "exclude": ["./node_modules"]
 }

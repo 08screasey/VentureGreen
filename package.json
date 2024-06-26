@@ -12,7 +12,8 @@
         "lint": "next lint",
         "prettier": "prettier",
         "knip": "knip",
-        "meta:generate": "node ./cli/filemeta.js"
+        "meta:generate": "node ./cli/filemeta.js",
+        "import:generate": "cd ./src/data && node ./cli/bulk-import.js && cd ../.."
     },
     "dependencies": {
         "@fortawesome/free-brands-svg-icons": "^6.5.2",
