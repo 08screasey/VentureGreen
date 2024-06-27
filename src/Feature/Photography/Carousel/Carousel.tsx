@@ -75,7 +75,7 @@ const CarouselImage = ({
                     onTouch();
                 }
             }}
-            style={{ width: width / window.devicePixelRatio, height: height / window.devicePixelRatio }}
+            style={{ width: width / window.devicePixelRatio, aspectRatio: `${width} / ${height}` }}
             initial="enter"
             animate="center"
             exit="exit"
