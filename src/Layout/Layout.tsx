@@ -58,7 +58,7 @@ export const Layout = ({ children }: LayoutProps) => {
                     )}
                 >
                     {/* Desktop Navigation Bar */}
-                    <nav className="tw-flex tw-items-center tw-justify-between tw-px-8 tw-py-3 lg:tw-pb-4 lg:tw-pt-6">
+                    <nav className="tw-flex tw-items-center tw-justify-between tw-py-3 lg:tw-px-8 lg:tw-pb-4 lg:tw-pt-6">
                         <Link
                             className={merge(
                                 'tw-hidden tw-h-[50px] tw-w-[50px] tw-items-center tw-justify-center tw-rounded tw-p-2 tw-transition lg:tw-flex',

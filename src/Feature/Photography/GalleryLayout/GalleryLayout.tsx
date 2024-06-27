@@ -51,7 +51,7 @@ export const GalleryLayout = ({ album }: GalleryLayoutProps) => {
                     )}
                 </div>
                 <div className="tw-grid tw-grid-cols-1 sm:tw-grid-cols-2 lg:tw-grid-cols-3 xl:tw-grid-cols-4">
-                    {images.map(({ src, alt }, i) => (
+                    {images.map(({ src, alt, verticalPosition }, i) => (
                         <motion.button
                             key={i}
                             onClick={() => openGallery(i)}
@@ -69,6 +69,7 @@ export const GalleryLayout = ({ album }: GalleryLayoutProps) => {
                                 alt={alt ?? src}
                                 originalWidth={400}
                                 lazy
+                                verticalPosition={verticalPosition}
                                 className="tw-h-full tw-w-full tw-object-cover"
                             />
                         </motion.button>

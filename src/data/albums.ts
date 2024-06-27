@@ -229,7 +229,7 @@ import oceania26 from '../../public/photos/travel/oceania/oceania7.jpg';
 import oceania27 from '../../public/photos/travel/oceania/oceania8.jpg';
 import oceania28 from '../../public/photos/travel/oceania/oceania9.jpg';
 
-export type Image = { src: StaticImageData; alt: string; height: number; width: number };
+export type Image = { src: StaticImageData; alt: string; height: number; width: number; verticalPosition?: number };
 export type Album = { images: Image[]; header: string; subheader?: string; quote?: string; coverArt: Image };
 export type Collection = { coverArt: Image; header: string; albums: Record<string, Album> };
 
@@ -283,24 +283,28 @@ const PORTRAIT_ALBUM: Album = {
             width: 1200,
             height: 1497,
             alt: '',
+            verticalPosition: 30,
         },
         {
             src: portrait8,
             width: 1200,
             height: 1500,
             alt: '',
+            verticalPosition: 0,
         },
         {
             src: portrait9,
             width: 1200,
             height: 1497,
             alt: '',
+            verticalPosition: 90,
         },
         {
             src: portrait10,
             width: 1200,
             height: 1517,
             alt: '',
+            verticalPosition: 0,
         },
         {
             src: portrait11,
@@ -1111,6 +1115,7 @@ const ASIA_ALBUM: Album = {
             width: 1200,
             height: 1501,
             alt: '',
+            verticalPosition: 30,
         },
         {
             src: asia8,
@@ -1339,6 +1344,7 @@ const OCEANIA_ALBUM: Album = {
             width: 1200,
             height: 1502,
             alt: '',
+            verticalPosition: 20,
         },
         {
             src: oceania3,
@@ -1363,6 +1369,7 @@ const OCEANIA_ALBUM: Album = {
             width: 1067,
             height: 1600,
             alt: '',
+            verticalPosition: 30,
         },
         {
             src: oceania7,
@@ -1375,6 +1382,7 @@ const OCEANIA_ALBUM: Album = {
             width: 1200,
             height: 1495,
             alt: '',
+            verticalPosition: 40,
         },
         {
             src: oceania9,
@@ -1387,18 +1395,21 @@ const OCEANIA_ALBUM: Album = {
             width: 1200,
             height: 1499,
             alt: '',
+            verticalPosition: 70,
         },
         {
             src: oceania11,
             width: 1200,
             height: 1500,
             alt: '',
+            verticalPosition: 40,
         },
         {
             src: oceania12,
             width: 1600,
             height: 1074,
             alt: '',
+            verticalPosition: 80,
         },
         {
             src: oceania13,
@@ -1411,6 +1422,7 @@ const OCEANIA_ALBUM: Album = {
             width: 1200,
             height: 1511,
             alt: '',
+            verticalPosition: 10,
         },
         {
             src: oceania15,
@@ -1429,18 +1441,21 @@ const OCEANIA_ALBUM: Album = {
             width: 1051,
             height: 1600,
             alt: '',
+            verticalPosition: 0,
         },
         {
             src: oceania18,
             width: 1067,
             height: 1600,
             alt: '',
+            verticalPosition: 20,
         },
         {
             src: oceania19,
             width: 1600,
             height: 1067,
             alt: '',
+            verticalPosition: 0,
         },
         {
             src: oceania20,
@@ -1471,6 +1486,7 @@ const OCEANIA_ALBUM: Album = {
             width: 1200,
             height: 1500,
             alt: '',
+            verticalPosition: 20,
         },
         {
             src: oceania25,
@@ -1489,12 +1505,14 @@ const OCEANIA_ALBUM: Album = {
             width: 1600,
             height: 1067,
             alt: '',
+            verticalPosition: 10,
         },
         {
             src: oceania28,
             width: 1200,
             height: 1349,
             alt: '',
+            verticalPosition: 80,
         },
     ],
 };
@@ -1573,18 +1591,21 @@ const EUROPE_ALBUM: Album = {
             width: 1200,
             height: 1496,
             alt: '',
+            verticalPosition: 70,
         },
         {
             src: europe12,
             width: 1067,
             height: 1600,
             alt: '',
+            verticalPosition: 10,
         },
         {
             src: europe13,
             width: 1200,
             height: 1414,
             alt: '',
+            verticalPosition: 10,
         },
         {
             src: europe14,
@@ -1597,6 +1618,7 @@ const EUROPE_ALBUM: Album = {
             width: 1600,
             height: 1067,
             alt: '',
+            verticalPosition: 0,
         },
         {
             src: europe16,
@@ -1633,6 +1655,7 @@ const EUROPE_ALBUM: Album = {
             width: 1200,
             height: 1502,
             alt: '',
+            verticalPosition: 80,
         },
         {
             src: europe22,
@@ -1681,6 +1704,7 @@ const EUROPE_ALBUM: Album = {
             width: 1200,
             height: 1500,
             alt: '',
+            verticalPosition: 80,
         },
     ],
 };
