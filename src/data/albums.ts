@@ -474,6 +474,7 @@ const GEMMA_ALBUM: Album = {
             width: 1123,
             height: 1600,
             alt: '',
+            verticalPosition: 40,
         },
         {
             src: gemma2,
@@ -522,6 +523,7 @@ const GEMMA_ALBUM: Album = {
             width: 973,
             height: 1600,
             alt: '',
+            verticalPosition: 30,
         },
         {
             src: gemma10,
@@ -540,6 +542,7 @@ const GEMMA_ALBUM: Album = {
             width: 1050,
             height: 1600,
             alt: '',
+            verticalPosition: 20,
         },
         {
             src: gemma13,
@@ -552,6 +555,7 @@ const GEMMA_ALBUM: Album = {
             width: 1025,
             height: 1600,
             alt: '',
+            verticalPosition: 70,
         },
         {
             src: gemma15,
@@ -564,6 +568,7 @@ const GEMMA_ALBUM: Album = {
             width: 1067,
             height: 1600,
             alt: '',
+            verticalPosition: 20,
         },
         {
             src: gemma17,
@@ -576,6 +581,7 @@ const GEMMA_ALBUM: Album = {
             width: 1054,
             height: 1600,
             alt: '',
+            verticalPosition: 70,
         },
         {
             src: gemma19,
@@ -594,6 +600,7 @@ const GEMMA_ALBUM: Album = {
             width: 1475,
             height: 1200,
             alt: '',
+            verticalPosition: 70,
         },
         {
             src: gemma22,
@@ -606,6 +613,7 @@ const GEMMA_ALBUM: Album = {
             width: 1200,
             height: 1580,
             alt: '',
+            verticalPosition: 60,
         },
         {
             src: gemma24,
@@ -1212,12 +1220,14 @@ const CANADA_ALBUM: Album = {
             width: 1280,
             height: 1600,
             alt: '',
+            verticalPosition: 0,
         },
         {
             src: canada2,
             width: 1280,
             height: 1600,
             alt: '',
+            verticalPosition: 20,
         },
         {
             src: canada3,
@@ -1260,6 +1270,7 @@ const CANADA_ALBUM: Album = {
             width: 2500,
             height: 3125,
             alt: '',
+            verticalPosition: 30,
         },
         {
             src: canada10,
@@ -1296,6 +1307,7 @@ const CANADA_ALBUM: Album = {
             width: 1280,
             height: 1600,
             alt: '',
+            verticalPosition: 60,
         },
         {
             src: canada16,
@@ -1320,6 +1332,7 @@ const CANADA_ALBUM: Album = {
             width: 1280,
             height: 1600,
             alt: '',
+            verticalPosition: 60,
         },
     ],
 };
