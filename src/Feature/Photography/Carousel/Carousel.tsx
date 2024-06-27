@@ -53,19 +53,29 @@ type CarouselImageProps = {
     onTouch: () => void;
 };
 
-const CarouselImage = ({ src, onSwipeLeft, onSwipeRight, alt, direction, onTouch }: CarouselImageProps) => {
+const CarouselImage = ({
+    src,
+    onSwipeLeft,
+    onSwipeRight,
+    alt,
+    direction,
+    onTouch,
+    width,
+    height,
+}: CarouselImageProps) => {
     const isDragging = useRef(false);
 
     return (
         <motion.div
             custom={direction}
-            className="tw-fixed tw-z-[100] tw-m-auto tw-flex tw-max-w-[1000px]"
+            className="tw-fixed tw-z-[100] tw-m-auto tw-block tw-max-h-[90vh] tw-max-w-[90vw]"
             variants={variants}
             onTouchEnd={() => {
                 if (!isDragging.current) {
                     onTouch();
                 }
             }}
+            style={{ width: width / window.devicePixelRatio, height: height / window.devicePixelRatio }}
             initial="enter"
             animate="center"
             exit="exit"
@@ -91,10 +101,11 @@ const CarouselImage = ({ src, onSwipeLeft, onSwipeRight, alt, direction, onTouch
             }}
         >
             <NetlifyImg
-                className="tw-pointer-events-none tw-max-h-[90vh] tw-w-full tw-max-w-[90vw] tw-object-contain"
+                className="tw-pointer-events-none tw-h-full tw-w-full tw-object-contain"
                 alt={alt}
                 originalSrc={src}
                 lazy={false}
+                priority
             />
         </motion.div>
     );
