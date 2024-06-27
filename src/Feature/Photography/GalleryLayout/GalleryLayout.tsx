@@ -50,7 +50,7 @@ export const GalleryLayout = ({ album }: GalleryLayoutProps) => {
                         </motion.p>
                     )}
                 </div>
-                <div className="tw-grid tw-grid-cols-1 tw-gap-2 sm:tw-grid-cols-2 lg:tw-grid-cols-3 xl:tw-grid-cols-4">
+                <div className="tw-grid tw-grid-cols-1 sm:tw-grid-cols-2 lg:tw-grid-cols-3 xl:tw-grid-cols-4">
                     {images.map(({ src, alt }, i) => (
                         <motion.button
                             key={i}
