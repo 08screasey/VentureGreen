@@ -1073,6 +1073,7 @@ const ASIA_ALBUM: Album = {
             width: 1200,
             height: 1504,
             alt: '',
+            verticalPosition: 30,
         },
         {
             src: asia3,
