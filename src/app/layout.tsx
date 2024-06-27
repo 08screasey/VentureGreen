@@ -12,7 +12,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     return (
         <html lang="en">
             <head>
-                <link rel="stylesheet" href="https://use.typekit.net/zkq8euy.css" />
+                <link rel="preload" href="https://use.typekit.net/zkq8euy.css" as="stylesheet" />
             </head>
             <body>
                 <Layout>{children}</Layout>

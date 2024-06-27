@@ -15,6 +15,7 @@ type NetlifyImageProps = {
     className?: string;
     blur?: boolean;
     priority?: boolean;
+    verticalPosition?: number;
 };
 
 export const NetlifyImg = forwardRef<HTMLImageElement, NetlifyImageProps>(
@@ -29,6 +30,7 @@ export const NetlifyImg = forwardRef<HTMLImageElement, NetlifyImageProps>(
             lazy = true,
             priority = false,
             className,
+            verticalPosition = 50,
         }: NetlifyImageProps,
         ref,
     ) => {
@@ -52,6 +54,7 @@ export const NetlifyImg = forwardRef<HTMLImageElement, NetlifyImageProps>(
                 loading={lazy ? 'lazy' : 'eager'}
                 ref={imageRef}
                 priority={priority}
+                style={{ objectPosition: `50% ${verticalPosition}%` }}
             />
         );
     },

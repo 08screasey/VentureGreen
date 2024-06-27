@@ -66,31 +66,26 @@ import climate16 from '../../public/photos/client/climate/climate6.jpg';
 import climate17 from '../../public/photos/client/climate/climate7.jpg';
 import climate18 from '../../public/photos/client/climate/climate8.jpg';
 import climate19 from '../../public/photos/client/climate/climate9.jpg';
-import gemma12 from '../../public/photos/client/gemma/gem.jpg';
-import gemma13 from '../../public/photos/client/gemma/gem1.jpg';
-import gemma14 from '../../public/photos/client/gemma/gem10.jpg';
-import gemma15 from '../../public/photos/client/gemma/gem11.jpg';
-import gemma16 from '../../public/photos/client/gemma/gem12.jpg';
-import gemma17 from '../../public/photos/client/gemma/gem13.jpg';
-import gemma18 from '../../public/photos/client/gemma/gem14.jpg';
-import gemma19 from '../../public/photos/client/gemma/gem15.jpg';
-import gemma20 from '../../public/photos/client/gemma/gem16.jpg';
-import gemma21 from '../../public/photos/client/gemma/gem17.jpg';
-import gemma22 from '../../public/photos/client/gemma/gem18.jpg';
-import gemma23 from '../../public/photos/client/gemma/gem19.jpg';
-import gemma24 from '../../public/photos/client/gemma/gem2.jpg';
-import gemma25 from '../../public/photos/client/gemma/gem20.jpg';
-import gemma1 from '../../public/photos/client/gemma/gem21.jpg';
-import gemma2 from '../../public/photos/client/gemma/gem22.jpg';
-import gemma3 from '../../public/photos/client/gemma/gem23.jpg';
-import gemma4 from '../../public/photos/client/gemma/gem24.jpg';
-import gemma5 from '../../public/photos/client/gemma/gem25.jpg';
-import gemma6 from '../../public/photos/client/gemma/gem3.jpg';
-import gemma7 from '../../public/photos/client/gemma/gem4.jpg';
-import gemma8 from '../../public/photos/client/gemma/gem5.jpg';
-import gemma9 from '../../public/photos/client/gemma/gem6.jpg';
-import gemma10 from '../../public/photos/client/gemma/gem8.jpg';
-import gemma11 from '../../public/photos/client/gemma/gem9.jpg';
+import gemma1 from '../../public/photos/client/gemma/gem-1.jpg';
+import gemma2 from '../../public/photos/client/gemma/gem-10.jpg';
+import gemma3 from '../../public/photos/client/gemma/gem-11.jpg';
+import gemma4 from '../../public/photos/client/gemma/gem-12.jpg';
+import gemma5 from '../../public/photos/client/gemma/gem-13.jpg';
+import gemma6 from '../../public/photos/client/gemma/gem-2.jpg';
+import gemma7 from '../../public/photos/client/gemma/gem-3.jpg';
+import gemma8 from '../../public/photos/client/gemma/gem-4.jpg';
+import gemma9 from '../../public/photos/client/gemma/gem-5.jpg';
+import gemma10 from '../../public/photos/client/gemma/gem-6.jpg';
+import gemma11 from '../../public/photos/client/gemma/gem-7.jpg';
+import gemma12 from '../../public/photos/client/gemma/gem-8.jpg';
+import gemma13 from '../../public/photos/client/gemma/gem-9.jpg';
+import gemma14 from '../../public/photos/client/gemma/gem-blue10.jpg';
+import gemma15 from '../../public/photos/client/gemma/gem-blue4.jpg';
+import gemma16 from '../../public/photos/client/gemma/gem-blue5.jpg';
+import gemma17 from '../../public/photos/client/gemma/gem-blue6.jpg';
+import gemma18 from '../../public/photos/client/gemma/gem-blue7.jpg';
+import gemma19 from '../../public/photos/client/gemma/gem-blue8.jpg';
+import gemma20 from '../../public/photos/client/gemma/gem-blue9.jpg';
 import luna1 from '../../public/photos/client/luna/Luna.jpg';
 import luna2 from '../../public/photos/client/luna/Luna10.jpg';
 import luna3 from '../../public/photos/client/luna/Luna11.jpg';
@@ -229,7 +224,7 @@ import oceania26 from '../../public/photos/travel/oceania/oceania7.jpg';
 import oceania27 from '../../public/photos/travel/oceania/oceania8.jpg';
 import oceania28 from '../../public/photos/travel/oceania/oceania9.jpg';
 
-export type Image = { src: StaticImageData; alt: string; height: number; width: number };
+export type Image = { src: StaticImageData; alt: string; height: number; width: number; verticalPosition?: number };
 export type Album = { images: Image[]; header: string; subheader?: string; quote?: string; coverArt: Image };
 export type Collection = { coverArt: Image; header: string; albums: Record<string, Album> };
 
@@ -283,24 +278,28 @@ const PORTRAIT_ALBUM: Album = {
             width: 1200,
             height: 1497,
             alt: '',
+            verticalPosition: 30,
         },
         {
             src: portrait8,
             width: 1200,
             height: 1500,
             alt: '',
+            verticalPosition: 0,
         },
         {
             src: portrait9,
             width: 1200,
             height: 1497,
             alt: '',
+            verticalPosition: 90,
         },
         {
             src: portrait10,
             width: 1200,
             height: 1517,
             alt: '',
+            verticalPosition: 0,
         },
         {
             src: portrait11,
@@ -331,12 +330,14 @@ const ANIMAL_ALBUM: Album = {
             width: 1200,
             height: 1315,
             alt: '',
+            verticalPosition: 10,
         },
         {
             src: animals3,
             width: 1200,
             height: 1500,
             alt: '',
+            verticalPosition: 90,
         },
         {
             src: animals4,
@@ -403,12 +404,14 @@ const ANIMAL_ALBUM: Album = {
             width: 1121,
             height: 1600,
             alt: '',
+            verticalPosition: 10,
         },
         {
             src: animals15,
             width: 1200,
             height: 1504,
             alt: '',
+            verticalPosition: 20,
         },
         {
             src: animals16,
@@ -421,6 +424,7 @@ const ANIMAL_ALBUM: Album = {
             width: 1200,
             height: 1491,
             alt: '',
+            verticalPosition: 80,
         },
         {
             src: animals18,
@@ -439,6 +443,7 @@ const ANIMAL_ALBUM: Album = {
             width: 1200,
             height: 1500,
             alt: '',
+            verticalPosition: 10,
         },
         {
             src: animals21,
@@ -467,151 +472,133 @@ const GEMMA_ALBUM: Album = {
     images: [
         {
             src: gemma1,
-            width: 1123,
+            width: 1030,
             height: 1600,
             alt: '',
+            verticalPosition: 50,
         },
         {
             src: gemma2,
-            width: 1048,
-            height: 1600,
+            width: 1200,
+            height: 1415,
             alt: '',
+            verticalPosition: 60,
         },
         {
             src: gemma3,
-            width: 983,
+            width: 1160,
             height: 1600,
             alt: '',
         },
         {
             src: gemma4,
-            width: 1067,
-            height: 1600,
-            alt: '',
-        },
-        {
-            src: gemma5,
-            width: 1200,
-            height: 1446,
-            alt: '',
-        },
-        {
-            src: gemma6,
-            width: 1200,
-            height: 1435,
-            alt: '',
-        },
-        {
-            src: gemma7,
-            width: 1132,
-            height: 1600,
-            alt: '',
-        },
-        {
-            src: gemma8,
-            width: 1129,
-            height: 1600,
-            alt: '',
-        },
-        {
-            src: gemma9,
-            width: 973,
-            height: 1600,
-            alt: '',
-        },
-        {
-            src: gemma10,
-            width: 1200,
-            height: 1415,
-            alt: '',
-        },
-        {
-            src: gemma11,
-            width: 1160,
-            height: 1600,
-            alt: '',
-        },
-        {
-            src: gemma12,
             width: 1050,
             height: 1600,
             alt: '',
         },
         {
-            src: gemma13,
-            width: 1063,
+            src: gemma5,
+            width: 1149,
             height: 1600,
             alt: '',
+            verticalPosition: 20,
         },
         {
-            src: gemma14,
-            width: 1025,
-            height: 1600,
-            alt: '',
-        },
-        {
-            src: gemma15,
-            width: 943,
-            height: 1600,
-            alt: '',
-        },
-        {
-            src: gemma16,
-            width: 1067,
-            height: 1600,
-            alt: '',
-        },
-        {
-            src: gemma17,
-            width: 866,
-            height: 1600,
-            alt: '',
-        },
-        {
-            src: gemma18,
-            width: 1054,
-            height: 1600,
-            alt: '',
-        },
-        {
-            src: gemma19,
-            width: 996,
-            height: 1600,
-            alt: '',
-        },
-        {
-            src: gemma20,
-            width: 1030,
-            height: 1600,
-            alt: '',
-        },
-        {
-            src: gemma21,
+            src: gemma6,
             width: 1475,
             height: 1200,
             alt: '',
         },
         {
-            src: gemma22,
-            width: 1200,
-            height: 1435,
-            alt: '',
-        },
-        {
-            src: gemma23,
-            width: 1200,
-            height: 1580,
-            alt: '',
-        },
-        {
-            src: gemma24,
+            src: gemma7,
             width: 1160,
             height: 1600,
             alt: '',
         },
         {
-            src: gemma25,
-            width: 1070,
+            src: gemma8,
+            width: 983,
+            height: 1600,
+            alt: '',
+            verticalPosition: 70,
+        },
+        {
+            src: gemma9,
+            width: 1067,
+            height: 1600,
+            alt: '',
+            verticalPosition: 60,
+        },
+        {
+            src: gemma10,
+            width: 1200,
+            height: 1446,
+            alt: '',
+            verticalPosition: 20,
+        },
+        {
+            src: gemma11,
+            width: 1132,
+            height: 1600,
+            alt: '',
+            verticalPosition: 80,
+        },
+        {
+            src: gemma12,
+            width: 1129,
+            height: 1600,
+            alt: '',
+            verticalPosition: 60,
+        },
+        {
+            src: gemma13,
+            width: 973,
+            height: 1600,
+            alt: '',
+        },
+        {
+            src: gemma14,
+            width: 996,
+            height: 1600,
+            alt: '',
+            verticalPosition: 50,
+        },
+        {
+            src: gemma15,
+            width: 1030,
+            height: 1600,
+            alt: '',
+            verticalPosition: 40,
+        },
+        {
+            src: gemma16,
+            width: 1063,
+            height: 1600,
+            alt: '',
+            verticalPosition: 20,
+        },
+        {
+            src: gemma17,
+            width: 943,
+            height: 1600,
+            alt: '',
+        },
+        {
+            src: gemma18,
+            width: 1025,
+            height: 1600,
+            alt: '',
+            verticalPosition: 50,
+        },
+        {
+            src: gemma19,
+            width: 1054,
+            height: 1600,
+            alt: '',
+        },
+        {
+            src: gemma20,
+            width: 866,
             height: 1600,
             alt: '',
         },
@@ -869,6 +856,7 @@ your hair in place while you do your morning sun salutations.`,
             width: 1280,
             height: 1600,
             alt: '',
+            verticalPosition: 10,
         },
         {
             src: luna3,
@@ -893,6 +881,7 @@ your hair in place while you do your morning sun salutations.`,
             width: 1280,
             height: 1600,
             alt: '',
+            verticalPosition: 30,
         },
         {
             src: luna7,
@@ -905,6 +894,7 @@ your hair in place while you do your morning sun salutations.`,
             width: 1280,
             height: 1600,
             alt: '',
+            verticalPosition: 20,
         },
         {
             src: luna9,
@@ -929,12 +919,14 @@ your hair in place while you do your morning sun salutations.`,
             width: 1280,
             height: 1600,
             alt: '',
+            verticalPosition: 10,
         },
         {
             src: luna13,
             width: 1280,
             height: 1600,
             alt: '',
+            verticalPosition: 5,
         },
     ],
 };
@@ -1081,6 +1073,7 @@ const ASIA_ALBUM: Album = {
             width: 1200,
             height: 1504,
             alt: '',
+            verticalPosition: 30,
         },
         {
             src: asia3,
@@ -1111,6 +1104,7 @@ const ASIA_ALBUM: Album = {
             width: 1200,
             height: 1501,
             alt: '',
+            verticalPosition: 30,
         },
         {
             src: asia8,
@@ -1207,12 +1201,14 @@ const CANADA_ALBUM: Album = {
             width: 1280,
             height: 1600,
             alt: '',
+            verticalPosition: 0,
         },
         {
             src: canada2,
             width: 1280,
             height: 1600,
             alt: '',
+            verticalPosition: 20,
         },
         {
             src: canada3,
@@ -1255,6 +1251,7 @@ const CANADA_ALBUM: Album = {
             width: 2500,
             height: 3125,
             alt: '',
+            verticalPosition: 30,
         },
         {
             src: canada10,
@@ -1291,6 +1288,7 @@ const CANADA_ALBUM: Album = {
             width: 1280,
             height: 1600,
             alt: '',
+            verticalPosition: 60,
         },
         {
             src: canada16,
@@ -1315,6 +1313,7 @@ const CANADA_ALBUM: Album = {
             width: 1280,
             height: 1600,
             alt: '',
+            verticalPosition: 60,
         },
     ],
 };
@@ -1339,6 +1338,7 @@ const OCEANIA_ALBUM: Album = {
             width: 1200,
             height: 1502,
             alt: '',
+            verticalPosition: 20,
         },
         {
             src: oceania3,
@@ -1363,6 +1363,7 @@ const OCEANIA_ALBUM: Album = {
             width: 1067,
             height: 1600,
             alt: '',
+            verticalPosition: 30,
         },
         {
             src: oceania7,
@@ -1375,6 +1376,7 @@ const OCEANIA_ALBUM: Album = {
             width: 1200,
             height: 1495,
             alt: '',
+            verticalPosition: 40,
         },
         {
             src: oceania9,
@@ -1387,18 +1389,21 @@ const OCEANIA_ALBUM: Album = {
             width: 1200,
             height: 1499,
             alt: '',
+            verticalPosition: 70,
         },
         {
             src: oceania11,
             width: 1200,
             height: 1500,
             alt: '',
+            verticalPosition: 40,
         },
         {
             src: oceania12,
             width: 1600,
             height: 1074,
             alt: '',
+            verticalPosition: 80,
         },
         {
             src: oceania13,
@@ -1411,6 +1416,7 @@ const OCEANIA_ALBUM: Album = {
             width: 1200,
             height: 1511,
             alt: '',
+            verticalPosition: 10,
         },
         {
             src: oceania15,
@@ -1429,18 +1435,21 @@ const OCEANIA_ALBUM: Album = {
             width: 1051,
             height: 1600,
             alt: '',
+            verticalPosition: 0,
         },
         {
             src: oceania18,
             width: 1067,
             height: 1600,
             alt: '',
+            verticalPosition: 20,
         },
         {
             src: oceania19,
             width: 1600,
             height: 1067,
             alt: '',
+            verticalPosition: 0,
         },
         {
             src: oceania20,
@@ -1471,6 +1480,7 @@ const OCEANIA_ALBUM: Album = {
             width: 1200,
             height: 1500,
             alt: '',
+            verticalPosition: 20,
         },
         {
             src: oceania25,
@@ -1489,12 +1499,14 @@ const OCEANIA_ALBUM: Album = {
             width: 1600,
             height: 1067,
             alt: '',
+            verticalPosition: 10,
         },
         {
             src: oceania28,
             width: 1200,
             height: 1349,
             alt: '',
+            verticalPosition: 80,
         },
     ],
 };
@@ -1573,18 +1585,21 @@ const EUROPE_ALBUM: Album = {
             width: 1200,
             height: 1496,
             alt: '',
+            verticalPosition: 70,
         },
         {
             src: europe12,
             width: 1067,
             height: 1600,
             alt: '',
+            verticalPosition: 10,
         },
         {
             src: europe13,
             width: 1200,
             height: 1414,
             alt: '',
+            verticalPosition: 10,
         },
         {
             src: europe14,
@@ -1597,6 +1612,7 @@ const EUROPE_ALBUM: Album = {
             width: 1600,
             height: 1067,
             alt: '',
+            verticalPosition: 0,
         },
         {
             src: europe16,
@@ -1633,6 +1649,7 @@ const EUROPE_ALBUM: Album = {
             width: 1200,
             height: 1502,
             alt: '',
+            verticalPosition: 80,
         },
         {
             src: europe22,
@@ -1681,6 +1698,7 @@ const EUROPE_ALBUM: Album = {
             width: 1200,
             height: 1500,
             alt: '',
+            verticalPosition: 80,
         },
     ],
 };
