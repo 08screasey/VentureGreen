@@ -66,31 +66,26 @@ import climate16 from '../../public/photos/client/climate/climate6.jpg';
 import climate17 from '../../public/photos/client/climate/climate7.jpg';
 import climate18 from '../../public/photos/client/climate/climate8.jpg';
 import climate19 from '../../public/photos/client/climate/climate9.jpg';
-import gemma12 from '../../public/photos/client/gemma/gem.jpg';
-import gemma13 from '../../public/photos/client/gemma/gem1.jpg';
-import gemma14 from '../../public/photos/client/gemma/gem10.jpg';
-import gemma15 from '../../public/photos/client/gemma/gem11.jpg';
-import gemma16 from '../../public/photos/client/gemma/gem12.jpg';
-import gemma17 from '../../public/photos/client/gemma/gem13.jpg';
-import gemma18 from '../../public/photos/client/gemma/gem14.jpg';
-import gemma19 from '../../public/photos/client/gemma/gem15.jpg';
-import gemma20 from '../../public/photos/client/gemma/gem16.jpg';
-import gemma21 from '../../public/photos/client/gemma/gem17.jpg';
-import gemma22 from '../../public/photos/client/gemma/gem18.jpg';
-import gemma23 from '../../public/photos/client/gemma/gem19.jpg';
-import gemma24 from '../../public/photos/client/gemma/gem2.jpg';
-import gemma25 from '../../public/photos/client/gemma/gem20.jpg';
-import gemma1 from '../../public/photos/client/gemma/gem21.jpg';
-import gemma2 from '../../public/photos/client/gemma/gem22.jpg';
-import gemma3 from '../../public/photos/client/gemma/gem23.jpg';
-import gemma4 from '../../public/photos/client/gemma/gem24.jpg';
-import gemma5 from '../../public/photos/client/gemma/gem25.jpg';
-import gemma6 from '../../public/photos/client/gemma/gem3.jpg';
-import gemma7 from '../../public/photos/client/gemma/gem4.jpg';
-import gemma8 from '../../public/photos/client/gemma/gem5.jpg';
-import gemma9 from '../../public/photos/client/gemma/gem6.jpg';
-import gemma10 from '../../public/photos/client/gemma/gem8.jpg';
-import gemma11 from '../../public/photos/client/gemma/gem9.jpg';
+import gemma1 from '../../public/photos/client/gemma/gem-1.jpg';
+import gemma2 from '../../public/photos/client/gemma/gem-10.jpg';
+import gemma3 from '../../public/photos/client/gemma/gem-11.jpg';
+import gemma4 from '../../public/photos/client/gemma/gem-12.jpg';
+import gemma5 from '../../public/photos/client/gemma/gem-13.jpg';
+import gemma6 from '../../public/photos/client/gemma/gem-2.jpg';
+import gemma7 from '../../public/photos/client/gemma/gem-3.jpg';
+import gemma8 from '../../public/photos/client/gemma/gem-4.jpg';
+import gemma9 from '../../public/photos/client/gemma/gem-5.jpg';
+import gemma10 from '../../public/photos/client/gemma/gem-6.jpg';
+import gemma11 from '../../public/photos/client/gemma/gem-7.jpg';
+import gemma12 from '../../public/photos/client/gemma/gem-8.jpg';
+import gemma13 from '../../public/photos/client/gemma/gem-9.jpg';
+import gemma14 from '../../public/photos/client/gemma/gem-blue10.jpg';
+import gemma15 from '../../public/photos/client/gemma/gem-blue4.jpg';
+import gemma16 from '../../public/photos/client/gemma/gem-blue5.jpg';
+import gemma17 from '../../public/photos/client/gemma/gem-blue6.jpg';
+import gemma18 from '../../public/photos/client/gemma/gem-blue7.jpg';
+import gemma19 from '../../public/photos/client/gemma/gem-blue8.jpg';
+import gemma20 from '../../public/photos/client/gemma/gem-blue9.jpg';
 import luna1 from '../../public/photos/client/luna/Luna.jpg';
 import luna2 from '../../public/photos/client/luna/Luna10.jpg';
 import luna3 from '../../public/photos/client/luna/Luna11.jpg';
@@ -477,56 +472,56 @@ const GEMMA_ALBUM: Album = {
     images: [
         {
             src: gemma1,
-            width: 1123,
+            width: 1030,
             height: 1600,
             alt: '',
             verticalPosition: 40,
         },
         {
             src: gemma2,
-            width: 1048,
-            height: 1600,
+            width: 1200,
+            height: 1415,
             alt: '',
         },
         {
             src: gemma3,
-            width: 983,
+            width: 1160,
             height: 1600,
             alt: '',
         },
         {
             src: gemma4,
-            width: 1067,
+            width: 1050,
             height: 1600,
             alt: '',
         },
         {
             src: gemma5,
-            width: 1200,
-            height: 1446,
+            width: 1149,
+            height: 1600,
             alt: '',
         },
         {
             src: gemma6,
-            width: 1200,
-            height: 1435,
+            width: 1475,
+            height: 1200,
             alt: '',
         },
         {
             src: gemma7,
-            width: 1132,
+            width: 1160,
             height: 1600,
             alt: '',
         },
         {
             src: gemma8,
-            width: 1129,
+            width: 983,
             height: 1600,
             alt: '',
         },
         {
             src: gemma9,
-            width: 973,
+            width: 1067,
             height: 1600,
             alt: '',
             verticalPosition: 30,
@@ -534,102 +529,70 @@ const GEMMA_ALBUM: Album = {
         {
             src: gemma10,
             width: 1200,
-            height: 1415,
+            height: 1446,
             alt: '',
         },
         {
             src: gemma11,
-            width: 1160,
+            width: 1132,
             height: 1600,
             alt: '',
         },
         {
             src: gemma12,
-            width: 1050,
+            width: 1129,
             height: 1600,
             alt: '',
             verticalPosition: 20,
         },
         {
             src: gemma13,
-            width: 1063,
+            width: 973,
             height: 1600,
             alt: '',
         },
         {
             src: gemma14,
-            width: 1025,
+            width: 996,
             height: 1600,
             alt: '',
             verticalPosition: 70,
         },
         {
             src: gemma15,
-            width: 943,
+            width: 1030,
             height: 1600,
             alt: '',
         },
         {
             src: gemma16,
-            width: 1067,
+            width: 1063,
             height: 1600,
             alt: '',
             verticalPosition: 20,
         },
         {
             src: gemma17,
-            width: 866,
+            width: 943,
             height: 1600,
             alt: '',
         },
         {
             src: gemma18,
-            width: 1054,
+            width: 1025,
             height: 1600,
             alt: '',
             verticalPosition: 70,
         },
         {
             src: gemma19,
-            width: 996,
+            width: 1054,
             height: 1600,
             alt: '',
         },
         {
             src: gemma20,
-            width: 1030,
-            height: 1600,
-            alt: '',
-        },
-        {
-            src: gemma21,
-            width: 1475,
-            height: 1200,
-            alt: '',
-            verticalPosition: 70,
-        },
-        {
-            src: gemma22,
-            width: 1200,
-            height: 1435,
-            alt: '',
-        },
-        {
-            src: gemma23,
-            width: 1200,
-            height: 1580,
-            alt: '',
-            verticalPosition: 60,
-        },
-        {
-            src: gemma24,
-            width: 1160,
-            height: 1600,
-            alt: '',
-        },
-        {
-            src: gemma25,
-            width: 1070,
+            width: 866,
             height: 1600,
             alt: '',
         },
