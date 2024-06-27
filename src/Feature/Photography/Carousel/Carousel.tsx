@@ -94,6 +94,7 @@ const CarouselImage = ({ src, onSwipeLeft, onSwipeRight, alt, direction, onTouch
                 className="tw-pointer-events-none tw-max-h-[90vh] tw-w-full tw-max-w-[90vw] tw-object-contain"
                 alt={alt}
                 originalSrc={src}
+                lazy={false}
             />
         </motion.div>
     );
