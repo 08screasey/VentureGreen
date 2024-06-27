@@ -57,7 +57,7 @@ export const GalleryLayout = ({ album }: GalleryLayoutProps) => {
                             onClick={() => openGallery(i)}
                             aria-label={`Open gallery view for ${alt ?? src}`}
                             className={merge(
-                                'tw-relative tw-mx-auto tw-flex tw-aspect-[14/10] tw-w-full tw-items-center tw-border-white tw-bg-white tw-p-5 tw-transition hover:tw-brightness-95 active:tw-brightness-90 sm:tw-p-10',
+                                'tw-relative tw-mx-auto tw-flex tw-w-full tw-items-center tw-border-white tw-bg-white tw-p-5 tw-transition hover:tw-brightness-95 active:tw-brightness-90 sm:tw-aspect-[14/10] sm:tw-p-10',
                                 FOCUS_VISIBLE_STYLES,
                                 'focus-visible:tw-z-[2]',
                             )}
@@ -67,7 +67,7 @@ export const GalleryLayout = ({ album }: GalleryLayoutProps) => {
                             <NetlifyImg
                                 originalSrc={src}
                                 alt={alt ?? src}
-                                originalWidth={400}
+                                originalWidth={600}
                                 lazy
                                 verticalPosition={verticalPosition}
                                 className="tw-h-full tw-w-full tw-object-cover"
